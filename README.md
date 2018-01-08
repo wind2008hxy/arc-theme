@@ -46,7 +46,7 @@ A non-transparent version of the theme is available here: [Arc Solid OBS repo](h
 To build the theme the follwing packages are required 
 * `autoconf`
 * `automake`
-* `sassc` (not for Ubuntu 16.04 - this distro assumes you have compiled with gulp)
+* `sassc`
 * `pkg-config` or `pkgconfig` for Fedora
 * `libgtk-3-dev` for Debian based distros or `gtk3-devel` for RPM based distros
 * `git` to clone the source directory
