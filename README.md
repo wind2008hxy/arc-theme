@@ -89,6 +89,7 @@ Other options to pass to autogen.sh are
     --disable-metacity         disable Metacity support
     --disable-unity            disable Unity support
     --disable-xfwm             disable XFWM support
+    --disable-plank            disable Plank theme support
 
     --with-gnome=<version>     build the theme for a specific GNOME version (3.18, 3.20, 3.22)
                                Note 1: Normally the correct version is detected automatically and this
@@ -126,7 +127,7 @@ The Arc icon theme is available at https://github.com/horst3180/arc-icon-theme
 To install the Chrome/Chromium theme go to the `extra/Chrome` folder and drag and drop the arc-theme.crx or arc-dark-theme.crx file into the Chrome/Chromium window. The source of the Chrome themes is located in the source "Chrome/arc-theme" folder.
 
 ### Plank theme
-To install the Plank theme, copy the `extra/Arc-Plank` folder to `~/.local/share/plank/themes` or to `/usr/share/plank/themes` for system-wide use.
+As of version `20180114` the plank theme will be installed along with the normal arc gtk theme. You can disable the install by passing `disable-plank` to the autogen command.
 Now open the Plank preferences window by executing `plank --preferences` from a terminal and select `Arc-Plank` as the theme.
 
 ### Arc-Dark for Ubuntu Software Center
