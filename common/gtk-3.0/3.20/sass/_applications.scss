@@ -278,6 +278,16 @@ $disk_space_free: darken($bg_color, 3%);
 .caja-side-pane .frame { border-width: 1px 0 0; }
 .caja-notebook .frame { border-width: 0 0 1px; }
 
+.caja-navigation-window {
+  .view .cell:selected {
+    &, &:focus {
+      background-image: _solid($selected_bg_color);
+
+      @extend %selected_items;
+    }
+  }
+}
+
 //
 // Gedit
 //
