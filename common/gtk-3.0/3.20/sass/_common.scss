@@ -1619,11 +1619,6 @@ menu,
     background-color: $_menu_bg;
   }
 
-  // Firefox workaround
-  .separator:not(label),
-  .csd & .separator:not(label) { color: $_menu_bg; }
-  // Firefox workaround end
-
   menuitem {
     min-height: 16px;
     min-width: 40px;
