@@ -1334,6 +1334,10 @@ StScrollBar {
     color: transparentize($fg_color, 0.4);
     font-size: 0.9em;
 
+    /* HACK: the label should be baseline-aligned with a 1em label,
+             fake this with some bottom padding */
+    padding-bottom: 0.13em;
+
     &:ltr { padding-left: 8px; }
     &:rtl { padding-right: 8px; }
   }
