@@ -1269,10 +1269,10 @@ StScrollBar {
 .message-list {
   width: 31.5em;
 
-  &-sections { spacing: 1.5em; }
+  &-sections { spacing: 1em; }
 
   &-section,
-  &-section-list { spacing: 0.7em; }
+  &-section-list { spacing: 0.4em; }
 
   &-placeholder {
     StIcon { width: 0; height: 0; }
@@ -1301,13 +1301,15 @@ StScrollBar {
   }
 
   &-icon-bin {
-    padding: 8px 0px 8px 8px;
+    padding: 10px 3px 10px 10px;
 
-    &:rtl { padding: 8px 8px 8px 0px; }
+    &:rtl { padding: 10px 10px 10px 3px; }
 
     > StIcon {
       //icon-size: 32px;
       color: inherit;
+      icon-size: 16px;
+      -st-icon-style: symbolic;
     }
   }
 
@@ -1342,7 +1344,7 @@ StScrollBar {
 }
 
 .message-media-control {
-  padding: 6px;
+  padding: 12px;
   color: $fg_color;
 
   &:last-child:ltr { padding-right: 18px; }
@@ -1358,7 +1360,7 @@ StScrollBar {
 }
 
 .media-message-cover-icon {
-  icon-size: 32px;
+  icon-size: 48px !important;
 
   &.fallback {
     color: $insensitive_fg_color;
