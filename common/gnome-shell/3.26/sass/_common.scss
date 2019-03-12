@@ -1594,7 +1594,7 @@ StScrollBar {
 
 .list-search-result-title { color: $_shell_fg_color; spacing: 12px; }
 
-.list-search-result-description { color: darken($_shell_fg_color, 20%); }
+.list-search-result-description { color: transparentize(darken($_shell_fg_color, 20%), 0.3); }
 
 .list-search-provider-details { width: 150px; color: darken($_shell_fg_color,10%); margin-top: 0.1em; }
 
