@@ -1890,6 +1890,12 @@ StScrollBar {
     spacing: 11px;
     padding: 12px;
   }
+
+  .placeholder {
+    background-image: url("common-assets/dash/dash-placeholder.svg");
+    background-size: contain;
+    height: 24px;
+  }
 }
 
 .workspace-thumbnails,
