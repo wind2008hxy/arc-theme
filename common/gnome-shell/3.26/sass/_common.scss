@@ -299,7 +299,7 @@ StScrollBar {
 }
 
 .message-dialog-subtitle {
-  color: darken($fg_color,40%);
+  color: $fg_color;
   font-weight: bold;
 }
 
