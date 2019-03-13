@@ -1426,6 +1426,7 @@ StScrollBar {
   background-size: 26px;
   height: 26px;
   width: 26px;
+  -shell-close-overlap: 11px;
 
   &:hover {
     background-image: url("common-assets/misc/close-hover.svg");
@@ -1440,10 +1441,6 @@ StScrollBar {
     height: 26px;
     width: 26px;
   }
-}
-
-.window-close {
-  -shell-close-overlap: 11px;
 }
 
 //
