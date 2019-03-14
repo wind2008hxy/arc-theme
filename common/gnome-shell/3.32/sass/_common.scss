@@ -1879,18 +1879,21 @@ StScrollBar {
 }
 
 .page-indicator {
-  padding: 15px 20px;
+  padding: 20px 20px;
 
   .page-indicator-icon {
-    width: 18px;
-    height: 18px;
-    background-image: url(common-assets/misc/page-indicator-inactive.svg);
+    width: 8px;
+    height: 8px;
+    background-color: transparentize($selected_fg_color, 0.7);
+    border: none;
+    border-radius: 8px;
+    margin: 0;
   }
 
-  &:hover .page-indicator-icon { background-image: url(common-assets/misc/page-indicator-hover.svg); }
-  &:active .page-indicator-icon { background-image: url(common-assets/misc/page-indicator-active.svg); }
+  &:hover .page-indicator-icon { background-color: transparentize($selected_fg_color, 0.45); }
+  &:active .page-indicator-icon { background-color: $selected_bg_color; }
   &:checked .page-indicator-icon,
-  &:checked:active { background-image: url(common-assets/misc/page-indicator-checked.svg); }
+  &:checked:active .page-indicator-icon { background-color: $selected_fg_color; }
 }
 
 .no-frequent-applications-label { @extend %status_text; }
