@@ -1423,15 +1423,15 @@ StScrollBar {
 
 
 //
-//Activities Ripples
+// Activities Ripples
 //
 .ripple-box {
   width: 52px;
   height: 52px;
-  background-image: url("common-assets/misc/corner-ripple-ltr.svg");
-  background-size: contain;
+  border-radius: 0 0 52px 0; // radius the size of the box give us the curve
+  background-color: transparentize($selected_bg_color, 0.5);
 
-  &:rtl { background-image: url("common-assets/misc/corner-ripple-rtl.svg"); }
+  &:rtl { border-radius: 0 0 0 52px; } // just a simple change to the border radius position
 }
 
 // not really top bar only
