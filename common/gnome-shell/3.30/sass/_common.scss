@@ -138,12 +138,15 @@ StScrollBar {
 // Slider
 //
 .slider {
-  -slider-height: 4px;
-  -slider-background-color: $button_border;                   //background of the trough
-  -slider-border-color: transparentize(black, 1);             //trough border color
-  -slider-active-background-color: $selected_bg_color;        //active trough fill
-  -slider-active-border-color: transparentize(black, 1);      //active trough border
-  -slider-border-width: 0;
+  -barlevel-height: 4px;
+  -barlevel-background-color: $button_border;                   //background of the trough
+  -barlevel-border-color: transparentize(black, 1);             //trough border color
+  -barlevel-active-background-color: $selected_bg_color;        //active trough fill
+  -barlevel-active-border-color: transparentize(black, 1);      //active trough border
+  -barlevel-overdrive-color: $warning_color;
+  -barlevel-overdrive-border-color: transparentize(black, 1); 
+  -barlevel-overdrive-separator-width: 1px;
+  -barlevel-border-width: 0;
   -slider-handle-radius: 0px;
   height: 18px;
   border: 0 solid transparent;
@@ -152,8 +155,8 @@ StScrollBar {
   color: transparent;
 
   .popup-menu-item.selected & {
-    -slider-background-color: transparentize(black, 0.8);
-    -slider-active-background-color: $selected_fg_color;
+    -barlevel-background-color: transparentize(black, 0.8);
+    -barlevel-active-background-color: $selected_fg_color;
   }
 }
 
@@ -728,13 +731,11 @@ StScrollBar {
   .level {
     padding: 0;
     height: 4px;
-    background-color: transparentize(black, 0.5);
-    border-radius: 2px;
-    color: $selected_bg_color;
-  }
-  .level-bar {
-    background-color: $selected_bg_color;
-    border-radius: 2px;
+    -barlevel-height: 4px;
+    -barlevel-background-color: transparentize(black, 0.5);
+    -barlevel-active-background-color: $selected_bg_color;
+    -barlevel-overdrive-color: $warning_color;
+    -barlevel-overdrive-separator-width: 1px;
   }
 }
 
