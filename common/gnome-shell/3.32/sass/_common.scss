@@ -2129,6 +2129,15 @@ StScrollBar {
   border-width: 0;
   border-top-width: 1px;
   border-color: transparentize(black, 0.8);
+
+  .page-indicator {
+    padding: 4px 4px;
+
+    .page-indicator-icon {
+        width: 6px;
+        height: 6px
+    }
+  }
 }
 
 .key-container {
@@ -2192,6 +2201,22 @@ StScrollBar {
   -arrow-base: 20px;
   -arrow-rise: 10px;
   -boxpointer-gap: 5px;
+}
+
+.emoji-page {
+  .keyboard-key {
+    background-color: transparent;
+    border: none;
+  }
+}
+
+.emoji-panel {
+  .keyboard-key:latched {
+    @include button(osd-active);
+
+    &:hover { background-color: darken($selected_bg_color, 5%); }
+    &:active, &:checked { @include button(osd-active); }
+  }
 }
 
 //
