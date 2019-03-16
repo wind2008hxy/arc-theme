@@ -626,8 +626,8 @@ StScrollBar {
   .popup-sub-menu {
 /*  background: none;
     box-shadow: none;
-    border-image: url("#{$asset_path}/menu/submenu.svg") 9 9 9 9;
-*/
+    border-image: url("#{$asset_path}/menu/submenu.svg") 9 9 9 9; */
+
     // workaround glitch when closing the sub-menu by not using svg assets
     background: if($variant=='light', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
     box-shadow: inset 0 -1px if($variant=='light', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
@@ -1081,10 +1081,10 @@ StScrollBar {
   min-width: 23.5em;
   .popup-menu-icon { padding: 0 4px; }
   .popup-sub-menu .popup-menu-item > :first-child {
-    &:ltr { /* 12px spacing + 2*4px padding + 16px icon */
-            padding-left: 36px; }
-    &:rtl { /* 12px spacing + 2*4px padding + 16px icon */
-            padding-right: 36px; }
+    &:ltr { /* 12px spacing + 2*4px padding + 16px icon - 4px margin */
+            padding-left: 32px; }
+    &:rtl { /* 12px spacing + 2*4px padding + 16px icon - 4px margin */
+            padding-right: 32px; }
   }
 }
 
