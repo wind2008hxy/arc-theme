@@ -1022,11 +1022,6 @@ StScrollBar {
 
   .remote-access-indicator { color: $error_color; }
 
-  .clock-display > * > *:last-child {
-    color: $selected_bg_color;
-    margin-left: .3em;
-  }
-
   .popup-menu-arrow { width: 0; }
 }
 
