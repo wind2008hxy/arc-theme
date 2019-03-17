@@ -1387,6 +1387,11 @@ StScrollBar {
       icon-size: 1.33em;
       -st-icon-style: symbolic;
     }
+
+    > .fallback-window-icon {
+      width: 1.33em;
+      height: 1.33em;
+    }
   }
 
   &-secondary-bin {
