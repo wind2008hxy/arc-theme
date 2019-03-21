@@ -1649,6 +1649,8 @@ StScrollBar {
 .search-section-separator {
   background-color: transparentize(white, 0.8);
   height: 1px;
+
+  .search-section:last-child & { background-color: transparent; }
 }
 
 .list-search-result-content { spacing: 30px; }
