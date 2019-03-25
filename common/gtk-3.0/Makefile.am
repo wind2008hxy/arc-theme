@@ -12,8 +12,7 @@ endif
 
 EXTRA_DIST = \
 	light \
-	dark \
-	_colors.scss.thpl
+	dark
 
 SUBDIRS = $(GTK3_VERSION)
 DIST_SUBDIRS = 3.18 3.20
