@@ -24,14 +24,16 @@ $(hidpi): $(srcdir)/assets.svg | assets
 .PHONY: normal hidpi clean
 
 if ENABLE_TRANSPARENCY
-%.css: $(srcdir)/sass/%.scss
-	$(SASSC) "$<" "$@"
+%.css: FORCE
+	$(SASSC) "$(srcdir)/sass/$*.scss" "$(srcdir)/$@"
 else
-gtk.css: $(srcdir)/sass/gtk-solid.scss
-	$(SASSC) "$<" "$@"
-gtk-%.css: $(srcdir)/sass/gtk-solid-%.scss
-	$(SASSC) "$<" "$@"
+gtk.css: FORCE
+	$(SASSC) "$(srcdir)/sass/gtk-solid.scss" "$(srcdir)/$@"
+gtk-%.css: FORCE
+	$(SASSC) "$(srcdir)/sass/gtk-solid-$*.scss" "$(srcdir)/$@"
 endif
+
+FORCE:
 
 EXTRA_DIST = \
 	assets.txt \
