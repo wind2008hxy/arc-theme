@@ -88,9 +88,6 @@ from the cloned git repository, or
 ### Arc KDE
 A port of Arc for the Plasma 5 desktop with a few additions and extras. Available [here](https://github.com/PapirusDevelopmentTeam/arc-kde).
 
-### Arc icon theme
-The Arc icon theme is available at https://github.com/horst3180/arc-icon-theme
-
 ### Plank theme
 As of version `20180114` the plank theme will be installed along with the normal arc gtk theme. You can disable the install by passing `disable-plank` to the autogen command.
 Now open the Plank preferences window by executing `plank --preferences` from a terminal and select `Gtk+` as the theme.
