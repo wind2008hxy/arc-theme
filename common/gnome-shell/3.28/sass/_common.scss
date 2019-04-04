@@ -1702,6 +1702,10 @@ StScrollBar {
       background-image: url("common-assets/dash/running#{$var}.svg");
     }
   }
+
+  & .show-apps {
+    margin: 0 1px 1px 0;
+  }
 }
 
 .show-apps {
