@@ -1436,17 +1436,23 @@ StScrollBar {
 }
 
 /* Controls the styling when using the "Simple buttons" option */
-.workspace-switcher {
+.panel-top .workspace-switcher,
+.panel-bottom .workspace-switcher {
   padding-left: 3px;
   padding-right: 3px;
+}
+
+.panel-left .workspace-switcher
+.panel-right .workspace-switcher {
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
 .workspace-button {
   width: 20px;
   height: 10px;
   color: $selected_fg_color;
-  padding: 3px;
-  padding-top: 4px;
+  padding: 1px 3px 0px 3px;
   transition-duration: 300;
 
   &:outlined, &:outlined:hover { color: $selected_bg_color; }
