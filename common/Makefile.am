@@ -37,9 +37,9 @@ if ENABLE_CINNAMON
 
 	cd $(srcdir)/cinnamon && cp thumbnail.png $(ithemedir)/cinnamon
 
-	$(SASSC) $(srcdir)/cinnamon/sass/cinnamon.scss $(srcdir)/cinnamon/cinnamon.css;
+	$(SASSC) $(srcdir)/cinnamon/$(CINNAMON_VERSION)/sass/cinnamon.scss $(srcdir)/cinnamon/$(CINNAMON_VERSION)/cinnamon.css;
 
-	cd $(srcdir)/cinnamon && cp -R \
+	cd $(srcdir)/cinnamon/$(CINNAMON_VERSION) && cp -R \
 		common-assets \
 		light-assets \
 		cinnamon.css \
@@ -50,14 +50,14 @@ if ENABLE_DARK
 
 	cd $(srcdir)/cinnamon && cp thumbnail-dark.png $(ithemedarkdir)/cinnamon/thumbnail.png
 
-	$(SASSC) $(srcdir)/cinnamon/sass/cinnamon-dark.scss $(srcdir)/cinnamon/cinnamon-dark.css;
+	$(SASSC) $(srcdir)/cinnamon/$(CINNAMON_VERSION)/sass/cinnamon-dark.scss $(srcdir)/cinnamon/$(CINNAMON_VERSION)/cinnamon-dark.css;
 
-	cd $(srcdir)/cinnamon && cp -R \
+	cd $(srcdir)/cinnamon/$(CINNAMON_VERSION) && cp -R \
 		common-assets \
 		dark-assets \
 		$(ithemedarkdir)/cinnamon
 
-	cd $(srcdir)/cinnamon && cp -R \
+	cd $(srcdir)/cinnamon/$(CINNAMON_VERSION) && cp -R \
 		cinnamon-dark.css \
 		$(ithemedarkdir)/cinnamon/cinnamon.css
 endif # ENABLE_DARK
