@@ -1444,6 +1444,7 @@ StScrollBar {
   & .icon-box {
     padding-top: 2px;
 
+    .panel-top &,
     .panel-launchers.vertical & {
       padding-top: 0;
     }
@@ -1454,7 +1455,7 @@ StScrollBar {
     border: 0px solid $selected_bg_color;
 
     .panel-bottom & { border-bottom-width: 1px; }
-    .panel-top & { border-top-width: 1px; }
+    .panel-top & { border-top-width: 1px; padding-top: 0;}
     .panel-left & { border-left-width: 1px; padding-left: 0; }
     .panel-right & { border-right-width: 1px; padding-right: 0; }
   }
