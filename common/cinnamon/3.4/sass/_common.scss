@@ -1428,19 +1428,27 @@ StScrollBar {
 //
 // Panel Launchers Applet (panelLaunchers.js)
 //
-#panel-launchers-box {
+.panel-launchers {
   padding-left: 7px;
+  spacing: 6px;
 
   &.vertical {
     padding: 2px 0;
   }
 }
 
-.panel-launcher,
 .launcher {
   margin: 1px;
   padding: 1px;
   transition-duration: 200;
+
+  & .icon-box {
+    padding-top: 2px;
+
+    .panel-launchers.vertical & {
+      padding-top: 0;
+    }
+  }
 
   &:hover {
     background-gradient-direction: none;
