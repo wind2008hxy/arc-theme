@@ -1486,7 +1486,11 @@ StScrollBar {
 // Applets (applet.js) 
 //
 .applet {
-  &-separator { padding: 1px 4px; }
+  &-separator {
+    padding: 1px 4px;
+
+    .vertical & { padding: 4px 1px; }
+  }
 
   &-separator-line {
     width: 1px;
