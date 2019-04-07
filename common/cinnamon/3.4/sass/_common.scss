@@ -268,62 +268,52 @@ StScrollBar {
 // Popvers/Menus
 //
 .menu,
-.popup-menu,
 %menu {
   color: $fg_color;
   border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
-
-  &-arrow { icon-size: 16px; }
-
-  .popup-sub-menu {
-    background-gradient-direction: none;
-    box-shadow: none;
-    border-image: url("#{$asset_path}/menu/submenu.svg") 9 9 9 9;
-
-    .popup-menu-item:ltr { padding-right: 0em; }
-    .popup-menu-item:rtl { padding-left: 0em; }
-
-    StScrollBar {
-      padding: 4px;
-      StBin#trough, StBin#vhandle { border-width: 0; }
-    }
-  }
-
-  .popup-menu-content { padding: 1em 0em 1em 0em; }
-  .popup-menu-item {
-    padding: .4em 1.75em;
-    spacing: 1em;
-
-    &:active {
-      color: $selected_fg_color;
-      background-color: transparent;
-      border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
-    }
-    &:insensitive {
-      color: transparentize($fg_color, 0.5);
-      background: none;
-    }
-  }
-
-  .popup-inactive-menu-item { //all icons and other graphical elements
-    color: $fg_color;
-
-    &:insensitive { color: $insensitive_fg_color; }
-  }
-
-  .popup-menu-item:active .popup-inactive-menu-item { color: $selected_fg_color; }
-
-  &-icon { icon-size: 16px; }
 }
 
-.popup-menu-boxpointer {
-  -arrow-border-radius: 3px;
-  -arrow-background-color:  rgba(0,0,0,0.0);
-  -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0,0,0,0.0);
-  -arrow-base: 0;
-  -arrow-rise: 0;
+.popup-menu-arrow { icon-size: 16px; }
+
+.popup-sub-menu {
+  background-gradient-direction: none;
+  box-shadow: none;
+  border-image: url("#{$asset_path}/menu/submenu.svg") 9 9 9 9;
+
+  .popup-menu-item:ltr { padding-right: 0em; }
+  .popup-menu-item:rtl { padding-left: 0em; }
+
+  StScrollBar {
+    padding: 4px;
+    StBin#trough, StBin#vhandle { border-width: 0; }
+  }
 }
+
+.popup-menu-content { padding: 1em 0em 1em 0em; }
+.popup-menu-item {
+  padding: .4em 1.75em;
+  spacing: 1em;
+
+  &:active {
+    color: $selected_fg_color;
+    background-color: transparent;
+    border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
+  }
+  &:insensitive {
+    color: transparentize($fg_color, 0.5);
+    background: none;
+  }
+}
+
+.popup-inactive-menu-item { //all icons and other graphical elements
+  color: $fg_color;
+
+  &:insensitive { color: $insensitive_fg_color; }
+}
+
+.popup-menu-item:active .popup-inactive-menu-item { color: $selected_fg_color; }
+
+.popup-menu-icon { icon-size: 16px; }
 
 .popup-combo-menu {
   @extend %menu;
