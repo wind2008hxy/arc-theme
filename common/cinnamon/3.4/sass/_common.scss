@@ -1354,6 +1354,8 @@ StScrollBar {
 
     StBoxLayout {
       padding-top: 2px;
+
+      & > StLabel { padding-left: 10px; }
     }
   }
 
