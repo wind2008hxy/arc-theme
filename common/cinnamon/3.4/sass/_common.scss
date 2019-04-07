@@ -1505,7 +1505,7 @@ StScrollBar {
       padding: 3px 0;
     }
 
-    &:hover {
+    &:checked, &:hover {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
     }
@@ -1520,8 +1520,10 @@ StScrollBar {
   &-label {
     font-weight: bold;
     color: $_shell_fg_color;
-
-    &:hover, .applet-box:hover > & {
+ 
+    .applet-box:checked > &,
+    .applet-box:hover > &, 
+    &:hover {
       color: $selected_fg_color;
       text-shadow: none;
     }
@@ -1531,7 +1533,9 @@ StScrollBar {
     color: $_shell_fg_color;
     icon-size: 22px;
 
-    &:hover, .applet-box:hover > & {
+    .applet-box:checked > &,
+    .applet-box:hover > &, 
+    &:hover {
       color: $selected_fg_color;
       text-shadow: none;
     }
