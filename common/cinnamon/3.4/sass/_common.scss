@@ -1515,6 +1515,11 @@ StScrollBar {
       border-image: none;
       background-color: transparentize($error_color, 0.5);
     }
+
+    .panel-top &,
+    .panel-bottom & {
+      spacing: 3px;
+    }
   }
 
   &-label {
