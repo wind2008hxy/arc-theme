@@ -363,6 +363,10 @@ StScrollBar {
     border-image: none;
     background-color: transparentize($error_color, 0.5);
   }
+}
+
+.panel {
+  $_panel_fg_color: $_shell_fg_color;
 
   &Left {
     spacing: 4px;
@@ -410,10 +414,6 @@ StScrollBar {
       background-gradient-end: rgba(0,255,0,0.2);
     }
   }
-}
-
-.panel {
-  $_panel_fg_color: $_shell_fg_color;
 
   &-top, &-bottom, &-left, &-right {
     color: $_panel_fg_color;
@@ -1487,6 +1487,11 @@ StScrollBar {
   &-separator-line {
     width: 1px;
     background: rgba(255,255,255, 0.12);
+
+    &-vertical {
+	    border: 0px solid rgba(255,255,255,0.12);
+		  border-bottom-width: 1px;
+    }
   }
 
   &-box {
