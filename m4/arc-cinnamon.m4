@@ -17,7 +17,8 @@ AC_DEFUN([ARC_CINNAMON], [
         )
         AS_IF(
             [test "x$CINNAMON_FOUND" = xyes],
-            [CINNAMON_VERSION=`cinnamon --version | cut -d' ' -f2`],
+            [CINNAMON_VERSION=`cinnamon --version | cut -d' ' -f2`]
+            AC_MSG_RESULT([Detected cinnamon $CINNAMON_VERSION]),
             [AC_MSG_ERROR([Could not find cinnamon from \$PATH.])]
         )
         AS_IF(
@@ -45,5 +46,5 @@ AC_DEFUN([ARC_CINNAMON], [
         [AC_MSG_ERROR([Invalid cinnamon version: $CINNAMON_VERSION])]
     )
     AC_SUBST([CINNAMON_VERSION])
-    AC_MSG_RESULT([Building for cinnamon $CINNAMON_VERSION])
+    AC_MSG_RESULT([Building cinnamon theme $CINNAMON_VERSION])
 ])

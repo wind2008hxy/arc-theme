@@ -12,7 +12,8 @@ AC_DEFUN([ARC_GTK3], [
         [GTK3_VERSION="$withval"],
         [PKG_CHECK_EXISTS(
             [gtk+-3.0],
-            [GTK3_VERSION=`$PKG_CONFIG --modversion gtk+-3.0`],
+            [GTK3_VERSION=`$PKG_CONFIG --modversion gtk+-3.0`]
+            AC_MSG_RESULT([Detected GTK3 $GTK3_VERSION]),
             [AC_MSG_ERROR([Could not determine GTK3 version. Install GTK3 and its development files (libgtk-3-dev for Debian/Ubuntu based distros and gtk3-devel for RPM based distros).])]
         )]
     )
@@ -34,5 +35,5 @@ AC_DEFUN([ARC_GTK3], [
     AC_SUBST([gtk3themedir], [${themedir}/gtk-3.0])
     AC_SUBST([gtk3themedarkerdir], [${themedarkerdir}/gtk-3.0])
     AC_SUBST([gtk3themedarkdir], [${themedarkdir}/gtk-3.0])
-    AC_MSG_RESULT([Building for GTK3 $GTK3_VERSION])
+    AC_MSG_RESULT([Building GTK3 theme $GTK3_VERSION])
 ])

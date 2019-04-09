@@ -17,7 +17,8 @@ AC_DEFUN([ARC_GNOME_SHELL], [
         )
         AS_IF(
             [test "x$GNOME_SHELL_FOUND" = xyes],
-            [GNOME_SHELL_VERSION=`gnome-shell --version | cut -d' ' -f3`],
+            [GNOME_SHELL_VERSION=`gnome-shell --version | cut -d' ' -f3`]
+            AC_MSG_RESULT([Detected gnome-shell $GNOME_SHELL_VERSION]),
             [AC_MSG_ERROR([Could not find gnome-shell from \$PATH.])]
         )
         AS_IF(
@@ -45,5 +46,5 @@ AC_DEFUN([ARC_GNOME_SHELL], [
         [AC_MSG_ERROR([Invalid gnome-shell version: $GNOME_SHELL_VERSION])]
     )
     AC_SUBST([GNOME_SHELL_VERSION])
-    AC_MSG_RESULT([Building for gnome-shell $GNOME_SHELL_VERSION])
+    AC_MSG_RESULT([Building gnome-shell theme $GNOME_SHELL_VERSION])
 ])
