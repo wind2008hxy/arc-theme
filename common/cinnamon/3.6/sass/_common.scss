@@ -1292,6 +1292,11 @@ StScrollBar {
       padding-left: 0px;
       padding-right: 0px;
     }
+
+    & .progress {
+        background-gradient-start: $selected_bg_color;
+        background-gradient-end: $selected_bg_color;
+    }
   }
 
   &-item-demands-attention {
