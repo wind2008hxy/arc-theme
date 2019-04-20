@@ -1143,10 +1143,6 @@ StScrollBar {
       padding: 7px;
       @extend %button:hover;
     }
-    &-hover {
-      background-color: red;
-      border-radius: 2px;
-    }
     &-greyed {
       padding: 7px;
       color: $insensitive_fg_color;
