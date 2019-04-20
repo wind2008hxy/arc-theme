@@ -1330,9 +1330,10 @@ StScrollBar {
     StButton:small {
       width: 16px;
       height: 16px;
-      padding: 1px;
+      color: transparentize($fg_color, 0.4);
 
-      StIcon { icon-size: 12px; }
+      &:hover {color: $fg_color;}
+      StIcon { icon-size: 16px; }
     }
   }
 
