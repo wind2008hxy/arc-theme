@@ -457,18 +457,25 @@ StScrollBar {
   background-color: $osd_bg_color;
   border: 1px solid $osd_bg_color;
   color: $osd_fg_color;
-  spacing: 25px;
+  padding: .5em .7em;
+  spacing: .5em;
   border-radius: 2px;
   font-size: 9pt;
-  padding: 5px 8px;
-  -cinnamon-caption-spacing: 4px;
+  -cinnamon-caption-spacing: 8px;
+  max-width: 20em;
 
-  &#selected {
+  &:focus {
     background-color: $selected_bg_color;
     color: $selected_fg_color;
     border: 1px solid $selected_bg_color;
-    spacing: 25px;
   }
+}
+
+.window-border {
+    border: 3px $selected_bg_color;
+    border-radius: 4px;
+    /* Cover rounded corners and some bad adjustment gaps */
+    box-shadow: 0 0 0 1px $selected_bg_color inset;
 }
 
 .expo-workspaces-name-entry,
