@@ -1280,7 +1280,8 @@ StScrollBar {
 
     &:active,
     &:checked,
-    &:focus {
+    &:focus,
+    &:running {
       color: $_shell_fg_color;
 
       .panel-bottom & { border-image: url("common-assets/panel/window-list-active-bottom.svg") 3 3 1 3; }
@@ -1314,6 +1315,88 @@ StScrollBar {
     text-shadow: none;
     padding: 14px;
     spacing: 4px;
+  }
+}
+
+//
+// Grouped window list (grouped-window-list@cinnamon.org)
+//
+
+.grouped-window-list {
+  &-thumbnail-label {
+    padding-left: 4px;
+  }
+  &-number-label {
+    z-index: 99;
+    text-shadow: none;
+    font-size: 10px;
+    color: $osd_fg_color;
+    padding: 0;
+  }
+  &-badge {
+    border-radius: 256px;
+    background-color: $osd_bg_color;
+  }
+  &-button-label {
+    padding-left: 4px;
+  }
+  &-thumbnail-alert {
+    background: transparentize($error_color, 0.5);
+  }
+  &-item-box {
+    spacing: 0.5em;
+
+    &.top,
+    &.bottom {
+      padding: 0 0.5em;
+    }
+
+    &:active {
+      .panel-bottom & { border-image: url("common-assets/panel/window-list-active-bottom.svg") 3 3 1 3; }
+      .panel-top & { border-image: url("common-assets/panel/window-list-active-top.svg") 3 3 3 1; }
+      .panel-left & { border-image: url("common-assets/panel/window-list-active-left.svg") 3 1 3 3; }
+      .panel-right & { border-image: url("common-assets/panel/window-list-active-right.svg") 1 3 3 3; }
+    }
+
+    &:checked,
+    &:focus,
+    &:focus:hover,
+    &:hover,
+    &:active:hover,
+    &:active:focus:hover {
+      background: $selected_bg_color;
+      border-image: none;
+    }
+
+    & .progress {
+      background: $selected_bg_color;
+    }
+  }
+
+  &-item-demands-attention {
+    background: transparentize($error_color, 0.5);
+  }
+
+  &-thumbnail-menu {
+    & .item-box {
+      padding: 10px;
+      border-radius: 2px;
+      spacing: 4px;
+    }
+    & .item-box:outlined {
+      padding: 4px;
+      border: 2px solid $selected_bg_color;
+    }
+    & .item-box:selected {
+      background: none;
+    }
+    & .thumbnail {
+      width: 256px;
+    }
+    & .separator {
+      width: 1px;
+      background: rgba(255,255,255,0.12);
+    }
   }
 }
 
