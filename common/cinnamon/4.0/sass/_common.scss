@@ -1173,6 +1173,10 @@ StScrollBar {
 
   &-selected-app-description { max-width: 150px; }
 
+  &-top-box {
+      spacing: 10px;
+  }
+
   &-search-box:ltr { padding-left: 30px; }
   &-search-box-rtl { padding-right: 30px; }
 }
