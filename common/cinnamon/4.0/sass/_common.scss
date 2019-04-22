@@ -1096,27 +1096,17 @@ StScrollBar {
 //
 .menu {
   &-favorites-box {
-    padding: 10px;
+    padding: .8em;
     transition-duration: 300;
     background-color: $bg_color;
     border: 1px solid $borders_color;
   }
 
   &-favorites-button {
-    padding: 10px;
+    padding: .8em;
     border: 1px solid rgba(0,0,0,0);
 
     &:hover { @extend %button:hover; }
-  }
-
-  &-places {
-
-    &-box {
-      padding: 10px;
-      border: 0px solid red;
-    }
-
-    &-button { padding: 10px; }
   }
 
   &-categories-box { padding: 10px 30px 10px 30px; }
