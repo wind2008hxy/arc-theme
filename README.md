@@ -66,6 +66,7 @@ Other options to pass to autogen.sh are
     --disable-plank               disable Plank theme support
     --disable-openbox             disable Openbox support
 
+    --with-cinnamon=<version>     build the theme for a specific Cinnamon version
     --with-gnome-shell=<version>  build the theme for a specific GNOME version
     --with-gtk3=<version>         build the GTK3 theme for a specific version
 
