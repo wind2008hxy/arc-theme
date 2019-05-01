@@ -1684,6 +1684,10 @@ StScrollBar {
 }
 
 #dashtodockContainer {
+  .app-well-app.focused .overview-icon {
+    background-color: transparentize(black, 0.83);
+  }
+
   &.running-dots {
     .app-well-app .app-well-app-running-dot,
     .app-well-app.focused:hover .app-well-app-running-dot {
