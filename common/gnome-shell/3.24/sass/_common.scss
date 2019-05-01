@@ -1683,6 +1683,17 @@ StScrollBar {
 }
 
 #dashtodockContainer {
+  &.running-dots {
+    .app-well-app .app-well-app-running-dot,
+    .app-well-app.focused:hover .app-well-app-running-dot {
+      background-color: $selected_bg_color;
+    }
+
+    .app-well-app:hover .app-well-app-running-dot {
+      background-color: $selected_fg_color;
+    }
+  }
+
   .app-well-app-running-dot {
     background: none;
     width: 28px;
