@@ -666,7 +666,7 @@ toolbar.inline-toolbar toolbutton {
 
 // Apply the rules defined above
 .linked:not(.vertical) {
-  &:not(.path-bar) { @include linking_rules(); }
+  &:not(.path-bar):not(.nautilus-path-bar) { @include linking_rules(); }
   &.path-bar { @include pathbar_linking_rules(); }
 }
 
@@ -1237,7 +1237,7 @@ headerbar {
       border-style: solid;
     }
   }
-  .linked:not(.vertical):not(.path-bar) {
+  .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) {
     $_uncolored_button: 'button:not(:checked):not(:active):not(.suggested-action):not(.destructive-action)';
 
     > #{$_uncolored_button}:hover:not(:only-child),
@@ -1263,7 +1263,7 @@ headerbar {
   }
 
   // use linking rules for entries only
-  .linked:not(.vertical):not(.path-bar) {
+  .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) {
     @include linking_rules( $a:0.5,
                             $var:if($variant=='light' and $darker=='false', 'light', 'dark'),
                             $button_rules:'false',
