@@ -96,39 +96,37 @@ terminal-window,
 }
 
 // path-bar buttons for nautilus >=3.32
-.nautilus-path-bar > button {
-  margin: 0;
-  border: 1px $header_button_border solid;
-  background-color: $header_button_bg;
+.nautilus-path-bar {
+  > button {
+    margin: 0;
 
-  @extend %linked;
+    @include button(header-hover);
 
-  // from .linked:not(.vertical).path-bar > button:hover in _common.scss
-  &:hover { background-color: lighten($header_button_bg, 15%); }
+    &:hover { background-color: lighten($header_button_bg, 15%); }
+    &:active, &:checked { @include button(header-active); }
+    &:disabled { color: transparentize($header_fg, 0.4); }
 
-  &:active, &:checked { @include button(header-active); }
+    &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
 
-  .nautilus-window .path-bar-box.width-maximized > & {
-    border-width: 0;
+    .nautilus-window .path-bar-box.width-maximized > & {
+      border-width: 0;
 
-    &:last-child {
-      border-width: 0px 1px 0px 0px;
-    }
+      &:last-child {
+        border-width: 0px 1px 0px 0px;
+      }
 
-    &:only-child {
-      border-radius: 3px 0px 0px 3px;
-    }
+      &:only-child {
+        border-radius: 3px 0px 0px 3px;
+      }
 
-    &:not(:first-child) {
-      border-radius: 0;
+      &:not(:first-child) {
+        border-radius: 0;
+      }
     }
   }
 
-  // workaround jumpy button labels
-  & > box > label { padding: 0 1px; }
-  &:only-child > box > label { padding: 0 2px; }
+  @include pathbar_linking_rules($sep_color:$header_button_border);
 }
-
 
 button.nautilus-circular-button.image-button {
   @extend button.circular;
