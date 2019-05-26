@@ -222,9 +222,11 @@ $disk_space_free: darken($bg_color, 3%);
 
   // Nemo dual pane inactive pane
 
-  .nemo-inactive-pane .view {
-    color: $insensitive_fg_color;
-    background-color: $base_color;
+  .nemo-inactive-pane {
+    .view, .view > header > button {
+      color: transparentize($fg_color, 0.3);
+      background-color: darken($base_color, 3%);
+    }
   }
 }
 
