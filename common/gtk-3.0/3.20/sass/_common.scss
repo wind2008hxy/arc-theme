@@ -2730,6 +2730,19 @@ placessidebar {
   }
 }
 
+separator.sidebar {
+  &:dir(ltr), &.left, &.left:dir(rtl),
+  &:dir(rtl), &.right {
+    background-color: $borders_color;
+    border: 0;
+
+    .titlebar & {
+      background-color: $header_border;
+      margin: 0;
+    }
+  }
+}
+
 //
 // Placesview
 //
