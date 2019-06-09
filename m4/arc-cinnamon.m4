@@ -6,7 +6,7 @@ AC_DEFUN([ARC_CINNAMON], [
         [cinnamon],
         [AS_HELP_STRING(
             [--with-cinnamon],
-            [cinnamon minor version]
+            [Cinnamon version]
         )],
         [CINNAMON_VERSION="$withval"],
         [AC_CHECK_PROG(
@@ -18,12 +18,12 @@ AC_DEFUN([ARC_CINNAMON], [
         AS_IF(
             [test "x$CINNAMON_FOUND" = xyes],
             [CINNAMON_VERSION=`cinnamon --version | cut -d' ' -f2`]
-            AC_MSG_RESULT([Detected cinnamon $CINNAMON_VERSION]),
-            [AC_MSG_ERROR([Could not find cinnamon from \$PATH.])]
+            AC_MSG_RESULT([Detected Cinnamon $CINNAMON_VERSION]),
+            [AC_MSG_WARN([Could not find cinnamon from \$PATH.])]
         )
         AS_IF(
             [test -z "$CINNAMON_VERSION"],
-            [AC_MSG_ERROR([Could not determine cinnamon version.])]
+            [AC_MSG_ERROR([Could not determine Cinnamon version. Install Cinnamon, or use the --with-cinnamon=<version> option. Alternatively you can choose to not build the Cinnamon theme with --disable-cinnamon option.])]
         )]
     )
 
@@ -43,8 +43,8 @@ AC_DEFUN([ARC_CINNAMON], [
     )
     AS_IF(
         [! test -e "$CINNAMON_DIR/$CINNAMON_VERSION"],
-        [AC_MSG_ERROR([Invalid cinnamon version: $CINNAMON_VERSION])]
+        [AC_MSG_ERROR([Invalid Cinnamon version: $CINNAMON_VERSION])]
     )
     AC_SUBST([CINNAMON_VERSION])
-    AC_MSG_RESULT([Building cinnamon theme $CINNAMON_VERSION])
+    AC_MSG_RESULT([Building Cinnamon theme $CINNAMON_VERSION])
 ])
