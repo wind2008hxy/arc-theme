@@ -23,8 +23,8 @@ To build the theme the follwing packages are required
 * `automake`
 * `pkgconf`
 * `git` to clone the source directory
-* `sassc` for GTK 3, Cinnamon, or GNOME Shell
-* `optipng` and `inkscape` for GTK 2, GTK 3, or XFWM
+* `sassc` for GTK3, Cinnamon, or GNOME Shell
+* `optipng` and `inkscape` for GTK2, GTK3, or XFWM
 
 For the theme to function properly, install the following
 * GNOME Shell 3.18 - 3.32
@@ -36,6 +36,13 @@ For the theme to function properly, install the following
   * `gtk-murrine-engine` (Fedora)
   * `gtk2-engine-murrine` (openSUSE)
   * `gtk-engines-murrine` (Gentoo)
+
+The build system tries to determine version for GTK3, Cinnamon, or GNOME Shell automatically using the following packages
+* `gnome-shell` for GNOME Shell
+* `cinnamon` for Cinnamon
+* for GTK3, the GTK3 development files (`libgtk-3-dev` for Debian based distros or `gtk3-devel` for RPM based distros), or just the GTK3 package for distributions that don't ship separate development packages
+
+The above packages aren't required if you define the theme versions manually. See the build options below.
 
 Install the theme with the following commands
 
