@@ -44,6 +44,8 @@ The build system tries to determine version for GTK3, Cinnamon, or GNOME Shell a
 
 The above packages aren't required if you define the theme versions manually. See the build options below.
 
+**Note:** The build will fail, if GTK3, Cinnamon, or GNOME Shell versions can't be determined. You can work around this by either disabling the build of a specific theme, or by specifying the versions manually with build options detailed below.
+
 Install the theme with the following commands
 
 #### 1. Get the source
