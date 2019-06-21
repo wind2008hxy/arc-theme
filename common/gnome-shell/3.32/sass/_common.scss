@@ -741,10 +741,7 @@ StScrollBar {
   min-height: 64px;
 
   color: $_shell_fg_color;
-  background: none;
-  border: none;
-  border-radius: 5px;
-  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+  @extend %shell_osd;
 
 .osd-monitor-label { font-size: 3em; }
 
@@ -762,11 +759,16 @@ StScrollBar {
 
 .resize-popup {
   color: $osd_fg_color;
-  background: none;
-  border: none;
-  border-radius: 5px;
-	border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
   padding: 12px;
+  @extend %shell_osd;
+}
+
+%shell_osd {
+  border: 1px solid $shell_osd_border_color;
+  border-radius: 2px;
+  background: $shell_osd_background_color;
+  //background-clip: padding-box;
+  box-shadow: $_popup_shadow;
 }
 
 //
