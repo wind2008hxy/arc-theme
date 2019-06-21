@@ -32,6 +32,9 @@ $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
 $_shell_fg_color: white;
 
+$_popup_shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
+$_popup_menu_shadow: if($variant=='light', 0 1px 3px 1px rgba(0, 0, 0, 0.06), $_popup_shadow);
+
 stage {
   font-family: $font-family;
   @include fontsize($font-size);
