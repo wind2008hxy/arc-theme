@@ -1360,6 +1360,11 @@ StScrollBar {
     color: inherit;
     padding: 8px;
     font-size: 1em;
+
+    StButton {
+      &:hover { color: transparentize($fg_color, 0.3); }
+      &:active { color: $destructive_color }
+    }
   }
 }
 
