@@ -995,9 +995,17 @@ StScrollBar {
   &.dynamic-top-bar-white-btn { border-image: none; }
 
   &.unlock-screen,
-  &.login-screen,
-  &.lock-screen {
+  &.login-screen {
     background-color: transparent;
+    border-image: none;
+
+    .panel-button {
+      color: lighten($fg_color, 10%);
+      &:focus, &:hover, &:active { color: lighten($fg_color, 10%); }
+    }
+  }
+
+  &.lock-screen {
     border-image: none;
 
     .panel-button {
