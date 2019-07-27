@@ -1002,7 +1002,10 @@ StScrollBar {
     .panel-button {
       color: $fg_color;
       &:hover { color: $fg_color; }
-      &:focus, &:active, &:checked { color: $selected_fg_color; }
+      &:focus, &:active, &:checked {
+        color: $selected_fg_color;
+        border-color: transparent;
+      }
     }
   }
 
@@ -1012,7 +1015,10 @@ StScrollBar {
     .panel-button {
       color: $osd_fg_color;
       &:hover { color: $osd_fg_color; }
-      &:focus, &:active, &:checked { color: $selected_fg_color; }
+      &:focus, &:active, &:checked {
+        color: $selected_fg_color;
+        border-color: transparent;
+      }
     }
   }
 
