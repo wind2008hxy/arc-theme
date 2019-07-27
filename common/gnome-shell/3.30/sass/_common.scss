@@ -2123,6 +2123,14 @@ StScrollBar {
   font-size: 14pt;
   spacing: 12px;
   min-height: 20pt;
+
+  StButton {
+    padding: 0 0.5em;
+    border-radius: 2px;
+    color: $osd_fg_color;
+
+    &:hover, &:focus, &:active { background-color: $selected_bg_color; color: $selected_fg_color; }
+  }
 }
 
 #keyboard {
