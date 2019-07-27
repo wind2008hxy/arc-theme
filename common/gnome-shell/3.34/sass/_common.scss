@@ -999,6 +999,11 @@ StScrollBar {
   &.lock-screen {
     background-color: transparent;
     border-image: none;
+
+    .panel-button {
+      color: lighten($fg_color, 10%);
+      &:focus, &:hover, &:active { color: lighten($fg_color, 10%); }
+    }
   }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
@@ -1066,12 +1071,6 @@ StScrollBar {
     }
 
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
-    .unlock-screen &,
-    .login-screen &,
-    .lock-screen & {
-      color: lighten($fg_color, 10%);
-      &:focus, &:hover, &:active { color: lighten($fg_color, 10%); }
-    }
 
     &.clock-display StIcon {
       color: $selected_bg_color;
