@@ -397,21 +397,24 @@ button {
     padding-right: 5px;
 
     label {
+      padding-left: 2px;
+      padding-right: 2px;
+
       &:first-child {
-        padding-left: 8px;
+        padding-left: 7px;
         padding-right: 2px;
       }
       &:last-child {
-        padding-right: 8px;
+        padding-right: 7px;
         padding-left: 2px;
       }
       &:only-child {
-        padding-left: 8px;
-        padding-right: 8px;
+        padding-left: 7px;
+        padding-right: 7px;
       }
     }
 
-    &.popup { padding-right: 8px; padding-left: 8px; }
+    &.popup { padding-right: 7px; padding-left: 7px; }
   }
 
   &:drop(active) {
