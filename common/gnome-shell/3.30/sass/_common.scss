@@ -1400,7 +1400,7 @@ StScrollBar {
 
     StButton {
       &:hover { color: transparentize($fg_color, 0.3); }
-      &:active { color: $destructive_color }
+      &:active { color: $selected_bg_color }
     }
   }
 }
