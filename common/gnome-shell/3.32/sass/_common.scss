@@ -151,11 +151,12 @@ StScrollBar {
   border: 0 solid transparent;
   border-right-width: 1px;
   border-left-width: 5px;
-  color: transparent;
+  color: $selected_bg_color;
 
   .popup-menu-item.selected & {
     -barlevel-background-color: transparentize(black, 0.8);
     -barlevel-active-background-color: $selected_fg_color;
+    color: $selected_fg_color;
   }
 }
 
@@ -752,6 +753,7 @@ StScrollBar {
     -barlevel-active-background-color: $selected_bg_color;
     -barlevel-overdrive-color: $warning_color;
     -barlevel-overdrive-separator-width: 1px;
+    color: $selected_bg_color;
   }
 }
 
