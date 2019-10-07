@@ -937,11 +937,12 @@ StScrollBar {
   font-weight: bold;
   font-feature-settings: "tnum";
   height: 2.1em;
-  min-height: 27px;
+  min-height: 26px;
   background-gradient-direction: none;
-  background-color: transparent;
-  border-bottom-width: 0;
-  border-image: url('common-assets/panel/panel.svg') 1 1 1 1;
+  background-color: $shell_osd_background_color;
+  //background-clip: padding-box;
+  border: 0 solid $shell_osd_border_color;
+  border-bottom-width: 1px;
 
   // Fix dynamic top bar extension
   &.dynamic-top-bar-white-btn { border-image: none; }
@@ -952,8 +953,6 @@ StScrollBar {
     background-color: transparent;
     border-image: none;
   }
-
-  &:overview { border-image: url('common-assets/panel/panel-overview.svg') 1 1 1 1; }
 
   #panelLeft, #panelCenter { // spacing between activities<>app menu and such
     spacing: 8px;
