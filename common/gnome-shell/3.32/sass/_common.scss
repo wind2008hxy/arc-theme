@@ -629,48 +629,41 @@ StScrollBar {
 // Popvers/Menus
 //
 .popup-menu {
+  $_popup_submenu_background_color: if($variant=='light', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+  $_popup_submenu_border_color: if($variant=='light', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
+
   min-width: 15em;
-  color: $fg_color;
-  border-image: url("#{$asset_path}/menu/menu.svg") 9 9 9 9;
+
+  .popup-menu-content {
+    margin: 3px;
+
+    @extend %popup_menu;
+  }
 
   .popup-menu-arrow { } //defined globally in the TOP BAR
   .popup-sub-menu {
-/*  background: none;
-    box-shadow: none;
-    border-image: url("#{$asset_path}/menu/submenu.svg") 9 9 9 9;
-*/
-    // workaround glitch when closing the sub-menu by not using svg assets
     padding-bottom: 1px;
-    background: if($variant=='light', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
-    box-shadow: inset 0 -1px if($variant=='light', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
-    margin: 0 4px;
-
-    .popup-menu-item.selected {
-      background-color: $selected_bg_color;
-      border-image: none;
-      margin: 0;
-    }
-    // end workaround
+    background-color: $_popup_submenu_background_color;
+    box-shadow: inset 0 -1px $_popup_submenu_border_color;
   }
 
-  .popup-menu-content { padding: 1em 0em 1em 0em; }
+  .popup-menu-content { padding: .7em 0em .7em 0em; }
   .popup-menu-item {
     spacing: 12px;
 
-    &:ltr { padding: .4em 3em .4em 0em; }
-    &:rtl { padding: .4em 0em .4em 3em; }
+    &:ltr { padding: .4em 32px .4em 0em; }
+    &:rtl { padding: .4em 0em .4em 32px; }
 
     &:checked {
       font-weight: normal;
-      background: none;
-      box-shadow: none;
-      border-image: url("#{$asset_path}/menu/submenu-open.svg") 9 9 9 9;
+      background-color: $_popup_submenu_background_color;
+      box-shadow: inset 0 1px $_popup_submenu_border_color;
     }
 
     &:active, &.selected {
       color: $selected_fg_color;
-      background-color: transparent;
-      border-image: url("common-assets/menu/menu-hover.svg") 9 9 1 1;
+      background-color: $selected_bg_color;
+      box-shadow: none;
     }
 
     &:insensitive {
@@ -721,7 +714,6 @@ StScrollBar {
   margin: 0;
   background-color: transparent;
   border: none;
-  border-image: url("common-assets/menu/menu-separator.svg") 1 1 1 1;
 }
 
 // Background menu
@@ -1094,10 +1086,10 @@ StScrollBar {
   min-width: 23.5em;
   .popup-menu-icon { padding: 0 4px; }
   .popup-sub-menu .popup-menu-item > :first-child {
-    &:ltr { /* 12px spacing + 2*4px padding + 16px icon - 4px margin */
-            padding-left: 32px; }
-    &:rtl { /* 12px spacing + 2*4px padding + 16px icon - 4px margin */
-            padding-right: 32px; }
+    &:ltr { /* 12px spacing + 2*4px padding + 16px icon */
+            padding-left: 36px; }
+    &:rtl { /* 12px spacing + 2*4px padding + 16px icon */
+            padding-right: 36px; }
   }
 }
 
@@ -1128,7 +1120,7 @@ StScrollBar {
 // Calendar popover
 //
 #calendarArea {
-  padding: 0.75em 1.0em;
+  padding: 0.75em 0.7em;
 }
 
 .calendar {
