@@ -895,7 +895,8 @@ StScrollBar {
   }
 }
 
-.ws-switcher-active-up, .ws-switcher-active-down {
+.ws-switcher-active-up, .ws-switcher-active-down,
+.ws-switcher-active-left, .ws-switcher-active-right {
   height: 30px;
   background-color: $selected_bg_color;
   background-size: 96px;
@@ -909,6 +910,14 @@ StScrollBar {
 
 .ws-switcher-active-down {
   background-image: url("common-assets/misc/ws-switch-arrow-down.png");
+}
+
+.ws-switcher-active-left {
+  background-image: url("common-assets/misc/ws-switch-arrow-left.png");
+}
+
+.ws-switcher-active-right {
+  background-image: url("common-assets/misc/ws-switch-arrow-right.png");
 }
 
 .ws-switcher-box {
