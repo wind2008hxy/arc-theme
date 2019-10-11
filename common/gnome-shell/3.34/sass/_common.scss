@@ -1784,6 +1784,7 @@ StScrollBar {
   padding: 4px 12px;
   color: $_shell_fg_color;
   background-color: transparentize(black, 0.3);
+  border: 0;
   text-align: center;
   -x-offset: 3px;
 
