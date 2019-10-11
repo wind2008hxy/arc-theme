@@ -1905,6 +1905,7 @@ StScrollBar {
 //favorties | all toggle button
 .app-view-control {
   padding: 4px 32px;
+  margin: 0;
 
   @include button(osd);
 
