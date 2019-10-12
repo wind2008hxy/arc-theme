@@ -220,12 +220,14 @@ StScrollBar {
 .modal-dialog {
   color: $fg_color;
   background-color: transparentize($bg_color, 1);
-  border: none;
-  border-image: url("#{$asset_path}/misc/modal.svg") 9 9 9 67;
-  padding: 0 5px 6px 5px;
+  border: 1px solid $shell_modal_border_color;
+  border-radius: 2px;
+  padding: 0;
+  box-shadow: $_popup_menu_shadow;
 
   .modal-dialog-content-box {
-    padding: 20px 10px 10px 10px;
+    padding: 15px 10px 10px 10px;
+    background-color: $shell_modal_background_color;
   }
 
   &-linked-button {
@@ -317,8 +319,10 @@ StScrollBar {
 // End Session Dialog
 //
 .end-session-dialog {
-  spacing: 42px;
+  spacing: 0px;
   //border: 3px solid $_bubble_borders_color;
+
+  .modal-dialog-content-box { padding-bottom: 52px; }
 
   &-list {
     padding-top: 20px;
