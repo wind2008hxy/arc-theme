@@ -2100,6 +2100,15 @@ StScrollBar {
   }
 }
 
+%popup_menu {
+  color: $fg_color;
+  background-color: $shell_popup_menu_background_color;
+  //background-clip: padding-box;
+  border: 1px solid $shell_popup_menu_border_color;
+  border-radius: 2px;
+  box-shadow: $_popup_menu_shadow;
+}
+
 .secondary-icon { icon-size: 1.09em; }
 
 // Chat Bubbles
