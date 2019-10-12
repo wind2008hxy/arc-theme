@@ -795,11 +795,8 @@ StScrollBar {
 }
 
 .switcher-list {
-  background: none;
-  border: none;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
-  border-radius: 3px;
-  padding: 20px;
+  padding: 15px;
+  @extend %shell_bg;
 
   &-item-container { spacing: 8px; }
 
@@ -851,6 +848,14 @@ StScrollBar {
   height: 96px;
 }
 
+%shell_bg {
+  background: $dark_sidebar_bg;
+  //background-clip: padding-box;
+  border: 1px solid $shell_bg_border_color;
+  border-radius: 2px;
+  box-shadow: $_popup_shadow;
+}
+
 //
 //Window Cycler
 //
@@ -870,10 +875,9 @@ StScrollBar {
   &-group { padding: 12px; }
 
   &-container {
-    border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
-    border-radius: 3px;
-    padding: 20px;
-    padding-bottom: 24px;
+    padding: 16px;
+    padding-bottom: 19px;
+    @extend %shell_bg;
   }
 }
 
@@ -2527,13 +2531,11 @@ StScrollBar {
 // Looking Glass
 //
 #LookingGlassDialog {
+  margin: 4px;
   spacing: 4px;
-  padding: 8px 8px 10px 8px;
-  background-color: transparentize(black, 0.3);
-  border: 1px solid black;
-  border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
-  border-radius: 2px;
+  padding: 4px 4px 6px 4px;
   color: $osd_fg_color;
+  @extend %shell_bg;
 
   & > #Toolbar {
     padding: 3px;
