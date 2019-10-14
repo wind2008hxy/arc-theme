@@ -866,29 +866,29 @@ StScrollBar {
   &-container {
     border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
     border-radius: 3px;
-    padding: 20px;
-    padding-bottom: 24px;
+    padding: 18px;
+    padding-bottom: 22px;
   }
 }
 
 .ws-switcher-active-up, .ws-switcher-active-down {
-  height: 30px;
+  height: 64px;
   background-color: $selected_bg_color;
-  background-size: 96px;
+  background-size: 64px;
   border-radius: 2px;
   border: 1px solid $selected_bg_color;
 }
 
 .ws-switcher-active-up {
-  background-image: url("common-assets/misc/ws-switch-arrow-up.png");
+  background-image: url("common-assets/misc/ws-switch-arrow-up.svg");
 }
 
 .ws-switcher-active-down {
-  background-image: url("common-assets/misc/ws-switch-arrow-down.png");
+  background-image: url("common-assets/misc/ws-switch-arrow-down.svg");
 }
 
 .ws-switcher-box {
-  height: 96px;
+  height: 64px;
   background-color: transparentize(black, 0.67);
   border: 1px solid transparentize(black, 0.67);
   border-radius: 2px;

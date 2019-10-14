@@ -897,39 +897,39 @@ StScrollBar {
   &-group { padding: 12px; }
 
   &-container {
-    padding: 16px;
-    padding-bottom: 19px;
+    padding: 14px;
+    padding-bottom: 17px;
     @extend %shell_bg;
   }
 }
 
 .ws-switcher-active-up, .ws-switcher-active-down,
 .ws-switcher-active-left, .ws-switcher-active-right {
-  height: 30px;
+  height: 64px;
   background-color: $selected_bg_color;
-  background-size: 96px;
+  background-size: 64px;
   border-radius: 2px;
   border: 1px solid $selected_bg_color;
 }
 
 .ws-switcher-active-up {
-  background-image: url("common-assets/misc/ws-switch-arrow-up.png");
+  background-image: url("common-assets/misc/ws-switch-arrow-up.svg");
 }
 
 .ws-switcher-active-down {
-  background-image: url("common-assets/misc/ws-switch-arrow-down.png");
+  background-image: url("common-assets/misc/ws-switch-arrow-down.svg");
 }
 
 .ws-switcher-active-left {
-  background-image: url("common-assets/misc/ws-switch-arrow-left.png");
+  background-image: url("common-assets/misc/ws-switch-arrow-left.svg");
 }
 
 .ws-switcher-active-right {
-  background-image: url("common-assets/misc/ws-switch-arrow-right.png");
+  background-image: url("common-assets/misc/ws-switch-arrow-right.svg");
 }
 
 .ws-switcher-box {
-  height: 96px;
+  height: 64px;
   background-color: transparentize(black, 0.67);
   border: 1px solid transparentize(black, 0.67);
   border-radius: 2px;
