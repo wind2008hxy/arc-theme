@@ -2119,6 +2119,7 @@ StScrollBar {
 .notification-banner:focus {
   font-size: 1em;
   width: 34em;
+  min-height: 0;
   margin: 9px;
   padding: 6px;
 
@@ -2132,11 +2133,13 @@ StScrollBar {
 
   .notification-actions {
     background-color: transparent;
+    border: 0;
     padding: 2px 2px 0 2px;
     spacing: 3px;
   }
   .notification-button {
     padding: 4px 4px 5px;
+    min-height: 0;
     @extend %button;
 
     &:first-child, &:last-child { border-radius: 2px; }
