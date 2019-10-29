@@ -765,7 +765,7 @@ StScrollBar {
   color: $_shell_fg_color;
   @extend %shell_osd;
 
-.osd-monitor-label { font-size: 3em; }
+  .osd-monitor-label { font-size: 3em; }
 
   .level {
     padding: 0;
@@ -1051,7 +1051,7 @@ StScrollBar {
     }
   }
 
-    #panelActivities.panel-button { -natural-hpadding: 12px; }
+  #panelActivities.panel-button { -natural-hpadding: 12px; }
 
   .panel-status-indicators-box,
   .panel-status-menu-box {
@@ -2367,31 +2367,31 @@ StScrollBar {
   font-size: 1.15em;
 }
 
-  .candidate-index {
-    padding: 0 0.5em 0 0;
-    color: lighten($osd_fg_color, 10%);
-  }
+.candidate-index {
+  padding: 0 0.5em 0 0;
+  color: lighten($osd_fg_color, 10%);
+}
 
-  .candidate-box {
-    padding: 0.3em 0.5em 0.3em 0.5em;
-    border-radius: 2px;
-    color: $osd_fg_color;
-    &:selected,&:hover { background-color: $selected_bg_color; color: $selected_fg_color; }
-  }
+.candidate-box {
+  padding: 0.3em 0.5em 0.3em 0.5em;
+  border-radius: 2px;
+  color: $osd_fg_color;
+  &:selected,&:hover { background-color: $selected_bg_color; color: $selected_fg_color; }
+}
 
-  .candidate-page-button-box {
-    height: 2em;
-    .vertical & { padding-top: 0.5em; }
-    .horizontal & { padding-left: 0.5em; }
-  }
+.candidate-page-button-box {
+  height: 2em;
+  .vertical & { padding-top: 0.5em; }
+  .horizontal & { padding-left: 0.5em; }
+}
 
-  .candidate-page-button {
-    padding: 4px;
-  }
+.candidate-page-button {
+  padding: 4px;
+}
 
-  .candidate-page-button-previous { border-radius: 2px 0px 0px 2px; border-right-width: 0; }
-  .candidate-page-button-next { border-radius: 0px 2px 2px 0px;  }
-  .candidate-page-button-icon { icon-size: 1em; }
+.candidate-page-button-previous { border-radius: 2px 0px 0px 2px; border-right-width: 0; }
+.candidate-page-button-next { border-radius: 0px 2px 2px 0px;  }
+.candidate-page-button-icon { icon-size: 1em; }
 
 //
 // Auth Dialogs & Screen Shield
@@ -2430,82 +2430,82 @@ StScrollBar {
   }
 }
 
-  .login-dialog-logo-bin { padding: 24px 0px; }
-  .login-dialog-banner { color: darken($osd_fg_color,10%); }
-  .login-dialog-button-box { spacing: 5px; }
-  .login-dialog-message-warning { color: $warning_color; }
-  .login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
-  .login-dialog-user-selection-box { padding: 100px 0px; }
-  .login-dialog-not-listed-label {
-    padding-left: 2px;
-    .login-dialog-not-listed-button:focus &,
-    .login-dialog-not-listed-button:hover & {
-      color: $osd_fg_color;
-    }
-  }
-  .login-dialog-not-listed-label {
-    font-size: 90%;
-    font-weight: bold;
-    color: darken($osd_fg_color,30%);
-    padding-top: 1em;
-  }
-
-  .login-dialog-user-list-view { -st-vfade-offset: 1em; }
-  .login-dialog-user-list {
-    spacing: 12px;
-    width: 23em;
-    &:expanded .login-dialog-user-list-item:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
-    &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $selected_bg_color; }
-  }
-  .login-dialog-user-list-item {
-    border-radius: 5px;
-    padding: 6px;
-    color: darken($osd_fg_color,30%);
-    &:ltr .user-widget { padding-right: 1em; }
-    &:rtl .user-widget { padding-left: 1em; }
-    .login-dialog-timed-login-indicator {
-      height: 2px;
-      margin-top: 6px;
-      background-color: $osd_fg_color;
-    }
-    &:focus .login-dialog-timed-login-indicator { background-color: $selected_fg_color; }
-  }
-
-  .login-dialog-username,
-  .user-widget-label {
+.login-dialog-logo-bin { padding: 24px 0px; }
+.login-dialog-banner { color: darken($osd_fg_color,10%); }
+.login-dialog-button-box { spacing: 5px; }
+.login-dialog-message-warning { color: $warning_color; }
+.login-dialog-message-hint { padding-top: 0; padding-bottom: 20px; }
+.login-dialog-user-selection-box { padding: 100px 0px; }
+.login-dialog-not-listed-label {
+  padding-left: 2px;
+  .login-dialog-not-listed-button:focus &,
+  .login-dialog-not-listed-button:hover & {
     color: $osd_fg_color;
-    font-size: 120%;
-    font-weight: bold;
-    text-align: left;
-    padding-left: 15px;
   }
-    .user-widget-label {
-      &:ltr { padding-left: 14px; }
-      &:rtl { padding-right: 14px; }
-    }
+}
+.login-dialog-not-listed-label {
+  font-size: 90%;
+  font-weight: bold;
+  color: darken($osd_fg_color,30%);
+  padding-top: 1em;
+}
 
-  .login-dialog-prompt-layout {
-    padding-top: 24px;
-    padding-bottom: 12px;
-    spacing: 8px;
-    width: 23em;
+.login-dialog-user-list-view { -st-vfade-offset: 1em; }
+.login-dialog-user-list {
+  spacing: 12px;
+  width: 23em;
+  &:expanded .login-dialog-user-list-item:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
+  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $selected_bg_color; }
+}
+.login-dialog-user-list-item {
+  border-radius: 5px;
+  padding: 6px;
+  color: darken($osd_fg_color,30%);
+  &:ltr .user-widget { padding-right: 1em; }
+  &:rtl .user-widget { padding-left: 1em; }
+  .login-dialog-timed-login-indicator {
+    height: 2px;
+    margin-top: 6px;
+    background-color: $osd_fg_color;
   }
+  &:focus .login-dialog-timed-login-indicator { background-color: $selected_fg_color; }
+}
 
-  .login-dialog-prompt-label {
-    color: darken($osd_fg_color, 20%);
-    font-size: 110%;
-    padding-top: 1em;
-  }
+.login-dialog-username,
+.user-widget-label {
+  color: $osd_fg_color;
+  font-size: 120%;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
+}
+.user-widget-label {
+  &:ltr { padding-left: 14px; }
+  &:rtl { padding-right: 14px; }
+}
 
-  .login-dialog-session-list-button StIcon {
-    icon-size: 1.25em;
-  }
+.login-dialog-prompt-layout {
+  padding-top: 24px;
+  padding-bottom: 12px;
+  spacing: 8px;
+  width: 23em;
+}
 
-  .login-dialog-session-list-button {
-    color: darken($osd_fg_color,30%);
-    &:hover,&:focus { color: $osd_fg_color; }
-    &:active { color: darken($osd_fg_color, 50%); }
-  }
+.login-dialog-prompt-label {
+  color: darken($osd_fg_color, 20%);
+  font-size: 110%;
+  padding-top: 1em;
+}
+
+.login-dialog-session-list-button StIcon {
+  icon-size: 1.25em;
+}
+
+.login-dialog-session-list-button {
+  color: darken($osd_fg_color,30%);
+  &:hover,&:focus { color: $osd_fg_color; }
+  &:active { color: darken($osd_fg_color, 50%); }
+}
 
 //
 // Screen Shield
