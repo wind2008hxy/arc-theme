@@ -1372,23 +1372,32 @@ StScrollBar {
       padding: 0 0.5em;
     }
 
-    &:active {
-      .panel-bottom & { border-image: url("common-assets/panel/window-list-active-bottom.svg") 3 3 1 3; }
-      .panel-top & { border-image: url("common-assets/panel/window-list-active-top.svg") 3 3 3 1; }
-      .panel-left & { border-image: url("common-assets/panel/window-list-active-left.svg") 3 1 3 3; }
-      .panel-right & { border-image: url("common-assets/panel/window-list-active-right.svg") 1 3 3 3; }
+    &.left,
+    &.right {
+      padding: 0.3em 0;
     }
+
+    &:active {
+      // Trick due to St limitations. It needs a background to draw a box-shadow
+      background: rgba(0, 0, 0, 0.01);
+
+      .panel-bottom & { box-shadow: inset 0 -2px $selected_bg_color; }
+      .panel-top & { box-shadow: inset 0 2px $selected_bg_color; }
+      .panel-left & { box-shadow: inset 2px 0 $selected_bg_color; }
+      .panel-right & { box-shadow: inset -2px 0 $selected_bg_color; }
+
+      &:hover {
+        .panel-bottom & { box-shadow: inset 0 -2px $selected_fg_color; }
+        .panel-top & { box-shadow: inset 0 2px $selected_fg_color; }
+        .panel-left & { box-shadow: inset 2px 0 $selected_fg_color; }
+        .panel-right & { box-shadow: inset -2px 0 $selected_fg_color; }
+      }
+    }
+
+    &:focus { background: transparentize(black, 0.8); }
 
     &:checked,
-    &:focus,
-    &:focus:hover,
     &:hover,
-    &:active:hover,
-    &:active:focus:hover {
-      background: $selected_bg_color;
-      border-image: none;
-    }
-
     & .progress {
       background: $selected_bg_color;
     }
