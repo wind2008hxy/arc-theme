@@ -731,6 +731,8 @@ panel-toplevel.background {
     @extend %panelbutton;
   }
 
+  #tasklist-button { @extend %tasklist-button; }
+
   button,
   #tasklist-button {
     label, image { color: inherit; }
@@ -765,10 +767,16 @@ panel-toplevel.background {
 
   frame > border { border: 0; }
   label { font-weight: normal; }
-  button { @extend %panelbutton; }
+
+  .tasklist > button { @extend %tasklist-button; }
+
+  button,
+  .tasklist > button.flat {
+    @extend %panelbutton;
+  }
 }
 
-#tasklist-button {
+%tasklist-button {
   color: transparentize($panel_fg, 0.2);
   border-radius: 0;
   border: none;
