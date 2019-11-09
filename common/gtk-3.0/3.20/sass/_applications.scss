@@ -263,6 +263,10 @@ $disk_space_free: darken($bg_color, 3%);
       color: $selected_fg_color;
     }
   }
+
+  scrolledwindow.shortcuts-pane {
+    border-top-width: 0;
+  }
 }
 
 //
