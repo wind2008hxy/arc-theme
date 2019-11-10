@@ -7,6 +7,6 @@ Encoding=UTF-8
 [X-GNOME-Metatheme]
 GtkTheme=Arc-Darker
 MetacityTheme=Arc-Darker
-IconTheme=gnome
+IconTheme=Adwaita
 CursorTheme=DMZ-Black
 ButtonLayout=menu:minimize,maximize,close
