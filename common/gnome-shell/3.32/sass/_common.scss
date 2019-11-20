@@ -554,13 +554,16 @@ StScrollBar {
 //
 // Audio selection dialog
 //
-.audio-device-selection-dialog { spacing: 30px; }
+.audio-device-selection-dialog { spacing: 0px; }
 
 .audio-selection {
 
   &-content {
     spacing: 20px;
     padding: 24px;
+    padding-bottom: 54px;
+
+    @extend %modal_dialog_content_box;
   }
 
   &-title {
