@@ -1600,6 +1600,8 @@ StScrollBar {
   &-content {
     spacing: 20px;
     padding: 10px;
+
+    @extend %modal_dialog_content_box;
   }
 
   &-header-hbox { spacing: 10px; }
