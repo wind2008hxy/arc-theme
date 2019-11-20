@@ -227,7 +227,8 @@ StScrollBar {
 
   .modal-dialog-content-box {
     padding: 15px 10px 10px 10px;
-    background-color: $shell_modal_background_color;
+
+    @extend %modal_dialog_content_box;
   }
 
   &-linked-button {
@@ -279,6 +280,10 @@ StScrollBar {
   .run-dialog-label {
     font-size: 0;
   }
+}
+
+%modal_dialog_content_box {
+  background-color: $shell_modal_background_color;
 }
 
 .mount-dialog-subject,
