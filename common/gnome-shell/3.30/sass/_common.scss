@@ -1582,6 +1582,7 @@ StScrollBar {
   border-radius: 20px;
   border: 1px solid transparentize(black, 0.75);
   background-color: transparentize($entry_bg, 0.1);
+  transition-duration: 0ms;
 
   &:focus {
     padding: 7px 9px;
