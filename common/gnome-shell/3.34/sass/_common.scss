@@ -1839,6 +1839,10 @@ StScrollBar {
     margin-bottom: 2px;
     background-color: $selected_bg_color;
   }
+
+  &:hover .app-well-app-running-dot {
+    background-color: $selected_fg_color;
+  }
 }
 
 #dashtodockContainer {
@@ -1857,7 +1861,8 @@ StScrollBar {
     }
   }
 
-  .app-well-app-running-dot {
+  .app-well-app-running-dot,
+  .app-well-app:hover .app-well-app-running-dot {
     background: none;
     width: 28px;
     height: 4px;
@@ -1866,6 +1871,9 @@ StScrollBar {
   @each $var in 1, 2, 3, 4 {
     .running#{$var} .app-well-app-running-dot {
       background-image: url("common-assets/dash/running#{$var}.svg");
+    }
+    .running#{$var}:hover .app-well-app-running-dot {
+      background-image: url("common-assets/dash/running#{$var}-hover.svg");
     }
   }
 
