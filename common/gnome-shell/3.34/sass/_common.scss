@@ -1057,6 +1057,11 @@ StScrollBar {
       color: lighten($fg_color, 10%);
       &:focus, &:hover, &:active { color: lighten($fg_color, 10%); }
     }
+
+    &.clock-display StIcon {
+      color: $selected_bg_color;
+      margin-left: .3em;
+    }
   }
 
   #panelActivities.panel-button { -natural-hpadding: 12px; }
