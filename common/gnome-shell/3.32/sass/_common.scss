@@ -1172,10 +1172,9 @@ StScrollBar {
 .weather-button,
 .events-section-title {
   padding: 7px 10px 7px 10px;
-  border: 1px solid transparentize($base_color, 1);
 
-  &:hover, &:focus { @include button(hover); }
-  &:active { @include button(active); }
+  &:hover, &:focus { background-color: transparentize(black, 0.9); }
+  &:active { background-color: $selected_bg_color; }
 }
 
 .datemenu-today-button .day-label {
