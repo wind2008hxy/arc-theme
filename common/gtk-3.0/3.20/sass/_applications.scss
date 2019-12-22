@@ -929,6 +929,12 @@ panel-toplevel.background {
   }
   .window-frame.menu.csd,
   .window-frame.popup.csd { box-shadow: none; }
+
+  popover {
+    font-weight: normal;
+    text-shadow: none;
+    -gtk-icon-shadow: none;
+  }
 }
 
 .composited-indicator {
