@@ -324,10 +324,10 @@ StScrollBar {
 // End Session Dialog
 //
 .end-session-dialog {
-  spacing: 0px;
-  //border: 3px solid $_bubble_borders_color;
-
+  spacing: 0;
   .modal-dialog-content-box { padding-bottom: 52px; }
+
+  //border: 3px solid $_bubble_borders_color;
 
   &-list {
     padding-top: 20px;
@@ -419,7 +419,8 @@ StScrollBar {
 .shell-mount-operation-icon { icon-size: 48px; }
 
 .mount-dialog {
-  spacing: 24px;
+  spacing: 0;
+  .modal-dialog-content-box { padding-bottom: 24px; }
 
   .message-dialog-title {
     padding-top: 10px;
@@ -595,14 +596,16 @@ StScrollBar {
 // Access Dialog
 //
 .access-dialog {
-  spacing: 30px;
+  spacing: 0;
+  .modal-dialog-content-box { padding-bottom: 30px; }
 }
 
 //
 // Geolocation Dialog
 //
 .geolocation-dialog {
-  spacing: 30px;
+  spacing: 0;
+  .modal-dialog-content-box { padding-bottom: 30px; }
 }
 
 //
@@ -617,7 +620,8 @@ StScrollBar {
 // Inhibit-Shortcuts Dialog
 //
 .inhibit-shortcuts-dialog {
-  spacing: 30px;
+  spacing: 0;
+  .modal-dialog-content-box { padding-bottom: 30px; }
 }
 
 //
