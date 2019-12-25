@@ -5,7 +5,7 @@
   paned > separator {
     background-image: _solid($dark_sidebar_border);
 
-    @if $variant=='light' {
+    @if $variant!='dark' {
       &:dir(ltr) { margin-left: -1px; }
       &:dir(rtl) { margin-right: -1px; }
     }
@@ -131,7 +131,7 @@ filechooser {
   actionbar {
     color: $dark_sidebar_fg;
     background-color: $dark_sidebar_bg;
-    border-color: if($variant =='light', darken($dark_sidebar_bg, 7%), darken($dark_sidebar_bg, 15%));
+    border-color: if($variant != 'dark', darken($dark_sidebar_bg, 7%), darken($dark_sidebar_bg, 15%));
 
     button { @extend %dark_sidebar_button; }
     entry { @extend %dark_sidebar_entry; }

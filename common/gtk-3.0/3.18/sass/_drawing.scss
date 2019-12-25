@@ -24,7 +24,7 @@
   // focused entry
   //
     color: $text_color;
-    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    border-color: if($variant!='dark', $selected_bg_color, $button_border);
     background-color: $entry_bg;
     background-image: linear-gradient(to bottom, $entry_bg);
 
@@ -64,7 +64,7 @@
   // focused header-bar entry
   //
     color: $selected_fg_color;
-    border-color: if($darker=='false' and $variant=='light', $selected_bg_color, transparent);
+    border-color: if($variant=='light', $selected_bg_color, transparent);
     background-image: linear-gradient(to bottom, $selected_bg_color);
   }
 
@@ -142,7 +142,7 @@
     color: $selected_fg_color;
     outline-color: transparentize($selected_fg_color, 0.7);
 
-    border-color: if($variant=='light', $selected_bg_color, $button_border);
+    border-color: if($variant!='dark', $selected_bg_color, $button_border);
     background-color: $selected_bg_color;
   }
 
@@ -197,7 +197,7 @@
   //
     color: $selected_fg_color;
     outline-color: transparentize($selected_fg_color, 0.7);
-    border-color: if($darker=='false' and $variant=='light', $selected_bg_color, transparent);
+    border-color: if($variant=='light', $selected_bg_color, transparent);
     background-color: $selected_bg_color;
   }
 

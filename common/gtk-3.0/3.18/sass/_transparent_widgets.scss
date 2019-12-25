@@ -125,7 +125,7 @@ GtkFileChooserDialog {
   }
   GtkFileChooserWidget > GtkActionBar > GtkRevealer > .action-bar.frame {
     background-color: transparent;
-    border-color: if($variant =='light', darken($dark_sidebar_bg, 7%), darken($dark_sidebar_bg, 15%));
+    border-color: if($variant != 'dark', darken($dark_sidebar_bg, 7%), darken($dark_sidebar_bg, 15%));
   }
 
   GtkFileChooserWidget > GtkActionBar > GtkRevealer > .action-bar.frame,
