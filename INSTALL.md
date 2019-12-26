@@ -32,7 +32,7 @@ Use the following commands to install the theme to `~/.local/share/themes/` for 
 **Note:** Some themes (at least GTK 2) aren't loaded from `~/.local/share/themes/`. You can work around this e.g. by symlinking the Arc theme directories in `~/.local/share/themes/` to `~/.themes/` with following commands:
 
     mkdir -p ~/.themes/
-    for d in Arc{,-Dark,-Darker}{,-solid}; do
+    for d in Arc{,-Dark,-Darker,-Lighter}{,-solid}; do
       [ -d ~/.local/share/themes/$d ] && ln -s ~/.local/share/themes/$d ~/.themes/;
     done
 
@@ -83,6 +83,7 @@ Options to pass to `autogen.sh`:
     --disable-light               disable Arc Light support
     --disable-darker              disable Arc Darker support
     --disable-dark                disable Arc Dark support
+    --disable-lighter             disable Arc Lighter support
 
     --disable-cinnamon            disable Cinnamon support
     --disable-gnome-shell         disable GNOME Shell support
@@ -108,4 +109,4 @@ Run the following from the source code directory:
 
 Or simply remove the theme directories from your install location, e.g.
 
-    rm -rf ~/.local/share/themes/Arc{,-Dark,-Darker}{,-solid}
+    rm -rf ~/.local/share/themes/Arc{,-Dark,-Darker,-Lighter}{,-solid}

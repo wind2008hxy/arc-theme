@@ -24,9 +24,15 @@ if ENABLE_DARK
 themedark_DATA = $(srcdir)/index/dark/index.theme
 endif
 
-ithemedir       = $(DESTDIR)$(themedir)
-ithemedarkerdir = $(DESTDIR)$(themedarkerdir)
-ithemedarkdir   = $(DESTDIR)$(themedarkdir)
+if ENABLE_LIGHTER
+themelighter_DATA = $(srcdir)/index/lighter/index.theme
+endif
+
+
+ithemedir        = $(DESTDIR)$(themedir)
+ithemedarkerdir  = $(DESTDIR)$(themedarkerdir)
+ithemedarkdir    = $(DESTDIR)$(themedarkdir)
+ithemelighterdir = $(DESTDIR)$(themelighterdir)
 
 install-exec-hook:
 
@@ -192,6 +198,10 @@ endif # ENABLE_DARKER
 if ENABLE_DARK
 	rm -rf $(ithemedarkdir)
 endif # ENABLE_DARK
+
+if ENABLE_LIGHTER
+	rm -rf $(ithemelighterdir)
+endif # ENABLE_LIGHTER
 
 
 EXTRA_DIST = \

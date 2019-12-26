@@ -16,6 +16,7 @@ AC_PROG_MKDIR_P
 ARC_ENABLE([LIGHT],         [light],         [Arc Light],     [disable])
 ARC_ENABLE([DARKER],        [darker],        [Arc Darker],    [disable])
 ARC_ENABLE([DARK],          [dark],          [Arc Dark],      [disable])
+ARC_ENABLE([LIGHTER],       [lighter],       [Arc Lighter],   [disable])
 ARC_ENABLE([CINNAMON],      [cinnamon],      [Cinnamon],      [disable])
 ARC_ENABLE([GNOME_SHELL],   [gnome-shell],   [GNOME Shell],   [disable])
 ARC_ENABLE([GTK2],          [gtk2],          [GTK2],          [disable])
@@ -31,10 +32,12 @@ AS_IF([test "x$ENABLE_TRANSPARENCY" != xno], [
     AC_SUBST([themedir], [${datadir}/themes/Arc])
     AC_SUBST([themedarkerdir], [${datadir}/themes/Arc-Darker])
     AC_SUBST([themedarkdir], [${datadir}/themes/Arc-Dark])
+    AC_SUBST([themelighterdir], [${datadir}/themes/Arc-Lighter])
 ], [
     AC_SUBST([themedir], [${datadir}/themes/Arc-solid])
     AC_SUBST([themedarkerdir], [${datadir}/themes/Arc-Darker-solid])
     AC_SUBST([themedarkdir], [${datadir}/themes/Arc-Dark-solid])
+    AC_SUBST([themelighterdir], [${datadir}/themes/Arc-Lighter-solid])
 ])
 
 AS_IF([test "x$ENABLE_GTK3" != xno], [ARC_GTK3])
