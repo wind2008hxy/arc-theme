@@ -35,5 +35,6 @@ AC_DEFUN([ARC_GTK3], [
     AC_SUBST([gtk3themedir], [${themedir}/gtk-3.0])
     AC_SUBST([gtk3themedarkerdir], [${themedarkerdir}/gtk-3.0])
     AC_SUBST([gtk3themedarkdir], [${themedarkdir}/gtk-3.0])
+    AC_SUBST([gtk3themelighterdir], [${themelighterdir}/gtk-3.0])
     AC_MSG_RESULT([Building GTK3 theme $GTK3_VERSION])
 ])

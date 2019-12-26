@@ -973,7 +973,7 @@ actionbar {
 //
 // Headerbars
 //
-$_header_radius: if($variant=='light', 4px, 3px);
+$_header_radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
 
 headerbar,
 %titlebar {
@@ -1147,7 +1147,7 @@ headerbar {
 
     &:focus {
       @include entry(header-focus);
-      background-clip: if($variant=='light', border-box, padding-box);
+      background-clip: if($variant=='light' or $variant=='lighter', border-box, padding-box);
 
       image { color: $selected_fg_color; }
     }
@@ -1168,7 +1168,7 @@ headerbar {
                                             (error, $error_color, $error_fg_color) {
       &.#{$e_type} {
         color: $e_fg_color;
-        border-color: if($variant=='light', $e_color, $header_entry_border);
+        border-color: if($variant=='light' or $variant=='lighter', $e_color, $header_entry_border);
         background-color: mix($e_color, $header_bg, 60%);
 
         &:focus {
@@ -1193,7 +1193,7 @@ headerbar {
     &:hover { @include button(header-hover); }
     &:active, &:checked {
       @include button(header-active);
-      background-clip: if($variant=='light', border-box, padding-box);
+      background-clip: if($variant=='light' or $variant=='lighter', border-box, padding-box);
     }
     &:disabled { @include button(header-insensitive); }
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
@@ -1258,7 +1258,7 @@ headerbar {
   // use linking rules for entries only
   .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) {
     @include linking_rules( $a:0.5,
-                            $var:if($variant=='light', 'light', 'dark'),
+                            $var:if($variant=='light' or $variant=='lighter', 'light', 'dark'),
                             $button_rules:'false',
                             $e_border:$header_entry_border,
                             $b_border:$header_button_border );
@@ -1314,7 +1314,7 @@ headerbar {
     > button:first-child:hover:not(:active),
     > entry + button:not(:active):hover { box-shadow: none; }
 
-    > entry:focus + button { border-left-color: if($variant=='light', $selected_bg_color, $header_entry_border); }
+    > entry:focus + button { border-left-color: if($variant=='light' or $variant=='lighter', $selected_bg_color, $header_entry_border); }
   }
 
   // Headerbar ComboBoxes
@@ -1333,13 +1333,13 @@ headerbar {
         border-right-style: none;
 
         &:focus { box-shadow: none; }
-        @if $variant=='light' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
+        @if $variant=='light' or $variant=='lighter' { &:focus { box-shadow: 1px 0 $selected_bg_color; } }
       }
       &:dir(rtl) {
         border-left-style: none;
 
         &:focus { box-shadow: none; }
-        @if $variant=='light' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
+        @if $variant=='light' or $variant=='lighter' { &:focus { box-shadow: -1px 0 $selected_bg_color; } }
       }
     }
     > .linked > button.combo {
@@ -1371,13 +1371,13 @@ headerbar {
 
   // Headerbar Scale
   scale {
-    $_trough_bg: if($variant=='light', opacify($header_button_border, 0.05), $header_button_border);
+    $_trough_bg: if($variant=='light' or $variant=='lighter', opacify($header_button_border, 0.05), $header_button_border);
 
     &:backdrop { opacity: 0.75; }
 
     slider {
-      $_slider_border: if($variant=='light', opacify($header_button_border, 0.2), opacify($header_button_border, 0.3));
-      $_slider_bg: if($variant=='light', opacify($header_button_bg,1), lighten(opacify($header_bg,1), 10%));
+      $_slider_border: if($variant=='light' or $variant=='lighter', opacify($header_button_border, 0.2), opacify($header_button_border, 0.3));
+      $_slider_bg: if($variant=='light' or $variant=='lighter', opacify($header_button_bg,1), lighten(opacify($header_bg,1), 10%));
 
       background-color: $_slider_bg;
       border-color: $_slider_border;
@@ -1398,7 +1398,7 @@ headerbar {
     trough {
       background-color: $_trough_bg;
 
-      &:disabled { background-color: if($variant=='light', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
+      &:disabled { background-color: if($variant=='light' or $variant=='lighter', transparentize($_trough_bg, 0.05), transparentize($_trough_bg, 0.1)); }
     }
   }
 }
@@ -3101,7 +3101,7 @@ stackswitcher button {
 //
 
 decoration {
-  border-radius: if($variant=='light', 4px 4px 0 0, 3px 3px 0 0);
+  border-radius: if($variant=='light' or $variant=='lighter', 4px 4px 0 0, 3px 3px 0 0);
   border-width: 0px;
 
   $_wm_border: if($variant!='dark', transparentize(black, 0.9), transparentize(black, 0.45));
@@ -3131,7 +3131,7 @@ decoration {
   }
   // server-side decorations as used by mutter
   .ssd & {
-    border-radius: if($variant=='light', 4px 4px 0 0, 3px 3px 0 0);
+    border-radius: if($variant=='light' or $variant=='lighter', 4px 4px 0 0, 3px 3px 0 0);
     box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', transparentize(black, 0.35), $_wm_border);
 
     &.maximized { border-radius: 0; }

@@ -10,6 +10,10 @@ if ENABLE_DARK
 gtk3themedark_DATA = dark/thumbnail.png
 endif
 
+if ENABLE_LIGHTER
+gtk3themelighter_DATA = light/thumbnail.png
+endif
+
 EXTRA_DIST = \
 	light \
 	dark

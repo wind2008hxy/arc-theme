@@ -5,7 +5,7 @@
   paned > separator {
     background-image: _solid($dark_sidebar_border);
 
-    @if $variant!='dark' {
+    @if $variant=='light' or $variant=='darker' {
       &:dir(ltr) { margin-left: -1px; }
       &:dir(rtl) { margin-right: -1px; }
     }

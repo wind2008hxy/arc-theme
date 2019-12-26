@@ -10,7 +10,7 @@ NemoWindow {
   -GtkPaned-handle-size: 0;
 }
 
-@if $variant==dark {
+@if $variant==dark or $variant==lighter {
   GtkFileChooserDialog,
   NautilusWindow ,
   NemoWindow {

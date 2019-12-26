@@ -12,6 +12,10 @@ dark/gtk-main.css: gtk-dark.css | dark
 	cp "$<" "$@"
 dark/gtk-main-dark.css: | dark
 	touch "$@"
+lighter/gtk-main.css: gtk-lighter.css | lighter
+	cp "$<" "$@"
+lighter/gtk-main-dark.css: gtk-dark.css | lighter
+	cp "$<" "$@"
 
 %/gtk.css %/gtk-dark.css: | %
 	echo '@import url("resource:///org/gnome/arc-theme/$(subst gtk,gtk-main,$(notdir $@))");' > "$@"
@@ -35,4 +39,8 @@ endif
 
 if ENABLE_DARK
 gtk3themedark_DATA = dark/gtk.css dark/gtk.gresource
+endif
+
+if ENABLE_LIGHTER
+gtk3themelighter_DATA = lighter/gtk.css lighter/gtk-dark.css lighter/gtk.gresource
 endif

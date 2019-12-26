@@ -65,7 +65,7 @@
   // focused header-bar entry
   //
     color: $selected_fg_color;
-    border-color: if($variant=='light', $selected_bg_color, transparent);
+    border-color: if($variant=='light' or $variant=='lighter', $selected_bg_color, transparent);
     background-color: $selected_bg_color;
   }
 
@@ -189,7 +189,7 @@
   // pushed header-bar button
   //
     color: $selected_fg_color;
-    border-color: if($variant=='light', $selected_bg_color, transparent);
+    border-color: if($variant=='light' or $variant=='lighter', $selected_bg_color, transparent);
     background-color: $selected_bg_color;
   }
 
