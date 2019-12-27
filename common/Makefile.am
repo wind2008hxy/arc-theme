@@ -142,6 +142,12 @@ if ENABLE_DARK
 		mv thumbnail-dark.png thumbnail.png
 endif # ENABLE_DARK
 
+if ENABLE_LIGHTER
+	cp -R $(srcdir)/metacity-1 $(ithemelighterdir)
+
+	cd $(ithemelighterdir)/metacity-1 && rm metacity-theme-1-dark.xml metacity-theme-2-dark.xml thumbnail-dark.png
+endif # ENABLE_LIGHTER
+
 endif # ENABLE_METACITY
 
 if ENABLE_OPENBOX
