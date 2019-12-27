@@ -37,6 +37,11 @@ xfwm4themedarkdir = $(themedarkdir)/xfwm4
 xfwm4themedark_DATA = $(srcdir)/dark/themerc $(dark)
 endif
 
+if ENABLE_LIGHTER
+xfwm4themelighterdir = $(themelighterdir)/xfwm4
+xfwm4themelighter_DATA = $(srcdir)/light/themerc $(light)
+endif
+
 EXTRA_DIST = \
 	assets.txt \
 	$(patsubst %,%/assets.svg,light dark) \
