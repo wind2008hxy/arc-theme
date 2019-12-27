@@ -191,6 +191,12 @@ if ENABLE_DARK
 	mv window-buttons-dark window-buttons
 endif # ENABLE_DARK
 
+if ENABLE_LIGHTER
+	cp -R $(srcdir)/unity $(ithemelighterdir)
+
+	cd $(ithemelighterdir)/unity && rm -rf window-buttons-dark
+endif # ENABLE_LIGHTER
+
 endif # ENABLE_UNITY
 
 
