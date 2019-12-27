@@ -70,9 +70,17 @@ gtk2themedarkassets_DATA = $(dark)
 nobase_gtk2themedark_DATA = $(mbt_dark)
 endif
 
+if ENABLE_LIGHTER
+gtk2themelighterdir = $(themelighterdir)/gtk-2.0
+gtk2themelighterassetsdir = $(gtk2themelighterdir)/assets
+gtk2themelighter_DATA = $(srcrc) $(srcdir)/lighter/gtkrc
+gtk2themelighterassets_DATA = $(light)
+nobase_gtk2themelighter_DATA = $(mbt_light)
+endif
+
 EXTRA_DIST = \
 	assets.txt \
 	$(srcrc) \
 	$(patsubst %,%/assets.svg,light dark) \
-	$(patsubst %,%/gtkrc,light darker dark) \
+	$(patsubst %,%/gtkrc,light darker dark lighter) \
 	$(patsubst %,menubar-toolbar/menubar-toolbar%,.rc -dark.rc)
