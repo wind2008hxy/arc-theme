@@ -204,15 +204,29 @@ if ENABLE_PLANK
 
 if ENABLE_LIGHT
 	cp -R $(srcdir)/plank $(ithemedir)
+
+	cd $(ithemedir)/plank && rm dock-lighter.theme
 endif # ENABLE_LIGHT
 
 if ENABLE_DARKER
 	cp -R $(srcdir)/plank $(ithemedarkerdir)
+
+	cd $(ithemedarkerdir)/plank && rm dock-lighter.theme
 endif # ENABLE_DARKER
 
 if ENABLE_DARK
 	cp -R $(srcdir)/plank $(ithemedarkdir)
+
+	cd $(ithemedarkdir)/plank && rm dock-lighter.theme
 endif # ENABLE_DARK
+
+if ENABLE_LIGHTER
+	cp -R $(srcdir)/plank $(ithemelighterdir)
+
+	cd $(ithemelighterdir)/plank && \
+	rm dock.theme && \
+	mv dock-lighter.theme dock.theme
+endif # ENABLE_LIGHTER
 
 endif # ENABLE_PLANK
 
