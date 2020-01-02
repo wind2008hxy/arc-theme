@@ -5,4 +5,4 @@ EXTRA_DIST = \
 	HACKING.md \
 	autogen.sh
 
-SUBDIRS = common extra
+SUBDIRS = common
