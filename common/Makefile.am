@@ -200,6 +200,23 @@ endif # ENABLE_LIGHTER
 endif # ENABLE_UNITY
 
 
+if ENABLE_PLANK
+
+if ENABLE_LIGHT
+	cp -R $(srcdir)/plank $(ithemedir)
+endif # ENABLE_LIGHT
+
+if ENABLE_DARKER
+	cp -R $(srcdir)/plank $(ithemedarkerdir)
+endif # ENABLE_DARKER
+
+if ENABLE_DARK
+	cp -R $(srcdir)/plank $(ithemedarkdir)
+endif # ENABLE_DARK
+
+endif # ENABLE_PLANK
+
+
 uninstall-local:
 	rm -rf $(ithemedir)
 
@@ -221,4 +238,5 @@ EXTRA_DIST = \
 	gnome-shell \
 	index \
 	metacity-1 \
-	unity
+	unity \
+	plank
