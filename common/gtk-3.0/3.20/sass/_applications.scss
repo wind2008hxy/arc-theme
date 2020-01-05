@@ -778,17 +778,21 @@ panel-toplevel.background {
   }
 }
 
-%tasklist-button {
-  color: transparentize($panel_fg, 0.2);
+%tasklist-button, %panelbutton {
+  color: $panel_fg;
   border-radius: 0;
   border: none;
   background-color: transparentize($panel_bg, 1);
+  transition: none;
 
   &:hover {
     color: lighten($panel_fg, 10%);
+    border: none;
     background-color: transparentize(black, 0.83);
   }
+}
 
+%tasklist-button {
   &:checked {
     color: white;
     background-color: transparentize(black, 0.75);
@@ -797,15 +801,6 @@ panel-toplevel.background {
 }
 
 %panelbutton {
-  color: $panel_fg;
-  border-radius: 0;
-  border: none;
-  background-color: transparentize($panel_bg, 1);
-
-  &:hover {
-    border: none;
-    background-color: lighten($panel_bg, 10%);
-  }
   &:active, &:checked {
     color: $selected_fg_color;
     border: none;
