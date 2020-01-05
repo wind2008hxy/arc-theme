@@ -763,6 +763,7 @@ panel-toplevel.background {
 
   frame > border { border: 0; }
   label { font-weight: normal; }
+  widget { color: $panel_fg; }
 
   .tasklist > button { @extend %tasklist-button; }
 
@@ -786,16 +787,16 @@ panel-toplevel.background {
   transition: none;
 
   &:hover {
-    color: lighten($panel_fg, 10%);
+    color: if($variant == 'lighter', darken($panel_fg, 10%), lighten($panel_fg, 10%));
     border: none;
-    background-color: transparentize(black, 0.83);
+    background-color: if($variant == 'lighter', transparentize(black, 0.9), transparentize(black, 0.83));
   }
 }
 
 %tasklist-button {
   &:checked {
-    color: white;
-    background-color: transparentize(black, 0.75);
+    color: if($variant == 'lighter', darken($panel_fg, 10%), white);
+    background-color: if($variant == 'lighter', transparentize(black, 0.85), transparentize(black, 0.75));
     box-shadow: inset 0 -2px $selected_bg_color;
   }
 }
