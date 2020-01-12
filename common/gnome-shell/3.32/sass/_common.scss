@@ -1,7 +1,15 @@
 //This is the RIGHT PLACE to edit the stylesheet
 
 $panel-corner-radius: 0px;
-$asset_path: if($variant == 'dark', dark-assets, light-assets);
+
+$asset_path: assets;
+@if $variant == 'light' {
+  $asset_path: light-assets;
+} @else if $variant == 'dark' {
+  $asset_path: dark-assets;
+} @else if $variant == 'lighter' {
+  $asset_path: lighter-assets;
+}
 
 /* Copyright 2009, 2015 Red Hat, Inc.
  *
@@ -31,9 +39,10 @@ $_bubble_bg_color: opacify($osd_bg_color,0.25);
 $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
 $_shell_fg_color: white;
+$_panel_fg_color: if($variant=='lighter', $fg_color, $_shell_fg_color);
 
 $_popup_shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
-$_popup_menu_shadow: if($variant=='light', 0 1px 3px 2.1px rgba(0, 0, 0, 0.06), $_popup_shadow);
+$_popup_menu_shadow: if($variant!='dark', 0 1px 3px 2.1px rgba(0, 0, 0, 0.06), $_popup_shadow);
 
 stage {
   font-family: $font-family;
@@ -241,7 +250,7 @@ StScrollBar {
 
     color: $osd_fg_color;
     background-color: $osd_bg_color;
-    border-color: if($variant=='light', darken($osd_bg_color, 5%), darken($osd_bg_color, 8%));
+    border-color: if($variant!='dark', darken($osd_bg_color, 5%), darken($osd_bg_color, 8%));
 
     &:hover { background-color: lighten($osd_bg_color, 5%); }
     &:focus { color: $selected_bg_color; }
@@ -641,13 +650,13 @@ StScrollBar {
 // Popvers/Menus
 //
 .popup-menu {
-  $_popup_submenu_background_color: if($variant=='light', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
-  $_popup_submenu_border_color: if($variant=='light', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
+  $_popup_submenu_background_color: if($variant!='dark', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+  $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
 
   min-width: 15em;
 
   .popup-menu-content {
-    margin: if($variant=='light', 4px, 3px);
+    margin: if($variant!='dark', 4px, 3px);
 
     @extend %popup_menu;
   }
@@ -748,7 +757,7 @@ StScrollBar {
   min-width: 64px;
   min-height: 64px;
 
-  color: $_shell_fg_color;
+  color: $_panel_fg_color;
   @extend %shell_osd;
 
 .osd-monitor-label { font-size: 3em; }
@@ -757,7 +766,7 @@ StScrollBar {
     padding: 0;
     height: 4px;
     -barlevel-height: 4px;
-    -barlevel-background-color: transparentize(black, 0.5);
+    -barlevel-background-color: if($variant!='lighter', transparentize(black, 0.5), $button_border);
     -barlevel-active-background-color: $selected_bg_color;
     -barlevel-overdrive-color: $warning_color;
     -barlevel-overdrive-separator-width: 1px;
@@ -810,6 +819,7 @@ StScrollBar {
 
   .item-box {
     padding: 8px;
+    color: $_panel_fg_color;
     border-radius: 2px;
     border: 1px solid transparent;
 
@@ -846,7 +856,7 @@ StScrollBar {
   color: $osd_fg_color;
 
   &:highlighted {
-    color: $_shell_fg_color;
+    color: $_panel_fg_color;
   }
 }
 
@@ -907,8 +917,8 @@ StScrollBar {
 
 .ws-switcher-box {
   height: 64px;
-  background-color: transparentize(black, 0.67);
-  border: 1px solid transparentize(black, 0.67);
+  background-color: if($variant!='lighter', transparentize(black, 0.67), transparentize(black, 0.83));
+  border: 1px solid if($variant!='lighter', transparentize(black, 0.67), transparentize(black, 0.83));
   border-radius: 2px;
 }
 
@@ -936,8 +946,6 @@ StScrollBar {
 // Top Bar
 //
 #panel {
-  $_panel_fg_color: $_shell_fg_color;
-
   font-weight: bold;
   font-feature-settings: "tnum";
   height: 2.1em;
@@ -1004,7 +1012,7 @@ StScrollBar {
 
     &:hover {
       color: $_panel_fg_color;
-      background-color: transparentize(black, 0.83);
+      background-color: if($variant!='lighter', transparentize(black, 0.83), transparentize(black, 0.95));
       border-bottom-width: 1px;
       border-color: transparent;
     }
@@ -1014,7 +1022,10 @@ StScrollBar {
       background-color: $selected_bg_color;
       box-shadow: none;
       border-bottom-width: 1px;
-      border-color: black;
+
+      @if $variant != 'lighter' {
+        border-color: black;
+      }
 
       & > .system-status-icon { icon-shadow: none; }
     }
@@ -1056,7 +1067,7 @@ StScrollBar {
 #panel #panelActivities.panel-button {
 
   > * {
-    background-image: url("common-assets/panel/activities.svg");
+    background-image: url("#{$asset_path}/panel/activities.svg");
     background-size: contain;
     width: 24px;
     height: 24px;
@@ -1400,7 +1411,7 @@ StScrollBar {
   background-color: $shell_message_background_color;
   border: 1px solid $shell_message_border_color;
   border-radius: 2px;
-  box-shadow: inset 4px 0 0 if($variant=='light', -1px, -2px) $selected_bg_color;
+  box-shadow: inset 4px 0 0 if($variant!='dark', -1px, -2px) $selected_bg_color;
 
   &:hover, &:focus {
     color: $fg_color;
@@ -1727,7 +1738,7 @@ StScrollBar {
   font-size: 1em;
   color: $osd_fg_color;
   background-color: $dark_sidebar_bg;
-  border: 1px solid rgba(0,0,0,0.4);
+  border: 1px solid if($variant!='lighter', rgba(0,0,0,0.4), rgba(0,0,0,0.1));
   border-left-width: 0;
   padding: 4px 0;
   border-radius: 0 3px 3px 0;
@@ -1805,7 +1816,7 @@ StScrollBar {
 
 #dashtodockContainer {
   .app-well-app.focused .overview-icon {
-    background-color: transparentize(black, 0.75);
+    background-color: if($variant != 'lighter', transparentize(black, 0.75), transparentize(black, 0.85));
   }
 
   &.running-dots {
@@ -1839,7 +1850,7 @@ StScrollBar {
 .show-apps {
 
   .overview-icon {
-    background-color: transparentize(black, 0.5);
+    background-color: if($variant!='lighter', transparentize(black, 0.5), transparentize(black, 0.63));
     border-radius: 2px;
     border: 0px;
     padding: 6px;
@@ -1848,7 +1859,7 @@ StScrollBar {
   }
 
   &:hover .overview-icon {
-    background-color: transparentize(black, 0.3);
+    background-color: if($variant!='lighter', transparentize(black, 0.3), transparentize(black, 0.43));
     color: $selected_bg_color;
   }
 
@@ -1892,7 +1903,20 @@ StScrollBar {
 
   @include button(osd);
 
-  &:hover { @include button(osd-hover); }
+  @if $variant == 'lighter' {
+    background-color: opacify($osd_button_bg, 0.4);
+    border-color: transparentize($osd_button_border, 0.2);
+  }
+
+  &:hover {
+    @include button(osd-hover);
+
+    @if $variant == 'lighter' {
+      background-color: opacify(darken($osd_button_bg, 5%), 0.4);
+      border-color: transparentize($osd_button_border, 0.2);
+    }
+  }
+
   &:checked {
     color: $selected_fg_color;
     background-color: $selected_bg_color;
@@ -1936,7 +1960,7 @@ StScrollBar {
   &:hover .overview-icon,
   &:focus .overview-icon,
   &:selected .overview-icon {
-    background-color: transparentize($osd_fg_color,.6);
+    background-color: if($variant!='lighter', transparentize($osd_fg_color,.6), transparentize($osd_bg_color,.6));
     transition-duration: 0ms;
     border-image: none;
     background-image: none;
@@ -2116,7 +2140,7 @@ StScrollBar {
   color: $fg_color;
   background-color: $shell_popup_menu_background_color;
   //background-clip: padding-box;
-  border: if($variant=='light', 0, 1px) solid $shell_popup_menu_border_color;
+  border: if($variant!='dark', 0, 1px) solid $shell_popup_menu_border_color;
   border-radius: 2px;
   box-shadow: $_popup_menu_shadow;
 }
@@ -2276,7 +2300,7 @@ StScrollBar {
   }
 
   &.shift-key-lowercase {
-    background-image: url("common-assets/key/key-shift.svg");
+    background-image: url("#{$asset_path}/key/key-shift.svg");
   }
   &.shift-key-uppercase {
     background-image: url("common-assets/key/key-shift-uppercase.svg");
@@ -2285,12 +2309,12 @@ StScrollBar {
     background-image: url("common-assets/key/key-shift-latched-uppercase.svg");
   }
   &.hide-key {
-    background-image: url("common-assets/key/key-hide.svg");
+    background-image: url("#{$asset_path}/key/key-hide.svg");
 
     &:active, &:checked { background-image: url("common-assets/key/key-hide-active.svg"); }
   }
   &.layout-key {
-    background-image: url("common-assets/key/key-layout.svg");
+    background-image: url("#{$asset_path}/key/key-layout.svg");
 
     &:active, &:checked { background-image: url("common-assets/key/key-layout-active.svg"); }
   }
@@ -2584,7 +2608,7 @@ StScrollBar {
     padding-right: .3em;
 
     &:hover {
-      color: $_shell_fg_color;
+      color: $_panel_fg_color;
       text-shadow: black 0px 2px 2px;
     }
     &:selected {
@@ -2660,5 +2684,6 @@ StScrollBar {
   background: transparentize(black, 0.3);
   border: 1px solid grey;
   border-radius: 2px;
+  color: $_shell_fg_color;
   padding: 6px;
 }
