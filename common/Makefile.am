@@ -113,6 +113,29 @@ endif
 		$(ithemedarkdir)/gnome-shell/gnome-shell.css
 endif # ENABLE_DARK
 
+if ENABLE_LIGHTER
+	$(MKDIR_P) $(ithemelighterdir)/gnome-shell
+
+if ENABLE_TRANSPARENCY
+
+	$(SASSC) $(srcdir)/gnome-shell/$(GNOME_SHELL_VERSION)/sass/gnome-shell-lighter.scss $(srcdir)/gnome-shell/$(GNOME_SHELL_VERSION)/gnome-shell-lighter.css;
+
+else !ENABLE_TRANSPARENCY
+
+	$(SASSC) $(srcdir)/gnome-shell/$(GNOME_SHELL_VERSION)/sass/gnome-shell-solid-lighter.scss $(srcdir)/gnome-shell/$(GNOME_SHELL_VERSION)/gnome-shell-lighter.css;
+
+endif
+
+	cd $(srcdir)/gnome-shell/$(GNOME_SHELL_VERSION) && cp -RL \
+		common-assets \
+		lighter-assets \
+		$(ithemelighterdir)/gnome-shell
+
+	cd $(srcdir)/gnome-shell/$(GNOME_SHELL_VERSION) && cp -R \
+		gnome-shell-lighter.css \
+		$(ithemelighterdir)/gnome-shell/gnome-shell.css
+endif # ENABLE_LIGHTER
+
 endif # ENABLE_GNOME_SHELL
 
 

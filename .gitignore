@@ -10,6 +10,7 @@ install-sh
 missing
 common/cinnamon/**/cinnamon-dark.css
 common/cinnamon/**/cinnamon.css
+common/gnome-shell/**/gnome-shell-lighter.css
 common/gnome-shell/**/gnome-shell-dark.css
 common/gnome-shell/**/gnome-shell.css
 common/gtk-3.0/**/*.css
