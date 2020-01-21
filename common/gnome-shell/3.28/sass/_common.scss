@@ -1142,7 +1142,10 @@ StScrollBar {
   padding: 7px 10px 7px 10px;
 
   &:hover, &:focus { background-color: transparentize(black, 0.9); }
-  &:active { background-color: $selected_bg_color; }
+  &:active {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
 }
 
 .datemenu-today-button .day-label {
