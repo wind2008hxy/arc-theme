@@ -113,6 +113,7 @@ endif
 		$(ithemedarkdir)/gnome-shell/gnome-shell.css
 endif # ENABLE_DARK
 
+if GNOME_SHELL_3_32_OR_NEWER
 if ENABLE_LIGHTER
 	$(MKDIR_P) $(ithemelighterdir)/gnome-shell
 
@@ -135,6 +136,7 @@ endif
 		gnome-shell-lighter.css \
 		$(ithemelighterdir)/gnome-shell/gnome-shell.css
 endif # ENABLE_LIGHTER
+endif # GNOME_SHELL_3_32_OR_NEWER
 
 endif # ENABLE_GNOME_SHELL
 
