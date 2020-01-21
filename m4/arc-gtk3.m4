@@ -14,7 +14,7 @@ AC_DEFUN([ARC_GTK3], [
             [gtk+-3.0],
             [GTK3_VERSION=`$PKG_CONFIG --modversion gtk+-3.0`]
             AC_MSG_RESULT([Detected GTK3 $GTK3_VERSION]),
-            [AC_MSG_ERROR([Could not determine GTK3 version. Install GTK3 (and its development files), or use the --with-gtk=<version> option. Alternatively you can choose to not build the GTK3 theme with --disable-gtk3 option.])]
+            [AC_MSG_ERROR([Could not determine GTK3 version. Install GTK3 (and its development files), or use the --with-gtk3=<version> option. Alternatively you can choose to not build the GTK3 theme with --disable-gtk3 option.])]
         )]
     )
 
