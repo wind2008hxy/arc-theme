@@ -47,6 +47,10 @@ AS_IF([test "x$ENABLE_CINNAMON" != xno], [ARC_CINNAMON])
 AS_IF([test "x$ENABLE_GTK2" != xno -o "x$ENABLE_GTK3" != xno -o "x$ENABLE_XFWM" != xno], [
     AC_PATH_PROG([INKSCAPE], [inkscape])
     AS_IF([test "x$ac_cv_path_INKSCAPE" = x], [AC_MSG_ERROR([inkscape not found])])
+    AS_IF([test "x$ac_cv_path_INKSCAPE" != x],
+        [INKSCAPE_VERSMJR=`inkscape --version 2> /dev/null | cut -d' ' -f2 | cut -d'.' -f1`]
+        AM_CONDITIONAL([INKSCAPE_1_0_OR_NEWER], [test "x$INKSCAPE_VERSMJR" = x1])
+    )
     AC_PATH_PROG([OPTIPNG], [optipng])
     AS_IF([test "x$ac_cv_path_OPTIPNG" = x], [AC_MSG_ERROR([optipng not found])])
 ])
