@@ -1774,6 +1774,7 @@ StScrollBar {
     padding: 6px;
     transition-duration: 0ms;
     text-align: center;
+    color: $_shell_fg_color;
   }
 
   &:hover .overview-icon {
