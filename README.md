@@ -6,7 +6,7 @@ The theme was originally designed and developed by [horst3180](https://github.co
 
 This fork aims to keep the theme updated with new toolkit and desktop environment versions, resolve pre-existing issues, and improve and polish the theme while preserving the original visual design.
 
-## Arc is available in three variants 
+## Arc is available in four variants
 
 ##### Arc
 
