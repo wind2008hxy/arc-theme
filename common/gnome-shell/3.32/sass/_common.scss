@@ -1853,17 +1853,17 @@ StScrollBar {
 .show-apps {
 
   .overview-icon {
-    background-color: if($variant!='lighter', transparentize(black, 0.5), transparentize(black, 0.63));
+    background-color: if($variant!='lighter', transparentize(black, 0.5), transparentize(black, 0.8));
     border-radius: 2px;
     border: 0px;
     padding: 6px;
     transition-duration: 0ms;
     text-align: center;
-    color: $_shell_fg_color;
+    color: $_panel_fg_color;
   }
 
   &:hover .overview-icon {
-    background-color: if($variant!='lighter', transparentize(black, 0.3), transparentize(black, 0.43));
+    background-color: if($variant!='lighter', transparentize(black, 0.3), transparentize(black, 0.9));
     color: $selected_bg_color;
   }
 
