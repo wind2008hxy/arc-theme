@@ -10,15 +10,19 @@ This fork aims to keep the theme updated with new toolkit and desktop environmen
 
 ##### Arc
 
-![A screenshot of the Arc theme](http://i.imgur.com/Ph5ObOa.png)
+![A screenshot of the Arc theme](https://raw.githubusercontent.com/jnsh/arc-theme/master/.github/arc-prv.png)
 
 ##### Arc-Darker
 
-![A screenshot of the Arc-Darker theme](http://i.imgur.com/NC6dqyl.png)
+![A screenshot of the Arc-Darker theme](https://raw.githubusercontent.com/jnsh/arc-theme/master/.github/arc-darker-prv.png)
 
 ##### Arc-Dark
 
-![A screenshot of the Arc-Dark theme](http://i.imgur.com/5AGlCnA.png)
+![A screenshot of the Arc-Dark theme](https://raw.githubusercontent.com/jnsh/arc-theme/master/.github/arc-dark-prv.png)
+
+##### Arc-Lighter
+
+![A screenshot of the Arc-Lighter theme](https://raw.githubusercontent.com/jnsh/arc-theme/master/.github/arc-lighter-prv.png)
 
 ## Supported toolkits and desktops
 
