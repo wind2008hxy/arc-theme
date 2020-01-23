@@ -35,6 +35,14 @@ Arc comes with themes for the following:
 
 ## Installation
 
+#### Packages
+
+Distro | Link | Notes
+-------|-------|-------
+Arch Linux | [arc-gtk-theme-jnsh-git](https://aur.archlinux.org/packages/arc-gtk-theme-jnsh-git/) | [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) package
+
+#### Manual installation
+
 See [INSTALL.md](https://github.com/jnsh/arc-theme/blob/master/INSTALL.md) for build instructions, list of dependencies, build options and additional details.
 
 ## Bugs
