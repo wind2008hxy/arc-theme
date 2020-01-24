@@ -30,7 +30,8 @@ AC_DEFUN([ARC_GTK3], [
         [test "0$GTK3_VERSMNR" -lt 17], [AC_MSG_ERROR([GTK3 version too old: $GTK3_VERSION])],
         [test "0$GTK3_VERSMNR" -lt 19], [GTK3_VERSION=3.18],
         [test "0$GTK3_VERSMNR" -ge 19 -a "0$GTK3_VERSMNR" -lt 21], [GTK3_VERSION=3.20],
-        [test "0$GTK3_VERSMNR" -ge 21], [GTK3_VERSION=3.22]
+        [test "0$GTK3_VERSMNR" -ge 21 -a "0$GTK3_VERSMNR" -lt 23], [GTK3_VERSION=3.22],
+        [test "0$GTK3_VERSMNR" -ge 23], [GTK3_VERSION=3.24]
     )
     AC_SUBST([GTK3_VERSION])
     AC_SUBST([gtk3themedir], [${themedir}/gtk-3.0])
