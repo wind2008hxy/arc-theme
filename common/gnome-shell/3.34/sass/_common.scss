@@ -1872,6 +1872,11 @@ StScrollBar {
 }
 
 #dashtodockContainer {
+
+  &.bottom #dash {
+    margin-top: 1px;
+  }
+
   .app-well-app.focused .overview-icon {
     background-color: if($variant != 'lighter', transparentize(black, 0.75), transparentize(black, 0.85));
   }
