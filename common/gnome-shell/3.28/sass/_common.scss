@@ -1689,6 +1689,10 @@ StScrollBar {
 // Dash Buttons
 #dash .app-well-app {
 
+  & .overview-icon {
+    border: none;
+  }
+
   &:hover .overview-icon,
   .right &:hover .overview-icon,
   .bottom &:hover .overview-icon,
