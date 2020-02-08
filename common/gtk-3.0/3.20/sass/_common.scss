@@ -1224,7 +1224,7 @@ headerbar {
   }
 
   // Reset buttons
-  .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar):not(.stack-switcher) > button {
+  .linked:not(.vertical):not(.path-bar):not(.nautilus-path-bar) > button {
     &, &:hover, &:active, &:checked, &:disabled {
       border-radius: 3px;
       border-style: solid;
