@@ -950,6 +950,8 @@ panel-toplevel.background {
 
   > GtkWidget > GtkWidget:first-child { padding: 0 2px; }
 
+  image, label { padding: 0 3px; }
+
   .menuitem:active, .menuitem:hover {
     border-style: none;
     background-image: none;
