@@ -178,6 +178,11 @@ $disk_space_free: darken($bg_color, 3%);
 }
 
 //
+// NautilusPreviewer (sushi)
+//
+sushi-media-bin box.overlay-bar { @extend %osd; }
+
+//
 // Nemo
 //
 .nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
