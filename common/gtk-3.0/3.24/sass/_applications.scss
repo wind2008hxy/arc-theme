@@ -934,6 +934,11 @@ panel-toplevel.background {
     font-weight: normal;
     text-shadow: none;
     -gtk-icon-shadow: none;
+
+    .switcher.toggle {
+      &, &:active { color: transparentize($fg_color, 0.3); }
+      &:checked { color: $selected_bg_color; }
+    }
   }
 }
 
