@@ -982,12 +982,15 @@ toolbar {
   border-radius: 0  0 3px 3px;
 }
 
-searchbar {
+searchbar > revealer > box {
   background-color: $bg_color;
   border-style: solid;
   border-color: $borders_color;
   border-width: 0 0 1px;
-  padding: 3px;
+
+  // workaround: undo the GtkContainer:border-width and use CSS padding instead
+  margin: -6px;
+  padding: 6px;
 }
 
 actionbar {
