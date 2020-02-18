@@ -3010,16 +3010,24 @@ colorswatch {
     }
   }
 
-  &.dark overlay {
-    color: transparentize(white, 0.3);
-    &:hover {
-      border-color: if($variant != 'dark', transparentize(black, 0.5), $borders_color);
+  &.dark {
+    outline-color: transparentize(white, 0.6);
+
+    overlay {
+      color: transparentize(white, 0.3);
+      &:hover {
+        border-color: if($variant != 'dark', transparentize(black, 0.5), $borders_color);
+      }
     }
   }
-  &.light overlay {
-    color: transparentize(black, 0.3);
-    &:hover {
-      border-color: if($variant != 'dark', transparentize(black, 0.7), $borders_color);
+  &.light {
+    outline-color: transparentize(black, 0.6);
+
+    overlay {
+      color: transparentize(black, 0.3);
+      &:hover {
+        border-color: if($variant != 'dark', transparentize(black, 0.7), $borders_color);
+      }
     }
   }
 
