@@ -1045,6 +1045,7 @@ headerbar,
   }
 
   // Selectionmode
+  .selection-mode &,
   &.selection-mode {
     color: $selection_mode_fg;
     background-color: $selection_mode_bg;
@@ -1228,6 +1229,7 @@ headerbar {
     &:disabled:active, &:disabled:checked { @include button(header-insensitive-active); }
   }
 
+  .selection-mode & button,
   &.selection-mode button {
 
     &, &.flat {
