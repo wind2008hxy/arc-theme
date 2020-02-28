@@ -962,7 +962,7 @@ StScrollBar {
   &.unlock-screen,
   &.login-screen {
     background-color: transparent;
-    border-image: none;
+    border: none;
 
     .panel-button {
       color: $fg_color;
@@ -975,7 +975,7 @@ StScrollBar {
   }
 
   &.lock-screen {
-    border-image: none;
+    border: none;
 
     .panel-button {
       color: $osd_fg_color;
