@@ -65,6 +65,8 @@ AC_CONFIG_FILES([
     common/gtk-3.0/Makefile
     common/gtk-3.0/3.18/Makefile
     common/gtk-3.0/3.20/Makefile
+    common/gtk-3.0/3.22/Makefile
+    common/gtk-3.0/3.24/Makefile
     common/xfwm4/Makefile
     common/Makefile
     Makefile
