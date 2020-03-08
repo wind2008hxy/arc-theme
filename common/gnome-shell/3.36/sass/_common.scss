@@ -1281,6 +1281,10 @@ StScrollBar {
   icon-size: 2.18em;
 }
 
+.weather-forecast-temp {
+  font-weight: bold;
+}
+
 .weather-forecast-time {
   color: transparentize($fg_color, 0.4);
   font-size: 0.8em;
