@@ -324,6 +324,34 @@ StScrollBar {
 }
 
 //
+// Dialog List
+//
+.dialog-list {
+  spacing: 18px;
+
+  .dialog-list-title {
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .dialog-list-scrollview { max-height: 200px; }
+  .dialog-list-box {
+    spacing: 1em;
+
+    .dialog-list-item {
+      spacing: 1em;
+
+      .dialog-list-item-title { font-weight: bold; }
+      .dialog-list-item-description {
+        color: darken($fg_color,5%);
+        @include fontsize($font-size - 1);
+      }
+    }
+  }
+}
+
+
+//
 // End Session Dialog
 //
 .end-session-dialog {
