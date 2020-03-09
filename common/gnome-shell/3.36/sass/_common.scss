@@ -279,19 +279,6 @@ StScrollBar {
       border-radius: 0px 0px 2px 2px;
     }
   }
-
-  .run-dialog-entry {
-    width: 21em;
-    margin-bottom: 6px;
-  }
-  .run-dialog-error-box {
-    padding-top: 5px;
-    spacing: 5px;
-  }
-
-  .run-dialog-label {
-    font-size: 0;
-  }
 }
 
 %modal_dialog_content_box {
@@ -321,6 +308,25 @@ StScrollBar {
     }
   }
   .message-dialog-description { text-align: center; }
+}
+
+//
+// Run Dialog
+//
+.run-dialog {
+  .modal-dialog-content-box {
+    margin-top: 24px;
+    margin-bottom: 14px;
+  }
+
+  &-entry {
+    width: 21em;
+  }
+  &-description {
+    @include fontsize($font-size - 1);
+    text-align: center;
+    color: $fg_color;
+  }
 }
 
 //
