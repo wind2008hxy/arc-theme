@@ -298,8 +298,7 @@ StScrollBar {
   background-color: $shell_modal_background_color;
 }
 
-.mount-dialog-subject,
-.end-session-dialog-subject { //this should be a generic header class
+.mount-dialog-subject {
   @include fontsize($font-size * 1.2);
   font-weight: bold;
   color: $fg_color;
@@ -328,78 +327,11 @@ StScrollBar {
 // End Session Dialog
 //
 .end-session-dialog {
-  spacing: 0;
-  .modal-dialog-content-box { padding-bottom: 52px; }
+  width: 30em;
 
-  //border: 3px solid $_bubble_borders_color;
-
-  &-list {
-    padding-top: 20px;
-  }
-
-  &-layout {
-    padding-left: 17px;
-    &:rtl { padding-right: 17px; }
-  }
-
-  &-description {
-    width: 28em;
-    padding-bottom: 10px;
-    &:rtl {
-      text-align: right;
-    }
-  }
-
-  &-warning {
-    width: 28em;
+  &-battery-warning,
+  .dialog-list-title {
     color: $warning_color;
-    padding-top: 6px;
-    &:rtl {
-      text-align: right;
-    }
-  }
-
-  &-logout-icon {
-    border: 0px solid transparent;
-    border-radius: 99px;
-    width: 48px;
-    height: 48px;
-    background-size: contain;
-  }
-
-  &-shutdown-icon {
-    color: $fg_color;
-    width: 48px;
-    height: 48px;
-  }
-
-  &-inhibitor-layout {
-    spacing: 16px;
-    max-height: 200px;
-    padding-right: 10px;
-    padding-left: 10px;
-  }
-
-  &-session-list, &-app-list {
-    spacing: 1em;
-  }
-
-  &-list-header {
-    font-weight: bold;
-    &:rtl { text-align: right; }
-  }
-
-  &-app-list-item, &-session-list-item {
-    spacing: 1em;
-  }
-
-  &-app-list-item-name, &-session-list-item-name {
-    font-weight: bold;
-  }
-
-  &-app-list-item-description {
-    color: lighten($fg_color,5%);
-    @include fontsize($font-size * 0.9);
   }
 
   .modal-dialog-linked-button:last-child {
