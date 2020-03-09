@@ -113,6 +113,11 @@ StEntry {
     icon-size: 1.09em;
     padding: 0 4px;
   }
+
+  StLabel.hint-text {
+    margin-left: 2px;
+    color: transparentize($text_color, 0.3);
+  }
 }
 
 //
