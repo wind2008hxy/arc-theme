@@ -520,6 +520,13 @@ StScrollBar {
   color: transparentize(black, 1);
 }
 
+.caps-lock-warning-label {
+  text-align: center;
+  padding-bottom: 8px;
+  @include fontsize($font-size);
+  color: $warning_color;
+}
+
 //
 // Polkit Dialog
 //
