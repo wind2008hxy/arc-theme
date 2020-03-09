@@ -2017,7 +2017,7 @@ StScrollBar {
 }
 
 //
-// Collections
+// App folders
 //
 .app-well-app.app-folder {
 
@@ -2037,16 +2037,46 @@ StScrollBar {
   }
 }
 
-.app-folder-popup { //expanded collection
-  -arrow-border-radius: 2px;
-  -arrow-background-color: darken($dark_sidebar_bg, 8%);
-  -arrow-border-color: transparentize(darken($dark_sidebar_bg, 25%), 0.5);
-  -arrow-border-width: 1px;
-  -arrow-base: 20px;
-  -arrow-rise: 10px;
+// expanded folder
+.app-folder-dialog {
+  border-radius: 2px;
+  border: 1px solid transparentize(darken($dark_sidebar_bg, 25%), 0.5);
+  spacing: 12px;
+  background-color: darken($dark_sidebar_bg, 8%);
+
+  & .folder-name-container {
+    padding: 24px 36px 0;
+    spacing: 12px;
+
+    & .folder-name-label,
+    & .folder-name-entry {
+      font-size: 18pt;
+      font-weight: bold;
+    }
+
+    & .folder-name-entry { width: 300px; }
+
+    /* FIXME: this is to keep the label in sync with the entry */
+    & .folder-name-label { padding: 5px 7px; color: $fg_color; }
+
+    & .edit-folder-button {
+      @extend %button;
+
+      padding: 0;
+      width: 36px;
+      height: 36px;
+      border-radius: 18px;
+
+      & > StIcon { icon-size: 16px }
+    }
+  }
+}
+.app-folder-dialog-container {
+  padding: 12px;
+  width: 800px;
+  height: 600px;
 }
 
-.app-folder-popup-bin { padding: 5px; }
 .app-folder-icon {
   padding: 5px;
   spacing-rows: 5px;
