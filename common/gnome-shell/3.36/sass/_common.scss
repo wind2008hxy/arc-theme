@@ -238,6 +238,7 @@ StScrollBar {
   box-shadow: $_popup_menu_shadow;
 
   .modal-dialog-content-box {
+    margin: 0;
     padding: 15px 10px 10px 10px;
 
     @extend %modal_dialog_content_box;
