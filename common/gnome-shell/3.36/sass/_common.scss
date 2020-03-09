@@ -290,12 +290,6 @@ StScrollBar {
   background-color: $shell_modal_background_color;
 }
 
-.mount-dialog-subject {
-  @include fontsize($font-size * 1.2);
-  font-weight: bold;
-  color: $fg_color;
-}
-
 //
 // Message Dialog
 //
@@ -392,66 +386,6 @@ StScrollBar {
       background-color: darken($destructive_color, 5%);
     }
   }
-}
-
-//
-// ShellMountOperation Dialogs
-//
-.shell-mount-operation-icon { icon-size: 48px; }
-
-.mount-dialog {
-  spacing: 0;
-  .modal-dialog-content-box { padding-bottom: 24px; }
-
-  .message-dialog-title {
-    padding-top: 10px;
-    padding-left: 17px;
-    padding-bottom: 6px;
-    max-width: 34em;
-
-    &:rtl {
-      padding-left: 0px;
-      padding-right: 17px;
-    }
-  }
-
-  .message-dialog-body {
-    padding-left: 17px;
-    width: 28em;
-
-    &:rtl {
-      padding-right: 17px;
-    }
-  }
-}
-
-.mount-dialog-app-list {
-  @include fontsize($font-size * 1.1);
-  max-height: 200px;
-  padding-top: 24px;
-  padding-left: 49px;
-  padding-right: 32px;
-
-  &:rtl {
-    padding-right: 49px;
-    padding-left: 32px;
-  }
-}
-
-.mount-dialog-app-list-item {
-  color: darken($fg_color,10%);
-  &:hover { color: $fg_color; }
-  &:ltr { padding-right: 1em; }
-  &:rtl { padding-left: 1em; }
-}
-
-.mount-dialog-app-list-item-icon {
-  &:ltr { padding-right: 17px; }
-  &:rtl { padding-left: 17px; }
-}
-
-.mount-dialog-app-list-item-name {
-  @include fontsize($font-size * 1.1);
 }
 
 //
@@ -553,50 +487,6 @@ StScrollBar {
   }
 
   &-device-icon { icon-size: 64px; }
-}
-
-//
-// Access Dialog
-//
-.access-dialog {
-  spacing: 0;
-  .modal-dialog-content-box { padding-bottom: 30px; }
-}
-
-//
-// Geolocation Dialog
-//
-.geolocation-dialog {
-  spacing: 0;
-  .modal-dialog-content-box { padding-bottom: 30px; }
-}
-
-//
-// Extension Dialog
-//
-.extension-dialog {
-  .message-dialog-title { color: $fg_color; }
-}
-
-//
-// Inhibit-Shortcuts Dialog
-//
-.inhibit-shortcuts-dialog {
-  spacing: 0;
-  .modal-dialog-content-box { padding-bottom: 30px; }
-}
-
-//
-// Network Agent Dialog
-//
-.network-dialog-secret-table {
-  spacing-rows: 15px;
-  spacing-columns: 1em;
-}
-
-.keyring-dialog-control-table {
-  spacing-rows: 15px;
-  spacing-columns: 1em;
 }
 
 //
