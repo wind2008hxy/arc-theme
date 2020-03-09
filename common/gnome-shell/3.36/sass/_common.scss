@@ -288,7 +288,6 @@ StScrollBar {
     spacing: 5px;
   }
 
-  //.run-dialog-button-box { padding-top: 1em; }
   .run-dialog-label {
     font-size: 0;
   }
@@ -308,19 +307,9 @@ StScrollBar {
 //
 // Message Dialog
 //
-.message-dialog-main-layout {
-  padding: 12px 20px 0;
-  spacing: 12px;
-}
-
 .message-dialog-content {
   max-width: 28em;
   spacing: 20px;
-}
-
-.message-dialog-icon {
-  min-width: 48px;
-  icon-size: 48px;
 }
 
 .message-dialog-title {
@@ -493,11 +482,6 @@ StScrollBar {
   width: 34em;
   //border: 3px solid $_bubble_borders_color;
 
-  .message-dialog-main-layout {
-    spacing: 24px;
-    padding: 10px;
-  }
-
   .message-dialog-content {
     spacing: 16px;
   }
@@ -642,7 +626,6 @@ StScrollBar {
 // Extension Dialog
 //
 .extension-dialog {
-  .message-dialog-main-layout { spacing: 24px; padding: 10px; }
   .message-dialog-title { color: $fg_color; }
 }
 
