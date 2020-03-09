@@ -315,8 +315,10 @@ StScrollBar {
 //
 .run-dialog {
   .modal-dialog-content-box {
-    margin-top: 24px;
-    margin-bottom: 14px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 24px;
+    padding-bottom: 14px;
   }
 
   &-entry {
