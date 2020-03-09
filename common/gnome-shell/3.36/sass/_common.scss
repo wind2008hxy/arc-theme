@@ -308,17 +308,19 @@ StScrollBar {
 // Message Dialog
 //
 .message-dialog-content {
-  max-width: 28em;
-  spacing: 20px;
-}
+  spacing: 18px;
 
-.message-dialog-title {
-  font-weight: bold;
-}
+  .message-dialog-title {
+    text-align: center;
+    font-size: 18pt;
+    font-weight: 800;
 
-.message-dialog-subtitle {
-  color: $fg_color;
-  font-weight: bold;
+    &.leightweight {
+      font-size: 13pt;
+      font-weight: 800;
+    }
+  }
+  .message-dialog-description { text-align: center; }
 }
 
 //
