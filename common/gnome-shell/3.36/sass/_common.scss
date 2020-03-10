@@ -512,25 +512,19 @@ StScrollBar {
 // Polkit Dialog
 //
 .polkit-dialog-user {
-
   &-layout {
-    padding-left: 10px;
-    spacing: 10px;
-    &:rtl {
-      padding-left: 0px;
-      padding-right: 10px;
-    }
+    text-align: center;
+    spacing: 8px;
+    margin-bottom: 6px;
   }
 
-  &-root-label {
-    color: $warning_color;
-  }
-
-  &-icon {
+  &-layout &-icon {
     border-radius: 99px;
     background-size: contain;
-    width: 48px;
-    height: 48px;
+  }
+
+  &-layout &-root-label {
+    color: $warning_color;
   }
 }
 
