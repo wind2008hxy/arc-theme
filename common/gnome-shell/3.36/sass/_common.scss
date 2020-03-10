@@ -458,62 +458,43 @@ StScrollBar {
 // Password or Authentication Dialog
 //
 .prompt-dialog {
-  //this is the width of the entire modal popup
-  width: 34em;
-  //border: 3px solid $_bubble_borders_color;
+  width: 28em;
 
-  .message-dialog-content {
-    spacing: 16px;
+  .modal-dialog-content-box {
+    margin-bottom: 24px;
   }
 
-  .message-dialog-title {
-    @include fontsize($font-size * 1.3);
-    font-weight: bold;
-    color: $fg_color;
+  &-password-grid {
+    spacing-rows: 8px;
+    spacing-columns: 4px;
   }
 
-  &-description:rtl {
-    text-align: right;
+  &-password-grid &-password-entry {
+    width: auto;
+
+    // 4px (spacing) + 16px (spinner-width)
+    &:ltr { margin-left: 20px; }
+    &:rtl { margin-right: 20px; }
   }
 
-  &-password-box {
-    spacing: 1em;
-    padding-bottom: 1em;
+  &-password-layout {
+    spacing: 8px;
+  }
+
+  &-password-entry {
+    width: 20em;
+  }
+
+  &-error-label,
+  &-info-label,
+  &-null-label {
+    text-align: center;
+    @include fontsize($font-size);
   }
 
   &-error-label {
-    @include fontsize($font-size);
     color: $warning_color;
-    padding-bottom: 8px;
   }
-
-  &-info-label {
-    @include fontsize($font-size);
-    padding-bottom: 8px;
-  }
-
-  &-null-label {
-    @include fontsize($font-size);
-    padding-bottom: 8px;
-  }
-
-  &-pim-box {
-    spacing: 1em;
-  }
-
-  &-grid {
-    spacing-rows: 15px;
-    spacing-columns: 1em;
-  }
-
-  &-keyfiles-box {
-    spacing: 1em;
-  }
-
-  &-button.button {
-    padding: 8px;
-  }
-
 }
 
 .hidden {
