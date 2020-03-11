@@ -1029,6 +1029,16 @@ StScrollBar {
   padding-right: .4em;
 }
 
+.calendar,
+.datemenu-today-button,
+.world-clocks-button,
+.weather-button,
+.events-section-title {
+  box-shadow: none;
+  background: transparent;
+  border: none;
+}
+
 .datemenu-today-button,
 .world-clocks-button,
 .weather-button,
