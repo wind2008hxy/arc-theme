@@ -1564,11 +1564,17 @@ StScrollBar {
     padding: 7px 9px;
   }
 
+  .search-entry-icon,
+  .hint-text {
+    color: $fg_color;
+  }
+
   .search-entry-icon {
     icon-size: 16px;
     padding: 0 4px;
-    color: $fg_color;
   }
+
+  .hint-text { margin-left: 0; }
 
   &:hover, &:focus {
     color: $selected_fg_color;
@@ -1578,7 +1584,10 @@ StScrollBar {
     selection-background-color: $selected_fg_color;
     selected-color: $selected_bg_color;
 
-    .search-entry-icon { color: $selected_fg_color; }
+    .search-entry-icon,
+    .hint-text {
+      color: $selected_fg_color;
+    }
   }
 }
 
