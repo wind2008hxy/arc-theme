@@ -914,6 +914,7 @@ StScrollBar {
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
 
     &.clock-display {
+      & .clock { box-shadow: none; }
       & StIcon {
         color: $selected_bg_color;
         margin-left: .3em;
