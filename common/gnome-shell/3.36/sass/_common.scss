@@ -1544,6 +1544,9 @@ StScrollBar {
   background-color: $selected_bg_color;
   border-radius: 2px;
   padding: 4px 12px;
+  border-width: 0;
+  @include fontsize($font-size);
+  font-weight: normal;
 }
 
 //
