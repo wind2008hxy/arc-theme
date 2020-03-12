@@ -1684,6 +1684,7 @@ StScrollBar {
   border: 0;
   text-align: center;
   -x-offset: 3px;
+  box-shadow: none;
 
   .bottom &, .top & {
     -y-offset: 3px;
