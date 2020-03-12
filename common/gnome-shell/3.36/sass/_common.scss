@@ -913,9 +913,14 @@ StScrollBar {
 
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
 
-    &.clock-display StIcon {
-      color: $selected_bg_color;
-      margin-left: .3em;
+    &.clock-display {
+      & StIcon {
+        color: $selected_bg_color;
+        margin-left: .3em;
+      }
+      &:active, &:overview, &:focus, &:checked {
+        & StIcon { color: $selected_fg_color; }
+      }
     }
   }
 
