@@ -509,6 +509,7 @@ StScrollBar {
     padding-bottom: 1px;
     background-color: $_popup_submenu_background_color;
     box-shadow: inset 0 -1px $_popup_submenu_border_color;
+    border: none;
   }
 
   .popup-menu-content { padding: .7em 0em .7em 0em; }
