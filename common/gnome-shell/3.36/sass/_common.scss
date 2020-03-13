@@ -1353,6 +1353,7 @@ StScrollBar {
 .message-media-control {
   padding: 12px;
   color: $fg_color;
+  background-color: transparent;
 
   &:last-child:ltr { padding-right: 18px; }
   &:last-child:rtl { padding-left: 18px; }
