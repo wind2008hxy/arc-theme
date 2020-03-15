@@ -2254,7 +2254,6 @@ StScrollBar {
 
   &.default-key {
     background-color: darken($osd_button_bg, 13%);
-    background-size: 20px;
 
     &:hover { background-color: darken($osd_button_bg, 5%); }
     &:active, &:checked { @include button(osd-active); }
@@ -2262,31 +2261,22 @@ StScrollBar {
 
   &.enter-key {
     @include button(osd-active);
-    background-image: url("common-assets/key/key-enter.svg");
 
     &:hover { background-color: darken($selected_bg_color, 5%); }
     &:active, &:checked { @include button(osd-active); }
   }
 
-  &.shift-key-lowercase {
-    background-image: url("#{$asset_path}/key/key-shift.svg");
+  &.shift-key-lowercase {}
+  &.shift-key-uppercase,
+  &.shift-key-uppercase:latched  {
+    color: $selected_bg_color;
   }
-  &.shift-key-uppercase {
-    background-image: url("common-assets/key/key-shift-uppercase.svg");
-  }
-  &.shift-key-uppercase:latched {
-    background-image: url("common-assets/key/key-shift-latched-uppercase.svg");
-  }
-  &.hide-key {
-    background-image: url("#{$asset_path}/key/key-hide.svg");
-
-    &:active, &:checked { background-image: url("common-assets/key/key-hide-active.svg"); }
-  }
+  &.hide-key,
   &.layout-key {
-    background-image: url("#{$asset_path}/key/key-layout.svg");
-
-    &:active, &:checked { background-image: url("common-assets/key/key-layout-active.svg"); }
+    &:active, &:checked { color: $selected_fg_color; }
   }
+
+  StIcon { icon-size: 1.125em; }
 }                             
 
 .keyboard-subkeys { //long press on a key popup
