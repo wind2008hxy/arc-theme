@@ -127,7 +127,7 @@ label {
   &:disabled {
     color: $insensitive_fg_color;
 
-    selection { @extend %selected_items:disabled; }
+    selection { @extend %selected_items_disabled; }
   }
 }
 
@@ -336,6 +336,7 @@ button {
 
   separator { margin: 4px 1px; }
 
+  @at-root %button_basic_flat,
   &.flat {
     @include button(undecorated);
     // to avoid adiacent buttons borders clashing when transitioning, the transition on the normal state is set
@@ -371,6 +372,7 @@ button {
   &:active:hover, &:checked { color: $selected_fg_color; }
   //Webkitgtk workaround end
 
+  @at-root %button_basic_flat,
   &.flat:disabled { @include button(undecorated); }
 
   &:disabled {
@@ -417,6 +419,7 @@ button {
     &.popup { padding-right: 7px; padding-left: 7px; }
   }
 
+  @at-root %button_basic_drop_active,
   &:drop(active) {
     color: $drop_target_color;
     border-color: $drop_target_color;
@@ -583,9 +586,9 @@ button {
 // More inline toolbar buttons
 toolbar.inline-toolbar toolbutton {
   & > button.flat { @extend %linked_middle; }
-  &:first-child > button.flat { @extend %linked:first-child; }
-  &:last-child > button.flat { @extend %linked:last-child; }
-  &:only-child > button.flat { @extend %linked:only-child; }
+  &:first-child > button.flat { @extend %linked_left; }
+  &:last-child > button.flat { @extend %linked_right; }
+  &:only-child > button.flat { @extend %linked_only_child; }
 }
 
 // Some crazy linking stuff
@@ -696,16 +699,17 @@ toolbar.inline-toolbar toolbutton {
   border-right-style: solid;
 }
 
+%linked_only_child {
+  border-radius: 3px;
+  border-style: solid;
+}
+
 %linked {
   @extend %linked_middle;
 
   &:first-child { @extend %linked_left; }
   &:last-child { @extend %linked_right; }
-
-  &:only-child {
-    border-radius: 3px;
-    border-style: solid;
-  }
+  &:only-child { @extend %linked_only_child; }
 }
 
 // Other widgets let CSS give the order, so 1st/last child are at text start/end
@@ -722,10 +726,7 @@ toolbar.inline-toolbar toolbutton {
     &:last-child { @extend %linked_left; }
   }
 
-  &:only-child {
-    border-radius: 3px;
-    border-style: solid;
-  }
+  &:only-child { @extend %linked_only_child; }
 }
 
 %linked_vertical_middle {
@@ -733,21 +734,28 @@ toolbar.inline-toolbar toolbutton {
   border-bottom-style: none;
 }
 
+%linked_vertical_top {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+}
+
+%linked_vertical_bottom {
+  border-bottom-left-radius: 3px;
+  border-bottom-right-radius: 3px;
+  border-style: solid;
+}
+
+%linked_vertical_only_child {
+  border-radius: 3px;
+  border-style: solid;
+}
+
 %linked_vertical{
   @extend %linked_vertical_middle;
-  &:first-child {
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
-  }
-  &:last-child {
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
-    border-bottom-style: solid;
-  }
-  &:only-child {
-    border-radius: 3px;
-    border-style: solid;
-  }
+
+  &:first-child { @extend %linked_vertical_top; }
+  &:last-child { @extend %linked_vertical_bottom; }
+  &:only-child { @extend %linked_vertical_only_child; }
 }
 
 %undecorated_button {
@@ -813,7 +821,7 @@ modelbutton.flat arrow {
 
 button:link, button:visited {
   @extend %undecorated_button;
-  @extend *:link;
+  @extend %link;
 
   &:hover, &:active, &:checked {
     @extend %undecorated_button;
@@ -902,7 +910,7 @@ combobox {
     min-width: 16px;
   }
 
-  &:drop(active) button.combo { @extend button:drop(active); }
+  &:drop(active) button.combo { @extend %button_basic_drop_active; }
 
   .linked:not(.vertical) > & > box > button.combo {
     // the combobox is a composite widget so the way we do button linking doesn't
@@ -911,14 +919,14 @@ combobox {
     &:dir(rtl) { @extend %linked_middle; } // specificity bump
   }
 
-  .linked:not(.vertical) > &:first-child > box > button.combo { @extend %linked:first-child; }
-  .linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked:last-child; }
-  .linked:not(.vertical) > &:only-child > box > button.combo { @extend %linked:only-child; }
+  .linked:not(.vertical) > &:first-child > box > button.combo { @extend %linked_left; }
+  .linked:not(.vertical) > &:last-child > box > button.combo { @extend %linked_right; }
+  .linked:not(.vertical) > &:only-child > box > button.combo { @extend %linked_only_child; }
 
   .linked.vertical > & > box > button.combo { @extend %linked_vertical_middle; }
-  .linked.vertical > &:first-child > box > button.combo { @extend %linked_vertical:first-child; }
-  .linked.vertical > &:last-child > box > button.combo { @extend %linked_vertical:last-child; }
-  .linked.vertical > &:only-child > box > button.combo { @extend %linked_vertical:only-child; }
+  .linked.vertical > &:first-child > box > button.combo { @extend %linked_vertical_top; }
+  .linked.vertical > &:last-child > box > button.combo { @extend %linked_vertical_bottom; }
+  .linked.vertical > &:only-child > box > button.combo { @extend %linked_vertical_only_child; }
 }
 
 //
@@ -1063,7 +1071,7 @@ headerbar,
       color: transparentize($selection_mode_fg, 0.4);
     }
 
-    .subtitle:link { @extend *:link:selected;  }
+    .subtitle:link { @extend %link_selected; }
 
     .selection-menu {
       box-shadow: none;
@@ -1752,7 +1760,11 @@ popover.background {
   .csd &, & { border: 1px solid darken($borders_color, 5%); }
 
   & separator { background-color: $_popover_bg; }
-  label.separator { @extend label.separator; } // Noice
+  label.separator {
+    @extend .dim-label;
+
+    color: $fg_color;
+  }
 
   > list,
   > .view,
@@ -2747,7 +2759,7 @@ placessidebar {
       margin-top: 2px;
       margin-bottom: 2px;
       padding: 0;
-      @extend button.flat;
+      @extend %button_basic_flat;
       border-radius: 100%;
       -gtk-outline-radius: 100%;
 
@@ -3239,6 +3251,7 @@ headerbar,
   @at-root %nobg_selected_items, & {
     color: $selected_fg_color;
 
+    @at-root %selected_items_disabled,
     &:disabled { color: mix($selected_fg_color, $selected_bg_color, 50%); }
   }
 }
