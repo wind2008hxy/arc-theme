@@ -1280,12 +1280,12 @@ headerbar {
       background-color: transparentize($selection_mode_fg, 1);
     }
     &:hover { @extend %selected_button_normal; }
-    &:active, &:checked { @extend %selected_button:active; }
+    &:active, &:checked { @extend %selected_button_active; }
 
     &:disabled {
-      @extend %selected_button.flat:disabled;
+      @extend %selected_button_flat_disabled;
 
-      &:checked, &:active { @extend %selected_button:disabled:checked; }
+      &:checked, &:active { @extend %selected_button_disabled_active; }
     }
   }
 
@@ -2953,6 +2953,7 @@ infobar {
     color: $selected_fg_color;
     background-color: transparentize($selected_fg_color, 1);
 
+    @at-root %selected_button_flat_disabled,
     &:disabled {
       &, label { color: transparentize($selected_fg_color, 0.6); }
     }
@@ -2962,6 +2963,7 @@ infobar {
     background-color: transparentize($selected_fg_color, 0.8);
     border-color: transparentize($selected_fg_color, 0.2);
   }
+  @at-root %selected_button_active,
   &:active, &:active:hover, &:checked {
     color: $selected_bg_color;
     background-color: $selected_fg_color;
@@ -2972,6 +2974,7 @@ infobar {
     background-color: transparentize($selected_fg_color, 1);
     border-color: transparentize($selected_fg_color, 0.6);
 
+    @at-root %selected_button_disabled_active,
     &:active, &:checked {
       color: $selected_bg_color;
       background-color: transparentize($selected_fg_color, 0.5);
