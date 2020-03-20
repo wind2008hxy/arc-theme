@@ -1279,13 +1279,13 @@ headerbar {
       color: $selection_mode_fg;
       background-color: transparentize($selection_mode_fg, 1);
     }
-    &:hover { @extend %normal_selected_button; }
-    &:active, &:checked { @extend %selected-button:active; }
+    &:hover { @extend %selected_button_normal; }
+    &:active, &:checked { @extend %selected_button:active; }
 
     &:disabled {
-      @extend %selected-button.flat:disabled;
+      @extend %selected_button.flat:disabled;
 
-      &:checked, &:active { @extend %selected-button:disabled:checked; }
+      &:checked, &:active { @extend %selected_button:disabled:checked; }
     }
   }
 
@@ -2553,7 +2553,7 @@ row {
   &:selected {
     @extend %selected_items;
 
-    button { @extend %selected-button; }
+    button { @extend %selected_button; }
   }
 
   &.activatable {
@@ -2926,7 +2926,7 @@ infobar {
     color: $selected_fg_color;
     caret-color: currentColor;
 
-    button { @extend %selected-button }
+    button { @extend %selected_button }
 
     selection {
       color: $selected_bg_color;
@@ -2940,9 +2940,9 @@ infobar {
 //
 // Buttons on selected backgrounds
 //
-%selected-button {
+%selected_button {
 
-  @at-root %normal_selected_button, & {
+  @at-root %selected_button_normal, & {
     color: $selected_fg_color;
     background-color: transparentize($selected_fg_color, 1);
     border-color: transparentize($selected_fg_color, 0.5);
