@@ -35,6 +35,7 @@ terminal-window,
   border-radius: 2px;
 }
 
+%nautilus_canvas_item,
 .nautilus-desktop.nautilus-canvas-item {
   color: white;
   text-shadow: 1px 1px transparentize(black, 0.4);
@@ -185,7 +186,7 @@ sushi-media-bin box.overlay-bar { @extend %osd; }
 //
 // Nemo
 //
-.nemo-desktop.nemo-canvas-item { @extend .nautilus-desktop.nautilus-canvas-item; }
+.nemo-desktop.nemo-canvas-item { @extend %nautilus_canvas_item; }
 
 .nemo-window {
 
@@ -272,7 +273,7 @@ sushi-media-bin box.overlay-bar { @extend %osd; }
 //
 // Caja
 //
-.caja-desktop { @extend .nautilus-desktop.nautilus-canvas-item; }
+.caja-desktop { @extend %nautilus_canvas_item; }
 
 .caja-notebook { border-top: 1px solid $borders_color; }
 .caja-side-pane .frame { border-width: 1px 0 0; }
