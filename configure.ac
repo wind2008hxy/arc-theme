@@ -41,7 +41,10 @@ AS_IF([test "x$ENABLE_TRANSPARENCY" != xno], [
 ])
 
 AS_IF([test "x$ENABLE_GTK3" != xno], [ARC_GTK3])
-AS_IF([test "x$ENABLE_GNOME_SHELL" != xno], [ARC_GNOME_SHELL])
+AS_IF([test "x$ENABLE_GNOME_SHELL" != xno],
+    [ARC_GNOME_SHELL]
+    [GNOME_SHELL_VERSMNR=`echo $GNOME_SHELL_VERSION | cut -d. -f2`])
+AM_CONDITIONAL([GNOME_SHELL_3_32_OR_NEWER], [test "0$GNOME_SHELL_VERSMNR" -ge 31])
 AS_IF([test "x$ENABLE_CINNAMON" != xno], [ARC_CINNAMON])
 
 AS_IF([test "x$ENABLE_GTK2" != xno -o "x$ENABLE_GTK3" != xno -o "x$ENABLE_XFWM" != xno], [
