@@ -988,7 +988,8 @@ StScrollBar {
 
 .aggregate-menu {
   min-width: 23.5em;
-  .popup-menu-icon { padding: 0 4px;
+  .popup-menu-icon { padding: 0;
+                     margin: 0 4px;
                      -st-icon-style: symbolic; }
   .popup-sub-menu .popup-menu-item > :first-child {
     &:ltr { /* 12px spacing + 2*4px padding + 16px icon */
