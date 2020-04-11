@@ -41,9 +41,12 @@ Arc comes with themes for the following:
 
 #### Packages
 
-Distro | Link | Notes
+Distribution | Package name | Notes
 -------|-------|-------
 Arch Linux | [arc-gtk-theme-jnsh-git](https://aur.archlinux.org/packages/arc-gtk-theme-jnsh-git/) | [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) package
+Debian (bullseye) | [arc-theme](https://packages.debian.org/bullseye/arc-theme) | 
+
+***Note:*** Other Arc Theme distribution packages are not necessarily built from this repository.
 
 #### Manual installation
 
