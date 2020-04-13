@@ -1046,6 +1046,7 @@ StScrollBar {
   background: transparent;
   border: none;
   color: inherit;
+  text-shadow: none;
 }
 
 .datemenu-today-button,
@@ -1289,6 +1290,7 @@ StScrollBar {
   border: 1px solid $shell_message_border_color;
   border-radius: 2px;
   box-shadow: inset 4px 0 0 if($variant!='dark', -1px, -2px) $selected_bg_color;
+  text-shadow: none;
 
   &:hover, &:focus {
     color: $fg_color;
