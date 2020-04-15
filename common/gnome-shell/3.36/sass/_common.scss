@@ -1936,6 +1936,10 @@ StScrollBar {
   > .overview-icon {
     background-color: darken($dark_sidebar_bg, 8%);
     border: 1px solid transparentize(darken($dark_sidebar_bg, 25%), 0.5);
+
+    @if $variant == 'lighter' {
+      color: $dark_sidebar_fg;
+    }
   }
 
   &:hover > .overview-icon, &:focus > .overview-icon {
@@ -1987,6 +1991,12 @@ StScrollBar {
   padding: 12px;
   width: 800px;
   height: 600px;
+
+  @if $variant == 'lighter' {
+    .overview-icon {
+      color: $dark_sidebar_fg;
+    }
+  }
 }
 
 .app-folder-icon {

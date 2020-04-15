@@ -2019,6 +2019,10 @@ StScrollBar {
   > .overview-icon {
     background-color: darken($dark_sidebar_bg, 8%);
     border: 1px solid transparentize(darken($dark_sidebar_bg, 25%), 0.5);
+
+    @if $variant == 'lighter' {
+      color: $dark_sidebar_fg;
+    }
   }
 
   &:hover > .overview-icon, &:focus > .overview-icon {
@@ -2046,6 +2050,12 @@ StScrollBar {
   padding: 5px;
   spacing-rows: 5px;
   spacing-columns: 5px;
+}
+
+@if $variant == 'lighter' {
+  .app-folder-popup-bin .overview-icon {
+    color: $dark_sidebar_fg;
+  }
 }
 
 .page-indicator {
