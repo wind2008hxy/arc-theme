@@ -1818,7 +1818,7 @@ StScrollBar {
   .top &, .bottom & { padding: 0; }
 
   .placeholder {
-    background-image: url("common-assets/dash/dash-placeholder.svg");
+    background-image: none;
     background-size: contain;
     height: 24px;
   }
