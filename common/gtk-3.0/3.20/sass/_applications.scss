@@ -775,6 +775,15 @@ panel-toplevel.background {
   }
 }
 
+//
+// xfce4-notifyd
+//
+#XfceNotifyWindow {
+  @extend %osd;
+
+  border-radius: 2px;
+}
+
 // Elementary Apps
 
 //
