@@ -843,6 +843,14 @@ panel-toplevel.background {
   @extend %osd;
 
   border-radius: 2px;
+
+  button {
+    @include button(osd);
+
+    &:hover { @include button(osd-hover); }
+    &:active, &:checked { @include button(osd-active); }
+    &:disabled { @include button(osd-insensitive); }
+  }
 }
 
 // Elementary Apps
