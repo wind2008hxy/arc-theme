@@ -1281,7 +1281,10 @@ StScrollBar {
   background-image: url("common-assets/misc/calendar-today.svg");
 }
 
-.calendar-today.calendar-day-with-events { color: $selected_fg_color; }
+.calendar-today.calendar-day-with-events {
+  color: $selected_fg_color;
+  background-image: url("common-assets/misc/calendar-today-active.svg");
+}
 
 .calendar-other-month-day {
   color: transparentize($fg_color, 0.7);

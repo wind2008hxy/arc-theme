@@ -1166,6 +1166,10 @@ StScrollBar {
   .calendar-day-with-events {
     font-weight: bold;
     background-image: url("common-assets/misc/calendar-today.svg");
+
+    &.calendar-today {
+      background-image: url("common-assets/misc/calendar-today-active.svg");
+    }
   }
 
   .calendar-other-month-day {
