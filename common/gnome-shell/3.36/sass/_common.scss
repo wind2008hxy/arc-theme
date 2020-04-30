@@ -1182,6 +1182,9 @@ StScrollBar {
     margin: 6px;
     background-color: if($variant!='dark', transparentize($fg_color,0.9), transparentize($fg_color,0.7));
     color: if($variant!='dark', transparentize($fg_color,0.5), $bg_color);
+
+    &:ltr { margin-left: 10px; }
+    &:rtl { margin-right: 10px; }
   }
 }
 
