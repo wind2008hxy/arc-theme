@@ -1291,6 +1291,8 @@ StScrollBar {
     StIcon { width: 0; height: 0; }
     StLabel { color: $insensitive_fg_color; }
   }
+
+  StScrollBar { padding: 2px 0; }
 }
 
 .message-list-sections {
