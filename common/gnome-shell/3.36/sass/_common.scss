@@ -1432,6 +1432,11 @@ StScrollBar {
   }
 }
 
+// URLs in messages
+.url-highlighter {
+  link-color: $link_color;
+}
+
 /* Media Controls */
 .message-media-control {
   padding: 12px;
@@ -2159,7 +2164,6 @@ StScrollBar {
 //
 // Notifications & Message Tray
 //
-.url-highlighter { link-color: $link_color; }
 
 // Banners
 .notification-banner,
