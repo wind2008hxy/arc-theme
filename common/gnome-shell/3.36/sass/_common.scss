@@ -925,7 +925,7 @@ StScrollBar {
         @extend .panel-button;
 
         box-shadow: none;
-        padding: 0 10px;
+        padding: 1px 10px 0;
       }
 
       &:hover .clock { @extend %panel_button_hover; }
