@@ -675,16 +675,10 @@ StScrollBar {
     border-radius: 2px;
     border: 1px solid transparent;
 
-    &:outlined {
-      padding: 8px;
-      border: 1px solid $selected_bg_color;
-    }
-
-    &:selected {
+    &:outlined, &:selected {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
       border: 1px solid $selected_bg_color;
-
     }
   }
 
