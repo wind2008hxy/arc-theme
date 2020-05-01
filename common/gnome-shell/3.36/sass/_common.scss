@@ -892,6 +892,7 @@ StScrollBar {
       icon-shadow: none;
     }
 
+    @at-root %panel_button_hover,
     &:hover {
       color: $_panel_fg_color;
       background-color: if($variant!='lighter', transparentize(black, 0.83), transparentize(black, 0.95));
@@ -899,6 +900,7 @@ StScrollBar {
       border-color: transparent;
     }
 
+    @at-root %panel_button_active,
     &:active, &:overview, &:focus, &:checked {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
@@ -915,13 +917,26 @@ StScrollBar {
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
 
     &.clock-display {
-      & .clock { box-shadow: none; }
-      & StIcon {
-        color: $selected_bg_color;
-        margin-left: .3em;
+      // Move highlight from .panel-button to .clock
+      background: transparent;
+      border-bottom-width: 0;
+
+      .clock {
+        @extend .panel-button;
+
+        box-shadow: none;
+        padding: 0 10px;
       }
+
+      &:hover .clock { @extend %panel_button_hover; }
+
       &:active, &:overview, &:focus, &:checked {
-        & StIcon { color: $selected_fg_color; }
+        .clock { @extend %panel_button_active; }
+      }
+
+      & StIcon {
+        color: $_panel_fg_color;
+        margin: 0 4px;
       }
     }
   }
