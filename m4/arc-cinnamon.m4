@@ -36,8 +36,8 @@ AC_DEFUN([ARC_CINNAMON], [
 
     # Evenize the minor version for stable versions
     AS_IF(
-        [test "0$CINNAMON_VERSMJR" -eq 4 -a "0$CINNAMON_VERSMNR" -ge 0], [CINNAMON_VERSION=4.0],
-        [test "0$CINNAMON_VERSMJR" -ge 4], [CINNAMON_VERSION=4.0],
+        [test "0$CINNAMON_VERSMJR" -eq 4 -a "0$CINNAMON_VERSMNR" -ge 2], [CINNAMON_VERSION=4.2],
+        [test "0$CINNAMON_VERSMJR" -ge 4], [CINNAMON_VERSION=4.2],
         [test `expr $CINNAMON_VERSMNR % 2` != "0"],
         [CINNAMON_VERSION="$CINNAMON_VERSMJR.`expr $CINNAMON_VERSMNR + 1`"]
     )
