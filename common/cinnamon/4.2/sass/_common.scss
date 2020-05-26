@@ -1502,6 +1502,25 @@ StScrollBar {
 }
 
 //
+// Spacer applet
+//
+.spacer-box {
+  border-radius: 1px;
+  border: 1px solid transparent;
+
+  &:highlight {
+    background-color: #aa5555;
+  }
+
+  &.vertical {}
+
+  &.edit-mode {
+    border-radius: 1px;
+    border: 1px symbolic;
+  }
+}
+
+//
 // Workspace Switcher applet (workspaceSwitcher.js)
 //
 /* Controls the styling when using the "Simple buttons" option */
