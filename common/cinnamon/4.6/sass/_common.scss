@@ -3,14 +3,12 @@ $asset_path: if($variant == 'dark', dark-assets, light-assets);
 //
 // Globals
 //
-$font-size: 9;
 $_bubble_bg_color: opacify($osd_bg_color,0.25);
 $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
 $_shell_fg_color: white;
 
 stage {
-  @include fontsize($font-size);
   color: $fg_color;
 }
 
@@ -460,7 +458,7 @@ StScrollBar {
   padding: .5em .7em;
   spacing: .5em;
   border-radius: 2px;
-  font-size: 9pt;
+  font-size: 1em;
   -cinnamon-caption-spacing: 8px;
   max-width: 20em;
 
@@ -490,7 +488,7 @@ StScrollBar {
 .expo-workspaces-name-entry {
   height: 1.4em;
   border-radius: 2px;
-  font-size: 9pt;
+  font-size: 1em;
   padding: 5px 8px;
   -cinnamon-caption-spacing: 4px;
   transition-duration: 300;
@@ -605,7 +603,7 @@ StScrollBar {
     font-weight: bold;
   }
   &-uuid {
-    font-size: 10px;
+    font-size: 1.1em;
     color: #888;
   }
   &-icon {
@@ -631,7 +629,7 @@ StScrollBar {
   }
   &-version {
     padding-left: 7px;
-    font-size: 10px;
+    font-size: 1.1em;
     color: #888;
   }
 }
@@ -701,7 +699,7 @@ StScrollBar {
 }
 
 .calendar-day-base {
-  font-size: 8pt;
+  font-size: 0.9em;
   text-align: center;
   width: 2.5em;
   height: 2.5em;
@@ -713,7 +711,7 @@ StScrollBar {
 .calendar-day-heading {
   color: transparentize($fg_color, 0.15);
   margin-top: 1em;
-  font-size: 6pt;
+  font-size: 0.7em;
   width: 2.5em;
   height: 2em;
 }
@@ -755,7 +753,7 @@ StScrollBar {
 
 .calendar-week-number {
   color: transparentize($fg_color, 0.3);
-  font-size: 6pt;
+  font-size: 0.7em;
   width: 2.5em;
   height: 2em;
   padding: 1.2em 0 0;
@@ -978,7 +976,7 @@ StScrollBar {
   }
   &-completion-box {
     padding-left: 15px;
-    font-size: 10px;
+    font-size: 1.1em;
   }
   &-entry {
     width: 21em;
@@ -1032,7 +1030,7 @@ StScrollBar {
 .keyboard-key {
   min-height: 2em;
   min-width: 2em;
-  font-size: 14pt;
+  font-size: 1.5em;
   font-weight: bold;
   border-radius: 3px;
   box-shadow: none;
@@ -1282,7 +1280,7 @@ StScrollBar {
     border: none;
     border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
     border-radius: 3px;
-    font-size: 9pt;
+    font-size: 1em;
     color: $osd_fg_color;
     text-shadow: none;
     padding: 14px;
@@ -1301,7 +1299,7 @@ StScrollBar {
   &-number-label {
     z-index: 99;
     text-shadow: none;
-    font-size: 10px;
+    font-size: 1.1em;
     color: $osd_fg_color;
     padding: 0;
   }
