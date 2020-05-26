@@ -1541,6 +1541,7 @@ StScrollBar {
 
   &:outlined, &:outlined:hover { color: $selected_bg_color; }
   &:hover { color: transparentize($selected_bg_color, 0.5) }
+  &:shaded { color: transparentize($_shell_fg_color, 0.4); }
 
   .vertical & { padding: 4px 0; }
 }
