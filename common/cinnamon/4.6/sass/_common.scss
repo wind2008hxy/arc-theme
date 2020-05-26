@@ -946,6 +946,14 @@ StScrollBar {
   }
 }
 
+.workspace-osd {
+  text-align: center;
+  font-weight: bold;
+  padding: 16px;
+  color: $_shell_fg_color;
+  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
+}
+
 //
 // Run dialog
 //
@@ -1702,18 +1710,6 @@ StScrollBar {
   color: $osd_fg_color;
   padding: 12px;
   padding-bottom: 16px;
-}
-
-//
-// Workspace OSD
-//
-.workspace-osd {
-  text-align: center;
-  font-weight: bold;
-  spacing: 1em;
-  padding: 16px;
-  color: $_shell_fg_color;
-  border-image: url("common-assets/misc/osd.svg") 9 9 9 9;
 }
 
 //
