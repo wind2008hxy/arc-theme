@@ -993,63 +993,6 @@ StScrollBar {
   }
 }
 
-/* CinnamonMountOperation Dialogs */
-.cinnamon-mount-operation-icon {
-  icon-size: 48px;
-}
-
-.mount-password-reask {
-  color: $warning_color;
-}
-
-.show-processes-dialog,
-.mount-question-dialog {
-  spacing: 24px;
-
-  &-subject {
-    padding-top: 10px;
-    padding-left: 17px;
-    padding-bottom: 6px;
-
-    &:rtl {
-      padding-left: 0px;
-      padding-right: 17px;
-    }
-  }
-  &-description {
-    padding-left: 17px;
-    width: 28em;
-
-    &:rtl { padding-right: 17px; }
-  }
-}
-
-.show-processes-dialog-app-list {
-  max-height: 200px;
-  padding-top: 24px;
-  padding-left: 49px;
-  padding-right: 32px;
-
-  &:rtl {
-    padding-right: 49px;
-    padding-left: 32px;
-  }
-
-  &-item {
-    color: #ccc;
-
-    &:hover { color: white }
-
-    &:ltr { padding-right: 1em; }
-    &:rtl { padding-left: 1em; }
-
-    &-icon:ltr { padding-right: 17px; }
-    &-icon:rtl { padding-left: 17px; }
-
-    &-name { font-size: 1.1em; }
-  }
-}
-
 //
 // Magnifier
 //
