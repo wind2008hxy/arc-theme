@@ -2735,3 +2735,16 @@ StScrollBar {
   color: $_shell_fg_color;
   padding: 6px;
 }
+
+//
+// OpenWeather extension
+//
+.openweather-current-summarybox,
+.openweather-forecast-icon,
+.openweather-current-databox-captions,
+.openweather-current-databox-values,
+.openweather-current-icon,
+.openweather-forecast-summary,
+.openweather-forecast-temperature {
+  color: $fg_color;
+}
