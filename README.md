@@ -43,7 +43,8 @@ Arc comes with themes for the following:
 
 Distribution | Package name | Notes
 -------|-------|-------
-Arch Linux | [arc-gtk-theme-jnsh-git](https://aur.archlinux.org/packages/arc-gtk-theme-jnsh-git/) | [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) package
+Arch Linux | [arc-gtk-theme](https://www.archlinux.org/packages/community/any/arc-gtk-theme/) | 
+Arch Linux | [arc-gtk-theme-git](https://aur.archlinux.org/packages/arc-gtk-theme-git/) | latest git version, [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) package
 Debian | [arc-theme](https://packages.debian.org/bullseye/arc-theme) | *bullseye* and newer
 Gentoo | [arc-theme](https://packages.gentoo.org/packages/x11-themes/arc-theme) | 
 NixOS | [arc-theme](https://nixos.org/nixos/packages.html?attr=arc-theme&channel=nixpkgs-unstable) | `nixpkgs-unstable` channel
