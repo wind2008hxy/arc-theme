@@ -60,6 +60,10 @@ See [INSTALL.md](https://github.com/jnsh/arc-theme/blob/master/INSTALL.md) for b
 
 If you find a bug, or have a suggestion for improving the theme, please open an issue at <https://github.com/jnsh/arc-theme/issues>.
 
+## Contributing
+
+If you'd like to contribute to the project, open an pull request, or an issue for discussion. See [HACKING.md](https://github.com/jnsh/arc-theme/blob/master/HACKING.md) for further details.
+
 ## License
 
 Arc is available under the terms of the GPL-3.0. See [COPYING](https://github.com/jnsh/arc-theme/blob/master/COPYING) for details.
