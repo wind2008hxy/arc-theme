@@ -22,7 +22,9 @@ if INKSCAPE_1_0_OR_NEWER
 else !INKSCAPE_1_0_OR_NEWER
 	$(INKSCAPE) --export-id-only --export-png="$@" --export-id="$(basename $(notdir $@))" --export-dpi=96 "$<" >/dev/null
 endif
+if OPTIPNG
 	$(OPTIPNG) -o7 --quiet "$@"
+endif
 
 .PHONY: light dark clean
 

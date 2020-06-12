@@ -47,9 +47,14 @@ To build the theme the following packages are required:
 
 The following packages are only required for building certain themes:
 * `sassc` for GTK 3, Cinnamon, and GNOME Shell
-* `optipng` and `inkscape` for GTK 2, GTK 3, and XFWM
+* `inkscape` for GTK 2, GTK 3, and XFWM
 
 You can avoid these dependencies by disabling support for the specific themes with build options detailed below.
+
+##### Optional build dependencies
+
+The following packages are optional, but used to optimize the built theme if available:
+* `optipng` for optimizing PNG assets for GTK 2, GTK 3, and XFWM
 
 #### Runtime dependencies
 

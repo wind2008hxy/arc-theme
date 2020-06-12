@@ -40,7 +40,9 @@ if INKSCAPE_1_0_OR_NEWER
 else !INKSCAPE_1_0_OR_NEWER
 	$(INKSCAPE) --export-id-only --export-png="$@" --export-id="$(basename $(notdir $@))" --export-dpi=96 "$<" >/dev/null
 endif
+if OPTIPNG
 	$(OPTIPNG) -o7 --quiet "$@"
+endif
 
 menubar-toolbar/%-dark.png: dark/assets/%.png | menubar-toolbar
 	cp "$<" "$@"
