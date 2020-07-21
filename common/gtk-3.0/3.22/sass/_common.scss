@@ -1172,6 +1172,15 @@ headerbar {
       .tiled & { border-radius: 0; }
     }
   }
+
+  window stack & { // tackles the stacked headerbars case
+    &:first-child, &:last-child {
+      &:backdrop, & {
+        border-top-left-radius: $_header_radius;
+        border-top-right-radius: $_header_radius;
+      }
+    }
+  }
 }
 
 // Fixes split headerbars too
