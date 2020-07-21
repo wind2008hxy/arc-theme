@@ -128,7 +128,7 @@ filechooser,
 
 filechooser {
 
-  actionbar {
+  actionbar > revealer > box {
     color: $dark_sidebar_fg;
     background-color: $dark_sidebar_bg;
     border-color: if($variant != 'dark', darken($dark_sidebar_bg, 7%), darken($dark_sidebar_bg, 15%));
