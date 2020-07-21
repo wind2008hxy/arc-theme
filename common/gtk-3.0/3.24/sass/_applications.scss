@@ -783,6 +783,11 @@ panel-toplevel.background {
   }
 }
 
+// xfce4-genmon-plugin
+.genmon_progressbar > trough {
+  background-color: if($variant == 'lighter', transparentize(black, 0.85), transparentize(black, 0.75));
+}
+
 %tasklist-button, %panelbutton {
   color: $panel_fg;
   border-radius: 0;
