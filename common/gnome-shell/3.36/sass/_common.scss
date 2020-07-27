@@ -230,7 +230,7 @@ StScrollBar {
 //
 // Modal Dialogs
 //
-.headline { font-size: 110%; }
+.headline { @include fontsize($font-size * 1.1); }
 .lightbox { background-color: black; }
 .flashspot { background-color: white; }
 
@@ -298,11 +298,11 @@ StScrollBar {
 
   .message-dialog-title {
     text-align: center;
-    font-size: 18pt;
+    @include fontsize($font-size * 2);
     font-weight: 800;
 
     &.leightweight {
-      font-size: 13pt;
+      @include fontsize($font-size * 1.44);
       font-weight: 800;
     }
   }
@@ -612,7 +612,7 @@ StScrollBar {
   color: $_panel_fg_color;
   @extend %shell_osd;
 
-  .osd-monitor-label { font-size: 3em; }
+  .osd-monitor-label { @include fontsize($font-size * 3); }
 
   .level {
     padding: 0;
@@ -1066,13 +1066,13 @@ StScrollBar {
 
   // weekday label
   .day-label {
-    font-size: 1em;
+    @include fontsize($font-size);
     font-weight: 400;
   }
 
   // date label
   .date-label {
-    font-size: 1.5em;
+    @include fontsize($font-size * 1.5);
     font-weight: 300;
   }
 }
@@ -1117,7 +1117,7 @@ StScrollBar {
   $calendar_day_size: 27px;
 
   .calendar-day-base {
-    font-size: 80%;
+    @include fontsize($font-size * 0.8);
     text-align: center;
     width: $calendar_day_size;
     height: $calendar_day_size;
@@ -1136,7 +1136,7 @@ StScrollBar {
     &.calendar-day-heading {
       color: transparentize($fg_color, 0.15);
       margin-top: 9px;
-      font-size: 70%;
+      @include fontsize($font-size * 0.7);
       height: 23px;//adjusts bottom margin
     }
   }
@@ -1186,7 +1186,7 @@ StScrollBar {
   }
 
   .calendar-week-number {
-    font-size: 70%;
+    @include fontsize($font-size * 0.7);
     font-weight: bold;
     height: 15px;
     width: 19px;
@@ -1222,7 +1222,7 @@ StScrollBar {
   // city label
   .world-clocks-city {
     color: inherit;
-    font-size: 0.9em;
+    @include fontsize($font-size * 0.9);
     font-weight: bold;
   }
 
@@ -1231,7 +1231,7 @@ StScrollBar {
     font-weight: normal;
     color: transparentize($fg_color, 0.2);
     font-feature-settings: "lnum";
-    font-size: 1.2em;
+    @include fontsize($font-size * 1.2);
     text-align: right;
   }
   &:active .world-clocks-time { color: transparentize($selected_fg_color, 0.2); }
@@ -1240,7 +1240,7 @@ StScrollBar {
   .world-clocks-timezone {
     color: transparentize($fg_color, 0.4);
     font-feature-settings: "tnum";
-    font-size: 0.9em;
+    @include fontsize($font-size * 0.9);
   }
   &:active .world-clocks-timezone { color: transparentize($selected_fg_color, 0.4); }
 }
@@ -1263,7 +1263,7 @@ StScrollBar {
 
     &.location {
       font-weight: normal;
-      font-size: 0.9em;
+      @include fontsize($font-size * 0.9);
     }
   }
   &:active .weather-header {
@@ -1278,7 +1278,7 @@ StScrollBar {
   .weather-forecast-time {
     color: transparentize($fg_color, 0.4);
     font-feature-settings: "tnum";
-    font-size: 0.8em;
+    @include fontsize($font-size * 0.8);
     font-weight: normal;
     padding-top: 2px;
     padding-bottom: 4px;
@@ -1401,7 +1401,7 @@ StScrollBar {
     // notification time stamp
     > .event-time {
       color: transparentize($fg_color, 0.4);
-      font-size: 0.9em;
+      @include fontsize($font-size * 0.9);
       text-align: right;
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
       padding-bottom: 0.05em;//Use em instead of px, since this depends on font-size
@@ -1562,7 +1562,7 @@ StScrollBar {
   &-airplane-box { spacing: 12px; }
 
   &-airplane-headline {
-    font-size: 1.1em;
+    @include fontsize($font-size * 1.1);
     font-weight: bold;
     text-align: center;
   }
@@ -1579,11 +1579,11 @@ StScrollBar {
 
   &-header {
     font-weight: bold;
-    font-size: 1.2em;
+    @include fontsize($font-size * 1.2);
   }
 
   &-item {
-    font-size: 1em;
+    @include fontsize($font-size);
     border-bottom: 0px solid;
     padding: 12px;
     spacing: 0px;
@@ -1730,7 +1730,7 @@ StScrollBar {
 // Dash
 //
 #dash {
-  font-size: 1em;
+  @include fontsize($font-size);
   color: $osd_fg_color;
   background-color: $dark_sidebar_bg;
   border: 1px solid if($variant!='lighter', rgba(0,0,0,0.4), rgba(0,0,0,0.1));
@@ -2041,7 +2041,7 @@ StScrollBar {
 
     & .folder-name-label,
     & .folder-name-entry {
-      font-size: 18pt;
+      @include fontsize($font-size * 2);
       font-weight: bold;
     }
 
@@ -2150,7 +2150,7 @@ StScrollBar {
 }
 
 %status_text {
-  font-size: 2em;
+  @include fontsize($font-size * 2);
   font-weight: bold;
   color: $fg_color;
 }
@@ -2163,7 +2163,7 @@ StScrollBar {
 .notification-banner,
 .notification-banner:hover,
 .notification-banner:focus {
-  font-size: 1em;
+  @include fontsize($font-size);
   width: 34em;
   min-height: 0;
   margin: 9px;
@@ -2223,7 +2223,7 @@ StScrollBar {
 
 .chat-meta-message {
   padding-left: 4px;
-  font-size: 9pt;
+  @include fontsize($font-size);
   font-weight: bold;
   color: transparentize($fg_color, 0.4);
 
@@ -2291,7 +2291,7 @@ StScrollBar {
 // On-Screen Keyboard
 //
 .word-suggestions {
-  font-size: 14pt;
+  @include fontsize($font-size * 1.6);
   spacing: 12px;
   min-height: 20pt;
 
@@ -2328,7 +2328,7 @@ StScrollBar {
 .keyboard-key {
   min-height: 1.2em;
   min-width: 1.2em;
-  font-size: 16pt;
+  @include fontsize($font-size * 1.8);
   border-radius: 3px;
   box-shadow: none;
 
@@ -2400,7 +2400,7 @@ StScrollBar {
   padding: 0.5em;
   spacing: 0.3em;
   color: $osd_fg_color;
-  font-size: 1.15em;
+  @include fontsize($font-size * 1.15);
 }
 
 .candidate-index {
@@ -2480,7 +2480,7 @@ StScrollBar {
   }
 }
 .login-dialog-not-listed-label {
-  font-size: 90%;
+  @include fontsize($font-size * 0.9);
   font-weight: bold;
   color: if($variant!='dark', lighten($fg_color, 20%), darken($fg_color, 30%));
   padding-top: 1em;
@@ -2510,7 +2510,7 @@ StScrollBar {
 .login-dialog-username,
 .user-widget-label {
   color: $fg_color;
-  font-size: 120%;
+  @include fontsize($font-size * 1.2);
   font-weight: bold;
   text-align: left;
   padding-left: 15px;
@@ -2531,7 +2531,7 @@ StScrollBar {
 
 .login-dialog-prompt-label {
   color: if($variant!='dark', lighten($fg_color, 10%), darken($fg_color, 20%));
-  font-size: 110%;
+  @include fontsize($font-size * 1.1);
   padding-top: 1em;
 }
 
@@ -2691,7 +2691,7 @@ StScrollBar {
 }
 
 .lg-completions-text {
-  font-size: .9em;
+  @include fontsize($font-size * 0.9);
   font-style: italic;
 }
 
