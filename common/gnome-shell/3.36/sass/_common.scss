@@ -1230,7 +1230,7 @@ StScrollBar {
   .world-clocks-time {
     font-weight: normal;
     color: transparentize($fg_color, 0.2);
-    font-feature-settings: "lnum";
+    font-feature-settings: "tnum";
     @include fontsize($font-size * 1.2);
     text-align: right;
   }
