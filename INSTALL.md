@@ -95,7 +95,6 @@ Options to pass to `autogen.sh`:
     --disable-gtk2                disable GTK 2 support
     --disable-gtk3                disable GTK 3 support
     --disable-metacity            disable Metacity support
-    --disable-openbox             disable Openbox support
     --disable-plank               disable Plank support
     --disable-unity               disable Unity support
     --disable-xfwm                disable XFWM support

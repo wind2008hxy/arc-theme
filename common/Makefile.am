@@ -175,22 +175,6 @@ endif # ENABLE_LIGHTER
 
 endif # ENABLE_METACITY
 
-if ENABLE_OPENBOX
-
-if ENABLE_LIGHT
-	cp -R $(srcdir)/openbox/Arc/* $(ithemedir)
-endif # ENABLE_LIGHT
-
-if ENABLE_DARKER
-	cp -R $(srcdir)/openbox/Arc-Darker/* $(ithemedarkerdir)
-endif # ENABLE_DARKER
-
-if ENABLE_DARK
-	cp -R $(srcdir)/openbox/Arc-Dark/* $(ithemedarkdir)
-endif # ENABLE_DARK
-
-endif # ENABLE_OPENBOX
-
 
 if ENABLE_UNITY
 

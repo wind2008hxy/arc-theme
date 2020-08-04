@@ -34,7 +34,6 @@ Arc comes with themes for the following:
 * Unity
 * Metacity
 * Xfwm
-* Openbox
 * Plank
 
 ## Installation
