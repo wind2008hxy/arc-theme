@@ -1357,6 +1357,17 @@ StScrollBar {
   }
 
   &-thumbnail-menu {
+    border-image: url("common-assets/misc/bg.svg") 9 9 9 9;
+    border-radius: 3px;
+    color: $osd_fg_color;
+    padding: 8px;
+
+    // HACK: Dont style GWL thumbnail-menus inside the topmost thumbnail-menu
+    & .grouped-window-list-thumbnail-menu {
+      border-image: none;
+      padding: 0;
+    }
+
     & .item-box {
       padding: 10px;
       border-radius: 2px;
