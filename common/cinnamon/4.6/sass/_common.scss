@@ -1378,7 +1378,8 @@ StScrollBar {
       border: 2px solid $selected_bg_color;
     }
     & .item-box:selected {
-      background: none;
+      background: $selected_bg_color;
+      color: $selected_fg_color;
     }
     & .thumbnail {
       width: 256px;
