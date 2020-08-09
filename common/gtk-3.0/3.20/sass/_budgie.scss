@@ -307,14 +307,13 @@ $z-depth-4: rgba(0, 0, 0, 0.34);
   }
 
   button {
-    @extend row.activatable;
+    @extend row, .activatable;
 
     min-height: 32px;
     padding: 0 8px;
     border-radius: 0;
     color: $fg_color;
     font-weight: normal;
-
   }
 
   row {
