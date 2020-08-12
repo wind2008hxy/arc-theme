@@ -707,6 +707,7 @@ toolbar.inline-toolbar toolbutton {
 %linked_middle {
   border-radius: 0;
   border-right-style: none;
+  -gtk-outline-radius: 0;
 }
 
 %linked_left {
@@ -715,6 +716,10 @@ toolbar.inline-toolbar toolbutton {
   border-top-right-radius: 0;
   border-bottom-right-radius: 0;
   border-right-style: none;
+  -gtk-outline-top-left-radius: 2px;
+  -gtk-outline-bottom-left-radius: 2px;
+  -gtk-outline-top-right-radius: 0;
+  -gtk-outline-bottom-right-radius: 0;
 }
 
 %linked_right {
@@ -723,11 +728,16 @@ toolbar.inline-toolbar toolbutton {
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
   border-right-style: solid;
+  -gtk-outline-top-left-radius: 0;
+  -gtk-outline-bottom-left-radius: 0;
+  -gtk-outline-top-right-radius: 2px;
+  -gtk-outline-bottom-right-radius: 2px;
 }
 
 %linked_only_child {
   border-radius: 3px;
   border-style: solid;
+  -gtk-outline-radius: 2px;
 }
 
 %linked {
@@ -758,22 +768,28 @@ toolbar.inline-toolbar toolbutton {
 %linked_vertical_middle {
   border-radius: 0;
   border-bottom-style: none;
+  -gtk-outline-radius: 0;
 }
 
 %linked_vertical_top {
   border-top-left-radius: 3px;
   border-top-right-radius: 3px;
+  -gtk-outline-top-left-radius: 2px;
+  -gtk-outline-top-right-radius: 2px;
 }
 
 %linked_vertical_bottom {
+  border-bottom-style: solid;
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
-  border-style: solid;
+  -gtk-outline-bottom-left-radius: 2px;
+  -gtk-outline-bottom-right-radius: 2px;
 }
 
 %linked_vertical_only_child {
   border-radius: 3px;
   border-style: solid;
+  -gtk-outline-radius: 2px;
 }
 
 %linked_vertical{
@@ -2702,15 +2718,27 @@ messagedialog { // Message Dialog styling
     %last_button {
       border-radius: 0 0 3px 0;
       border-right-style: none;
+      -gtk-outline-bottom-right-radius: 2px;
+      -gtk-outline-top-right-radius: 0px;
+      -gtk-outline-bottom-left-radius: 0px;
+      -gtk-outline-top-left-radius: 0px;
     }
     %first_button {
       border-radius: 0 0 0 3px;
       border-left-style: none;
+      -gtk-outline-bottom-left-radius: 2px;
+      -gtk-outline-top-left-radius: 0px;
+      -gtk-outline-top-right-radius: 0px;
+      -gtk-outline-bottom-right-radius: 0px;
     }
     %single_button {
       border-radius: 0 0 3px 3px;
       border-left-style: none;
       border-right-style: none;
+      -gtk-outline-top-right-radius: 0px;
+      -gtk-outline-top-left-radius: 0px;
+      -gtk-outline-bottom-left-radius: 2px;
+      -gtk-outline-bottom-right-radius: 2px;
     }
   }
 }
