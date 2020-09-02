@@ -45,11 +45,12 @@ Distribution | Package name | Notes
 Arch Linux | [arc-gtk-theme](https://www.archlinux.org/packages/community/any/arc-gtk-theme/) | 
 Arch Linux | [arc-gtk-theme-git](https://aur.archlinux.org/packages/arc-gtk-theme-git/) | latest git version, [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) package
 Debian | [arc-theme](https://packages.debian.org/bullseye/arc-theme) | *bullseye* and newer
+Fedora | [arc-theme](https://copr.fedorainfracloud.org/coprs/mhdahmad/workstation/package/arc-theme/) | unofficial COPR repository (see [#71](https://github.com/jnsh/arc-theme/issues/71) for details)
 Gentoo | [arc-theme](https://packages.gentoo.org/packages/x11-themes/arc-theme) | 
 NixOS | [arc-theme](https://nixos.org/nixos/packages.html?attr=arc-theme&channel=nixpkgs-unstable) | `nixpkgs-unstable` channel
 openSUSE | [arc-gtk-theme](https://build.opensuse.org/package/show/openSUSE:Leap:15.2:Update/arc-gtk-theme) | *Leap 15.2* and newer
 
-***Note:*** Other Arc Theme distribution packages are not necessarily built from this repository.
+The theme may be available for other distributions as well. The package is usually named either `arc-theme` or `arc-gtk-theme`, and versions starting with `2020` or later should be built from this repository.
 
 #### Manual installation
 
