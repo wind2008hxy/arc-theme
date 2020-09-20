@@ -6,7 +6,7 @@ This theme uses libsass to process the various .scss files. Never edit any of th
 
 * Edit the `common/*/sass/*.scss` files.
 
-* Run `make` to generate all css files using `sassc`.
+* Rebuild to generate all css files using `sassc`.
 
 #### Editing the GTK 2 themes
 
@@ -30,7 +30,7 @@ Because this theme is heavily based on the pixmap engine, a lot of the styling c
 
 * Find the object you want to edit and make your changes. **Important:** Don't change the object *id*!
 
-* Save `assets.svg` and run `make` (or `make -j$(nproc)` if you're in a hurry) from a terminal in the parent directory.
+* Save `assets.svg` and rebuild.
 
 ---
 

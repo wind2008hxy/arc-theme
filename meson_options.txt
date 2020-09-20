@@ -1,0 +1,38 @@
+option(
+  'themes',
+  type: 'array',
+  choices: ['cinnamon', 'gnome-shell', 'gtk2', 'gtk3', 'metacity', 'plank', 'unity', 'xfwm'],
+  description: 'List of themes to build',
+)
+
+option(
+  'variants',
+  type: 'array',
+  choices: ['light', 'darker', 'dark', 'lighter'],
+  description: 'List of theme variants to build',
+)
+
+option(
+  'transparency',
+  type: 'boolean',
+  value: true,
+  description: 'Enable or disable transparency',
+)
+
+option(
+  'cinnamon_version',
+  type: 'string',
+  description: 'Build Cinnamon theme for specific version',
+)
+
+option(
+  'gnome_shell_version',
+  type: 'string',
+  description: 'Build GNOME Shell theme for specific version',
+)
+
+option(
+  'gtk3_version',
+  type: 'string',
+  description: 'Build GTK 3 theme for specific version',
+)
