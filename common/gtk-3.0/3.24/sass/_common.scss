@@ -1805,9 +1805,10 @@ menu,
 //
 // Popovers
 //
+$_popover_bg: if($variant!='dark', $base_color, $bg_color);
+
 popover,
 popover.background {
-  $_popover_bg: if($variant!='dark', $base_color, $bg_color);
   padding: 2px;
   border-radius: 3px;
   background-clip: border-box;
