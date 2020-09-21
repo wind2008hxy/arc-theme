@@ -37,7 +37,7 @@ AC_DEFUN([ARC_GNOME_SHELL], [
     # Evenize the minor version for stable versions
     AS_IF(
         [test "x$GNOME_SHELL_VERSMJR" != x3], [AC_MSG_ERROR([Invalid GNOME Shell version: $GNOME_SHELL_VERSION])],
-        [test "0$GNOME_SHELL_VERSMNR" -ge 35], [GNOME_SHELL_VERSION=3.36],
+        [test "0$GNOME_SHELL_VERSMNR" -ge 37], [GNOME_SHELL_VERSION=3.38],
         [test `expr $GNOME_SHELL_VERSMNR % 2` != "0"],
         [GNOME_SHELL_VERSION="$GNOME_SHELL_VERSMJR.`expr $GNOME_SHELL_VERSMNR + 1`"]
     )
