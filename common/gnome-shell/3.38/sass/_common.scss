@@ -1642,11 +1642,10 @@ StScrollBar {
 .overview-controls { padding-bottom: 32px; }
 
 .window-picker { //container around window thumbnails
-  -horizontal-spacing: 16px;
-  -vertical-spacing: 16px;
-  padding: 0 16px 16px;
+  spacing: 6px;
+  padding: 0 12px 12px;
 
-  &.external-monitor { padding: 16px; }
+  &.external-monitor { padding: 12px; }
 }
 
 .window-clone-border {
