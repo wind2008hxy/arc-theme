@@ -2700,6 +2700,11 @@ StScrollBar {
     color: $link_color;
     &:hover { color: lighten($link_color,10%); }
   }
+  .actor-link {
+    color: $osd_fg_color;
+    &:hover { color: lighten($osd_fg_color, 10%); }
+    &:active { color: darken($osd_fg_color, 10%); }
+   }
 }
 
 .lg-completions-text {
