@@ -1199,6 +1199,36 @@ StScrollBar {
   }
 }
 
+/* Events */
+.events-button {
+  @include datemenu_bubble;
+
+  .events-box {
+    spacing: 5px;
+  }
+
+  .events-list {
+    spacing: 10px;
+  }
+
+  .events-title {
+    color: transparentize($fg_color, 0.6);
+    font-weight: bold;
+  }
+  &:active .events-title {
+    color: $selected_fg_color;
+  }
+
+  .event-time {
+    color: transparentize($fg_color, 0.4);
+    font-feature-settings: "tnum";
+    @include fontsize($font-size * 0.9);
+  }
+  &:active .event-time {
+    color: transparentize($selected_fg_color, 0.4);
+  }
+}
+
 /* World clocks */
 .world-clocks-button {
   @include datemenu_bubble;
