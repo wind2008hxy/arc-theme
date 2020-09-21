@@ -1924,11 +1924,10 @@ StScrollBar {
 // App Vault/Grid
 //
 .icon-grid {
-  spacing: 20px;
-  -shell-grid-horizontal-item-size: 136px;
-  -shell-grid-vertical-item-size: 136px;
-
-  .overview-icon { icon-size: 96px; }
+  row-spacing: 30px;
+  column-spacing: 30px;
+  max-row-spacing: 60px;
+  max-column-spacing: 60px;
 }
 
 .system-action-icon {
