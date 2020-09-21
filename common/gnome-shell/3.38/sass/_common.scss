@@ -2053,6 +2053,19 @@ StScrollBar {
       & > StIcon { icon-size: 16px }
     }
   }
+
+  & .icon-grid {
+    row-spacing: 10px;
+    column-spacing: 25px;
+  }
+
+  & .page-indicators {
+    margin-bottom: 18px;
+
+    .page-indicator {
+      padding: 15px 12px;
+    }
+  }
 }
 .app-folder-dialog-container {
   padding: 12px;
