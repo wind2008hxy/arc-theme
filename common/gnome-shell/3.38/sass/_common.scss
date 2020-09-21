@@ -1902,49 +1902,11 @@ StScrollBar {
   .overview-icon { icon-size: 96px; }
 }
 
-//.app-display { spacing: 20px; }
-
 .system-action-icon {
   background-color: $bg_color;
   color: $fg_color;
   border-radius: 99px;
   icon-size: 48px;
-}
-
-//favorties | all toggle container
-.app-view-controls { padding-bottom: 32px; }
-
-//favorties | all toggle button
-.app-view-control {
-  padding: 4px 32px;
-  margin: 0;
-
-  @include button(osd);
-
-  @if $variant == 'lighter' {
-    background-color: opacify($osd_button_bg, 0.4);
-    border-color: transparentize($osd_button_border, 0.2);
-  }
-
-  &:hover {
-    @include button(osd-hover);
-
-    @if $variant == 'lighter' {
-      background-color: opacify(darken($osd_button_bg, 5%), 0.4);
-      border-color: transparentize($osd_button_border, 0.2);
-    }
-  }
-
-  &:checked {
-    color: $selected_fg_color;
-    background-color: $selected_bg_color;
-  }
-
-  &:first-child:ltr,
-  &:last-child:rtl { border-radius: 2px 0 0 2px; border-right-width: 0; }
-
-  &:last-child:ltr,
-  &:first-child:rtl { border-radius: 0 2px 2px 0; border-left-width: 0;}
 }
 
 //
@@ -2095,8 +2057,6 @@ StScrollBar {
   &:active .page-indicator-icon { background-color: $selected_bg_color; }
 }
 
-.no-frequent-applications-label { @extend %status_text; }
-
 .app-well-app > .overview-icon.overview-icon-with-label,
 .grid-search-result .overview-icon.overview-icon-with-label {
   padding: 10px 8px 5px 8px;
@@ -2145,8 +2105,7 @@ StScrollBar {
 }
 
 //Some hacks I don't even
-.all-apps,
-.frequent-apps > StBoxLayout {
+.all-apps {
   // horizontal padding to make sure scrollbars or dash don't overlap content
   padding: 0px 88px 10px 88px;
 }
