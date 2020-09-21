@@ -1189,7 +1189,6 @@ StScrollBar {
     height: 15px;
     width: 19px;
     border-radius: 2px;
-    padding: 4px 0 0;
     margin: 6px;
     background-color: if($variant!='dark', transparentize($fg_color,0.9), transparentize($fg_color,0.7));
     color: if($variant!='dark', transparentize($fg_color,0.5), $bg_color);
