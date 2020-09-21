@@ -2024,8 +2024,8 @@ StScrollBar {
 .app-folder-dialog {
   border-radius: 2px;
   border: 1px solid transparentize(darken($dark_sidebar_bg, 25%), 0.5);
-  spacing: 12px;
   background-color: darken($dark_sidebar_bg, 8%);
+  padding: 12px;
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -2034,7 +2034,7 @@ StScrollBar {
     & .folder-name-label,
     & .folder-name-entry {
       @include fontsize($font-size * 2);
-      font-weight: bold;
+      font-weight: 800;
     }
 
     & .folder-name-entry { width: 300px; }
@@ -2056,8 +2056,8 @@ StScrollBar {
 }
 .app-folder-dialog-container {
   padding: 12px;
-  width: 800px;
-  height: 600px;
+  width: 620px;
+  height: 620px;
 
   @if $variant == 'lighter' {
     .overview-icon {
