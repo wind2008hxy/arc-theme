@@ -21,6 +21,8 @@ popover.combo {
   overshoot.bottom { @extend %linked_vertical_bottom; }
 
   scrollbar.vertical {
+    background-color: $_popover_bg;
+
     &:dir(ltr) { @extend %linked_right; }
     &:dir(rtl) { @extend %linked_left; }
   }
