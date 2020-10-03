@@ -223,7 +223,7 @@ window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):
   &,
   > decoration,
   > decoration-overlay {
-    border-radius: $_header_radius $_header_radius 0 0;
+    border-radius: $_header_radius;
   }
 }
 
