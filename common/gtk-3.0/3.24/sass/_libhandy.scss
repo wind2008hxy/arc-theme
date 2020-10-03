@@ -151,7 +151,7 @@ list.content {
     }
 
     &:hover.activatable:not(:selected) {
-      background-color: if($variant != 'dark', transparentize(black, 0.95), transparentize(white, 0.97));
+      background-color: if($variant != 'dark', mix($base_color, black, 95%), mix($base_color, white, 97%));
     }
   }
 
@@ -166,7 +166,7 @@ list.content {
 
     &:not(.expander):not(:active):hover.activatable:not(:selected),
     &.expander row.header:not(:active):hover.activatable:not(:selected) {
-      background-color: if($variant != 'dark', transparentize(black, 0.95), transparentize(white, 0.97));
+      background-color: if($variant != 'dark', mix($base_color, black, 95%), mix($base_color, white, 97%));
     }
 
     &,
