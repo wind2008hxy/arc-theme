@@ -227,3 +227,12 @@ window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):
   }
 }
 
+// HdyWindowHandle separator
+
+.windowhandle separator.sidebar {
+  &:dir(ltr), &.left, &.left:dir(rtl),
+  &:dir(rtl), &.right {
+    background-color: $header_border;
+    margin: 0;
+  }
+}
