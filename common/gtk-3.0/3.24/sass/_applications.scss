@@ -70,12 +70,7 @@ terminal-window,
 // Pathbar for nautilus >=3.30
 .nautilus-window .path-bar-box {
   border-radius: 3px;
-  border: 0 $header_button_border solid;
-
-  &.width-maximized {
-    border-width: 1px;
-    transition: border $backdrop_transition;
-  }
+  border: 1px $header_button_border solid;
 }
 
 // path-bar buttons for nautilus 3.30
@@ -107,17 +102,15 @@ terminal-window,
 
     &, &:hover, &:active, &:checked, &:disabled { @extend %linked; }
 
-    .nautilus-window .path-bar-box.width-maximized > & {
-      border-width: 0;
+    border-width: 0;
 
-      &:only-child {
-        border-radius: 3px 0px 0px 3px;
-      }
+    &:only-child {
+      border-radius: 3px 0px 0px 3px;
+    }
 
-      &:last-child {
-        border-radius: 0;
-        border-right-width: 1px;
-      }
+    &:last-child {
+      border-radius: 0;
+      border-right-width: 1px;
     }
   }
 
