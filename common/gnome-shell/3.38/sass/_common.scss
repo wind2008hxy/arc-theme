@@ -1732,6 +1732,10 @@ StScrollBar {
   @extend %status_text;
 }
 
+.grid-search-results {
+  spacing: 30px;
+}
+
 .list-search-results { spacing: 3px; }
 
 .search-section-separator {
