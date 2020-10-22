@@ -146,7 +146,8 @@ if ENABLE_METACITY
 if ENABLE_LIGHT
 	cp -R $(srcdir)/metacity-1 $(ithemedir)
 
-	cd $(ithemedir)/metacity-1 && rm metacity-theme-1-dark.xml metacity-theme-2-dark.xml thumbnail-dark.png
+	cd $(ithemedir)/metacity-1 && rm metacity-theme-1-dark.xml metacity-theme-2-dark.xml thumbnail-dark.png && \
+		rm meson.build
 endif # ENABLE_LIGHT
 
 if ENABLE_DARKER
@@ -155,7 +156,8 @@ if ENABLE_DARKER
 	cd $(ithemedarkerdir)/metacity-1 && \
 		mv metacity-theme-1-dark.xml metacity-theme-1.xml && \
 		mv metacity-theme-2-dark.xml metacity-theme-2.xml && \
-		mv thumbnail-dark.png thumbnail.png
+		mv thumbnail-dark.png thumbnail.png && \
+		rm meson.build
 endif # ENABLE_DARKER
 
 if ENABLE_DARK
@@ -164,13 +166,15 @@ if ENABLE_DARK
 	cd $(ithemedarkdir)/metacity-1 && \
 		mv metacity-theme-1-dark.xml metacity-theme-1.xml && \
 		mv metacity-theme-2-dark.xml metacity-theme-2.xml && \
-		mv thumbnail-dark.png thumbnail.png
+		mv thumbnail-dark.png thumbnail.png && \
+		rm meson.build
 endif # ENABLE_DARK
 
 if ENABLE_LIGHTER
 	cp -R $(srcdir)/metacity-1 $(ithemelighterdir)
 
-	cd $(ithemelighterdir)/metacity-1 && rm metacity-theme-1-dark.xml metacity-theme-2-dark.xml thumbnail-dark.png
+	cd $(ithemelighterdir)/metacity-1 && rm metacity-theme-1-dark.xml metacity-theme-2-dark.xml thumbnail-dark.png && \
+		rm meson.build
 endif # ENABLE_LIGHTER
 
 endif # ENABLE_METACITY
@@ -181,7 +185,8 @@ if ENABLE_UNITY
 if ENABLE_LIGHT
 	cp -R $(srcdir)/unity $(ithemedir)
 
-	cd $(ithemedir)/unity && rm -rf window-buttons-dark
+	cd $(ithemedir)/unity && rm -rf window-buttons-dark && \
+	rm meson.build
 endif # ENABLE_LIGHT
 
 if ENABLE_DARKER
@@ -189,7 +194,8 @@ if ENABLE_DARKER
 
 	cd $(ithemedarkerdir)/unity && \
 	rm -rf window-buttons && \
-	mv window-buttons-dark window-buttons
+	mv window-buttons-dark window-buttons && \
+	rm meson.build
 endif # ENABLE_DARKER
 
 if ENABLE_DARK
@@ -197,13 +203,15 @@ if ENABLE_DARK
 
 	cd $(ithemedarkdir)/unity && \
 	rm -rf window-buttons && \
-	mv window-buttons-dark window-buttons
+	mv window-buttons-dark window-buttons && \
+	rm meson.build
 endif # ENABLE_DARK
 
 if ENABLE_LIGHTER
 	cp -R $(srcdir)/unity $(ithemelighterdir)
 
-	cd $(ithemelighterdir)/unity && rm -rf window-buttons-dark
+	cd $(ithemelighterdir)/unity && rm -rf window-buttons-dark && \
+	rm meson.build
 endif # ENABLE_LIGHTER
 
 endif # ENABLE_UNITY
@@ -214,19 +222,22 @@ if ENABLE_PLANK
 if ENABLE_LIGHT
 	cp -R $(srcdir)/plank $(ithemedir)
 
-	cd $(ithemedir)/plank && rm dock-lighter.theme
+	cd $(ithemedir)/plank && rm dock-lighter.theme && \
+	rm meson.build
 endif # ENABLE_LIGHT
 
 if ENABLE_DARKER
 	cp -R $(srcdir)/plank $(ithemedarkerdir)
 
-	cd $(ithemedarkerdir)/plank && rm dock-lighter.theme
+	cd $(ithemedarkerdir)/plank && rm dock-lighter.theme && \
+	rm meson.build
 endif # ENABLE_DARKER
 
 if ENABLE_DARK
 	cp -R $(srcdir)/plank $(ithemedarkdir)
 
-	cd $(ithemedarkdir)/plank && rm dock-lighter.theme
+	cd $(ithemedarkdir)/plank && rm dock-lighter.theme && \
+	rm meson.build
 endif # ENABLE_DARK
 
 if ENABLE_LIGHTER
@@ -234,7 +245,8 @@ if ENABLE_LIGHTER
 
 	cd $(ithemelighterdir)/plank && \
 	rm dock.theme && \
-	mv dock-lighter.theme dock.theme
+	mv dock-lighter.theme dock.theme && \
+	rm meson.build
 endif # ENABLE_LIGHTER
 
 endif # ENABLE_PLANK
