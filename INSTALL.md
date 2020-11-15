@@ -43,11 +43,13 @@ Use the following commands to install the theme to `~/.local/share/themes/` for 
 To build the theme the following packages are required:
 * `autoconf`
 * `automake`
+* `make`
 * `pkgconf`
 
 The following packages are only required for building certain themes:
 * `sassc` for GTK 3, Cinnamon, and GNOME Shell
 * `inkscape` for GTK 2, GTK 3, and XFWM
+* `glib2` for GTK 3 (needs `glib-compile-resources` binary, the exact package name varies between distributions)
 
 You can avoid these dependencies by disabling support for the specific themes with build options detailed below.
 
