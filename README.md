@@ -45,7 +45,7 @@ Distribution | Package name | Notes
 Arch Linux | [arc-gtk-theme](https://www.archlinux.org/packages/community/any/arc-gtk-theme/) | 
 Arch Linux | [arc-gtk-theme-git](https://aur.archlinux.org/packages/arc-gtk-theme-git/) | latest git version, [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) package
 Debian | [arc-theme](https://packages.debian.org/bullseye/arc-theme) | *bullseye* and newer
-Fedora | [arc-theme](https://copr.fedorainfracloud.org/coprs/mhdahmad/workstation/package/arc-theme/) | unofficial COPR repository (see [#71](https://github.com/jnsh/arc-theme/issues/71) for details)
+Fedora | [arc-theme](https://src.fedoraproject.org/rpms/arc-theme) | Fedora 34, for F32 and F33 see [#71](https://github.com/jnsh/arc-theme/issues/71)
 Gentoo | [arc-theme](https://packages.gentoo.org/packages/x11-themes/arc-theme) | 
 NixOS | [arc-theme](https://search.nixos.org/packages?query=arc-theme) | 
 openSUSE | [arc-gtk-theme](https://build.opensuse.org/package/show/openSUSE:Leap:15.2:Update/arc-gtk-theme) | *Leap 15.2* and newer
