@@ -1,7 +1,5 @@
 ## Installing Arc from the source
 
-**Note:** Arc-theme has switched to [Meson](https://mesonbuild.com/) build system. The old GNU Autotools based build system is still present, and the old build documentation is available in [INSTALL.autotools.md](https://github.com/jnsh/arc-theme/blob/master/INSTALL.autotools.md), but it will be removed in future releases. Please open [an issue](https://github.com/jnsh/arc-theme/issues/new), if you have any problems with the new build system.
-
 #### Getting the source
 
 To get the source, either clone the git repository with e.g.
