@@ -40,21 +40,13 @@ Arc comes with themes for the following:
 
 #### Packages
 
-Distribution | Package name | Notes
--------|-------|-------
-Arch Linux | [arc-gtk-theme](https://www.archlinux.org/packages/community/any/arc-gtk-theme/) | 
-Arch Linux | [arc-gtk-theme-git](https://aur.archlinux.org/packages/arc-gtk-theme-git/) | latest git version, [AUR](https://wiki.archlinux.org/index.php/Arch_User_Repository) package
-Debian | [arc-theme](https://packages.debian.org/bullseye/arc-theme) | *bullseye* and newer
-Fedora | [arc-theme](https://src.fedoraproject.org/rpms/arc-theme) | Fedora 34, for F32 and F33 see [#71](https://github.com/jnsh/arc-theme/issues/71)
-Gentoo | [arc-theme](https://packages.gentoo.org/packages/x11-themes/arc-theme) | 
-NixOS | [arc-theme](https://search.nixos.org/packages?query=arc-theme) | 
-openSUSE | [arc-gtk-theme](https://build.opensuse.org/package/show/openSUSE:Leap:15.2:Update/arc-gtk-theme) | *Leap 15.2* and newer
+Arc Theme is available from the official software package repositories for many common Linux distributions and FOSS operating systems. Installing the theme by using the package manager of your operating system should be the preferred method in most cases.
 
-The theme may be available for other distributions as well. The package is usually named either `arc-theme` or `arc-gtk-theme`, and versions starting with `2020` or later should be built from this repository.
+See [the wiki](https://github.com/jnsh/arc-theme/wiki/Packages) for non-exhaustive list of distribution packages, and some additional packages.
 
 #### Manual installation
 
-See [INSTALL.md](https://github.com/jnsh/arc-theme/blob/master/INSTALL.md) for build instructions, list of dependencies, build options and additional details.
+For installing the theme by compiling it from the source code, see [INSTALL.md](https://github.com/jnsh/arc-theme/blob/master/INSTALL.md) for build instructions, list of dependencies, build options and additional details.
 
 ## Bugs
 
