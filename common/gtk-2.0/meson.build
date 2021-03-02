@@ -25,26 +25,26 @@ foreach variant : get_option('variants')
 
   if variant == 'light' or variant == 'lighter'
     light_menubar_toolbar_assets = [
-      'entry-active-toolbar.png',
-      'entry-disabled-toolbar.png',
-      'entry-toolbar.png',
-      'menubar_button.png',
-      'menubar.png'
+      'entry-active-toolbar',
+      'entry-disabled-toolbar',
+      'entry-toolbar',
+      'menubar_button',
+      'menubar'
     ]
   elif variant == 'dark' or variant == 'darker'
     light_menubar_toolbar_assets = [
-      'button-active.png',
-      'button-hover.png',
-      'button-insensitive.png',
-      'button.png'
+      'button-active',
+      'button-hover',
+      'button-insensitive',
+      'button'
     ]
 
     dark_menubar_toolbar_assets = [
-      'entry-active-toolbar.png',
-      'entry-disabled-toolbar.png',
-      'entry-toolbar.png',
-      'menubar_button.png',
-      'menubar.png'
+      'entry-active-toolbar',
+      'entry-disabled-toolbar',
+      'entry-toolbar',
+      'menubar_button',
+      'menubar'
     ]
   endif
 
@@ -72,19 +72,17 @@ foreach variant : get_option('variants')
       'sh', '-c',
       'install -D' + ' ' +
       '-t $MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar' + ' ' +
-      meson.current_build_dir() / 'light' / asset
+      meson.current_build_dir() / 'light' / asset + '.png'
     )
   endforeach
 
   if variant == 'dark' or variant == 'darker'
     foreach asset : dark_menubar_toolbar_assets
-      new_asset = asset.substring(0, -4) + '-dark' + asset.substring(-4)
-
       meson.add_install_script(
         'sh', '-c',
         'install -DT' + ' ' +
-        meson.current_build_dir() / 'dark' / asset + ' ' +
-        '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar' / new_asset
+        meson.current_build_dir() / 'dark' / asset + '.png' + ' ' +
+        '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar' / asset + '-dark.png'
       )
     endforeach
   endif
