@@ -23,7 +23,7 @@ install_dir = {
 }
 
 # sassc dependency
-foreach theme : ['cinnamon', 'gnome-shell', 'gtk3']
+foreach theme : ['cinnamon', 'gnome-shell', 'gtk3', 'gtk4']
   if theme in get_option('themes')
     sassc = find_program('sassc')
     break
@@ -31,7 +31,7 @@ foreach theme : ['cinnamon', 'gnome-shell', 'gtk3']
 endforeach
 
 # inkscape dependency
-foreach theme : ['gtk2', 'gtk3', 'xfwm']
+foreach theme : ['gtk2', 'gtk3', 'gtk4', 'xfwm']
   if theme in get_option('themes')
     inkscape = find_program('inkscape')
     inkscape_ver = run_command(inkscape, '--version').stdout().split()[1]

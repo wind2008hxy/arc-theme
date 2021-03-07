@@ -1,7 +1,7 @@
 option(
   'themes',
   type: 'array',
-  choices: ['cinnamon', 'gnome-shell', 'gtk2', 'gtk3', 'metacity', 'plank', 'unity', 'xfwm'],
+  choices: ['cinnamon', 'gnome-shell', 'gtk2', 'gtk3', 'gtk4', 'metacity', 'plank', 'unity', 'xfwm'],
   description: 'List of themes to build',
 )
 
@@ -35,6 +35,12 @@ option(
   'gtk3_version',
   type: 'string',
   description: 'Build GTK 3 theme for specific version',
+)
+
+option(
+  'gtk4_version',
+  type: 'string',
+  description: 'Build GTK 4 theme for specific version',
 )
 
 option(
