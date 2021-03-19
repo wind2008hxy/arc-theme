@@ -1,6 +1,5 @@
 # supported versions
-gnome_shell_versions = ['3.18', '3.20', '3.22', '3.24', '3.26', '3.28', '3.30', '3.32', '3.34', '3.36',
-'3.38']
+gnome_shell_versions = ['3.18', '3.20', '3.22', '3.24', '3.26', '3.28', '3.30', '3.32', '3.34', '3.36', '3.38', '40']
 
 # gnome-shell version
 gnome_shell = find_program('gnome-shell', required : false)
