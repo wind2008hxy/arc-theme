@@ -2474,7 +2474,8 @@ StScrollBar {
   max-width: 23em;
 }
 
-.login-dialog {
+.login-dialog,
+.unlock-dialog {
   //reset
   border: none;
   background-color: transparent;
