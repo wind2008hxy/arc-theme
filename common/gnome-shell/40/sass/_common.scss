@@ -2062,10 +2062,6 @@ StScrollBar {
 
   & .page-indicators {
     margin-bottom: 18px;
-
-    .page-indicator {
-      padding: 15px 12px;
-    }
   }
 }
 .app-folder-dialog-container {
@@ -2087,7 +2083,7 @@ StScrollBar {
 }
 
 .page-indicator {
-  padding: 20px 20px;
+  padding: 5px 20px 0;
 
   .page-indicator-icon {
     width: 8px;
