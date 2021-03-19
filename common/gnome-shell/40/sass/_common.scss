@@ -452,11 +452,6 @@ StScrollBar {
     margin-bottom: 6px;
   }
 
-  &-layout &-icon {
-    border-radius: 99px;
-    background-size: contain;
-  }
-
   &-layout &-root-label {
     color: $warning_color;
   }
