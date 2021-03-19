@@ -1919,10 +1919,14 @@ StScrollBar {
 // App Vault/Grid
 //
 .icon-grid {
-  row-spacing: 30px;
-  column-spacing: 30px;
+  row-spacing: 10px;
+  column-spacing: 10px;
   max-row-spacing: 60px;
   max-column-spacing: 60px;
+  page-padding-top: 20px;
+  page-padding-bottom: 20px;
+  page-padding-left: 10px;
+  page-padding-right: 10px;
 }
 
 .system-action-icon {
@@ -2052,6 +2056,8 @@ StScrollBar {
   & .icon-grid {
     row-spacing: 10px;
     column-spacing: 25px;
+    page-padding-top: 0;
+    page-padding-bottom: 0;
   }
 
   & .page-indicators {
