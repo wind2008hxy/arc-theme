@@ -889,6 +889,7 @@ StScrollBar {
     &:hover {
       color: $_panel_fg_color;
       background-color: if($variant!='lighter', transparentize(black, 0.83), transparentize(black, 0.95));
+      box-shadow: none;
       border-bottom-width: 1px;
       border-color: transparent;
     }
