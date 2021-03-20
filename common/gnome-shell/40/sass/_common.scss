@@ -43,6 +43,8 @@ $_panel_fg_color: if($variant=='lighter', $fg_color, $_shell_fg_color);
 $_popup_shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
 $_popup_menu_shadow: if($variant!='dark', 0 1px 3px 2.1px rgba(0, 0, 0, 0.06), $_popup_shadow);
 
+$panel_transition_duration: 250ms;
+
 stage {
   @include fontsize($font-size);
   color: $fg_color;
@@ -807,12 +809,14 @@ StScrollBar {
   //background-clip: padding-box;
   border: 0 solid $shell_osd_border_color;
   border-bottom-width: 1px;
+  transition-duration: $panel_transition_duration;
 
   // Fix dynamic top bar extension
   &.dynamic-top-bar-white-btn { border-image: none; }
 
   &.unlock-screen,
-  &.login-screen {
+  &.login-screen,
+  &:overview {
     background-color: transparent;
     border: none;
 
@@ -844,6 +848,7 @@ StScrollBar {
     -panel-corner-background-color: transparentize(black, 1);
     -panel-corner-border-width: 0px;
     -panel-corner-border-color: black;
+    -panel-corner-opacity: 0;
 
     &:active, &:overview, &:focus {
       -panel-corner-border-color: black;
