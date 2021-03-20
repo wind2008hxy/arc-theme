@@ -870,6 +870,7 @@ StScrollBar {
     transition-duration: 100ms;
     border-bottom-width: 1px;
     border-color: transparent;
+    border-radius: 0;
 
     .app-menu-icon {
       width: 0;
@@ -897,6 +898,7 @@ StScrollBar {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
       box-shadow: none;
+      border-width: 0;
       border-bottom-width: 1px;
 
       @if $variant != 'lighter' {
