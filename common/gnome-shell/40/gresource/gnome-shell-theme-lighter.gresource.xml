@@ -44,6 +44,7 @@
     <file alias="icons/scalable/actions/pointer-primary-click-symbolic.svg">icons/pointer-primary-click-symbolic.svg</file>
     <file alias="icons/scalable/actions/pointer-secondary-click-symbolic.svg">icons/pointer-secondary-click-symbolic.svg</file>
     <file alias="process-working.svg">icons/process-working.svg</file>
+    <file alias="gnome-shell-start.svg">icons/gnome-shell-start.svg</file>
     <file alias="gnome-shell.css">gnome-shell-lighter.css</file>
     <file>pad-osd.css</file>
   </gresource>
