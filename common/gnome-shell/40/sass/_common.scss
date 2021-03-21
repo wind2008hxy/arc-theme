@@ -1647,12 +1647,6 @@ StScrollBar {
   spacing: 6px;
 }
 
-.window-clone-border {
-  border: 3px solid transparentize($selected_bg_color, 0.2);
-  border-radius: 4px;
-  box-shadow: inset 0px 0px 0px 1px transparentize($selected_bg_color, 1);
-}
-
 .window-caption {
   spacing: 25px;
   color: $selected_fg_color;
