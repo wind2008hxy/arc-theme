@@ -2107,32 +2107,22 @@ StScrollBar {
 // Workspace pager
 //
 .workspace-thumbnails {
-  &, &:rtl {
+  visible-width: 40px;  //amount visible before hover
+  spacing: 5px;
+  padding: 5px;
+
+  .workspace-thumbnail {
     background-color: $dark_sidebar_bg;
-    //background-clip: padding-box;
+    background-clip: padding-box;
     border: 1px solid $shell_bg_border_color;
-    visible-width: 40px;  //amount visible before hover
-    spacing: 11px;
-    padding: 12px;
+    border-radius: 0;
   }
 
   .placeholder {
     background-image: url("common-assets/dash/dash-placeholder.svg");
     background-size: contain;
-    height: 24px;
+    width: 18px;
   }
-}
-
-.workspace-thumbnails {
-  border-radius: 3px 0 0 3px;
-  border-right-width: 0;
-  padding-right: 8px;
-}
-
-.workspace-thumbnails:rtl {
-  border-radius: 0 3px 3px 0;
-  border-right-width: 0;
-  padding-left: 8px;
 }
 
 .workspace-thumbnail-indicator {
