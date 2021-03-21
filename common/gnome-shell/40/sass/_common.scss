@@ -1777,43 +1777,50 @@ StScrollBar {
 //
 // Dash
 //
+
+$dash_placeholder_size: 24px;
+$dash_padding: 10px;
+$dash_spacing: 4px;
+
+$dash_bottom_margin: 20px;
+
 #dash {
   @include fontsize($font-size);
-  color: $osd_fg_color;
-  background-color: $dark_sidebar_bg;
-  border: 1px solid if($variant!='lighter', rgba(0,0,0,0.4), rgba(0,0,0,0.1));
-  border-left-width: 0;
-  padding: 4px 0;
-  border-radius: 0 3px 3px 0;
-
-  &:rtl {
-    border-left-width: 1px;
-    border-right-width: 0;
-    border-radius: 3px 0 0 3px;
-  }
-
-  .right &,
-  &:rtl { padding: 4px 0; }
-
-  .top &, .bottom & { padding: 0; }
+  margin-top: 10px;
+  padding: 0 $dash_padding;
 
   .placeholder {
     background-image: none;
     background-size: contain;
-    height: 24px;
+    height: $dash_placeholder_size;
   }
 
   .empty-dash-drop-target {
-    width: 24px;
-    height: 24px;
+    width: $dash_placeholder_size;
+    height: $dash_placeholder_size;
+  }
+
+  .overview-icon {
+    padding: $dash_padding / 2;
   }
 }
 
-.dash-item-container > StWidget {
+.dash-background {
+  background-color: $dark_sidebar_bg;
+  margin-bottom: $dash_bottom_margin;
+  padding: $dash_padding;
+  border: 1px solid if($variant!='lighter', rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+  border-radius: 3px;
+}
 
-  &, &:rtl, .right & { padding: 4px 8px; }
+.dash-item-container .app-well-app, .show-apps {
+  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+}
 
-  .top &, .bottom & { padding: 6px; }
+.dash-separator {
+  width: 1px;
+  margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
+  background-color: if($variant!='lighter', transparentize(black, 0.5), transparentize(black, 0.8));
 }
 
 //osd tooltip
@@ -1824,13 +1831,8 @@ StScrollBar {
   background-color: transparentize(black, 0.3);
   border: 0;
   text-align: center;
-  -x-offset: 3px;
+  -y-offset: 3px;
   box-shadow: none;
-
-  .bottom &, .top & {
-    -y-offset: 3px;
-    -x-offset: 0;
-  }
 }
 
 // Dash Buttons
@@ -1840,17 +1842,11 @@ StScrollBar {
     border: none;
   }
 
-  &:hover .overview-icon,
-  .right &:hover .overview-icon,
-  .bottom &:hover .overview-icon,
-  .top &:hover .overview-icon {
+  &:hover .overview-icon {
     background-color: $selected_bg_color;
   }
 
-  &:active .overview-icon,
-  .right &:active .overview-icon,
-  .bottom &:active .overview-icon,
-  .top &:active .overview-icon {
+  &:active .overview-icon {
     box-shadow: none;
     background-color: darken($selected_bg_color, 10%);
   }
