@@ -2106,8 +2106,7 @@ StScrollBar {
 //
 // Workspace pager
 //
-.workspace-thumbnails,
-.workspace-thumbnails-left {
+.workspace-thumbnails {
   &, &:rtl {
     background-color: $dark_sidebar_bg;
     //background-clip: padding-box;
@@ -2124,15 +2123,13 @@ StScrollBar {
   }
 }
 
-.workspace-thumbnails,
-.workspace-thumbnails-left:rtl {
+.workspace-thumbnails {
   border-radius: 3px 0 0 3px;
   border-right-width: 0;
   padding-right: 8px;
 }
 
-.workspace-thumbnails:rtl,
-.workspace-thumbnails-left {
+.workspace-thumbnails:rtl {
   border-radius: 0 3px 3px 0;
   border-right-width: 0;
   padding-left: 8px;
