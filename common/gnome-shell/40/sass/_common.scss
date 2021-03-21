@@ -2140,10 +2140,8 @@ StScrollBar {
   padding: 1px;
 }
 
-//Some hacks I don't even
-.all-apps {
-  // horizontal padding to make sure scrollbars or dash don't overlap content
-  padding: 0px 88px 10px 88px;
+.apps-scroll-view {
+  padding: 0;
 }
 
 %status_text {
