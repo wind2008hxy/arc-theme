@@ -1657,7 +1657,10 @@ StScrollBar {
 //
 // Overview
 //
-#overview { spacing: 24px; }
+.controls-manager,
+.secondary-monitor-workspaces {
+  spacing: 12px;
+}
 
 .overview-controls { padding-bottom: 32px; }
 
