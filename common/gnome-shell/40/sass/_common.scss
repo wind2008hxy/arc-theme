@@ -2072,7 +2072,7 @@ $dash_bottom_margin: 20px;
   border-radius: 2px;
   border: 1px solid transparentize(darken($dark_sidebar_bg, 25%), 0.5);
   background-color: darken($dark_sidebar_bg, 8%);
-  padding: 12px;
+  padding: 12px 0;
 
   & .folder-name-container {
     padding: 24px 36px 0;
@@ -2106,6 +2106,8 @@ $dash_bottom_margin: 20px;
     column-spacing: 25px;
     page-padding-top: 0;
     page-padding-bottom: 0;
+    page-padding-left: 0;
+    page-padding-right: 0;
   }
 
   & .page-indicators {
