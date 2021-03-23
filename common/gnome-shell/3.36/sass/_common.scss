@@ -228,6 +228,19 @@ StScrollBar {
 }
 
 //
+// App Icons
+//
+/* Outline for low res icons */
+.lowres-icon {
+  icon-shadow: none;
+}
+
+/* Drapshadow for large icons */
+.icon-dropshadow {
+  icon-shadow: none;
+}
+
+//
 // Modal Dialogs
 //
 .headline { @include fontsize($font-size * 1.1); }
