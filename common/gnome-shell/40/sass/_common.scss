@@ -39,6 +39,7 @@ $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
 $_shell_fg_color: white;
 $_panel_fg_color: if($variant=='lighter', $fg_color, $_shell_fg_color);
+$_system_bg_color: opacify(desaturate(darken($dark_sidebar_bg, 10%), 6%), 1);
 
 $_popup_shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
 $_popup_menu_shadow: if($variant!='dark', 0 1px 3px 2.1px rgba(0, 0, 0, 0.06), $_popup_shadow);
