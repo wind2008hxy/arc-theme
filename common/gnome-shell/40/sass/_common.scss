@@ -1670,6 +1670,10 @@ StScrollBar {
   spacing: 12px;
 }
 
+#overviewGroup {
+  background-color: $_system_bg_color;
+}
+
 .overview-controls { padding-bottom: 32px; }
 
 .window-picker { //container around window thumbnails
