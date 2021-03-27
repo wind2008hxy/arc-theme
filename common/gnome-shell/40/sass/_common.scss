@@ -898,31 +898,22 @@ StScrollBar {
     -minimum-hpadding: 6px;
     font-weight: bold;
     color: $_panel_fg_color;
-    text-shadow: none;
     transition-duration: 100ms;
+    border-width: 0;
     border-bottom-width: 1px;
     border-color: transparent;
     border-radius: 0;
 
+    // Hide icon for the application menu
     .app-menu-icon {
       width: 0;
       height: 0;
-      margin-left: 0px;
-      margin-right: 0px;
-    }
-
-    .system-status-icon,
-    .app-menu-icon > StIcon,
-    .popup-menu-arrow {
-      icon-shadow: none;
     }
 
     @at-root %panel_button_hover,
     &:hover {
-      color: $_panel_fg_color;
       background-color: if($variant!='lighter', transparentize(black, 0.83), transparentize(black, 0.95));
       box-shadow: none;
-      border-bottom-width: 1px;
       border-color: transparent;
     }
 
@@ -931,14 +922,10 @@ StScrollBar {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
       box-shadow: none;
-      border-width: 0;
-      border-bottom-width: 1px;
 
       @if $variant != 'lighter' {
         border-color: black;
       }
-
-      & > .system-status-icon { icon-shadow: none; }
     }
 
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
@@ -952,7 +939,6 @@ StScrollBar {
         @extend .panel-button;
 
         box-shadow: none;
-        padding: 1px 10px 0;
       }
 
       &:hover .clock { @extend %panel_button_hover; }
