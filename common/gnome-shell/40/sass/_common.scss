@@ -2184,9 +2184,9 @@ $dash_bottom_margin: 20px;
 }
 
 .workspace-thumbnail-indicator {
-  border: 4px solid transparentize($selected_bg_color, 0.2);
+  border: 3px solid transparentize($selected_bg_color, 0.2);
   border-radius: 1px;
-  padding: 1px;
+  padding: 0;
 }
 
 .apps-scroll-view {
