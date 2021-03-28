@@ -2050,7 +2050,7 @@ $dash_bottom_margin: 20px;
 }
 
 %icon_tile {
-  color: $_shell_fg_color;
+  color: if($variant!='lighter', $_shell_fg_color, $fg_color);
   border-radius: 2px;
   padding: 6px;
   border: 1px solid transparent;
