@@ -2148,7 +2148,7 @@ $dash_bottom_margin: 20px;
   .page-indicator-icon {
     width: 8px;
     height: 8px;
-    background-color: $selected_fg_color;
+    background-color: if($variant!='lighter', $_shell_fg_color, $fg_color);
     border-radius: 4px;
   }
 
