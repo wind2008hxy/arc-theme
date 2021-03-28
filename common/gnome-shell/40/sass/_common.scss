@@ -1003,10 +1003,15 @@ StScrollBar {
 // a little unstructured mess:
 
 #appMenu {
-  spacing: 4px;
+  spacing: 0;
   padding: 0 8px;
 
   .label-shadow { color: transparent; }
+}
+
+#appMenu .panel-status-menu-box {
+  padding: 0;
+  spacing: 0;
 }
 
 .app-menu,
