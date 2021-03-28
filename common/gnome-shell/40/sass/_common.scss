@@ -850,7 +850,7 @@ StScrollBar {
   &.login-screen,
   &:overview {
     background-color: transparent;
-    border: none;
+    border-color: transparent;
 
     .panel-button {
       &:focus, &:active, &:checked {
