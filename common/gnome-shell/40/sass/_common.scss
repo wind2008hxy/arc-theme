@@ -938,6 +938,7 @@ StScrollBar {
       .clock {
         @extend .panel-button;
 
+        padding: 0 10px;
         box-shadow: none;
       }
 
