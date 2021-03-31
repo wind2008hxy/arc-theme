@@ -94,6 +94,7 @@ Option | Default value | Description
 `cinnamon_version` | - | Build Cinnamon theme for specific version
 `gnome_shell_version` | - | Build GNOME Shell theme for specific version
 `gtk3_version` | - | Build GTK 3 theme for specific version
+`gnome_shell_gresource` | `false` | Compile GNOME Shell theme into a gresource file
 
 #### Uninstallation
 

@@ -36,3 +36,10 @@ option(
   type: 'string',
   description: 'Build GTK 3 theme for specific version',
 )
+
+option(
+  'gnome_shell_gresource',
+  type: 'boolean',
+  value: false,
+  description: 'Compile GNOME Shell theme into a gresource file',
+)
