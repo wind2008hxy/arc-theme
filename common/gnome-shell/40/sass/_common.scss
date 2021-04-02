@@ -2709,7 +2709,7 @@ $dash_bottom_margin: 20px;
 }
 
 #lockDialogGroup {
-  background-color: opacify($osd_bg_color, 1);
+  background-color: $_system_bg_color;
 }
 
 #unlockDialogNotifications {
