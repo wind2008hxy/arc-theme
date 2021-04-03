@@ -873,10 +873,6 @@ StScrollBar {
     }
   }
 
-  #panelLeft, #panelCenter { // spacing between activities<>app menu and such
-    spacing: 8px;
-  }
-
   .panel-corner {
     -panel-corner-radius: $panel-corner-radius;
     -panel-corner-background-color: transparentize(black, 1);
