@@ -9,17 +9,6 @@ if 'dark' in get_option('variants') or 'darker' in get_option('variants')
 endif
 
 foreach variant : get_option('variants')
-  light_assets = gtk2_light_assets
-  if variant == 'dark'
-    dark_assets = gtk2_dark_assets
-  endif
-
-  if variant == 'dark'
-    install_assets = dark_assets
-  else
-    install_assets = light_assets
-  endif
-
   if variant == 'light' or variant == 'lighter'
     light_menubar_toolbar_assets = [
       'entry-active-toolbar',
@@ -55,7 +44,7 @@ foreach variant : get_option('variants')
     install_dir : prefix / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar',
   )
 
-  foreach asset : install_assets
+  foreach asset : variant == 'dark' ? gtk2_dark_assets : gtk2_light_assets
     meson.add_install_script(
       'sh', '-c',
       'install -D' + ' ' +
