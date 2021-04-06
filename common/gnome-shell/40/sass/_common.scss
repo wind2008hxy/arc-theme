@@ -1556,7 +1556,7 @@ StScrollBar {
 //
 // Close buttons
 //
-$window_close_button_size: 22px;
+$window_close_button_size: 26px;
 $window_close_button_padding: 0;
 
 .window-close {
@@ -1570,7 +1570,7 @@ $window_close_button_padding: 0;
   padding: $window_close_button_padding;
   transition-duration: 100ms;
 
-  & > StIcon { icon-size: 16px; }
+  & > StIcon { icon-size: 18px; }
 
   &:hover {
     background-color: lighten(saturate($destructive_color, 15%), 12%);
