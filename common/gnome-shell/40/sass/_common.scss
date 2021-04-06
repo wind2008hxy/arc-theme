@@ -1556,30 +1556,29 @@ StScrollBar {
 //
 // Close buttons
 //
+$window_close_button_size: 22px;
+$window_close_button_padding: 0;
+
 .window-close {
   background-color: lighten(saturate($destructive_color, 6%), 4%);
-  border-radius: 22px;
+  border-radius: $window_close_button_size * 0.5 + $window_close_button_padding * 2;;
   border: none;
   box-shadow: 0 1px 0 0 rgba(0,0,0,0.1);;
   color: $destructive_fg_color;
-  height: 22px;
-  width: 22px;
-  padding: 0;
+  height: $window_close_button_size;
+  width: $window_close_button_size;
+  padding: $window_close_button_padding;
 
   & > StIcon { icon-size: 16px; }
 
   &:hover {
     background-color: lighten(saturate($destructive_color, 15%), 12%);
     color: $destructive_fg_color;
-    height: 22px;
-    width: 22px;
   }
 
   &:active {
     background-color: darken(adjust-hue(desaturate($destructive_color, 18%), -5%), 9%);
     color: $destructive_fg_color;
-    height: 22px;
-    width: 22px;
   }
 }
 
