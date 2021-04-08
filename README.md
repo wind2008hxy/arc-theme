@@ -48,9 +48,11 @@ See [the wiki](https://github.com/jnsh/arc-theme/wiki/Packages) for non-exhausti
 
 For installing the theme by compiling it from the source code, see [INSTALL.md](https://github.com/jnsh/arc-theme/blob/master/INSTALL.md) for build instructions, list of dependencies, build options and additional details.
 
-## Bugs
+## Issues
 
-If you find a bug, or have a suggestion for improving the theme, please open an issue at <https://github.com/jnsh/arc-theme/issues>.
+If you are experiencing any kind of issues, found a bug, or have a suggestion for improving the theme, please open an issue at <https://github.com/jnsh/arc-theme/issues>.
+
+Some known issues are addressed in [common problems](https://github.com/jnsh/arc-theme/wiki/Common-problems).
 
 ## Contributing
 
