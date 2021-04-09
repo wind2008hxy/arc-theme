@@ -2,6 +2,7 @@
 <gresources>
   <gresource prefix="/org/gnome/shell/theme">
     <file>common-assets/dash/dash-placeholder.svg</file>
+    <file>common-assets/dash/dash-placeholder-horizontal.svg</file>
     <file>common-assets/dash/running1-hover.svg</file>
     <file>common-assets/dash/running1.svg</file>
     <file>common-assets/dash/running2-hover.svg</file>
