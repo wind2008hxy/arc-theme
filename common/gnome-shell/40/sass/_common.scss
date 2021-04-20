@@ -851,14 +851,12 @@ StScrollBar {
   &:overview {
     background-color: transparent;
     border-color: transparent;
-    border-bottom-width: 0;
 
     .panel-button {
       &:focus, &:active, &:checked {
         &, &.clock-display .clock {
           color: $selected_fg_color;
           border-color: transparent;
-          border-bottom-width: 0;
         }
       }
     }
