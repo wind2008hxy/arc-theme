@@ -936,6 +936,9 @@ StScrollBar {
 
         padding: 0 10px;
         box-shadow: none;
+
+        //HACK: compensate for bottom border to ensure the clock stays vertically centered
+        padding-top: 1px;
       }
 
       &:hover .clock { @extend %panel_button_hover; }
