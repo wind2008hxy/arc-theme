@@ -908,20 +908,15 @@ StScrollBar {
 
     @at-root %panel_button_hover,
     &:hover {
-      background-color: if($variant!='lighter', transparentize(black, 0.83), transparentize(black, 0.95));
-      box-shadow: none;
+      box-shadow: inset 0 0 0 100px if($variant!='lighter', transparentize(black, 0.83), transparentize(black, 0.95));
       border-color: transparent;
     }
 
     @at-root %panel_button_active,
     &:active, &:overview, &:focus, &:checked {
       color: $selected_fg_color;
-      background-color: $selected_bg_color;
-      box-shadow: none;
-
-      @if $variant != 'lighter' {
-        border-color: black;
-      }
+      box-shadow: inset 0 0 0 100px $selected_bg_color;
+      border-color: if($variant!='lighter', black, $selected_bg_color);
     }
 
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
