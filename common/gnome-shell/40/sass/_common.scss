@@ -1789,48 +1789,48 @@ $window_close_button_padding: 0;
 // Dash
 //
 
-$dash_placeholder_size: 24px;
-$dash_padding: 10px;
-$dash_spacing: 4px;
+$_dash_placeholder_size: 24px;
+$_dash_padding: 10px;
+$_dash_spacing: 4px;
 
-$dash_bottom_margin: 20px;
+$_dash_bottom_margin: 20px;
 
 #dash {
   @include fontsize($font-size);
   margin-top: 15px;
-  padding: 0 $dash_padding;
+  padding: 0 $_dash_padding;
 
   .placeholder {
     background-image: none;
     background-size: contain;
-    height: $dash_placeholder_size;
+    height: $_dash_placeholder_size;
   }
 
   .empty-dash-drop-target {
-    width: $dash_placeholder_size;
-    height: $dash_placeholder_size;
+    width: $_dash_placeholder_size;
+    height: $_dash_placeholder_size;
   }
 
   .overview-icon {
-    padding: $dash_padding / 2;
+    padding: $_dash_padding / 2;
   }
 }
 
 .dash-background {
   background-color: $dark_sidebar_bg;
-  margin-bottom: $dash_bottom_margin;
-  padding: $dash_padding;
+  margin-bottom: $_dash_bottom_margin;
+  padding: $_dash_padding;
   border: 1px solid if($variant!='lighter', rgba(0,0,0,0.4), rgba(0,0,0,0.1));
   border-radius: 3px;
 }
 
 .dash-item-container .app-well-app, .show-apps {
-  padding: $dash_padding $dash_spacing $dash_padding + $dash_bottom_margin;
+  padding: $_dash_padding $_dash_spacing $_dash_padding + $_dash_bottom_margin;
 }
 
 .dash-separator {
   width: 1px;
-  margin: 0 ($dash_spacing + ($dash_padding / 2)) $dash_bottom_margin;
+  margin: 0 ($_dash_spacing + ($_dash_padding / 2)) $_dash_bottom_margin;
   background-color: if($variant!='lighter', transparentize(black, 0.5), transparentize(black, 0.8));
 }
 
