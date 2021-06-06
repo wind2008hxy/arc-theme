@@ -1797,7 +1797,7 @@ $dash_bottom_margin: 20px;
 
 #dash {
   @include fontsize($font-size);
-  margin-top: 10px;
+  margin-top: 15px;
   padding: 0 $dash_padding;
 
   .placeholder {
