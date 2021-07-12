@@ -1587,7 +1587,6 @@ $window_close_button_padding: 0;
 .workspace-background {
   // keep in sync with BACKGROUND_CORNER_RADIUS_PIXELS in workspace.js
   border-radius: 30px;
-  background-color: $dark_sidebar_bg;
   box-shadow: 0 8px 16px 0 transparentize(black, 0.8);
 }
 
