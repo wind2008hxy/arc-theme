@@ -47,6 +47,8 @@
     <file alias="icons/scalable/status/carousel-arrow-next-24-symbolic.svg">icons/carousel-arrow-next-24-symbolic.svg</file>
     <file alias="icons/scalable/status/carousel-arrow-back-24-symbolic.svg">icons/carousel-arrow-back-24-symbolic.svg</file>
     <file alias="process-working.svg">icons/process-working.svg</file>
+    <file alias="icons/scalable/status/screen-privacy-disabled-symbolic.svg">icons/screen-privacy-disabled-symbolic.svg</file>
+    <file alias="icons/scalable/status/screen-privacy-symbolic.svg">icons/screen-privacy-symbolic.svg</file>
     <file alias="gnome-shell-start.svg">icons/gnome-shell-start.svg</file>
     <file alias="gnome-shell.css">gnome-shell-dark.css</file>
     <file>pad-osd.css</file>
