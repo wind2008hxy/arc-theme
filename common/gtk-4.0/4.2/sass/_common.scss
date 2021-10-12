@@ -4086,7 +4086,7 @@ window {
     //border: solid 1px $borders_color;
     border-radius: 0;
 //    box-shadow: inset 0 0 0 4px $borders_color, inset 0 0 0 3px $headerbar_bg_color, inset 0 1px $top_hilight;//FIXME Arc styling, https://gitlab.gnome.org/GNOME/gtk/-/commit/da4e2a29763f5fcc314da992c4b24763247c6211
-    box-shadow: onne;
+    box-shadow: none;
 
 //    &:backdrop { box-shadow: inset 0 0 0 4px $borders_color, inset 0 0 0 3px $backdrop_bg_color, inset 0 1px $top_hilight; }//FIXME Arc styling, https://gitlab.gnome.org/GNOME/gtk/-/commit/da4e2a29763f5fcc314da992c4b24763247c6211
   }
