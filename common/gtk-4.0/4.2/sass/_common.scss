@@ -1510,7 +1510,7 @@ headerbar {
     box-shadow: none;
   }
 
-  separator { background-image: opacify($header_border, 1); }
+  separator { background-color: opacify($header_border, 1); }
 
   @extend %titlebar;
 }
