@@ -2663,7 +2663,6 @@ checkbutton {
   $_scale_trough_bg: if($variant != 'dark', $button_border, darken($bg_color, 5%));
 
   outline-offset: 2px;//FIXME from arc gtk3, still needed?
-  -gtk-outline-radius: 4.5px;//FIXME from arc gtk3, still needed?
 
   border-radius: 2.5px;
   background-color: $_scale_trough_bg;
