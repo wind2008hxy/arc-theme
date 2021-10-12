@@ -2506,7 +2506,7 @@ scrollbar {
         min-width: 4px;
         min-height: 4px;
         background-color: mix($fg_color, $bg_color, 70%);
-        border: 1px solid f($variant != 'dark', transparentize(white, 0.4), transparentize(black, 0.7));
+        border: 1px solid if($variant != 'dark', transparentize(white, 0.4), transparentize(black, 0.7));
       }
 
       &.horizontal {
