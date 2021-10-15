@@ -236,3 +236,184 @@ window.csd.unified:not(.solid-csd):not(.fullscreen):not(.tiled):not(.tiled-top):
     margin: 0;
   }
 }
+
+// Tabs
+
+@mixin undershoot-gradient($dir) {
+  background: linear-gradient(to #{$dir},
+                              $bg_color,
+                              transparentize($bg_color, 1) 20px);
+}
+
+@mixin need-attention-gradient($dir) {
+  background: linear-gradient(to #{$dir},
+                              transparentize($selected_bg_color, .3),
+                              transparentize($selected_bg_color, .5) 1px,
+                              transparentize($selected_bg_color, 1) 20px);
+}
+
+tabbar {
+  .box {
+    min-height: 20px;
+    background: $bg_color;
+    border-bottom: 1px solid $borders_color;
+  }
+
+  scrolledwindow.pinned {
+    undershoot {
+      border: 0 solid $borders_color;
+    }
+
+    &:dir(rtl) undershoot.left {
+      border-left-width: 1px;
+    }
+
+    &:dir(ltr) undershoot.right {
+      border-right-width: 1px;
+    }
+
+    tabbox {
+      &:dir(ltr) {
+        padding-right: 1px;
+        box-shadow: inset -1px 0 $borders_color;
+      }
+
+      &:dir(rtl) {
+        padding-left: 1px;
+        box-shadow: inset 1px 0 $borders_color;
+      }
+    }
+  }
+
+  undershoot {
+    transition: none;
+
+    &.left {
+      @include undershoot-gradient("right");
+    }
+
+    &.right {
+      @include undershoot-gradient("left");
+    }
+  }
+
+  .needs-attention-left undershoot.left {
+    @include need-attention-gradient("right");
+  }
+
+  .needs-attention-right undershoot.right {
+    @include need-attention-gradient("left");
+  }
+
+  tab {
+    min-width: 118px;
+    border-style: solid;
+    border-color: $borders_color;
+    border-width: 0 1px 0 1px;
+    transition: background 150ms ease-in-out;
+    background-color: transparentize($base_color, 1);
+    color: $insensitive_fg_color;
+
+    &.pinned {
+      min-width: 28px;
+    }
+
+    &:checked, &:checked:hover {
+      background-color: $base_color;
+      color: $fg_color;
+    }
+
+    &:hover {
+      background-color: transparentize($base_color, 0.5);
+      color: mix($fg_color, $insensitive_fg_color, 50%);
+    }
+  }
+
+  .start-action,
+  .end-action {
+    background-color: transparentize($base_color, 1);
+    border-color: $borders_color;
+    border-style: solid;
+    transition: background 150ms ease-in-out;
+
+    button {
+      border: none;
+      border-radius: 0;
+    }
+  }
+
+  .start-action:dir(ltr),
+  .end-action:dir(rtl) {
+    border-right-width: 1px;
+
+    > * {
+      margin-right: 1px;
+    }
+  }
+
+  .start-action:dir(rtl),
+  .end-action:dir(ltr) {
+    border-left-width: 1px;
+
+    > * {
+      margin-left: 1px;
+    }
+  }
+}
+
+.tab-drag-icon {
+  tab {
+    min-height: 20px;
+    background-color: $base_color;
+
+    $_wm_border: if($variant!='dark', transparentize(black, 0.9), transparentize(black, 0.45));
+
+    // copy shadow and border color from popovers
+    box-shadow: 0 2px 6px 1px if($variant!='dark', transparentize(black, 0.93), transparentize(black, 0.65)),
+                0 0 0 1px darken($borders_color, 5%);
+
+    margin: 25px;
+  }
+}
+
+
+tabbar,
+.tab-drag-icon {
+  tab {
+    padding: 2px 6px;
+
+    &.needs-attention {
+      background-image:
+        radial-gradient(ellipse at bottom,
+                        transparentize(white, .2),
+                        transparentize($selected_bg_color, .8) 15%,
+                        transparentize($selected_bg_color, 1) 15%);
+    }
+
+    .tab-close-button,
+    .tab-indicator {
+      padding: 0;
+      margin: 0;
+      min-width: 22px;
+      min-height: 22px;
+      color: mix($bg_color, $fg_color, 35%);
+
+      border: none;
+      box-shadow: none;
+      -gtk-icon-shadow: none;
+      text-shadow: none;
+      background: none;
+    }
+
+    .tab-close-button,
+    .tab-indicator.clickable {
+      &:hover {
+        color: lighten(red, 15%);
+      }
+
+      &:active {
+        color: $selected_bg_color;
+      }
+    }
+  }
+}
