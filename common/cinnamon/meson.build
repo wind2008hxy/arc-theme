@@ -1,5 +1,5 @@
 # supported versions
-cinnamon_versions = ['2.8', '3.0', '3.2', '3.4', '3.6', '3.8', '4.0', '4.2', '4.4', '4.6', '4.8']
+cinnamon_versions = ['2.8', '3.0', '3.2', '3.4', '3.6', '3.8', '4.0', '4.2', '4.4', '4.6', '4.8', '5.0']
 
 # cinnamon version
 cinnamon = find_program('cinnamon', required : false)
