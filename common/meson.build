@@ -1,4 +1,18 @@
-subdir('index')
+foreach variant : get_option('variants')
+  index_theme = configure_file(
+    input: 'index.theme.in',
+    output : 'index.theme.' + variant,
+    configuration : {
+      'variant_name' : variant_name.get(variant),
+    }
+  )
+
+  install_data(
+    index_theme,
+    rename: 'index.theme',
+    install_dir : prefix / install_dir.get(variant),
+  )
+endforeach
 
 common_dirs = {
   'cinnamon' : 'cinnamon',
