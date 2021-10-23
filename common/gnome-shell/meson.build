@@ -74,9 +74,9 @@ foreach variant : get_option('variants')
     continue
   endif
 
-  # lighter shell theme available starting from 3.32
+  # lighter shell theme available only for 3.32-3.38
   if variant == 'lighter'
-    if gnome_shell_ver.version_compare('<=3.30')
+    if gnome_shell_ver.version_compare('<=3.30') or gnome_shell_ver.version_compare('>=40')
       continue
     endif
   endif

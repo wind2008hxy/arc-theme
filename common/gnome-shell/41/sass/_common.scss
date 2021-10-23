@@ -1,15 +1,7 @@
 //This is the RIGHT PLACE to edit the stylesheet
 
 $panel-corner-radius: 0px;
-
-$asset_path: assets;
-@if $variant == 'light' {
-  $asset_path: light-assets;
-} @else if $variant == 'dark' {
-  $asset_path: dark-assets;
-} @else if $variant == 'lighter' {
-  $asset_path: lighter-assets;
-}
+$asset_path: if($variant == 'dark', dark-assets, light-assets);
 
 /* Copyright 2009, 2015 Red Hat, Inc.
  *
@@ -38,8 +30,8 @@ $_bubble_bg_color: opacify($osd_bg_color,0.25);
 $_bubble_fg_color: $osd_fg_color;
 $_bubble_borders_color: transparentize($osd_fg_color,0.8);
 $_shell_fg_color: white;
-$_panel_fg_color: if($variant=='lighter', $fg_color, $_shell_fg_color);
-$_system_bg_color: if($variant=='lighter', opacify(desaturate(darken($dark_sidebar_bg, 8%), 3%), 1), opacify(desaturate(darken($dark_sidebar_bg, 9%), 5%), 1));
+$_panel_fg_color: $_shell_fg_color;
+$_system_bg_color: opacify(desaturate(darken($dark_sidebar_bg, 9%), 5%), 1);
 
 $_popup_shadow: 0 1px 3px 1px rgba(0, 0, 0, 0.19);
 $_popup_menu_shadow: if($variant!='dark', 0 1px 3px 2.1px rgba(0, 0, 0, 0.06), $_popup_shadow);
@@ -649,7 +641,7 @@ StScrollBar {
     padding: 0;
     height: 4px;
     -barlevel-height: 4px;
-    -barlevel-background-color: if($variant!='lighter', transparentize(black, 0.5), $button_border);
+    -barlevel-background-color: transparentize(black, 0.5);
     -barlevel-active-background-color: $selected_bg_color;
     -barlevel-overdrive-color: $warning_color;
     -barlevel-overdrive-separator-width: 1px;
@@ -803,8 +795,8 @@ StScrollBar {
 
 .ws-switcher-box {
   height: 64px;
-  background-color: if($variant!='lighter', transparentize(black, 0.67), transparentize(black, 0.83));
-  border: 1px solid if($variant!='lighter', transparentize(black, 0.67), transparentize(black, 0.83));
+  background-color: transparentize(black, 0.67);
+  border: 1px solid transparentize(black, 0.67);
   border-radius: 2px;
 }
 
@@ -908,7 +900,7 @@ StScrollBar {
 
     @at-root %panel_button_hover,
     &:hover {
-      box-shadow: inset 0 0 0 100px if($variant!='lighter', transparentize(black, 0.83), transparentize(black, 0.95));
+      box-shadow: inset 0 0 0 100px transparentize(black, 0.83);
       border-color: transparent;
     }
 
@@ -916,7 +908,7 @@ StScrollBar {
     &:active, &:overview, &:focus, &:checked {
       color: $selected_fg_color;
       box-shadow: inset 0 0 0 100px $selected_bg_color;
-      border-color: if($variant!='lighter', black, $selected_bg_color);
+      border-color: black;
     }
 
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
@@ -972,7 +964,7 @@ StScrollBar {
 #panel #panelActivities.panel-button {
 
   > * {
-    background-image: url("#{$asset_path}/panel/activities.svg");
+    background-image: url("common-assets/panel/activities.svg");
     background-size: contain;
     width: 24px;
     height: 24px;
@@ -1818,7 +1810,7 @@ $_dash_bottom_margin: 20px;
   background-color: $dark_sidebar_bg;
   margin-bottom: $_dash_bottom_margin;
   padding: $_dash_padding;
-  border: 1px solid if($variant!='lighter', rgba(0,0,0,0.4), rgba(0,0,0,0.1));
+  border: 1px solid rgba(0,0,0,0.4);
   border-radius: 3px;
 }
 
@@ -1829,7 +1821,7 @@ $_dash_bottom_margin: 20px;
 .dash-separator {
   width: 1px;
   margin: 0 ($_dash_spacing + ($_dash_padding / 2)) $_dash_bottom_margin;
-  background-color: if($variant!='lighter', transparentize(black, 0.5), transparentize(black, 0.8));
+  background-color: transparentize(black, 0.5);
 }
 
 //osd tooltip
@@ -1879,7 +1871,7 @@ $_dash_bottom_margin: 20px;
   }
 
   .app-well-app.focused .overview-icon {
-    background-color: if($variant != 'lighter', transparentize(black, 0.75), transparentize(black, 0.85));
+    background-color: transparentize(black, 0.75);
   }
 
   &.running-dots {
@@ -1917,7 +1909,7 @@ $_dash_bottom_margin: 20px;
 .show-apps {
 
   .overview-icon {
-    background-color: if($variant!='lighter', transparentize(black, 0.5), transparentize(black, 0.8));
+    background-color: transparentize(black, 0.5);
     border-radius: 2px;
     border: 0px;
     padding: 6px;
@@ -1927,7 +1919,7 @@ $_dash_bottom_margin: 20px;
   }
 
   &:hover .overview-icon {
-    background-color: if($variant!='lighter', transparentize(black, 0.3), transparentize(black, 0.9));
+    background-color: transparentize(black, 0.3);
     color: $selected_bg_color;
   }
 
@@ -2024,7 +2016,7 @@ $_dash_bottom_margin: 20px;
   &:hover .overview-icon,
   &:focus .overview-icon,
   &:selected .overview-icon {
-    background-color: if($variant!='lighter', transparentize($osd_fg_color,.6), transparentize($osd_bg_color,.6));
+    background-color: transparentize($osd_fg_color,.6);
     transition-duration: 0ms;
     border-image: none;
     background-image: none;
@@ -2043,7 +2035,7 @@ $_dash_bottom_margin: 20px;
 }
 
 %icon_tile {
-  color: if($variant!='lighter', $_shell_fg_color, $fg_color);
+  color: $_shell_fg_color;
   border-radius: 2px;
   padding: 6px;
   border: 1px solid transparent;
@@ -2059,10 +2051,6 @@ $_dash_bottom_margin: 20px;
   > .overview-icon {
     background-color: darken($dark_sidebar_bg, 8%);
     border: 1px solid transparentize(darken($dark_sidebar_bg, 25%), 0.5);
-
-    @if $variant == 'lighter' {
-      color: $dark_sidebar_fg;
-    }
   }
 
   &:hover > .overview-icon, &:focus > .overview-icon {
@@ -2127,12 +2115,6 @@ $_dash_bottom_margin: 20px;
   padding: 12px;
   width: 620px;
   height: 620px;
-
-  @if $variant == 'lighter' {
-    .overview-icon {
-      color: $dark_sidebar_fg;
-    }
-  }
 }
 
 .page-indicator {
@@ -2141,7 +2123,7 @@ $_dash_bottom_margin: 20px;
   .page-indicator-icon {
     width: 8px;
     height: 8px;
-    background-color: if($variant!='lighter', $_shell_fg_color, $fg_color);
+    background-color: $_shell_fg_color;
     border-radius: 4px;
   }
 
@@ -2570,7 +2552,7 @@ $_dash_bottom_margin: 20px;
   padding-left: 2px;
   .login-dialog-not-listed-button:focus &,
   .login-dialog-not-listed-button:hover & {
-    color: if($variant != 'lighter', lighten($osd_fg_color, 25%), darken($osd_fg_color, 12%));
+    color: lighten($osd_fg_color, 25%);
   }
 }
 .login-dialog-not-listed-label {
@@ -2701,8 +2683,8 @@ $_dash_bottom_margin: 20px;
   font-weight: bold;
   padding: 0 6px;
   color: $fg_color;
-  border: 1px solid if($variant != 'lighter', transparentize(white, 0.9), transparentize(black, 0.9));
-  background-color: if($variant != 'lighter', transparentize(white, 0.8), transparentize(black, 0.8));
+  border: 1px solid transparentize(white, 0.9);
+  background-color: transparentize(white, 0.8);
   border-radius: 99px;
   margin-right: 12px;
 }
