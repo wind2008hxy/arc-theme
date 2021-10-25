@@ -88,7 +88,15 @@ sass_depend_files = run_command(
 ).stdout().split()
 
 # always compile the dark CSS
-input_scss_dark = sass_path / (get_option('transparency') ? 'gtk-dark.scss' : 'gtk-solid-dark.scss')
+input_scss_dark = configure_file(
+  input: meson.current_source_dir() / gtk3_ver / 'sass' / 'gtk.scss.in',
+  output : 'gtk-dark.scss',
+  configuration : {
+    'variant' : 'dark',
+    'transparency' : get_option('transparency').to_string(),
+    'sass_path' : meson.current_source_dir() / gtk3_ver / 'sass',
+  }
+)
 output_css_dark = 'gtk-main-dark.css'
 gtk3_stylesheet = custom_target(
   output_css_dark,
@@ -103,11 +111,15 @@ foreach variant : get_option('variants')
   output_css = (variant == 'light' ? 'gtk-main.css' : 'gtk-main-' + variant + '.css')
 
   if variant != 'dark'
-    if get_option('transparency')
-      input_scss = sass_path / (variant == 'light' ? 'gtk.scss' : 'gtk-' + variant + '.scss')
-    else
-      input_scss = sass_path / (variant == 'light' ? 'gtk-solid.scss' : 'gtk-solid-' + variant + '.scss')
-    endif
+    input_scss = configure_file(
+      input: meson.current_source_dir() / gtk3_ver / 'sass' / 'gtk.scss.in',
+      output : 'gtk-' + variant + '.scss',
+      configuration : {
+        'variant' : variant,
+        'transparency' : get_option('transparency').to_string(),
+        'sass_path' : meson.current_source_dir() / gtk3_ver / 'sass',
+      }
+    )
 
     gtk3_stylesheet = custom_target(
       output_css,

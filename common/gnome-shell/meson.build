@@ -81,17 +81,22 @@ foreach variant : get_option('variants')
     endif
   endif
 
-  if not get_option('transparency') and not gnome_shell_ver.version_compare('<=3.30')
-    input_scss = (variant == 'light' ? 'gnome-shell-solid.scss' : 'gnome-shell-solid-' + variant + '.scss')
-  else
-    input_scss = (variant == 'light' ? 'gnome-shell.scss' : 'gnome-shell-' + variant + '.scss')
-  endif
+  # generate base SCSS file
+  input_scss = configure_file(
+    input: meson.current_source_dir() / gnome_shell_ver / 'sass' / 'gnome-shell.scss.in',
+    output : 'gnome-shell-' + variant + '.scss',
+    configuration : {
+      'variant' : variant,
+      'transparency' : get_option('transparency').to_string(),
+      'sass_path' : meson.current_source_dir() / gnome_shell_ver / 'sass',
+    }
+  )
 
   output_css = (variant == 'light' ? 'gnome-shell.css' : 'gnome-shell-' + variant + '.css')
 
   gnome_shell_css = custom_target(
     output_css,
-    input : meson.current_source_dir() / gnome_shell_ver / 'sass' / input_scss,
+    input : input_scss,
     output : output_css,
     command : [sassc, '@INPUT@', '@OUTPUT@'],
     build_by_default : true,

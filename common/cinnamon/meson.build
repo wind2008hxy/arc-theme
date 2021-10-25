@@ -44,12 +44,22 @@ foreach variant : get_option('variants')
     continue
   endif
 
-  input_scss = (variant == 'light' ? 'cinnamon.scss' : 'cinnamon-' + variant + '.scss')
+  # generate base SCSS file
+  input_scss = configure_file(
+    input: meson.current_source_dir() / cinnamon_ver / 'sass' / 'cinnamon.scss.in',
+    output : 'cinnamon-' + variant + '.scss',
+    configuration : {
+      'variant' : variant,
+      'transparency' : get_option('transparency').to_string(),
+      'sass_path' : meson.current_source_dir() / cinnamon_ver / 'sass',
+    }
+  )
+
   output_css = (variant == 'light' ? 'cinnamon.css' : 'cinnamon-' + variant + '.css')
 
   cinnamon_css = custom_target(
     output_css,
-    input : meson.current_source_dir() / cinnamon_ver / 'sass' / input_scss,
+    input : input_scss,
     output : output_css,
     command : [sassc, '@INPUT@', '@OUTPUT@'],
     build_by_default : true,
