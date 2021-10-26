@@ -47,24 +47,6 @@ sass_depend_files = run_command(
   check : true
 ).stdout().split()
 
-if get_option('gnome_shell_gresource')
-  gresource_depend_files = []
-
-  gresource_depend_files += [
-    meson.current_source_dir() / gnome_shell_ver / 'pad-osd.css'
-  ]
-
-  gresource_depend_files += run_command(
-    'find', '-L',
-    meson.current_source_dir() / gnome_shell_ver / 'icons',
-    meson.current_source_dir() / gnome_shell_ver / 'common-assets',
-    meson.current_source_dir() / gnome_shell_ver / 'light-assets',
-    meson.current_source_dir() / gnome_shell_ver / 'dark-assets',
-    meson.current_source_dir() / gnome_shell_ver / 'lighter-assets',
-    check : true
-  ).stdout().split()
-endif
-
 # compile and install
 
 foreach variant : get_option('variants')
@@ -104,6 +86,18 @@ foreach variant : get_option('variants')
   )
 
   if get_option('gnome_shell_gresource')
+
+    # asset dependencies for gresource
+    gresource_depend_files = []
+    gresource_depend_files += [meson.current_source_dir() / gnome_shell_ver / 'pad-osd.css']
+    gresource_depend_files += run_command(
+      'find', '-L',
+      meson.current_source_dir() / gnome_shell_ver / 'icons',
+      meson.current_source_dir() / gnome_shell_ver / 'common-assets',
+      meson.current_source_dir() / gnome_shell_ver / variant + '-assets',
+      check : true
+    ).stdout().split()
+
     gresource_name = (variant == 'light' ? 'gnome-shell-theme' : 'gnome-shell-theme-' + variant)
 
     gnome_shell_gresource = custom_target(
