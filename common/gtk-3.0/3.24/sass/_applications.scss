@@ -768,10 +768,12 @@ panel-toplevel.background {
     @extend %panelbutton;
   }
 
-  button label,
-  button image:not(:only-child) {
-    &:first-child { padding-left: 4px; }
-    padding-right: 4px;
+  #applicationmenu-button > box,
+  .tasklist > button > box { 
+    > label, > image {
+      &:first-child { padding-left: 4px; }
+      padding-right: 4px;
+    }
   }
 }
 
