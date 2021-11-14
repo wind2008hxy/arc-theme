@@ -768,6 +768,7 @@ panel-toplevel.background {
     @extend %panelbutton;
   }
 
+  #clock-button,
   #applicationmenu-button > box,
   .tasklist > button > box { 
     > label, > image {
