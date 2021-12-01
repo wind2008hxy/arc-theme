@@ -4,7 +4,7 @@ foreach variant : get_option('variants')
   xml_assets = [
     variant == 'light' or variant == 'lighter' ? 'metacity-theme-1.xml' : 'metacity-theme-1-dark.xml',
     variant == 'light' or variant == 'lighter' ? 'metacity-theme-2.xml' : 'metacity-theme-2-dark.xml',
-    'metacity-theme-3.xml'
+    variant == 'light' or variant == 'lighter' ? 'metacity-theme-3.xml' : 'metacity-theme-3-dark.xml'
   ]
 
   install_data(
