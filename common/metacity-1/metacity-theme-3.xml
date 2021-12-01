@@ -38,7 +38,7 @@
 <constant name="C_icon_bg_focused" value="gtk:custom(wm_icon_bg,#90949E)" />
 <constant name="C_icon_bg_unfocused" value="gtk:custom(wm_icon_unfocused_bg,#B6B8C0)" />
 <constant name="C_icon_bg_hover" value="gtk:custom(wm_icon_hover_bg,#7A7F8B)" />
-<constant name="C_icon_bg_active" value="gtk:custom(wm_icon_active_bg,#ffffff)" />
+<constant name="C_icon_bg_active" value="gtk:custom(wm_icon_active_bg,#5294e2)" />
 
 <!-- geometries -->
 
