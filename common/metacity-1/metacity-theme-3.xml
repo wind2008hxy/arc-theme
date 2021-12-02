@@ -70,11 +70,11 @@
 	<distance name="bottom_height" value="0" />
 </frame_geometry>
 
-<frame_geometry name="tiled_left" title_scale="medium" rounded_top_left="false" rounded_top_right="C_border_radius" parent="normal">
+<frame_geometry name="tiled_left" title_scale="medium" rounded_top_left="false" rounded_top_right="false" parent="normal">
 	<distance name="right_width" value="0" />
 </frame_geometry>
 
-<frame_geometry name="tiled_right" title_scale="medium" rounded_top_left="C_border_radius" rounded_top_right="false" parent="normal">
+<frame_geometry name="tiled_right" title_scale="medium" rounded_top_left="false" rounded_top_right="false" parent="normal">
 	<distance name="left_width" value="0" />
 </frame_geometry>
 
