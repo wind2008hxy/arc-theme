@@ -19,6 +19,7 @@
 <constant name="C_wm_bg_unfocused" value="gtk:custom(wm_bg,#2f343f)" />
 
 <constant name="C_wm_highlight" value="gtk:custom(wm_highlight,#353a48)" />
+<constant name="C_wm_border" value="gtk:custom(wm_border,#21242b)" />
 
 <!-- window button colors -->
 
@@ -43,14 +44,14 @@
 <!-- geometries -->
 
 <frame_geometry name="normal" title_scale="medium" rounded_top_left="C_border_radius" rounded_top_right="C_border_radius">
-	<distance name="left_width" value="0" />
-	<distance name="right_width" value="0" />
-	<distance name="bottom_height" value="0" />
-	<distance name="left_titlebar_edge" value="2"/>
-	<distance name="right_titlebar_edge" value="2"/>
+	<distance name="left_width" value="1" />
+	<distance name="right_width" value="1" />
+	<distance name="bottom_height" value="1" />
+	<distance name="left_titlebar_edge" value="1"/>
+	<distance name="right_titlebar_edge" value="1"/>
 	<distance name="title_vertical_pad" value="6"/>
-	<border name="title_border" left="10" right="10" top="0" bottom="0"/>
-	<border name="button_border" left="0" right="0" top="6" bottom="6"/>
+	<border name="title_border" left="10" right="10" top="1" bottom="0"/>
+	<border name="button_border" left="0" right="0" top="7" bottom="7"/>
   <distance name="button_width" value="30"/>
   <distance name="button_height" value="16"/>
 </frame_geometry>
@@ -68,14 +69,14 @@
 							title_vertical_pad on normal state
 							or you'll have bigger buttons		-->
 	<distance name="bottom_height" value="0" />
+	<border name="title_border" left="10" right="10" top="0" bottom="0"/>
+	<border name="button_border" left="0" right="0" top="6" bottom="6"/>
 </frame_geometry>
 
 <frame_geometry name="tiled_left" title_scale="medium" rounded_top_left="false" rounded_top_right="false" parent="normal">
-	<distance name="right_width" value="0" />
 </frame_geometry>
 
 <frame_geometry name="tiled_right" title_scale="medium" rounded_top_left="false" rounded_top_right="false" parent="normal">
-	<distance name="left_width" value="0" />
 </frame_geometry>
 
 <frame_geometry name="small" title_scale="small" parent="normal" rounded_top_left="C_border_radius" rounded_top_right="C_border_radius">
@@ -159,16 +160,40 @@
 
 <draw_ops name="titlebar_focused">
 	<rectangle color="C_wm_bg_focused" x="0" y="0" width="width" height="height" filled="true" />
-	<rectangle color="C_wm_highlight" x="0" y="0" width="width" height="1" filled="true" />
+	<rectangle color="C_wm_highlight" x="0" y="1" width="width" height="1" filled="true" />
+	<arc color="C_wm_border" x="0" y="0" width="C_border_radius+2" height="C_border_radius+2" start_angle="270.0" extent_angle="90.0" />
+	<arc color="C_wm_border" x="width-C_border_radius-3" y="0" width="C_border_radius+2" height="C_border_radius+2" start_angle="0.0" extent_angle="90.0" />
 </draw_ops>
 
 <draw_ops name="titlebar_unfocused">
 	<rectangle color="C_wm_bg_unfocused" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_wm_highlight" x="0" y="1" width="width" height="1" filled="true" />
+	<arc color="C_wm_border" x="0" y="0" width="C_border_radius+2" height="C_border_radius+2" start_angle="270.0" extent_angle="90.0" />
+	<arc color="C_wm_border" x="width-C_border_radius-3" y="0" width="C_border_radius+2" height="C_border_radius+2" start_angle="0.0" extent_angle="90.0" />
+</draw_ops>
+
+<draw_ops name="edge_border">
+	<rectangle color="C_wm_border" x="0" y="0" width="width" height="height" filled="true" />
+</draw_ops>
+
+<draw_ops name="titlebar_max_focused">
+	<rectangle color="C_wm_bg_focused" x="0" y="0" width="width" height="height" filled="true" />
 	<rectangle color="C_wm_highlight" x="0" y="0" width="width" height="1" filled="true" />
 </draw_ops>
 
-<draw_ops name="titlebar_max">
+<draw_ops name="titlebar_max_unfocused">
+	<rectangle color="C_wm_bg_unfocused" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_wm_highlight" x="0" y="0" width="width" height="1" filled="true" />
+</draw_ops>
 
+<draw_ops name="titlebar_tiled_focused">
+	<rectangle color="C_wm_bg_focused" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_wm_highlight" x="0" y="1" width="width" height="1" filled="true" />
+</draw_ops>
+
+<draw_ops name="titlebar_tiled_unfocused">
+	<rectangle color="C_wm_bg_unfocused" x="0" y="0" width="width" height="height" filled="true" />
+	<rectangle color="C_wm_highlight" x="0" y="1" width="width" height="1" filled="true" />
 </draw_ops>
 
 <draw_ops name="titlebar_small_focused">
@@ -412,6 +437,12 @@
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="titlebar_focused" />
 	<piece position="title" draw_ops="title_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
@@ -446,6 +477,12 @@
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="titlebar_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
@@ -478,7 +515,7 @@
 
 <frame_style name="normal_max_focused" geometry="max">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
-	<piece position="titlebar" draw_ops="titlebar_max" />
+	<piece position="titlebar" draw_ops="titlebar_max_focused" />
 	<piece position="title" draw_ops="title_focused" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
@@ -512,7 +549,7 @@
 
 <frame_style name="normal_max_unfocused" geometry="max">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
-	<piece position="titlebar" draw_ops="titlebar_max" />
+	<piece position="titlebar" draw_ops="titlebar_max_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
@@ -546,7 +583,7 @@
 
 <frame_style name="normal_max_shaded_focused" geometry="max">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
-	<piece position="titlebar" draw_ops="titlebar_max" />
+	<piece position="titlebar" draw_ops="titlebar_max_focused" />
 	<piece position="title" draw_ops="title_focused" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
@@ -580,7 +617,7 @@
 
 <frame_style name="normal_max_shaded_unfocused" geometry="max">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
-	<piece position="titlebar" draw_ops="titlebar_max" />
+	<piece position="titlebar" draw_ops="titlebar_max_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
@@ -616,6 +653,12 @@
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="titlebar_focused" />
 	<piece position="title" draw_ops="title_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
@@ -650,6 +693,12 @@
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="titlebar_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
@@ -684,6 +733,12 @@
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="titlebar_focused" />
 	<piece position="title" draw_ops="title_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
@@ -718,6 +773,12 @@
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="titlebar_focused" />
 	<piece position="title" draw_ops="title_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
@@ -752,6 +813,12 @@
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="titlebar_small_focused" />
 	<piece position="title" draw_ops="title_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
@@ -786,6 +853,12 @@
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="titlebar_small_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
@@ -819,6 +892,12 @@
 <frame_style name="border_focused" geometry="border">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="overlay" draw_ops="border_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal"><draw_ops></draw_ops></button>
 	<button function="close" state="pressed"><draw_ops></draw_ops></button>
 	<button function="maximize" state="normal"><draw_ops></draw_ops></button>
@@ -844,6 +923,12 @@
 <frame_style name="border_unfocused" geometry="border">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="overlay" draw_ops="border_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal"><draw_ops></draw_ops></button>
 	<button function="close" state="pressed"><draw_ops></draw_ops></button>
 	<button function="maximize" state="normal"><draw_ops></draw_ops></button>
@@ -892,6 +977,12 @@
 <frame_style name="attached_focused" geometry="attached">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="titlebar" draw_ops="titlebar_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal"><draw_ops></draw_ops></button>
 	<button function="close" state="pressed"><draw_ops></draw_ops></button>
 	<button function="maximize" state="normal"><draw_ops></draw_ops></button>
@@ -917,6 +1008,12 @@
 <frame_style name="attached_unfocused" geometry="attached">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="titlebar" draw_ops="titlebar_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal"><draw_ops></draw_ops></button>
 	<button function="close" state="pressed"><draw_ops></draw_ops></button>
 	<button function="maximize" state="normal"><draw_ops></draw_ops></button>
@@ -941,8 +1038,14 @@
 
 <frame_style name="tiled_left_focused" geometry="tiled_left">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
-	<piece position="titlebar" draw_ops="titlebar_focused" />
+	<piece position="titlebar" draw_ops="titlebar_tiled_focused" />
 	<piece position="title" draw_ops="title_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
@@ -975,8 +1078,14 @@
 
 <frame_style name="tiled_left_unfocused" geometry="tiled_left">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
-	<piece position="titlebar" draw_ops="titlebar_unfocused" />
+	<piece position="titlebar" draw_ops="titlebar_tiled_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
@@ -1009,8 +1118,14 @@
 
 <frame_style name="tiled_right_focused" geometry="tiled_right">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
-	<piece position="titlebar" draw_ops="titlebar_focused" />
+	<piece position="titlebar" draw_ops="titlebar_tiled_focused" />
 	<piece position="title" draw_ops="title_focused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_focused" />
 	<button function="close" state="pressed" draw_ops="close_focused_pressed" />
 	<button function="close" state="prelight" draw_ops="close_focused_prelight" />
@@ -1043,8 +1158,14 @@
 
 <frame_style name="tiled_right_unfocused" geometry="tiled_right">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
-	<piece position="titlebar" draw_ops="titlebar_unfocused" />
+	<piece position="titlebar" draw_ops="titlebar_tiled_unfocused" />
 	<piece position="title" draw_ops="title_unfocused" />
+	<piece position="left_titlebar_edge" draw_ops="edge_border" />
+	<piece position="right_titlebar_edge" draw_ops="edge_border" />
+	<piece position="top_titlebar_edge" draw_ops="edge_border" />
+	<piece position="left_edge" draw_ops="edge_border" />
+	<piece position="right_edge" draw_ops="edge_border" />
+	<piece position="bottom_edge" draw_ops="edge_border" />
 	<button function="close" state="normal" draw_ops="close_unfocused"/>
 	<button function="close" state="prelight" draw_ops="close_unfocused_prelight"/>
 	<button function="close" state="pressed" draw_ops="close_unfocused_pressed"/>
