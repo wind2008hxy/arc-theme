@@ -719,6 +719,8 @@ panel-toplevel.background {
   #PanelApplet label,
   #PanelApplet image { color: $panel_fg; }
 
+  #PanelApplet frame > border { border-style: none; }
+
   // Panel buttons
   button:not(#tasklist-button) {
     @extend %panelbutton;
