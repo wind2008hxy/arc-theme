@@ -3,21 +3,19 @@ xfwm_asset_names = run_command(
   check : true
 ).stdout().split()
 
-if 'light' in get_option('variants')
+if 'light' in get_option('variants') or 'lighter' in get_option('variants')
   subdir('light')
 endif
 
-if 'dark' in get_option('variants')
+if 'dark' in get_option('variants') or 'darker' in get_option('variants')
   subdir('dark')
 endif
 
 foreach variant : get_option('variants')
-  if variant == 'darker' or variant == 'lighter'
-    continue
-  elif variant == 'light'
+  if variant == 'light' or variant == 'lighter'
     themerc = 'light/themerc'
     assets = xfwm_light_assets
-  elif variant == 'dark'
+  elif variant == 'dark' or variant == 'darker'
     themerc = 'dark/themerc'
     assets = xfwm_dark_assets
   endif
