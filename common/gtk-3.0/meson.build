@@ -4,46 +4,11 @@ glib_compile_resources = find_program('glib-compile-resources')
 # render PNG assets
 
 gtk3_asset_names = run_command(
-  'cat', 'assets.txt',
+  'cat', 'assets' / 'assets.txt',
   check : true
 ).stdout().split()
 
-assets_svg = 'assets.svg'
-
-gtk3_assets = []
-gtk3_hidpi_assets = []
-
-foreach asset : gtk3_asset_names
-  gtk3_assets += custom_target(
-    'gtk3-' + asset,
-    input : assets_svg,
-    output : asset + '.png',
-    command : [
-      inkscape,
-      '--export-id-only',
-      inkscape_ver.version_compare('>=1.0') ? '--export-filename=@OUTPUT@' : '--export-png=@OUTPUT@',
-      '--export-id=' + asset,
-      '--export-dpi=96',
-      '@INPUT@'
-    ],
-    build_by_default : true
-  )
-
-  gtk3_hidpi_assets += custom_target(
-    'gtk3-' + asset + '-hidpi',
-    input : assets_svg,
-    output : asset + '@2.png',
-    command : [
-      inkscape,
-      '--export-id-only',
-      inkscape_ver.version_compare('>=1.0') ? '--export-filename=@OUTPUT@' : '--export-png=@OUTPUT@',
-      '--export-id=' + asset,
-      '--export-dpi=192',
-      '@INPUT@'
-    ],
-    build_by_default : true
-  )
-endforeach
+subdir('assets')
 
 # compile CSS
 
@@ -107,11 +72,10 @@ foreach variant : get_option('variants')
     '<gresource prefix="/org/gnome/arc-theme">'
   ]
 
-  #TODO update asset paths in SASS files and get rid of the alias=
   foreach asset : gtk3_asset_names
     gresource_xml_array += [
-      '<file preprocess="to-pixdata" alias="assets/' + asset + '.png">' + asset + '.png</file>',
-      '<file preprocess="to-pixdata" alias="assets/' + asset + '@2.png">' + asset + '@2.png</file>'
+      '<file preprocess="to-pixdata">assets/' + asset + '.png</file>',
+      '<file preprocess="to-pixdata">assets/' + asset + '@2.png</file>'
     ]
   endforeach
 
