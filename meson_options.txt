@@ -32,12 +32,6 @@ option(
 )
 
 option(
-  'gtk3_version',
-  type: 'string',
-  description: 'Build GTK 3 theme for specific version',
-)
-
-option(
   'gtk4_version',
   type: 'string',
   description: 'Build GTK 4 theme for specific version',

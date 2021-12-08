@@ -1,46 +1,14 @@
-# supported versions
-gtk3_versions = ['3.24']
-
 # glib-compile-resources dependency
 glib_compile_resources = find_program('glib-compile-resources')
-
-# determine gtk3 version
-if get_option('gtk3_version') != ''
-  gtk3_full_ver = get_option('gtk3_version')
-else
-  gtk3_dep = dependency(
-    'gtk+-3.0',
-    version: '>= 3.23.0',
-    not_found_message : 'Could not determine GTK 3 version'
-  )
-  gtk3_full_ver = gtk3_dep.version()
-endif
-
-gtk3_ver_array = gtk3_full_ver.split('.')
-if gtk3_ver_array[1].to_int().is_even()
-  gtk3_ver = gtk3_ver_array[0] + '.' + gtk3_ver_array[1]
-else
-  # evenize development versions
-  gtk3_ver = gtk3_ver_array[0] + '.' + (gtk3_ver_array[1].to_int() + 1).to_string()
-endif
-
-if gtk3_ver not in gtk3_versions
-  if gtk3_ver.version_compare('>' + gtk3_versions[-1])
-    warning('GTK 3 version ' + gtk3_ver + ' not supported yet, building theme for ' + gtk3_versions[-1])
-    gtk3_ver = gtk3_versions[-1]
-  else
-    error('Unsupported GTK 3 version')
-  endif
-endif
 
 # render PNG assets
 
 gtk3_asset_names = run_command(
-  'cat', gtk3_ver / 'assets.txt',
+  'cat', 'assets.txt',
   check : true
 ).stdout().split()
 
-assets_svg = gtk3_ver / 'assets.svg'
+assets_svg = 'assets.svg'
 
 gtk3_assets = []
 gtk3_hidpi_assets = []
@@ -79,7 +47,7 @@ endforeach
 
 # compile CSS
 
-sass_path = meson.current_source_dir() / gtk3_ver / 'sass'
+sass_path = meson.current_source_dir() / 'sass'
 sass_depend_files = run_command(
   'find',
   sass_path,
@@ -89,12 +57,12 @@ sass_depend_files = run_command(
 
 # always compile the dark CSS
 input_scss_dark = configure_file(
-  input: meson.current_source_dir() / gtk3_ver / 'sass' / 'gtk.scss.in',
+  input: meson.current_source_dir() / 'sass' / 'gtk.scss.in',
   output : 'gtk-dark.scss',
   configuration : {
     'variant' : 'dark',
     'transparency' : get_option('transparency').to_string(),
-    'sass_path' : meson.current_source_dir() / gtk3_ver / 'sass',
+    'sass_path' : meson.current_source_dir() / 'sass',
   }
 )
 output_css_dark = 'gtk-main-dark.css'
@@ -112,12 +80,12 @@ foreach variant : get_option('variants')
 
   if variant != 'dark'
     input_scss = configure_file(
-      input: meson.current_source_dir() / gtk3_ver / 'sass' / 'gtk.scss.in',
+      input: meson.current_source_dir() / 'sass' / 'gtk.scss.in',
       output : 'gtk-' + variant + '.scss',
       configuration : {
         'variant' : variant,
         'transparency' : get_option('transparency').to_string(),
-        'sass_path' : meson.current_source_dir() / gtk3_ver / 'sass',
+        'sass_path' : meson.current_source_dir() / 'sass',
       }
     )
 
