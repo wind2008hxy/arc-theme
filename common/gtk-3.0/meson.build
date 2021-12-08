@@ -1,5 +1,5 @@
 # supported versions
-gtk3_versions = ['3.18', '3.20', '3.22', '3.24']
+gtk3_versions = ['3.24']
 
 # glib-compile-resources dependency
 glib_compile_resources = find_program('glib-compile-resources')
@@ -10,7 +10,7 @@ if get_option('gtk3_version') != ''
 else
   gtk3_dep = dependency(
     'gtk+-3.0',
-    version: '>= 3.17.0',
+    version: '>= 3.23.0',
     not_found_message : 'Could not determine GTK 3 version'
   )
   gtk3_full_ver = gtk3_dep.version()
