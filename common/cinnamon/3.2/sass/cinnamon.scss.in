@@ -1,6 +1,0 @@
-$variant: '@variant@';
-$transparency: '@transparency@';
-
-@import "@sass_path@/_colors";
-@import "@sass_path@/_drawing";
-@import "@sass_path@/_common";
