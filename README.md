@@ -28,10 +28,10 @@ This fork aims to keep the theme updated with new toolkit and desktop environmen
 
 Arc comes with themes for the following:
 * GTK 2
-* GTK 3 >=3.18
+* GTK 3
 * GTK 4
-* GNOME Shell >=3.18
-* Cinnamon >=2.8
+* GNOME Shell >=3.28
+* Cinnamon >=3.8
 * Unity
 * Metacity
 * Xfwm
