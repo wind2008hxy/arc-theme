@@ -207,11 +207,11 @@
 </draw_ops>
 
 <draw_ops name="border_focused">
-	<rectangle color="C_wm_bg_focused" x="0" y="0" width="width" height="height" filled="false" />
+	<rectangle color="C_wm_border" x="0" y="0" width="width" height="height" filled="false" />
 </draw_ops>
 
 <draw_ops name="border_unfocused">
-	<rectangle color="C_wm_bg_unfocused" x="0" y="0" width="width" height="height" filled="false" />
+	<rectangle color="C_wm_border" x="0" y="0" width="width" height="height" filled="false" />
 </draw_ops>
 
 
@@ -894,9 +894,6 @@
 <frame_style name="border_focused" geometry="border">
 	<piece position="entire_background" draw_ops="entire_background_focused" />
 	<piece position="overlay" draw_ops="border_focused" />
-	<piece position="left_titlebar_edge" draw_ops="edge_border" />
-	<piece position="right_titlebar_edge" draw_ops="edge_border" />
-	<piece position="top_titlebar_edge" draw_ops="edge_border" />
 	<piece position="left_edge" draw_ops="edge_border" />
 	<piece position="right_edge" draw_ops="edge_border" />
 	<piece position="bottom_edge" draw_ops="edge_border" />
@@ -925,9 +922,6 @@
 <frame_style name="border_unfocused" geometry="border">
 	<piece position="entire_background" draw_ops="entire_background_unfocused" />
 	<piece position="overlay" draw_ops="border_unfocused" />
-	<piece position="left_titlebar_edge" draw_ops="edge_border" />
-	<piece position="right_titlebar_edge" draw_ops="edge_border" />
-	<piece position="top_titlebar_edge" draw_ops="edge_border" />
 	<piece position="left_edge" draw_ops="edge_border" />
 	<piece position="right_edge" draw_ops="edge_border" />
 	<piece position="bottom_edge" draw_ops="edge_border" />
