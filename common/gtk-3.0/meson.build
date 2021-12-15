@@ -151,9 +151,8 @@ foreach variant : get_option('variants')
 
   # install gresource
   meson.add_install_script(
-    'sh', '-c',
-    'install -DT' + ' ' +
-    gresource.full_path() + ' ' +
+    install_file,
+    gresource.full_path(),
     '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk3') / 'gtk.gresource'
   )
 

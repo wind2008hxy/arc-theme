@@ -46,28 +46,25 @@ foreach variant : get_option('variants')
 
   foreach asset : variant == 'dark' ? gtk2_dark_assets : gtk2_light_assets
     meson.add_install_script(
-      'sh', '-c',
-      'install -D' + ' ' +
-      '-t $MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'assets' + ' ' +
-      asset.full_path()
+      install_file,
+      asset.full_path(),
+      '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'assets'
     )
   endforeach
 
   foreach asset : light_menubar_toolbar_assets
     meson.add_install_script(
-      'sh', '-c',
-      'install -D' + ' ' +
-      '-t $MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar' + ' ' +
-      meson.current_build_dir() / 'light' / asset + '.png'
+      install_file,
+      meson.current_build_dir() / 'light' / asset + '.png',
+      '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar'
     )
   endforeach
 
   if variant == 'dark' or variant == 'darker'
     foreach asset : dark_menubar_toolbar_assets
       meson.add_install_script(
-        'sh', '-c',
-        'install -DT' + ' ' +
-        meson.current_build_dir() / 'dark' / asset + '.png' + ' ' +
+        install_file,
+        meson.current_build_dir() / 'dark' / asset + '.png',
         '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar' / asset + '-dark.png'
       )
     endforeach

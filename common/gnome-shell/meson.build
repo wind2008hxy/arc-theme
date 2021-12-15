@@ -120,9 +120,8 @@ foreach variant : get_option('variants')
   endif
 
   meson.add_install_script(
-    'sh', '-c',
-    'install -DT' + ' ' +
-    gnome_shell_css.full_path() + ' ' +
+    install_file,
+    gnome_shell_css.full_path(),
     '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gnome-shell') / 'gnome-shell.css'
   )
 
