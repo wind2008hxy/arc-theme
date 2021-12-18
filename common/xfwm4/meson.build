@@ -25,11 +25,14 @@ foreach variant : get_option('variants')
     install_dir : prefix / install_dir.get(variant) / common_dirs.get('xfwm')
   )
 
+  full_path_assets = []
   foreach asset : assets
-    meson.add_install_script(
-      install_file,
-      asset.full_path(),
-      '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('xfwm')
-    )
+    full_path_assets += asset.full_path()
   endforeach
+
+  meson.add_install_script(
+    install_file,
+    full_path_assets,
+    '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('xfwm')
+  )
 endforeach
