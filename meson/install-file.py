@@ -32,4 +32,9 @@ else:
 os.makedirs(dest_dir, exist_ok=True)
 
 for src in source:
-  shutil.copy(os.path.expandvars(src), dest, follow_symlinks=False)
+  try:
+    shutil.copy(src, dest, follow_symlinks=False)
+  except FileExistsError:
+    if os.path.islink(dest):
+      os.remove(dest)
+      shutil.copy(src, dest, follow_symlinks=False)
