@@ -3,9 +3,9 @@ gtk2_asset_names = run_command(
   check : true
 ).stdout().split()
 
-subdir('light')
+subdir('assets-light')
 if 'dark' in get_option('variants') or 'darker' in get_option('variants')
-  subdir('dark')
+  subdir('assets-dark')
 endif
 
 foreach variant : get_option('variants')
@@ -57,7 +57,7 @@ foreach variant : get_option('variants')
 
   full_path_light_menubar_toolbar_assets = []
   foreach asset : light_menubar_toolbar_assets
-    full_path_light_menubar_toolbar_assets += meson.current_build_dir() / 'light' / asset + '.png'
+    full_path_light_menubar_toolbar_assets += meson.current_build_dir() / 'assets-light' / asset + '.png'
   endforeach
 
   meson.add_install_script(
@@ -70,7 +70,7 @@ foreach variant : get_option('variants')
     foreach asset : dark_menubar_toolbar_assets
       meson.add_install_script(
         install_file,
-        meson.current_build_dir() / 'dark' / asset + '.png',
+        meson.current_build_dir() / 'assets-dark' / asset + '.png',
         '$MESON_INSTALL_DESTDIR_PREFIX' / install_dir.get(variant) / common_dirs.get('gtk2') / 'menubar-toolbar' / asset + '-dark.png'
       )
     endforeach
