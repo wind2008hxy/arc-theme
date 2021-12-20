@@ -139,10 +139,12 @@ foreach variant : get_option('variants')
       glib_compile_resources,
       '--sourcedir=@OUTDIR@',
       '--sourcedir=@OUTDIR@' / gtk4_ver,
+      '--sourcedir=@CURRENT_SOURCE_DIR@' / gtk4_ver,
       '--target=@OUTPUT@',
       '@INPUT@'
     ],
     depends : [gtk4_assets, gtk4_hidpi_assets, gtk4_stylesheet],
+    depend_files : [gtk4_asset_files, gtk4_hidpi_asset_files],
     build_by_default : true
   )
 

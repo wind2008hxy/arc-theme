@@ -106,10 +106,12 @@ foreach variant : get_option('variants')
     command : [
       glib_compile_resources,
       '--sourcedir=@OUTDIR@',
+      '--sourcedir=@CURRENT_SOURCE_DIR@',
       '--target=@OUTPUT@',
       '@INPUT@'
     ],
     depends : [gtk3_assets, gtk3_hidpi_assets, gtk3_stylesheet],
+    depend_files : [gtk3_asset_files, gtk3_hidpi_asset_files],
     build_by_default : true
   )
 

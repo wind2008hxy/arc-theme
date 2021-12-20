@@ -5,6 +5,8 @@ project(
   license : 'GPL3'
 )
 
+fs = import('fs')
+
 variant_name = {
   'light' : (get_option('transparency') ? 'Arc' : 'Arc-solid'),
   'darker' : (get_option('transparency') ? 'Arc-Darker' : 'Arc-Darker-solid'),
@@ -33,12 +35,16 @@ endforeach
 # inkscape dependency
 foreach theme : ['gtk2', 'gtk3', 'gtk4', 'xfwm']
   if theme in get_option('themes')
-    inkscape = find_program('inkscape')
-    inkscape_ver = run_command(inkscape, '--version').stdout().split()[1]
+    inkscape = find_program('inkscape', required : false)
+    if inkscape.found()
+      inkscape_ver = run_command(inkscape, '--version').stdout().split()[1]
+    endif
     break
   endif
 endforeach
 
 install_file = meson.source_root() / 'meson/install-file.py'
+
+meson.add_dist_script('meson/render-assets.py')
 
 subdir('common')
