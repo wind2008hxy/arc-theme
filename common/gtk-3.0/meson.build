@@ -147,7 +147,8 @@ foreach variant : get_option('variants')
 
   # install thumbnail
   install_data(
-    variant != 'dark' ? 'light/thumbnail.png' : 'dark/thumbnail.png',
-    install_dir : prefix / install_dir.get(variant) / common_dirs.get('gtk3')
+    variant != 'dark' ? 'thumbnail/light.png' : 'thumbnail/dark.png',
+    install_dir : prefix / install_dir.get(variant) / common_dirs.get('gtk3'),
+    rename : ['thumbnail.png']
   )
 endforeach
