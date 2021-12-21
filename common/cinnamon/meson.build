@@ -50,7 +50,7 @@ foreach variant : get_option('variants')
     output : 'cinnamon-' + variant + '.scss',
     configuration : {
       'variant' : variant,
-      'transparency' : get_option('transparency').to_string(),
+      'transparency' : true.to_string(),
       'sass_path' : meson.current_source_dir() / cinnamon_ver / 'sass',
     }
   )
