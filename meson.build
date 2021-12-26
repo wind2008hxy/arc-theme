@@ -39,6 +39,6 @@ foreach theme : ['gtk2', 'gtk3', 'gtk4', 'xfwm']
   endif
 endforeach
 
-install_file = find_program('meson/install-file.py')
+install_file = meson.source_root() / 'meson/install-file.py'
 
 subdir('common')
