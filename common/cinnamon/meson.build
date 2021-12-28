@@ -83,7 +83,7 @@ foreach variant : get_option('variants')
   )
 
   install_data(
-    variant == 'light' ? 'thumbnail.png' : 'thumbnail-dark.png',
+    'thumbnail' / variant + '.png',
     rename : 'thumbnail.png',
     install_dir : prefix / install_dir.get(variant) / common_dirs.get('cinnamon')
   )
