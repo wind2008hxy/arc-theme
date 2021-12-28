@@ -973,12 +973,14 @@ StScrollBar {
     padding-bottom: 0;
   }
 
-  &-error-label { color: $error_color; }
-
-  &-error-box {
+  &-description {
+    color: $osd_fg_color;
     padding-top: 15px;
-    spacing: 5px;
+    text-align: center;
+
+    &.error { color: $error_color; }
   }
+
   &-completion-box {
     padding-left: 15px;
     font-size: 1.1em;
