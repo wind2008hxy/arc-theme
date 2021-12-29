@@ -98,3 +98,19 @@ $wm_icon_bg: if($variant == 'light', #90949E, #90939B);
 $wm_icon_unfocused_bg: if($variant == 'light', #B6B8C0, #666A74);
 $wm_icon_hover_bg: if($variant == 'light', #7A7F8B, #C4C7CC);
 $wm_icon_active_bg: $selected_fg_color;
+
+//GNOME Shell colors
+
+$shell_osd_background_color: if($transparency == 'true', transparentize(#252A35, 0.05), #252A35);
+$shell_osd_border_color: if($transparency == 'true', transparentize(#0F1116, 0.15), #0F1116);
+
+$shell_bg_border_color: rgba(#161A26, 0.81);
+
+$shell_modal_background_color: if($variant!='dark', $bg_color, #323644);
+$shell_modal_border_color: if($variant!='dark', rgba(black, 0.1), rgba(black, 0.64));
+
+$shell_popup_menu_background_color: if($variant!='dark', white, $bg_color);
+$shell_popup_menu_border_color: if($variant!='dark', rgba(black, 0.1), rgba(#1B1C21, 0.83));
+
+$shell_message_background_color: if($variant != 'dark', #FCFDFD, rgba(black, 0.15));
+$shell_message_border_color: if($variant != 'dark', $entry_border, rgba(black, 0.42));
