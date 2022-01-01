@@ -12,14 +12,19 @@ Or download and extract a [snapshot](https://github.com/jnsh/arc-theme/archive/m
 
 #### Build dependencies
 
-To build the theme the following packages are required:
-* `meson`
+The following packages are always required for building the theme:
+* `meson` version 0.53.0 or later
 
 The following packages are only required for building certain themes:
 * `sassc` for GTK 3, GTK 4, Cinnamon, and GNOME Shell
-* `inkscape` for GTK 2, GTK 3, GTK 4 and Xfwm
+* `glib-compile-resources` from `glib2` (or its development files, e.g. `libglib2.0-dev-bin` for Debian based distros or `glib2-devel` for RPM based distros), for GTK 3 and GTK 4 (and GNOME Shell if the `gnome_shell_gresource` build option is enabled)
 
 You can avoid these dependencies by choosing to not build specific themes using the `themes` build option.
+
+The following packages are only required for building certain themes from a git snapshot:
+* `inkscape` for GTK 2, GTK 3, GTK 4 and Xfwm
+
+These packages aren't required when building from a release tarball.
 
 #### Runtime dependencies
 
