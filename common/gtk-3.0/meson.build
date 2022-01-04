@@ -77,8 +77,8 @@ foreach variant : get_option('variants')
 
   foreach asset : gtk3_asset_names
     gresource_xml_array += [
-      '<file preprocess="to-pixdata">assets/' + asset + '.png</file>',
-      '<file preprocess="to-pixdata">assets/' + asset + '@2.png</file>'
+      '<file>assets/' + asset + '.png</file>',
+      '<file>assets/' + asset + '@2.png</file>'
     ]
   endforeach
 
