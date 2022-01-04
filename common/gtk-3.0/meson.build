@@ -1,6 +1,3 @@
-# glib-compile-resources dependency
-glib_compile_resources = find_program('glib-compile-resources')
-
 # render PNG assets
 
 gtk3_asset_names = run_command(

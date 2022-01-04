@@ -1,9 +1,6 @@
 # supported versions
 gtk4_versions = ['4.0', '4.2']
 
-# glib-compile-resources dependency
-glib_compile_resources = find_program('glib-compile-resources')
-
 # determine gtk4 version
 if get_option('gtk4_version') != ''
   gtk4_full_ver = get_option('gtk4_version')

@@ -1,11 +1,6 @@
 # supported versions
 gnome_shell_versions = ['3.28', '3.30', '3.32', '3.34', '3.36', '3.38', '40', '41']
 
-# glib-compile-resources dependency
-if get_option('gnome_shell_gresource')
-  glib_compile_resources = find_program('glib-compile-resources')
-endif
-
 # gnome-shell version
 gnome_shell = find_program('gnome-shell', required : false)
 

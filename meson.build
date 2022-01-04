@@ -43,6 +43,17 @@ foreach theme : ['gtk2', 'gtk3', 'gtk4', 'xfwm']
   endif
 endforeach
 
+# glib-compile-resources dependency
+foreach theme : ['gnome-shell', 'gtk3', 'gtk4']
+  if theme in get_option('themes')
+    if theme == 'gnome-shell' and not get_option('gnome_shell_gresource')
+      continue
+    endif
+    glib_compile_resources = find_program('glib-compile-resources')
+    break
+  endif
+endforeach
+
 install_file = meson.source_root() / 'meson/install-file.py'
 
 meson.add_dist_script('meson/render-assets.py')
