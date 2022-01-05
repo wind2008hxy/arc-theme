@@ -1,6 +1,6 @@
 project(
   'arc-theme',
-  version : '20220102',
+  version : '20220105',
   meson_version: '>= 0.53.0',
   license : 'GPL3'
 )
