@@ -2664,6 +2664,7 @@ checkbutton {
 
   outline-offset: 2px;//FIXME from arc gtk3, still needed?
 
+  border: none;
   border-radius: 2.5px;
   background-color: $_scale_trough_bg;
 
@@ -2691,6 +2692,7 @@ checkbutton {
 }
 
 %scale_highlight {
+  border: none;
   border-radius: 2.5px;
   background-color: $selected_bg_color;
 
@@ -3072,14 +3074,12 @@ progressbar {
   > trough {
     @extend %scale_trough;
 
-    border: none;
     border-radius: 3px;
   }
 
   > trough > progress {
     @extend %scale_highlight;
 
-    border: none;
     border-radius: 3px;
   }
 
