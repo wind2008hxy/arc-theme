@@ -3063,10 +3063,6 @@ progressbar {
     }
   }
 
-  &.horizontal > trough > progress { margin: 0 -1px; } // the progress node is positioned after the trough border
-  &.vertical > trough > progress { margin: -1px 0; }   // this moves it over it.
-
-
   // FIXME: insensitive state missing and some other state should be set probably
   padding: 0;
   font-size: smaller;
