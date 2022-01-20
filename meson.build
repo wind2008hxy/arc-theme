@@ -37,7 +37,7 @@ foreach theme : ['gtk2', 'gtk3', 'gtk4', 'xfwm']
   if theme in get_option('themes')
     inkscape = find_program('inkscape', required : false)
     if inkscape.found()
-      inkscape_ver = run_command(inkscape, '--version').stdout().split()[1]
+      inkscape_ver = run_command(inkscape, '--version', check : true).stdout().split()[1]
     endif
     break
   endif

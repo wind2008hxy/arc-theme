@@ -7,7 +7,7 @@ cinnamon = find_program('cinnamon', required : false)
 if get_option('cinnamon_version') != ''
   cinnamon_full_ver = get_option('cinnamon_version')
 elif cinnamon.found()
-  cinnamon_full_ver = run_command(cinnamon, '--version').stdout().split()[-1]
+  cinnamon_full_ver = run_command(cinnamon, '--version', check : true).stdout().split()[-1]
 else
   error('Could not determine Cinnamon version')
 endif
