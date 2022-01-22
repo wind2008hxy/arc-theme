@@ -2,7 +2,10 @@ project(
   'arc-theme',
   version : '20220105',
   meson_version: '>= 0.53.0',
-  license : 'GPL3'
+  license : 'GPL3',
+  default_options : [
+    'debug=false'
+  ]
 )
 
 fs = import('fs')
@@ -28,7 +31,11 @@ install_dir = {
 foreach theme : ['cinnamon', 'gnome-shell', 'gtk3', 'gtk4']
   if theme in get_option('themes')
     sassc = find_program('sassc')
-    sassc_options = ['--style', 'compact']
+    if get_option('debug')
+      sassc_options = ['--line-numbers', '--style', 'nested']
+    else
+      sassc_options = ['--style', 'compact']
+    endif
     break
   endif
 endforeach
