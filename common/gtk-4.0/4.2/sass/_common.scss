@@ -421,6 +421,7 @@ button {
     border: 1px solid;
     border-radius: 3px;
     transition: $button_transition;
+    background-clip: padding-box;
 
     @include button(normal);
 
