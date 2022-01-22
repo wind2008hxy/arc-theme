@@ -67,7 +67,7 @@ gtk4_stylesheets += custom_target(
   output_css_dark,
   input : input_scss_dark,
   output : output_css_dark,
-  command : [sassc, '@INPUT@', '@OUTPUT@'],
+  command : [sassc, sassc_options, '@INPUT@', '@OUTPUT@'],
   build_by_default : true,
   depend_files : sass_depend_files
 )
@@ -90,7 +90,7 @@ foreach variant : get_option('variants')
       output_css,
       input : input_scss,
       output : output_css,
-      command : [sassc, '@INPUT@', '@OUTPUT@'],
+      command : [sassc, sassc_options, '@INPUT@', '@OUTPUT@'],
       build_by_default : true,
       depend_files : sass_depend_files
     )

@@ -28,6 +28,7 @@ install_dir = {
 foreach theme : ['cinnamon', 'gnome-shell', 'gtk3', 'gtk4']
   if theme in get_option('themes')
     sassc = find_program('sassc')
+    sassc_options = ['--style', 'compact']
     break
   endif
 endforeach
