@@ -442,8 +442,8 @@ button {
       &:not(:disabled) label:disabled { color: inherit; opacity: 0.6; }
     }
 
-    &:checked:hover { @include button(checked-hover); }//FIXME missing checked-* styles
-    &:checked:active { @include button(checked-active); }//FIXME missing checked-* styles
+    &:checked:hover { @include button(active); }
+    &:checked:active { @include button(active); }
 
     &:disabled {
       @include button(insensitive);
@@ -463,14 +463,14 @@ button {
       transition: none;
 
       &:hover {
-        @include button(undecorated-hover);//FIXME missing style
+        @include button(hover);
         transition: $button_transition;
         transition-duration: 500ms;
       }
       &.keyboard-activating,
       &:active,
       &:checked {
-        @include button(undecorated-active);//FIXME missing style
+        @include button(active);
         transition: $button_transition;
       }
       &:disabled { @include button(undecorated); }
