@@ -2399,17 +2399,14 @@ notebook {
 /**************
  * Scrollbars *
  **************/
-//FIXME scrollbar mouseover animation looks incorrect
 $scrollbar_bg_color: darken($base_color, 1%);
 
 scrollbar {
   $_slider_min_length: 40px;
   $_slider_width: 6px;
-  $_scrollbar_transition: all 300ms $ease-out-quad;
   $_fine-tune_slider_border: $_slider_width - 3; 
 
   background-color: $scrollbar_bg_color;
-  transition: $_scrollbar_transition;
 
   // scrollbar border
   &.top { border-bottom: 1px solid $borders_color; }
@@ -2425,7 +2422,6 @@ scrollbar {
     border-radius: 8px;
     background-clip: padding-box;
     background-color: mix($fg_color, $bg_color, 40%);
-    transition: $_scrollbar_transition;
 
     &:hover { background-color: mix($fg_color, $bg_color, 30%); }
 
