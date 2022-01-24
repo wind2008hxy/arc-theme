@@ -122,7 +122,7 @@ gridview {
   }
 }
 
-coverflow cover {//FIXME Arc styling?
+coverflow cover {
   color: $text_color;
   background-color: $base_color;
   border: 1px solid black;
@@ -397,7 +397,7 @@ treeview entry {
 /*******************
  * Editable Labels *
  *******************/
-editablelabel > stack > text {//FIXME looks OK in Arc??
+editablelabel > stack > text {
   @include entry(normal);
 }
 
@@ -525,22 +525,6 @@ button {
     }
   }
 
-  @at-root %button_selected, & {//FIXME from adwaita, needs arc styling
-    row:selected & {
-      border-color: $selected_borders_color;
-    }
-
-    @at-root %button_selected_flat, &.flat {
-      row:selected & {
-        &:not(:active):not(:checked):not(:hover):not(disabled) {
-          color: $selected_fg_color;
-          border-color: transparent;
-        }
-      }
-    }
-  }
-
-
   // big standalone buttons like in Documents pager
   &.osd {
     min-width: 26px;
@@ -612,10 +596,6 @@ button {
       &:checked { @include button(osd-active); }
     }
   }
-
-  //FIXME From Arc GTK3. Still needed?
-  //.osd .linked:not(.vertical):not(.path-bar) > &:hover:not(:checked):not(:active):not(:only-child),
-  //.osd .linked:not(.vertical):not(.path-bar) > &:hover:not(:checked):not(:active) + &:not(:checked):not(:active) { box-shadow: none; }
 
   // Suggested and Destructive Action buttons
   @each $b_type, $b_color, $b_fg in (suggested-action, $suggested_color, $suggested_fg_color),
@@ -932,23 +912,9 @@ modelbutton.flat arrow {
 button.color {
   padding: 4px;//FIXME 0 in Arc GTK3
 
-  > colorswatch:only-child {//FIXME very different in Arc GTK3
+  > colorswatch:only-child {
     &, > overlay { border-radius: 0; }
-
-    /*@if $variant == 'light' {//FIXME not in Arc GTK3, remove?
-      box-shadow: 0 1px $shadow_color;
-
-      .osd & { box-shadow: none; }
-    }*/
   }
-
-  /*@if $variant == 'light' {//FIXME not in Arc GTK3, remove?
-    .osd &, & {
-      &:disabled,
-      &:active,
-      &:checked { colorswatch:only-child { box-shadow: none; }}
-    }
-  }*/
 }
 
 /* list buttons */
@@ -1315,7 +1281,7 @@ infobar {
  * Title buttons *
  *****************/
 
-windowcontrols {//FIXME these values from adwaita, adjust for Arc?
+windowcontrols {
   border-spacing: 6px;
 
   &:not(.empty) {
@@ -1975,7 +1941,7 @@ treeview.view {
       &:hover {
         @extend %column_header_button;
 
-        color: $selected_bg_color;//FIXME this is the same in GTK3, but :hover effect doesn't seem to work there?
+        color: $selected_bg_color;
         transition: none; //I shouldn't need this
       }
 
@@ -2078,7 +2044,7 @@ popover.background {
 
   &.touch-selection,
   &.magnifier {
-    //button { @extend %osd_button; }//FIXME from adw
+    button { @extend %osd_button; }
   }
 }
 
@@ -2218,7 +2184,7 @@ menubar {
 
 /*************
  * Notebooks *
- *************///FIXME cleanup, and maybe restructure
+ *************/
 notebook {
   //@include focus-ring("> header > tabs > tab:checked", $offset: -2px, $focus-state: 'focus:focus-visible');//FIXME from adw, fix for arc
 
@@ -2238,8 +2204,6 @@ notebook {
     &.top, &.bottom { padding-left: 0; padding-right: 0; }
     &.left, &.right { padding-top: 0; padding-bottom: 0; }
 
-    //> tabs { margin: -1px; }
-
     &.top {
       padding-bottom: 0;
       border-bottom-style: solid;
@@ -2249,8 +2213,6 @@ notebook {
           padding: 2px 10px;
           min-width: 20px;
           min-height: 20px;
-
-          outline-offset: -4px;//FIXME from arc, still needed?
 
           border: 1px solid transparent;
           border-bottom: none;
@@ -2275,8 +2237,6 @@ notebook {
           min-width: 20px;
           min-height: 20px;
 
-          outline-offset: -4px;//FIXME from arc, still needed?
-
           border: 1px solid transparent;
           border-top: none;
 
@@ -2300,8 +2260,6 @@ notebook {
           min-width: 20px;
           min-height: 20px;
 
-          outline-offset: -4px;//FIXME from arc, still needed?
-
           border: 1px solid transparent;
           border-right: none;
 
@@ -2324,8 +2282,6 @@ notebook {
           padding: 2px 10px;
           min-width: 20px;
           min-height: 20px;
-
-          outline-offset: -4px;//FIXME from arc, still needed?
 
           border: 1px solid transparent;
           border-left: none;
@@ -2398,10 +2354,7 @@ notebook {
       background-color: transparentize($base_color, 1);
       font-weight: normal;
 
-      border-width: 1px;         // for reorderable tabs
-      border-color: transparent; //
-
-      &:hover:not(:checked) {//FIXME add .reorderable-page?
+      &:hover:not(:checked) {
         color: mix($fg_color, $insensitive_fg_color, 50%);
         background-color: transparentize($base_color, 0.5);
         border-color: $borders_color;
@@ -2411,12 +2364,6 @@ notebook {
         color: $fg_color;
         background-color: $base_color;
         border-color: $borders_color;
-        /*&.reorderable-page {/FIXME add .reorderable-page?
-          border-color: transparentize($borders_color, 0.5);
-          background-color: transparentize($bg_color, 0.5);
-
-          &:hover { background-color: transparentize($bg_color, 0.3); }
-        }*/
       }
 
       // colors the button like the label, overridden otherwise
@@ -2426,8 +2373,8 @@ notebook {
 
         padding: 0;
         // FIXME: generalize .small-button?
-        min-width: 16px;//FIXME 20px in adw
-        min-height: 22px;//FIXME 20px in adw
+        min-width: 16px;
+        min-height: 22px;
 
         &:hover {
           @extend %undecorated_button;
@@ -2533,7 +2480,7 @@ scrollbar {
   &.vertical > range > trough > slider { min-height: $_slider_min_length; }
 }
 
-treeview ~ scrollbar.vertical {//FIXME
+treeview ~ scrollbar.vertical {
   border-top: 1px solid $borders_color;
   margin-top: -1px;
 }
@@ -2662,8 +2609,6 @@ checkbutton {
 //FIXME focus rings?
 %scale_trough {
   $_scale_trough_bg: if($variant != 'dark', $button_border, darken($bg_color, 5%));
-
-  outline-offset: 2px;//FIXME from arc gtk3, still needed?
 
   border: none;
   border-radius: 2.5px;
@@ -3084,7 +3029,7 @@ progressbar {
     border-radius: 3px;
   }
 
-  &.osd { // progressbar.osd used for epiphany page loading progress//FIXME style for arc
+  &.osd { // progressbar.osd used for epiphany page loading progress
     min-width: 3px;
     min-height: 3px;
     background-color: transparent;
@@ -3615,9 +3560,6 @@ stacksidebar {
     &:selected:hover:dir(ltr), &:selected:hover:dir(rtl) {
       background-color: mix(black, $selected_bg_color, 10%);
     }
-    //&.activatable:active, &.activatable:selected:active {//FIXME
-    //  box-shadow: none; // #3413
-    //}
   }
 }
 
@@ -3838,7 +3780,7 @@ tooltip {
     background-clip: padding-box;
   }
 
-  padding: 4px;//FIXME differs visually from GTK3???
+  padding: 4px;
   border-radius: 2px;
 
   > box {
