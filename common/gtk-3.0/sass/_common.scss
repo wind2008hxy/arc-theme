@@ -2098,10 +2098,13 @@ switch {
   }
 
   &, slider {
-    outline-color: transparent;
-    color: transparent;
     border: none;
     box-shadow: none;
+  }
+
+  & > image {
+    outline-color: transparent;
+    color: transparent;
   }
 }
 
