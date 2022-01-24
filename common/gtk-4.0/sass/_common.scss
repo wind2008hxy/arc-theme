@@ -602,7 +602,7 @@ button {
                                     (destructive-action, $destructive_color, $destructive_fg_color) {
     &.#{$b_type} {
       @include button(suggested_destructive, $b_color, $b_fg);
-    //  @include focus-ring($fc: $alt_focus_border_color);//FIXME from adw, fix for arc
+      @include focus-ring();
 
       &.flat {
         @include button(undecorated);
@@ -2186,7 +2186,7 @@ menubar {
  * Notebooks *
  *************/
 notebook {
-  //@include focus-ring("> header > tabs > tab:checked", $offset: -2px, $focus-state: 'focus:focus-visible');//FIXME from adw, fix for arc
+  @include focus-ring("> header > tabs > tab:checked", $focus-state: 'focus:focus-visible')
 
   > header {
     padding: 2px;
@@ -2488,7 +2488,6 @@ treeview ~ scrollbar.vertical {
 /**********
  * Switch *
  **********/
-//FIXME focus-ring in switch (in GTK3 too)??
 //FIXME port asset images to pure CSS (in GTK3 too)??
 switch {
   font-size: 1px;
@@ -2500,7 +2499,7 @@ switch {
   background-repeat: no-repeat;
   background-position: center center;
 
-  //@include focus-ring($offset: 0, $outer: true);//FIXME focus rings for arc
+  @include focus-ring($outer: true);
 
   > slider {
     min-width: 1px;
@@ -2508,10 +2507,13 @@ switch {
   }
 
   &, & > slider {
-    outline-color: transparent;
-    color: transparent;
     border: none;
     box-shadow: none;
+  }
+
+  & > image {
+    outline-color: transparent;
+    color: transparent;
   }
 }
 
@@ -2606,7 +2608,6 @@ checkbutton {
 /************
  * GtkScale *
  ************/
-//FIXME focus rings?
 %scale_trough {
   $_scale_trough_bg: if($variant != 'dark', $button_border, darken($bg_color, 5%));
 
@@ -2672,7 +2673,7 @@ scale {
   min-width: 15px;
   padding: 3px;
 
-  //@include focus-ring("> trough", $offset: 10px);//FIXME fix for arc
+  @include focus-ring();
 
   // the slider is inside the trough, so to have make it bigger there's a negative margin
   > trough {
@@ -3797,7 +3798,7 @@ colorswatch {
   // is colorswatch overlay {}, colorswatch has the programmatically set background, so most of the style is
   // applied to the overlay box.
 
-  //@include focus-ring($width: 4px, $offset: -2px);//FIXME fix for arc
+  @include focus-ring();
 
   &:drop(active), & { border-style: none; } // FIXME: implement a proper drop(active) state
 
@@ -3931,7 +3932,7 @@ colorswatch {
 }
 
 plane {
-  //@include focus-ring($offset: 2px, $outer: true);//FIXME fix for arc
+  @include focus-ring();
 }
 
 // colorscale popup
