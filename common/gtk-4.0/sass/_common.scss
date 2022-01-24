@@ -277,7 +277,7 @@ entry {
     }
 
     > text > block-cursor {
-      @include entry(block_cursor);//FIXME update drawing w this?
+      @include entry(block_cursor);
     }
 
     &.flat {
