@@ -2079,6 +2079,10 @@ scrollbar {
   &.vertical slider { min-height: $_slider_min_length; }
 }
 
+treeview ~ scrollbar.vertical {
+  border-top: 1px solid $borders_color;
+}
+
 //
 // Switches
 //
