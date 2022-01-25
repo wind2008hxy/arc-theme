@@ -910,7 +910,7 @@ modelbutton.flat arrow {
 }
 
 button.color {
-  padding: 4px;//FIXME 0 in Arc GTK3
+  padding: 2px;
 
   > colorswatch:only-child {
     &, > overlay { border-radius: 0; }
