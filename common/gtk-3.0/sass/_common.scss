@@ -3326,6 +3326,9 @@ headerbar,
 
       &:backdrop { opacity: 1; }
     }
+
+    & > image { opacity: 0; }
+
     // Load png assets for each button
     @each $k in ('close','maximize', 'minimize') {
       @each $l, $m in ('',''), (':backdrop','-backdrop'), (':hover','-hover'), (':active','-active') {
