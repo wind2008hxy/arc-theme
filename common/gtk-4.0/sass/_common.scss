@@ -3963,22 +3963,17 @@ colorchooser .popover.osd { border-radius: 3px; }
 /**********************
  * Window Decorations *
  *********************/
-//FIXME needs testing and some fixes for arc
+
+// this needs to be transparent, see bug #722563
 $_wm_border: if($variant!='dark', transparentize(black, 0.9), transparentize(black, 0.45));
 
 window {
   // lamefun trick to get rounded borders regardless of CSD use
   border-width: 0px;
 
-  // this needs to be transparent
-  // see bug #722563
-//FIXME $_wm_border now working from here for some reason, moved above
-//  $_wm_border: if($variant!='dark', transparentize(black, 0.9), transparentize(black, 0.45));
-//  $_wm_border_backdrop: if($variant == 'dark' or $variant == 'darker', transparentize(darken($header_bg, 7%), 0.1), $_wm_border);
-
   &.csd {
     box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', darken($header_bg, 7%), $_wm_border),
-              0 8px 8px 0 if($variant !='dark', opacify($_wm_border, 0.1), transparentize($_wm_border, 0.2));
+                0 8px 8px 0 if($variant !='dark', opacify($_wm_border, 0.1), transparentize($_wm_border, 0.2));
     margin: 0px;
     border-radius: if($variant=='light' or $variant=='lighter', 4px 4px 0 0, 3px 3px 0 0);
     &:backdrop {
@@ -4005,35 +4000,24 @@ window {
 
   &.solid-csd {
     margin: 1px;
-    padding: 4px;//FIXME ??? https://gitlab.gnome.org/GNOME/gtk/-/commit/f8dcda80cfec7e68e1c231ae77039dec1ddbd694
-    //border: solid 1px $borders_color;
+    padding: 0;
     border-radius: 0;
-//    box-shadow: inset 0 0 0 4px $borders_color, inset 0 0 0 3px $headerbar_bg_color, inset 0 1px $top_hilight;//FIXME Arc styling, https://gitlab.gnome.org/GNOME/gtk/-/commit/da4e2a29763f5fcc314da992c4b24763247c6211
+    background-color: $header_bg;
     box-shadow: none;
-
-//    &:backdrop { box-shadow: inset 0 0 0 4px $borders_color, inset 0 0 0 3px $backdrop_bg_color, inset 0 1px $top_hilight; }//FIXME Arc styling, https://gitlab.gnome.org/GNOME/gtk/-/commit/da4e2a29763f5fcc314da992c4b24763247c6211
   }
 
   &.maximized,
   &.fullscreen { border-radius: 0; box-shadow: none; }
 
-  //FIXME arc design for these
   &.tiled,
   &.tiled-top,
   &.tiled-left,
   &.tiled-right,
   &.tiled-bottom {
     border-radius: 0;
-    box-shadow: 0 0 0 1px $_wm_border, //_backdrop,
-                0 0 0 20px transparent; //transparent control workaround -- GTK issue #3670
-  }
-  &:backdrop {
-    box-shadow: 0 0 0 1px $_wm_border, //_backdrop,
-                0 0 0 20px transparent; // GTK issue #3670
   }
 
-
-  &.popup { box-shadow: none; }
+  &.popup { border-radius: 0; box-shadow: none; }
 
   // server-side decorations as used by mutter
   &.ssd { //just doing borders, wm draws actual shadows
