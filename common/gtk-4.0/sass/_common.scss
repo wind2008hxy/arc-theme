@@ -3436,6 +3436,8 @@ window.dialog.message { // Message Dialog styling
     background-image: none;
     background-color: $header_bg;
     border-bottom: 1px solid darken($header_bg, 7%);
+    border-top-left-radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
+    border-top-right-radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
   }
 
   box.dialog-vbox.vertical {
@@ -3460,11 +3462,11 @@ window.dialog.message { // Message Dialog styling
       border-bottom-style: none;
 
       &:first-child{
-        border-bottom-left-radius: 7px;
+        border-bottom-left-radius: 2px;
       }
 
       &:last-child {
-        border-bottom-right-radius: 7px;
+        border-bottom-right-radius: 2px;
       }
     }
   }
@@ -3997,8 +3999,7 @@ window {
     }
 
     &.dialog.message {
-      border-radius: 3px;
-      box-shadow: none;//FIXME looks right????
+      border-radius: if($variant=='light' or $variant=='lighter', 4px, 3px) if($variant=='light' or $variant=='lighter', 4px, 3px) 2px 2px;
     }
   }
 
