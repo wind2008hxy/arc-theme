@@ -3274,13 +3274,16 @@ decoration {
 
     transition: $backdrop_transition;
   }
+  .maximized &,
+  .fullscreen & {
+    border-radius: 0;
+    box-shadow: none;
+  }
   .tiled &,
   .tiled-top &,
   .tiled-right &,
   .tiled-bottom &,
-  .tiled-left &,
-  .maximized &,
-  .fullscreen & {
+  .tiled-left & {
     border-radius: 0;
   }
   .popup & {
