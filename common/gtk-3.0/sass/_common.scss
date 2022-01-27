@@ -1133,9 +1133,17 @@ headerbar,
     .maximized & { background-color: opacify($selection_mode_bg, 1); }
   }
 
-  .tiled &, .tiled &:backdrop,
-  .maximized &, .maximized &:backdrop {
-    border-radius: 0; // squared corners when the window is max'd or tiled
+  // squared corners when the window is maximized, tiled, or fullscreen
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left &,
+  .maximized &,
+  .fullscreen & {
+    &:backdrop, & {
+      border-radius: 0;
+    }
   }
 
   .maximized & {
@@ -1178,8 +1186,13 @@ headerbar {
     &, &:backdrop {
       border-top-left-radius: $_header_radius;
 
+      .tiled &,
+      .tiled-top &,
+      .tiled-right &,
+      .tiled-bottom &,
+      .tiled-left &,
       .maximized &,
-      .tiled & { border-radius: 0; }
+      .fullscreen & { border-radius: 0; }
     }
   }
 
@@ -1187,8 +1200,13 @@ headerbar {
     &, &:backdrop {
       border-top-right-radius: $_header_radius;
 
+      .tiled &,
+      .tiled-top &,
+      .tiled-right &,
+      .tiled-bottom &,
+      .tiled-left &,
       .maximized &,
-      .tiled & { border-radius: 0; }
+      .fullscreen & { border-radius: 0; }
     }
   }
 
@@ -3256,8 +3274,13 @@ decoration {
 
     transition: $backdrop_transition;
   }
-  .fullscreen &,
-  .tiled & {
+  .tiled &,
+  .tiled-top &,
+  .tiled-right &,
+  .tiled-bottom &,
+  .tiled-left &,
+  .maximized &,
+  .fullscreen & {
     border-radius: 0;
   }
   .popup & {
