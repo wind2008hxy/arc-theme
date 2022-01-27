@@ -5,6 +5,7 @@
 $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $backdrop_transition: 200ms ease-out;
 $button_transition: all 200ms $ease-out-quad;
+$header_radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
 
 $asset_suffix: if($variant=='dark', '-dark', '');
 $darker_asset_suffix: if($variant=='darker', '-dark', $asset_suffix);
@@ -1334,8 +1335,6 @@ windowcontrols {
 /***************
  * Header bars *
  ***************/
-$_header_radius: if($variant=='light' or $variant=='lighter', 4px, 3px);//FIXME rename to window_radius as per upstream, move to top?
-
 %titlebar,
 headerbar {
   padding: 0 7px;
@@ -3436,8 +3435,8 @@ window.dialog.message { // Message Dialog styling
     background-image: none;
     background-color: $header_bg;
     border-bottom: 1px solid darken($header_bg, 7%);
-    border-top-left-radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
-    border-top-right-radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
+    border-top-left-radius: $header_radius;
+    border-top-right-radius: $header_radius;
   }
 
   box.dialog-vbox.vertical {
@@ -3975,7 +3974,7 @@ window {
     box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', darken($header_bg, 7%), $_wm_border),
                 0 8px 8px 0 if($variant !='dark', opacify($_wm_border, 0.1), transparentize($_wm_border, 0.2));
     margin: 0px;
-    border-radius: if($variant=='light' or $variant=='lighter', 4px 4px 0 0, 3px 3px 0 0);
+    border-radius: $header_radius $header_radius 0 0;
     &:backdrop {
       // the transparent shadow here is to enforce that the shadow extents don't
       // change when we go to backdrop, to prevent jumping windows.
@@ -3994,7 +3993,7 @@ window {
     }
 
     &.dialog.message {
-      border-radius: if($variant=='light' or $variant=='lighter', 4px, 3px) if($variant=='light' or $variant=='lighter', 4px, 3px) 2px 2px;
+      border-radius: $header_radius $header_radius 2px 2px;
     }
   }
 
@@ -4021,7 +4020,7 @@ window {
 
   // server-side decorations as used by mutter
   &.ssd { //just doing borders, wm draws actual shadows
-    border-radius: if($variant=='light' or $variant=='lighter', 4px 4px 0 0, 3px 3px 0 0);
+    border-radius: $header_radius $header_radius 0 0;
     box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', transparentize(black, 0.35), $_wm_border);
 
     &.maximized { border-radius: 0; }
