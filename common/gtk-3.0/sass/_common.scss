@@ -3285,6 +3285,13 @@ decoration {
   .tiled-bottom &,
   .tiled-left & {
     border-radius: 0;
+    box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', darken($header_bg, 7%), $_wm_border),
+                0 0 0 20px transparent; //transparent control workaround -- GTK issue #3670
+
+    &:backdrop {
+      box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', darken($header_bg, 7%), $_wm_border),
+                  0 0 0 20px transparent; // GTK issue #3670
+    }
   }
   .popup & {
     box-shadow: none;
