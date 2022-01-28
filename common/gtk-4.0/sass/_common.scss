@@ -3439,6 +3439,8 @@ window.dialog.message { // Message Dialog styling
     border-top-right-radius: $header_radius;
   }
 
+  .dialog-action-area button { padding: 8px; min-height: 0; }
+
   box.dialog-vbox.vertical {
     border-spacing: 10px;
   }
@@ -3455,13 +3457,16 @@ window.dialog.message { // Message Dialog styling
       border: none;
     }
 
+    .dialog-action-area { @include linking_rules(); }
+
     .dialog-action-area button {
-      padding: 10px 14px; // labels are not vertically centered on message dialog, this is a workaround
       border-radius: 0;
       border-bottom-style: none;
+      border-right-style: none;
 
       &:first-child{
         border-bottom-left-radius: 2px;
+        border-left-style: none;
       }
 
       &:last-child {
