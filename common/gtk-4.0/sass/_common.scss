@@ -3442,6 +3442,7 @@ window.dialog.message { // Message Dialog styling
   .dialog-action-area button { padding: 8px; min-height: 0; }
 
   box.dialog-vbox.vertical {
+    padding-top: 10px;
     border-spacing: 10px;
   }
 

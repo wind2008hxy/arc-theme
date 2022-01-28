@@ -2723,6 +2723,10 @@ messagedialog { // Message Dialog styling
 
   .dialog-action-area button { padding: 8px; min-height: 0; }
 
+  box.dialog-vbox.vertical {
+    padding-top: 10px;
+  }
+
   &.csd { // rounded bottom border styling for csd version
     &.background {
       border-bottom-left-radius: 3px;
