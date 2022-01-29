@@ -3391,11 +3391,14 @@ calendar {
     border: none;
 
     > button {
-      @extend %undecorated_button;
+      &, &:hover, &:active, &:disabled {
+        @extend %undecorated_button;
+      }
 
       color: transparentize($fg_color,0.55);
 
       &:hover { color: $fg_color; }
+      &:active { color: $selected_bg_color; }
       &:disabled { color: $insensitive_fg_color; }
     }
   }
