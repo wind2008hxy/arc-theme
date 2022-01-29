@@ -2859,51 +2859,59 @@ scale {
     transform: rotate(135deg);
   }
 
-  //FIXME do proper color slider design for arc? add trough?
   &.color {
     min-height: 0;
     min-width: 0;
 
-    > trough {//FIXME
-    //  background-image: image($borders_color);
-    //  background-repeat: no-repeat;
+    > trough {
+      background-image: image($scale_trough_bg);
+      background-repeat: no-repeat;
+      border: 1px solid $scale_trough_bg;
+      min-height: 13px;
+      min-width: 13px;
+    }
+
+    > trough > slider {
+      &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
+        margin: -8px;
+      }
     }
 
     &.horizontal {
       padding: 0 0 15px 0;
 
-      /*> trough {//FIXME
+      > trough {
         padding-bottom: 4px;
         background-position: 0 -3px;
         border-top-left-radius: 0;
         border-top-right-radius: 0;
-      }*/
+      }
 
       > trough > slider {
-        &:dir(ltr), &:dir(rtl) { // specificity bump
+        &:dir(ltr), &:dir(rtl), & { // specificity bump
           &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
-            margin-bottom: -15px;
-            margin-top: 6px;
+            margin-bottom: -14px;
+            margin-top: 5px;
           }
         }
       }
     }
 
     &.vertical {
-      &:dir(ltr) {
+      &:dir(ltr), & {
         padding: 0 0 0 15px;
 
-        /*> trough {//FIXME
+        > trough {
           padding-left: 4px;
           background-position: 3px 0;
           border-bottom-right-radius: 0;
           border-top-right-radius: 0;
-        }*/
+        }
 
         > trough > slider {
           &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
-            margin-left: -15px;
-            margin-right: 6px;
+            margin-left: -13px;
+            margin-right: 4px;
           }
         }
       }
@@ -2911,17 +2919,17 @@ scale {
       &:dir(rtl) {
         padding: 0 15px 0 0;
 
-        /*> trough {//FIXME
+        > trough {
           padding-right: 4px;
           background-position: -3px 0;
           border-bottom-left-radius: 0;
           border-top-left-radius: 0;
-        }*/
+        }
 
         > trough > slider {
           &:hover, &:backdrop, &:disabled, &:backdrop:disabled, & {
-            margin-right: -15px;
-            margin-left: 6px;
+            margin-right: -13px;
+            margin-left: 4px;
           }
         }
       }
@@ -2929,47 +2937,47 @@ scale {
 
     &.fine-tune {
       &.horizontal {
-        &:dir(ltr), &:dir(rtl) { // specificity bump
-          padding: 0 0 12px 0;
+        &:dir(ltr), &:dir(rtl), & { // specificity bump
+          padding: 0 0 13px 0;
 
-          > trough {//FIXME
-          //  padding-bottom: 7px;
-          //  background-position: 0 -6px;
+          > trough {
+            padding-bottom: 6px;
+            background-position: 0 -5px;
           }
 
           > trough > slider {
-            margin-bottom: -15px;
-            margin-top: 6px;
+            margin-bottom: -14px;
+            margin-top: 5px;
           }
         }
       }
 
       &.vertical {
-        &:dir(ltr) {
-          padding: 0 0 0 12px;
+        &:dir(ltr), & {
+          padding: 0 0 0 13px;
 
-          > trough {//FIXME
-          //  padding-left: 7px;
-          //  background-position: 6px 0;
+          > trough {
+            padding-left: 6px;
+            background-position: 5px 0;
           }
 
           > trough > slider {
-            margin-left: -15px;
-            margin-right: 6px;
+            margin-left: -13px;
+            margin-right: 4px;
           }
         }
 
         &:dir(rtl) {
-          padding: 0 12px 0 0;
+          padding: 0 13px 0 0;
 
-          > trough {//FIXME
-          //  padding-right: 7px;
-          //  background-position: -6px 0;
+          > trough {
+            padding-right: 6px;
+            background-position: -5px 0;
           }
 
           > trough > slider {
-            margin-right: -15px;
-            margin-left: 6px;
+            margin-right: -13px;
+            margin-left: 4px;
           }
         }
       }
