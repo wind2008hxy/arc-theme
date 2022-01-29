@@ -6,6 +6,7 @@ $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $backdrop_transition: 200ms ease-out;
 $button_transition: all 200ms $ease-out-quad;
 $header_radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
+$scale_trough_bg: if($variant != 'dark', $button_border, darken($bg_color, 5%));
 
 $asset_suffix: if($variant=='dark', '-dark', '');
 $darker_asset_suffix: if($variant=='darker', '-dark', $asset_suffix);
@@ -2594,14 +2595,12 @@ checkbutton {
  * GtkScale *
  ************/
 %scale_trough {
-  $_scale_trough_bg: if($variant != 'dark', $button_border, darken($bg_color, 5%));
-
   border: none;
   border-radius: 2.5px;
-  background-color: $_scale_trough_bg;
+  background-color: $scale_trough_bg;
 
   &:disabled {
-   background-color: transparentize($_scale_trough_bg, 0.45);
+   background-color: transparentize($scale_trough_bg, 0.45);
   }
 
   // ...on selected list-rows and infobars
