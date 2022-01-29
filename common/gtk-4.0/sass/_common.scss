@@ -3781,6 +3781,10 @@ tooltip {
     background-clip: padding-box;
   }
 
+  &.background, & {
+    color: $osd_fg_color;
+  }
+
   padding: 4px;
   border-radius: 2px;
 
