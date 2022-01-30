@@ -2137,7 +2137,12 @@ popover.menu {
 // initial styling for popover menu and bar
 menubar {
   padding: 0px;
-  box-shadow: inset 0 -1px transparentize(black, 0.9);
+  background-color: opacify($header_bg, 1);
+  color: $header_fg;
+
+  &:backdrop {
+    color: transparentize($header_fg, 0.3);
+  }
 
   // adjust traditional menubar menu corner radius for Arc
   popover.menu > contents {
