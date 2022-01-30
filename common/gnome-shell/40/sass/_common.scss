@@ -1875,6 +1875,10 @@ $_dash_bottom_margin: 20px;
     background-color: transparentize(black, 0.75);
   }
 
+  .app-well-app.focused:hover .overview-icon {
+    background-color: $selected_bg_color;
+  }
+
   &.running-dots {
     .app-well-app .app-well-app-running-dot,
     .app-well-app.focused:hover .app-well-app-running-dot {
