@@ -881,11 +881,9 @@ modelbutton.flat {
 
   @extend %undecorated_button;
 
-  &:hover { background-color: if($variant!='dark', mix($fg_color,$bg_color,5%), mix($fg_color,$bg_color,10%)); }
-
   &:disabled { color: $insensitive_fg_color; }
 
-  &:selected { @extend %selected_items; }
+  &:hover, &:selected { @extend %selected_items; }
 }
 
 modelbutton.flat arrow {
