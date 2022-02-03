@@ -2080,10 +2080,8 @@ magnifier {
 /**********************
  * Popover Base Menus *
  **********************/
-//FIXME still need some work
-$_menu_bg: if($variant!='dark', $base_color, $bg_color);
 
-$_menu-padding: 12px; //inner menuitem padding//FIXME arc paddings??
+$_menu-padding: 8px; //inner menuitem padding
 //global $menu-margin for outside menuitems
 
 popover.menu {
@@ -2092,20 +2090,14 @@ popover.menu {
   box.inline-buttons {
     padding: 0 $_menu-padding;
 
-    button.image-button.model {//FIXME redesign for arc?
-      @include button(undecorated);
+    button.image-button.model {
+      @include button(normal);
 
-      min-height: 30px;
-      min-width: 30px;
-      padding: 0;
-      border: none;
-      outline: none;
-      transition: none;
+      &, &:dir(ltr) { margin-left: 6px; }
+      &:dir(rtl) { margin-right: 6px; }
 
-      &:selected {
-        background: $selected_bg_color;
-        color: $selected_fg_color;
-      }
+      &:focus { @include button(hover); }
+      &:active { @include button(active); }
     }
   }
 
@@ -2116,54 +2108,42 @@ popover.menu {
       @extend %list_button;
 
       padding: 11px;
-      &:focus {
-         background-color: $selected_bg_color;
-         border-color: $selected_bg_color;
-      }
+
+      &:focus { @include button(hover); }
+      &:active { @include button(active); }
     }
-  }
-
-  & > arrow,
-  &.background > contents {
-    background-color: $_menu_bg;
-    padding: 5px;
-  }
-
-  &.background separator {
-    margin: 0;
   }
 
   accelerator {
     color: gtkalpha(currentColor,0.55);
 
-    &:dir(ltr) { margin-left: $_menu-padding; }
-    &:dir(rtl) { margin-right: $_menu-padding; }
+    &:dir(ltr) { margin-left: 22px; }//$_menu-padding;
+    &:dir(rtl) { margin-right: 22px; }//$_menu-padding;
   }
 
   arrow.left,
   radio.left,
   check.left {
-    margin-left: -2px;
-    margin-right: 6px;
+    margin-left: -1px;
+    margin-right: 7px;
   }
 
   arrow.right,
   radio.right,
   check.right {
-    margin-left: 6px;
-    margin-right: -2px;
+    margin-left: 7px;
+    margin-right: -1px;
+  }
+
+  scale {
+    padding: 5px $_menu-padding;
   }
 
   modelbutton {
-    min-height: 30px;
+    min-height: 16px;
     min-width: 40px;
-    padding: 0 $_menu-padding;
-    border-radius: 3px;
-
-    &:selected {
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
-    }
+    padding: 5px $_menu-padding;
+    border-radius: 2px;
   }
 
   label.title {
