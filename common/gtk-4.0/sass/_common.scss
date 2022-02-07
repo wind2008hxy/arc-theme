@@ -264,6 +264,7 @@ entry {
     border-radius: 3px;
     border-spacing: 5px;
     transition: all 200ms $ease-out-quad;
+    background-clip: padding-box;
 
     &.search { border-radius: 20px; }
 
