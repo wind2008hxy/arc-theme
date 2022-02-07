@@ -910,7 +910,15 @@ modelbutton.flat arrow {
 
 /* oldstyle toolbar buttons */
 
-.toolbar button {
+.toolbar > button,
+.toolbar > :not(.linked) > button,
+.toolbar :not(.linked) > menubutton > button,
+.toolbar :not(.linked) > scalebutton > button,
+.toolbar :not(.linked) > dropdown > button,
+.toolbar :not(.linked) > colorbutton > button,
+.toolbar :not(.linked) > fontbutton > button,
+.toolbar :not(.linked) > appchooserbutton > button,
+.toolbar :not(.linked) > combobox > box > button {
   margin: 1px;
   @extend %button_basic_flat;
 }
