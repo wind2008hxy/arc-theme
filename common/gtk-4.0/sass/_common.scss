@@ -3151,9 +3151,12 @@ frame {
 
 actionbar > revealer > box {
   padding: 5px;
-  border-spacing: 5px;
   border-top: 1px solid $borders_color;
   background-color: darken($bg_color, 3%);
+
+  &, > box.start, > box.end {
+    border-spacing: 6px;
+  }
 }
 
 scrolledwindow {
