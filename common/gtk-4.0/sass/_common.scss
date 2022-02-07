@@ -1059,6 +1059,11 @@ dropdown > popover.menu.background > contents { padding: 0; } //allow search ent
 
 dropdown > button > box {
   border-spacing: 6px;
+
+  > stack > row.activatable:hover {
+    background: none;
+    box-shadow: none;
+  }
 }
 
 dropdown,
@@ -1096,21 +1101,24 @@ combobox {
 
   // newstyle
   popover {
-   padding: 0;
+    padding: 0;
 
-   listview {
+    listview.view {
+      margin: 4px 0;
+      background-color: transparent;
 
-      margin: 8px 0;
+      & > row {
+        min-height: 16px;
+        padding: 5px 6px;
 
-      &>row {
-         padding: 8px;
-
-         &:selected {
+        &:selected {
+          &, &:hover {
             color: $selected_fg_color;
             background-color: $selected_bg_color;
-         }
+          }
+        }
       }
-   }
+    }
 
     // drodowns with searchboxes on top
     .dropdown-searchbar {
