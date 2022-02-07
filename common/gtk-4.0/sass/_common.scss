@@ -4,7 +4,7 @@
 
 $ease-out-quad: cubic-bezier(0.25, 0.46, 0.45, 0.94);
 $backdrop_transition: 200ms ease-out;
-$button_transition: all 200ms $ease-out-quad;
+$button_transition: all 200ms $ease-out-quad, outline-width 0s;
 $header_radius: if($variant=='light' or $variant=='lighter', 4px, 3px);
 $scale_trough_bg: if($variant != 'dark', $button_border, darken($bg_color, 5%));
 
