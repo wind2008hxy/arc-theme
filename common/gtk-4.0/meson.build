@@ -1,47 +1,15 @@
-# supported versions
-gtk4_versions = ['4.0', '4.2']
-
-# determine gtk4 version
-if get_option('gtk4_version') != ''
-  gtk4_full_ver = get_option('gtk4_version')
-else
-  gtk4_dep = dependency(
-    'gtk4',
-    version: '>= 4.0',
-    not_found_message : 'Could not determine GTK 4 version'
-  )
-  gtk4_full_ver = gtk4_dep.version()
-endif
-
-gtk4_ver_array = gtk4_full_ver.split('.')
-if gtk4_ver_array[1].to_int().is_even()
-  gtk4_ver = gtk4_ver_array[0] + '.' + gtk4_ver_array[1]
-else
-  # evenize development versions
-  gtk4_ver = gtk4_ver_array[0] + '.' + (gtk4_ver_array[1].to_int() + 1).to_string()
-endif
-
-if gtk4_ver not in gtk4_versions
-  if gtk4_ver.version_compare('>' + gtk4_versions[-1])
-    warning('GTK 4 version ' + gtk4_ver + ' not supported yet, building theme for ' + gtk4_versions[-1])
-    gtk4_ver = gtk4_versions[-1]
-  else
-    error('Unsupported GTK 4 version')
-  endif
-endif
-
 # render PNG assets
 
 gtk4_asset_names = run_command(
-  'cat', gtk4_ver / 'assets' / 'assets.txt',
+  'cat', 'assets' / 'assets.txt',
   check : true
 ).stdout().split()
 
-subdir(gtk4_ver / 'assets')
+subdir('assets')
 
 # compile CSS
 
-sass_path = meson.current_source_dir() / gtk4_ver / 'sass'
+sass_path = meson.current_source_dir() / 'sass'
 sass_depend_files = run_command(
   'find',
   sass_path,
@@ -51,12 +19,12 @@ sass_depend_files = run_command(
 
 # always compile the dark CSS
 input_scss_dark = configure_file(
-  input: meson.current_source_dir() / gtk4_ver / 'sass' / 'gtk.scss.in',
+  input: meson.current_source_dir() / 'sass' / 'gtk.scss.in',
   output : 'gtk-dark.scss',
   configuration : {
     'variant' : 'dark',
     'transparency' : get_option('transparency').to_string(),
-    'sass_path' : meson.current_source_dir() / gtk4_ver / 'sass',
+    'sass_path' : meson.current_source_dir() / 'sass',
   }
 )
 
@@ -77,12 +45,12 @@ foreach variant : get_option('variants')
 
   if variant != 'dark'
     input_scss = configure_file(
-      input: meson.current_source_dir() / gtk4_ver / 'sass' / 'gtk.scss.in',
+      input: meson.current_source_dir() / 'sass' / 'gtk.scss.in',
       output : 'gtk-' + variant + '.scss',
       configuration : {
         'variant' : variant,
         'transparency' : get_option('transparency').to_string(),
-        'sass_path' : meson.current_source_dir() / gtk4_ver / 'sass',
+        'sass_path' : meson.current_source_dir() / 'sass',
       }
     )
 
@@ -138,8 +106,7 @@ foreach variant : get_option('variants')
     command : [
       glib_compile_resources,
       '--sourcedir=@OUTDIR@',
-      '--sourcedir=@OUTDIR@' / gtk4_ver,
-      '--sourcedir=@CURRENT_SOURCE_DIR@' / gtk4_ver,
+      '--sourcedir=@CURRENT_SOURCE_DIR@',
       '--target=@OUTPUT@',
       '@INPUT@'
     ],

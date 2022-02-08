@@ -74,22 +74,21 @@ Some themes (at least GTK 2) aren't loaded from `~/.local/share/themes/`. You ca
 
 ## Versioned themes
 
-The source code comes branched for different versions of GTK 4, GNOME Shell, and Cinnamon. Only one version of those themes will be built and installed, and using the wrong versions will likely result in visual issues.
+The source code comes branched for different versions of GNOME Shell, and Cinnamon. Only one version of those themes will be built and installed, and using the wrong versions will likely result in visual issues.
 
-The versions that will be built can be set manually with `cinnamon_version`, `gnome_shell_version` and `gtk4_version` build options.
+The versions that will be built can be set manually with `cinnamon_version` and `gnome_shell_version` build options.
 
 Otherwise the build system tries to determine correct versions using the following packages on the build environment:
 * `gnome-shell` for detecting GNOME Shell version
 * `cinnamon` for detecting Cinnamon version
-* `pkgconf` and the `gtk4` package (or its development files for distributions that ship those separately, e.g. `libgtk-4-dev` for Debian based distros or `gtk4-devel` for RPM based distros), for detecting GTK 4 version
 
-**Note:** The build setup for GTK 4, Cinnamon and GNOME Shell themes will fail, if their versions can't be determined either from the build options, or from installed packages.
+**Note:** The build setup for Cinnamon and GNOME Shell themes will fail, if their versions can't be determined either from the build options, or from installed packages.
 
 ## Build options
 
 Arc-theme specific build options can be set or changed with `meson configure -Doption=value <build_directory>` e.g.
 
-    meson configure -Dthemes=gtk4,plank,xfwm -Dtransparency=false -Dgtk4_version=4.2 build/
+    meson configure -Dthemes=cinnamon,plank,xfwm -Dtransparency=false -Dcinnamon_version=5.0 build/
 
 Option | Default value | Description
 --- | --- | ---
@@ -98,7 +97,6 @@ Option | Default value | Description
 `transparency` | `true` | Enable or disable transparency
 `cinnamon_version` | - | Build Cinnamon theme for specific version
 `gnome_shell_version` | - | Build GNOME Shell theme for specific version
-`gtk4_version` | - | Build GTK 4 theme for specific version
 `gnome_shell_gresource` | `false` | Compile GNOME Shell theme into a gresource file
 
 ## Uninstallation

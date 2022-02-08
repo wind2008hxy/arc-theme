@@ -32,12 +32,6 @@ option(
 )
 
 option(
-  'gtk4_version',
-  type: 'string',
-  description: 'Build GTK 4 theme for specific version',
-)
-
-option(
   'gnome_shell_gresource',
   type: 'boolean',
   value: false,
