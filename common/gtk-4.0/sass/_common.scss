@@ -923,7 +923,7 @@ modelbutton.flat arrow {
 .toolbar :not(.linked) > fontbutton > button,
 .toolbar :not(.linked) > appchooserbutton > button,
 .toolbar :not(.linked) > combobox > box > button {
-  margin: 1px;
+  margin: 1px 0;
   @extend %button_basic_flat;
 }
 
@@ -1176,7 +1176,7 @@ combobox {
  ************/
 %toolbar {
   padding: 4px;
-  border-spacing: 4px;
+  border-spacing: 1px;
   background-color: $bg_color;
 }
 
