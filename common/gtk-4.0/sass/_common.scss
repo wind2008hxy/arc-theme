@@ -2154,7 +2154,7 @@ popover.menu {
 
 // initial styling for popover menu and bar
 menubar {
-  padding: 0px;
+  padding: 0;
   background-color: opacify($header_bg, 1);
   color: $header_fg;
 
@@ -2162,18 +2162,12 @@ menubar {
     color: transparentize($header_fg, 0.3);
   }
 
-  // adjust traditional menubar menu corner radius for Arc
-  popover.menu > contents {
-    border-radius: 0;
-  }
-
   > item {
     min-height: 16px;
-    padding: 4px 8px;
+    padding: 4px $_menu-padding;
 
-    &:selected { //Seems like it :hover even with keyboard focus
-      background-color: $selected_bg_color;
-      color: $selected_fg_color;
+    &:selected { //Seems like it :selected even with keyboard focus
+      @extend %selected_items;
     }
 
     &:disabled {
@@ -2182,16 +2176,18 @@ menubar {
     }
   }
 
-  & > item popover.menu.background > contents {
-    padding: 5px;
+  & > item popover.menu modelbutton {
+    border-radius: 0;
   }
+
+  & > item popover.menu.background > contents {
+    padding: 4px 0;
+    border-radius: 2px;
+  }
+
   //nested submenus
   & > item popover.menu popover.menu {
-    padding: 0 0 4px 0;
-  }
-  & > item popover.menu.background popover.menu.background > contents {
-    margin: 0;
-    border-radius: 3px; //including top
+    margin-top: -5px;
   }
 }
 
