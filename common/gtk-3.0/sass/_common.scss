@@ -819,8 +819,7 @@ modelbutton.flat {
 
   @extend %undecorated_button;
 
-  &:hover { background-color: if($variant!='dark', mix($fg_color,$bg_color,5%), mix($fg_color,$bg_color,10%)); }
-  &:active, &:selected { &, arrow { @extend %selected_items; } }
+  &:hover, &:active, &:selected { &, arrow { @extend %selected_items; } }
   &:checked { color: $fg_color; }
 
   // FIXME: temporary workaround
@@ -2184,6 +2183,8 @@ switch {
     // too similar in luminosity to the selected background color, hence
     // we need special casing.
     menuitem #{$w}#{$s}:hover,
+    modelbutton #{$w}#{$s}:hover,
+    modelbutton #{$w}#{$s}:active,
     .view #{$w}#{$s}:selected,
     treeview.#{$w}#{$s}:selected,
     row:selected #{$w}#{$s},
