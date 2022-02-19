@@ -1028,7 +1028,7 @@ spinbutton {
     > button + button { border-left-style: none; }
 
     > button:hover:not(:active),
-    > button:hover + button { box-shadow: inset 1px 0 $button_border; }
+    > button:hover:not(:active) + button { box-shadow: inset 1px 0 $button_border; }
 
     > button:disabled + button:not(:disabled):not(:active):not(:checked):not(:hover),
     > button:not(:disabled):not(:active):not(:checked):not(:hover) + button:disabled { box-shadow: inset 1px 0 transparentize($button_border, 0.5); }
@@ -1043,7 +1043,7 @@ spinbutton {
 
     .osd & {
       > button:hover:not(:active),
-      > button:hover + button { box-shadow: inset 1px 0 $osd_button_border; }
+      > button:hover:not(:active) + button { box-shadow: inset 1px 0 $osd_button_border; }
 
       > button:first-child:hover:not(:active),
       > button.up:dir(rtl):hover:not(:active),
