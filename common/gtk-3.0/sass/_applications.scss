@@ -70,7 +70,10 @@ terminal-window,
 // Pathbar for nautilus >=3.30
 .nautilus-window .path-bar-box {
   border-radius: 3px;
+  background-color: $header_button_bg;
   border: 1px $header_button_border solid;
+
+  &:backdrop { opacity: 0.7; }
 }
 
 // path-bar buttons for nautilus 3.30
@@ -94,9 +97,18 @@ terminal-window,
   & > button:not(:last-child):not(:only-child) {
     margin: 0;
 
-    @include button(header-hover);
+    color: $header_fg;
+    border-color: $header_button_border;
+    background-color:transparent;
 
-    &:hover { background-color: lighten($header_button_bg, 15%); }
+    @if $variant == 'light' or $variant == 'lighter' {
+      &:hover { background-color: transparentize(white, 0.4); }
+      &:hover:backdrop { background-color: transparentize(white, 0.42); }
+    } @else {
+      &:hover { background-color: transparentize(white, 0.91); }
+      &:hover:backdrop { background-color: transparentize(white, 0.88); }
+    }
+
     &:active, &:checked { @include button(header-active); }
     &:disabled { color: transparentize($header_fg, 0.4); }
 
