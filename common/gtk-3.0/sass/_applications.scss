@@ -798,6 +798,11 @@ panel-toplevel.background {
   background-color: if($variant == 'lighter', transparentize(black, 0.85), transparentize(black, 0.75));
 }
 
+// xfce4-pulseaudio-plugin
+#XfcePanelWindowWrapper #pulseaudio-button {
+  switch, slider { color: transparent; }
+}
+
 %tasklist-button, %panelbutton {
   color: $panel_fg;
   border-radius: 0;
