@@ -68,7 +68,8 @@ stage {
   &:focus { @include button(focus); }
   &:hover { @include button(hover); }
   &:hover:focus { @include button(focus-hover); }
-  &:active, &:active:focus { @include button(active); }
+  &:active, &:active:focus,
+  &:checked, &:checked:focus { @include button(active); }
   &:insensitive { @include button(insensitive); }
 }
 
