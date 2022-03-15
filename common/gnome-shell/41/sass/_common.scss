@@ -1373,6 +1373,20 @@ StScrollBar {
 
   &:ltr { margin-right: 9px; }
   &:rtl { margin-left: 9px; }
+
+  .dnd-button {
+    // We need this because the focus outline isn't inset like for the buttons
+    // so the dnd button would grow when it gets focus if we didn't change only
+    // its color when focusing.
+    border-width: 1px;
+    border-color: transparent;
+    border-radius: 99px;
+    border-style: solid;
+
+    &:focus {
+      border-color: $selected_bg_color;
+    }
+  }
 }
 
 .message-list-clear-button {
