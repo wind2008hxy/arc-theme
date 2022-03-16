@@ -2581,6 +2581,32 @@ $_dash_bottom_margin: 20px;
   padding-top: 1em;
 }
 
+.login-dialog-auth-list-view { -st-vfade-offset: 1em; }
+.login-dialog-auth-list {
+  spacing: 6px;
+  margin-left: 2em;
+}
+
+.login-dialog-auth-list-title {
+  margin-left: 2em;
+}
+
+.login-dialog-auth-list-item {
+  border-radius: 5px;
+  padding: 6px;
+  color: $osd_fg_color;
+  &:focus, &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
+}
+
+.login-dialog-auth-list-label {
+  @include fontsize($font-size * 1.2);
+  font-weight: bold;
+  padding-left: 15px;
+
+  &:ltr { padding-left: 14px; text-align: left; }
+  &:rtl { padding-right: 14px; text-align: right; }
+}
+
 .login-dialog-user-list-view { -st-vfade-offset: 1em; }
 .login-dialog-user-list {
   spacing: 12px;
