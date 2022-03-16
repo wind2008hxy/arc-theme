@@ -1,6 +1,5 @@
 //This is the RIGHT PLACE to edit the stylesheet
 
-$panel-corner-radius: 0px;
 $asset_path: if($variant == 'dark', dark-assets, light-assets);
 
 /* Copyright 2009, 2015 Red Hat, Inc.
@@ -807,18 +806,6 @@ StScrollBar {
 .tile-preview {
   background-color: transparentize($selected_bg_color, 0.65);
   border: 1px solid $selected_bg_color;
-
-  &-left.on-primary {
-    border-radius: $panel-corner-radius 0 0 0;
-  }
-
-  &-right.on-primary {
-    border-radius: 0 $panel-corner-radius 0 0;
-  }
-
-  &-left.tile-preview-right.on-primary {
-    border-radius: $panel-corner-radius $panel-corner-radius 0 0;
-  }
 }
 
 //
@@ -861,24 +848,6 @@ StScrollBar {
       &:hover {
         color: $_shell_fg_color;
       }
-    }
-  }
-
-  .panel-corner {
-    -panel-corner-radius: $panel-corner-radius;
-    -panel-corner-background-color: transparentize(black, 1);
-    -panel-corner-border-width: 0px;
-    -panel-corner-border-color: black;
-    -panel-corner-opacity: 0;
-
-    &:active, &:overview, &:focus {
-      -panel-corner-border-color: black;
-    }
-
-    &.login-screen, &.unlock-screen {
-      -panel-corner-radius: 0;
-      -panel-corner-background-color: transparent;
-      -panel-corner-border-color: transparent;
     }
   }
 
