@@ -280,12 +280,19 @@ StScrollBar {
       background-color: darken($osd_bg_color, 2%);
     }
 
-    &:first-child {
+    &:first-child:ltr {
       border-radius: 0px 0px 0px 2px;
     }
-    &:last-child {
+    &:last-child:ltr {
       border-right-width: 0px;
       border-radius: 0px 0px 2px 0px;
+    }
+    &:first-child:rtl {
+      border-left-width: 0px;
+      border-radius: 0px 0px 2px 0px;
+    }
+    &:last-child:rtl {
+      border-radius: 0px 0px 0px 2px;
     }
     &:first-child:last-child {
       border-right-width: 0px;
