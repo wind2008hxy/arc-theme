@@ -761,53 +761,27 @@ StScrollBar {
 //
 // Workspace Switcher
 //
+$ws_indicator_height: 32px;
+$ws_dot_active: $ws_indicator_height / 3;
+$ws_dot_inactive: $ws_indicator_height / 6;
+
 .workspace-switcher {
-
-  background: transparent;
-  border: 0px;
-  border-radius: 0px;
-  padding: 0px;
+  @extend %shell_osd;
+  margin: 4em;
   spacing: 8px;
+}
 
-  &-group { padding: 12px; }
+.ws-switcher-indicator {
+  background-color: $_shell_fg_color;
+  padding: $ws_dot_inactive / 2;
+  margin: ($ws_indicator_height - $ws_dot_inactive) / 2;
+  border-radius: $ws_indicator_height;
 
-  &-container {
-    padding: 14px;
-    padding-bottom: 17px;
-    @extend %shell_bg;
+  &:active {
+    background-color: $selected_bg_color;
+    padding: $ws_dot_active / 2;
+    margin: ($ws_indicator_height - $ws_dot_active) / 2;
   }
-}
-
-.ws-switcher-active-up, .ws-switcher-active-down,
-.ws-switcher-active-left, .ws-switcher-active-right {
-  height: 64px;
-  background-color: $selected_bg_color;
-  background-size: 64px;
-  border-radius: 2px;
-  border: 1px solid $selected_bg_color;
-}
-
-.ws-switcher-active-up {
-  background-image: url("common-assets/misc/ws-switch-arrow-up.svg");
-}
-
-.ws-switcher-active-down {
-  background-image: url("common-assets/misc/ws-switch-arrow-down.svg");
-}
-
-.ws-switcher-active-left {
-  background-image: url("common-assets/misc/ws-switch-arrow-left.svg");
-}
-
-.ws-switcher-active-right {
-  background-image: url("common-assets/misc/ws-switch-arrow-right.svg");
-}
-
-.ws-switcher-box {
-  height: 64px;
-  background-color: transparentize(black, 0.67);
-  border: 1px solid transparentize(black, 0.67);
-  border-radius: 2px;
 }
 
 //
