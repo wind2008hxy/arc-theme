@@ -77,7 +77,8 @@ stage {
 
   &:hover { @include button(osd-hover); }
   &:focus { color: $selected_bg_color; }
-  &:active { @include button(osd-active); }
+  &:active, &:active:focus,
+  &:checked, &:checked:focus  { @include button(osd-active); }
   &:insensitive { @include button(osd-insensitive); }
 }
 
