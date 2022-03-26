@@ -2833,6 +2833,222 @@ $_dash_bottom_margin: 20px;
 }
 
 //
+// Screenshot UI
+//
+.icon-label-button-container {
+  spacing: 6px;
+  font-weight: normal;
+  @include fontsize($font-size * 0.9);
+
+  StIcon { icon-size: 32px;}
+}
+
+$_screenshot_ui_panel_padding: 15px;
+
+.screenshot-ui-panel {
+  @extend %shell_osd;
+  border-radius: 3px;
+  padding: $_screenshot_ui_panel_padding;
+  // Reduce the bottom padding a little to accommodate the large capture button.
+  padding-bottom: $_screenshot_ui_panel_padding - 6px;
+  margin-bottom: 4em;
+  spacing: 10px;
+}
+
+.screenshot-ui-close-button {
+  @extend .window-close; // copy window close button
+  &.left { margin-left: 8px;}
+  &.right { margin-right: 8px;}
+}
+
+.screenshot-ui-type-button {
+  @extend %osd_button;
+  min-width: 48px;
+  padding: 10px 15px !important;
+  border-radius: 3px;
+}
+
+.screenshot-ui-capture-button {
+  width: 36px;
+  height: 36px;
+  border-radius: 99px;
+  border: 4px $_shell_fg_color;
+  padding: 4px;
+
+  .screenshot-ui-capture-button-circle {
+    background-color: $_shell_fg_color;
+    transition-duration: 200ms;
+    &:hover, &:focus {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+    }
+    border-radius: 99px;
+  }
+
+  &:hover, &:focus {
+    .screenshot-ui-capture-button-circle {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+    }
+  }
+
+  &:active {
+    .screenshot-ui-capture-button-circle {
+      background-color: darken($selected_bg_color, 10%);
+    }
+  }
+
+  &:cast {
+    .screenshot-ui-capture-button-circle {
+      background-color: $error_color;
+    }
+    &:hover, &:focus {
+      .screenshot-ui-capture-button-circle {
+        background-color: lighten($error_color, 10%);
+      }
+    }
+    &:active {
+      .screenshot-ui-capture-button-circle {
+        background-color: darken($error_color, 10%);
+      }
+    }
+  }
+}
+
+.screenshot-ui-shot-cast-container {
+  @extend %osd_button;
+  border-radius: 2px;
+  padding: 0;
+  spacing: 0;
+}
+
+.screenshot-ui-shot-cast-button {
+  padding: 5px 10px;
+  background-color: transparent;
+  color: $osd_fg_color;
+
+  &:checked {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
+
+  &:first-child:ltr {
+    border-radius: 2px 0px 0px 2px;
+  }
+  &:last-child:ltr {
+    border-right-width: 0px;
+    border-radius: 0px 2px 2px 0px;
+  }
+  &:first-child:rtl {
+    border-left-width: 0px;
+    border-radius: 0px 2px 2px 0px;
+  }
+  &:last-child:rtl {
+    border-radius: 2px 0px 0px 2px;
+  }
+
+  StIcon { icon-size: 16px;}
+}
+
+.screenshot-ui-show-pointer-button {
+  @extend %osd_button;
+  border-radius: 99px;
+  padding: 10px !important;
+  StIcon { icon-size: 16px;}
+}
+
+.screenshot-ui-area-indicator-shade {
+  background-color: rgba(0,0,0,.3);
+}
+
+.screenshot-ui-area-selector {
+  .screenshot-ui-area-indicator-shade {
+    background-color: rgba(0,0,0,.5);
+  }
+
+  .screenshot-ui-area-indicator-selection {
+    border: 2px white;
+  }
+}
+
+.screenshot-ui-area-selector-handle {
+  border-radius: 99px;
+  background-color: white;
+  box-shadow: 0 1px 3px 2px rgba(0,0,0,0.2);
+  width: 24px;
+  height: 24px;
+}
+
+.screenshot-ui-window-selector {
+  background-color: $_system_bg_color;
+
+  .screenshot-ui-window-selector-window-container {
+    margin: 100px;
+  }
+
+  &:primary-monitor {
+    .screenshot-ui-window-selector-window-container {
+      // Make some room for the panel.
+      margin-bottom: 200px;
+    }
+  }
+}
+
+.screenshot-ui-window-selector-window-border {
+  transition-duration: 200ms;
+  border-radius: 3px;
+  border: 6px transparent;
+}
+
+.screenshot-ui-window-selector-check {
+  transition-duration: 200ms;
+  color: transparent;
+  border-radius: 99px;
+  border-width: 12px;
+  icon-size: 24px;
+}
+
+.screenshot-ui-window-selector-window {
+  &:hover {
+    .screenshot-ui-window-selector-window-border {
+      border-color: $selected_bg_color;
+    }
+  }
+  &:checked {
+    .screenshot-ui-window-selector-window-border {
+      border-color: $selected_bg_color;
+      background-color: transparent;
+    }
+
+    .screenshot-ui-window-selector-check {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+  }
+}
+
+.screenshot-ui-screen-selector {
+  transition-duration: 200ms;
+  background-color: rgba(0,0,0,.5);
+
+  &:hover { background-color: rgba(0,0,0,.3);}
+  &:active { background-color: rgba(0,0,0,.7);}
+  &:checked {
+    background-color: transparent;
+    border: 2px white;
+  }
+}
+
+.screenshot-ui-tooltip {
+  color: $osd_fg_color;
+  background-color: $osd_bg_color;
+  border-radius: 99px;
+  padding: 5px 10px;
+  text-align: center;
+  -y-offset: 24px;
+}
+
+//
 // OpenWeather extension
 //
 .openweather-current-summarybox,
