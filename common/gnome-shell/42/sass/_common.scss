@@ -524,96 +524,175 @@ StScrollBar {
 //
 // Popvers/Menus
 //
+
+$_popup_submenu_background_color: if($variant!='dark', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
+$_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
+
+// the popover itself
+.popup-menu-boxpointer {
+  -arrow-rise: 0px; // distance from the panel & screen edge
+}
+
+// container of the popover menu
 .popup-menu {
-  $_popup_submenu_background_color: if($variant!='dark', rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.15));
-  $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.15));
-
   min-width: 15em;
+  color: $fg_color;
 
-  .popup-menu-content {
-    margin: if($variant!='dark', 4px, 3px);
-
-    @extend %popup_menu;
+  &.panel-menu {
+    margin-bottom: 1.75em; // so it doesn't touch the bottom of the screen
   }
+}
 
-  .popup-menu-arrow { } //defined globally in the TOP BAR
-  .popup-sub-menu {
-    padding-bottom: 1px;
-    background-color: $_popup_submenu_background_color;
-    box-shadow: inset 0 -1px $_popup_submenu_border_color;
-    border: none;
-  }
+// popover content
+.popup-menu-content {
+  padding: .7em 0em .7em 0em;
+  margin: if($variant!='dark', 4px, 3px);
 
-  .popup-menu-content { padding: .7em 0em .7em 0em; }
-  .popup-menu-item {
-    spacing: 12px;
+  @extend %popup_menu;
+}
 
-    &:ltr { padding: .4em 32px .4em 0em; }
-    &:rtl { padding: .4em 0em .4em 32px; }
+// menu items
+.popup-menu-item {
+  border-radius: 0;
+  spacing: 12px;
+  background-color: transparent;
 
-    &:checked {
-      font-weight: normal;
-      background-color: $_popup_submenu_background_color;
-      box-shadow: inset 0 1px $_popup_submenu_border_color;
+  &:ltr { padding: .4em 16px .4em 0em; }
+  &:rtl { padding: .4em 0em .4em 16px; }
+
+  &:focus {
+    &, &:checked {
+      background-color: transparent !important;
     }
+  }
 
-    &:active, &.selected {
+  &:hover, &:active {
+    &, &:checked {
       color: $selected_fg_color;
-      background-color: $selected_bg_color;
+      background-color: $selected_bg_color !important;
       box-shadow: none;
     }
+  }
 
-    &:insensitive {
-      color: transparentize($fg_color, 0.5);
-      background: none;
+  &:checked {
+    background-color: $_popup_submenu_background_color !important;
+    box-shadow: inset 0 1px $_popup_submenu_border_color;
+  }
+
+  &:insensitive {color: transparentize($fg_color,0.5);}
+
+  // add margin to switches in menu items
+  .toggle-switch {
+    &:ltr { margin-left: 16px;}
+    &:rtl { margin-right: 16px;}
+  }
+}
+
+
+// all other graphical elements (sliders)
+.popup-inactive-menu-item {
+  color: $fg_color;
+  &:insensitive { color: $insensitive_fg_color; }
+}
+
+// symbolic icons in popover
+.popup-menu-arrow,
+.popup-menu-icon {
+  icon-size: 16px !important; // for some reason the variable doesn't work here
+}
+
+.popup-menu-arrow {
+}
+
+// popover submenus
+.popup-sub-menu {
+  padding-bottom: 1px;
+  background-color: $_popup_submenu_background_color;
+  box-shadow: inset 0 -1px $_popup_submenu_border_color;
+  border-radius: 0;
+
+  .popup-menu-ornament {
+    min-width: 16px !important;
+  }
+}
+
+// container for radio and check boxes
+.popup-menu-ornament {
+  width: 1.2em;
+  text-align: center !important;
+
+  &:ltr { text-align: right;}
+  &:rtl { text-align: left;}
+}
+
+// separator
+.popup-separator-menu-item {
+  &, .popup-sub-menu & {
+    margin: 0;
+    padding: 0 !important;
+
+    .popup-separator-menu-item-separator {
+      height: 6px;
+      margin: 0;
+      background-color: transparent;
+      border: none;
+    }
+
+    // separators in submenus
+    .popup-sub-menu & {
+      background-color: transparent;
+      height: 6px;
     }
   }
+}
 
-  .popup-inactive-menu-item { //all icons and other graphical elements
-    color: $fg_color;
+// desktop ackground menu
+.background-menu { -boxpointer-gap: 4px; -arrow-rise: 0px; }
 
-    &:insensitive { color: $insensitive_fg_color; }
+// system status menu
+.aggregate-menu {
+  min-width: 23.5em;
+
+  // this is unneeded at the top-level in this menu, hide it
+  .popup-menu-ornament { width: 0 !important; }
+
+  // lock screen, shutdown, etc. buttons
+  .popup-menu-icon {
+    margin: 0 4px;
+    -st-icon-style: symbolic;
   }
-  //.popup-status-menu-item { font-weight: normal;  color: pink; } //dunno what that is
-  &.panel-menu {
-    -boxpointer-gap: 0px;
-    margin-bottom: 1.75em;
+
+  // account for ornaments in submenus with padding
+  .popup-sub-menu .popup-menu-item > :first-child {
+    // this value is hardcoded for visual effect
+    &:ltr { margin-left: 20px;}
+    &:rtl { margin-right: 20px;}
   }
 }
 
-.popup-menu-ornament {
-  margin-left: 4px;
-  width: 16px;
+// right-click (and panel) app menu
+.app-menu {
+  max-width: 27.25em;
 
-  &:ltr { text-align: right };
-  &:rtl { text-align: left };
+  // this is unneeded at the top-level in this menu, hide it
+  .popup-menu-ornament { width: 0 !important; }
+
+  .popup-separator-menu-item:first-child {
+    margin: .4em 4px;
+    spacing: 0;
+  }
+
+  .popup-inactive-menu-item:first-child {
+    // "Open Windows" label
+    > StLabel {
+      @include fontsize($font-size);
+      font-weight: normal;
+      &:ltr {margin-right: 8px;}
+      &:rtl {margin-left: 8px;}
+    }
+  }
 }
 
-.popup-menu-boxpointer {
-  -arrow-border-radius: 2px;
-  -arrow-background-color:  rgba(0,0,0,0.0);
-  -arrow-border-width: 1px;
-  -arrow-border-color: rgba(0,0,0,0.0);
-  -arrow-base: 0;
-  -arrow-rise: 0;
-}
-
-.candidate-popup-boxpointer {
-  -arrow-border-radius: 2px;
-  -arrow-background-color: $osd_bg_color;
-  -arrow-border-width: 1px;
-  -arrow-border-color: transparentize(black, 0.6);
-  -arrow-base: 20px;
-  -arrow-rise: 10px;
-}
-
-.popup-separator-menu-item-separator {
-  //-margin-horizontal: 24px;
-  height: 2px; //not really the whole box
-  margin: 0;
-  background-color: transparent;
-  border: none;
-}
 
 // Rename popup
 .rename-folder-popup {
@@ -622,14 +701,6 @@ StScrollBar {
     &:ltr, &:rtl { padding: 0, 12px; }
   }
 }
-
-// Background menu
-.background-menu { -boxpointer-gap: 4px; -arrow-rise: 0px; }
-
-// fallback menu
-//- odd thing for styling App menu when apparently not running under shell. Light Adwaita styled
-//  app menu inside the main app window itself rather than the top bar
-//
 
 //
 // OSD
@@ -957,23 +1028,6 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 #appMenu .panel-status-menu-box {
   padding: 0;
   spacing: 4px;
-}
-
-.app-menu {
-  max-width: 27.25em;
-}
-
-.aggregate-menu {
-  min-width: 23.5em;
-  .popup-menu-icon { padding: 0;
-                     margin: 0 4px;
-                     -st-icon-style: symbolic; }
-  .popup-sub-menu .popup-menu-item > :first-child {
-    &:ltr { /* 12px spacing + 2*4px padding + 16px icon */
-            padding-left: 36px; }
-    &:rtl { /* 12px spacing + 2*4px padding + 16px icon */
-            padding-right: 36px; }
-  }
 }
 
 //
