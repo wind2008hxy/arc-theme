@@ -1322,6 +1322,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 
 // do-not-disturb + clear button
 .message-list-controls {
+  font-weight: normal;
   margin: 18px 18px 0;
   padding: 0;
   spacing: 10px;
@@ -1376,7 +1377,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   $message_icon_size: 16px;
 
   .message-icon-bin {
-    padding: 8px 2px 8px 8px;
+    &:ltr { padding: 8px 2px 8px 8px; }
     &:rtl { padding: 8px 8px 8px 2px; }
 
     // icon size and color
@@ -1397,11 +1398,13 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   .message-content {
     padding: 8px;
     spacing: 0;
+    margin: 0;
   }
 
   // title
   .message-title {
     font-weight: bold;
+    padding: 0;
   }
 
   // secondary container in title box
@@ -1428,6 +1431,9 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   // close button
   .message-close-button {
     color: $fg_color;
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
     &:hover { color: transparentize($fg_color, 0.3); }
     &:active { color: $selected_bg_color }
   }
@@ -1446,6 +1452,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 /* Media Controls */
 .message-media-control {
   padding: 12px;
+  margin: 0;
   color: $fg_color;
   background-color: transparent;
 
