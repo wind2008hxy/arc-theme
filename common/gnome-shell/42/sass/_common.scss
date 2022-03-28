@@ -2739,6 +2739,15 @@ $_dash_bottom_margin: 20px;
     border: none;
     background-color: transparent;
     border-radius: 0px;
+    spacing: 6px;
+
+    .lg-toolbar-button {
+      padding: 5px 10px;
+      border-radius: 2px;
+      @extend %button;
+
+      & > StIcon { icon-size: 16px; }
+    }
   }
   .labels { spacing: 4px; }
 
@@ -2750,15 +2759,16 @@ $_dash_bottom_margin: 20px;
     transition-duration: 100ms;
     padding-left: .3em;
     padding-right: .3em;
+    border-radius: 2px;
 
     &:hover {
       color: $_panel_fg_color;
-      text-shadow: black 0px 2px 2px;
+      background-color: transparentize($_panel_fg_color, 0.95);
     }
     &:selected {
       border-bottom-width: 0px;
-      color: $selected_bg_color;
-      text-shadow: black 0px 2px 2px;
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
     }
   }
   StBoxLayout#EvalBox { padding: 4px; spacing: 4px; }
