@@ -1050,36 +1050,40 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   @include datemenu_bubble;
   padding: 0;
 
-  // month
-  .calendar-month-label {
-    color: $fg_color;
-    font-weight: bold;
-    padding: 8px 0;
-    &:focus {}
-  }
+  // month header
+  .calendar-month-header {
 
-  // prev/next month icons
-  .calendar-change-month-back,
-  .calendar-change-month-forward:rtl {
-    background-image: url("#{$asset_path}/misc/calendar-arrow-left.svg");
-    &:focus, &:hover { background-image: url("#{$asset_path}/misc/calendar-arrow-left-hover.svg"); }
-    &:active { background-image: url("#{$asset_path}/misc/calendar-arrow-left.svg"); }
-  }
+    // month label
+    .calendar-month-label {
+      color: $fg_color;
+      font-weight: bold;
+      padding: 8px 0;
+      &:focus {}
+    }
 
-  .calendar-change-month-forward,
-  .calendar-change-month-back:rtl {
-    background-image: url("#{$asset_path}/misc/calendar-arrow-right.svg");
-    &:focus, &:hover { background-image: url("#{$asset_path}/misc/calendar-arrow-right-hover.svg"); }
-    &:active { background-image: url("#{$asset_path}/misc/calendar-arrow-right.svg"); }
-  }
+    // prev/next month icons
+    .calendar-change-month-back,
+    .calendar-change-month-forward:rtl {
+      background-image: url("#{$asset_path}/misc/calendar-arrow-left.svg");
+      &:focus, &:hover { background-image: url("#{$asset_path}/misc/calendar-arrow-left-hover.svg"); }
+      &:active { background-image: url("#{$asset_path}/misc/calendar-arrow-left.svg"); }
+    }
 
-  .pager-button {
-    color: transparent;
-    background-color: transparent;
-    height: 32px;
-    width: 32px;
-    border-radius: 2px;
-    &:focus, &:hover, &:active { background-color: transparent; }
+    .calendar-change-month-forward,
+    .calendar-change-month-back:rtl {
+      background-image: url("#{$asset_path}/misc/calendar-arrow-right.svg");
+      &:focus, &:hover { background-image: url("#{$asset_path}/misc/calendar-arrow-right-hover.svg"); }
+      &:active { background-image: url("#{$asset_path}/misc/calendar-arrow-right.svg"); }
+    }
+
+    .pager-button {
+      color: transparent;
+      background-color: transparent;
+      height: 32px;
+      width: 32px;
+      border-radius: 2px;
+      &:focus, &:hover, &:active { background-color: transparent; }
+    }
   }
 
   $calendar_day_size: 27px;
@@ -1087,14 +1091,17 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   .calendar-day-base {
     @include fontsize($font-size * 0.8);
     text-align: center;
-    width: $calendar_day_size;
-    height: $calendar_day_size;
+    width: $calendar_day_size !important;
+    height: $calendar_day_size !important;
     padding: 0;
     margin: 2px;
     border-radius: $calendar_day_size * 0.5;
     border: 0 solid transparent;
     font-feature-settings: "tnum";
-    &:hover, &:focus { background-color: transparentize(black, 0.9); }
+    &:hover, &:focus {
+      background-color: transparentize(black, 0.9);
+      box-shadow: none;
+    }
     &:active,&:selected {
       color: $fg_color;
       background-color: transparentize(black, 0.85);
@@ -1104,8 +1111,9 @@ $ws_dot_inactive: $ws_indicator_height / 6;
     &.calendar-day-heading {
       color: transparentize($fg_color, 0.15);
       margin-top: 9px;
+      font-weight: normal;
       @include fontsize($font-size * 0.7);
-      height: 23px;//adjusts bottom margin
+      height: 23px !important;//adjusts bottom margin
     }
   }
 
@@ -1156,15 +1164,12 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   .calendar-week-number {
     @include fontsize($font-size * 0.7);
     font-weight: bold;
-    height: 15px;
-    width: 19px;
+    font-feature-settings: "tnum";
     border-radius: 2px;
     margin: 6px;
+    padding: 0 4px;
     background-color: if($variant!='dark', transparentize($fg_color,0.9), transparentize($fg_color,0.7));
     color: if($variant!='dark', transparentize($fg_color,0.5), $bg_color);
-
-    &:ltr { margin-left: 10px; }
-    &:rtl { margin-right: 10px; }
   }
 }
 
