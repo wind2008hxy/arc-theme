@@ -129,6 +129,87 @@ terminal-window,
   @include pathbar_linking_rules($sep_color:$header_button_border);
 }
 
+// Pathbar for nautilus >=42
+.nautilus-path-bar.linked:not(.vertical):not(.path-bar),
+.nautilus-path-bar.linked:not(.vertical):not(.path-bar):not(.stack-switcher) {
+  & > scrolledwindow,
+  & > button.popup.toggle {
+    margin-top: 6px;
+    margin-bottom: 6px;
+  }
+
+  & > scrolledwindow {
+    background-color: $header_button_bg;
+    border: 1px $header_button_border solid;
+
+    &:dir(ltr){ border-right-width: 0; border-radius: 3px 0 0 3px; }
+    &:dir(rtl){ border-left-width: 0; border-radius: 0 3px 3px 0; }
+
+    &:backdrop { opacity: 0.7; }
+  }
+
+  & > button.popup.toggle {
+    padding: 2px 5px;
+    background-color: $header_button_bg;
+    border: 1px $header_button_border solid;
+
+    &:hover { background-color: lighten($header_button_bg, 15%); }
+    &:active, &:checked {
+      color: $selected_fg_color;
+      background-color: $selected_bg_color;
+    }
+
+    &:dir(ltr){ border-radius: 0 3px 3px 0; }
+    &:dir(rtl){ border-radius: 3px 0 0 3px; }
+
+    &:hover:not(:checked):not(:active):not(:only-child):hover,
+    &:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+.path-buttons-box {
+  & > box {
+    & > button:not(.current-dir):hover {
+      box-shadow: inset  1px 0 $header_button_border,
+                  inset -1px 0 $header_button_border;
+    }
+    &:first-child > button:not(.current-dir) {
+      border-radius: 3px 0 0 3px;
+      &:hover { box-shadow: inset -1px 0 $header_button_border; }
+    }
+    &:last-child > button:not(.current-dir) {
+      border-radius: 0 3px 3px 0;
+      &:hover { box-shadow: inset 1px 0 $header_button_border; }
+    }
+  }
+
+  button {
+    margin: 0;
+    border: none;
+    border-radius: 0;
+
+    &:not(.current-dir) {
+      @if $variant == 'light' or $variant == 'lighter' {
+        &:hover { background-color: transparentize(white, 0.4); }
+        &:hover:backdrop { background-color: transparentize(white, 0.42); }
+      } @else {
+        &:hover { background-color: transparentize(white, 0.91); }
+        &:hover:backdrop { background-color: transparentize(white, 0.88); }
+      }
+    }
+
+    .dim-label { opacity: 1;}
+
+    &.current-dir {
+      background-color: transparent;
+      color: $header_fg;
+    }
+  }
+}
+
+
 button.nautilus-circular-button.image-button {
   @extend %button_circular;
 }
