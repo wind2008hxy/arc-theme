@@ -147,25 +147,27 @@ terminal-window,
 
     &:backdrop { opacity: 0.7; }
   }
+}
 
-  & > button.popup.toggle {
-    padding: 2px 5px;
-    background-color: $header_button_bg;
-    border: 1px $header_button_border solid;
+.nautilus-window headerbar button.popup.toggle:not(.image-button):not(.disclosure-button),
+.nautilus-path-bar.linked:not(.vertical):not(.path-bar) > button.popup.toggle,
+.nautilus-path-bar.linked:not(.vertical):not(.path-bar):not(.stack-switcher) > button.popup.toggle {
+  padding: 2px 5px;
+  background-color: $header_button_bg;
+  border: 1px $header_button_border solid;
 
-    &:hover { background-color: lighten($header_button_bg, 15%); }
-    &:active, &:checked {
-      color: $selected_fg_color;
-      background-color: $selected_bg_color;
-    }
+  &:hover { background-color: lighten($header_button_bg, 15%); }
+  &:active, &:checked {
+    color: $selected_fg_color;
+    background-color: $selected_bg_color;
+  }
 
-    &:dir(ltr){ border-radius: 0 3px 3px 0; }
-    &:dir(rtl){ border-radius: 3px 0 0 3px; }
+  &:dir(ltr){ border-radius: 0 3px 3px 0; }
+  &:dir(rtl){ border-radius: 3px 0 0 3px; }
 
-    &:hover:not(:checked):not(:active):not(:only-child):hover,
-    &:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
-      box-shadow: none;
-    }
+  &:hover:not(:checked):not(:active):not(:only-child):hover,
+  &:hover:not(:checked):not(:active):not(:only-child):last-child:hover {
+    box-shadow: none;
   }
 }
 
