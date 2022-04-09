@@ -2455,11 +2455,15 @@ $_dash_bottom_margin: 20px;
 //
 // IBus Candidate Popup
 //
+.candidate-popup-boxpointer {
+  @extend .popup-menu-boxpointer;
+}
+
 .candidate-popup-content {
   padding: 0.5em;
   spacing: 0.3em;
-  color: $osd_fg_color;
   @include fontsize($font-size * 1.15);
+  @extend .popup-menu-content;
 }
 
 .candidate-index {
