@@ -881,8 +881,8 @@ panel-toplevel.background {
   background-color: if($variant == 'lighter', transparentize(black, 0.85), transparentize(black, 0.75));
 }
 
-// xfce4-pulseaudio-plugin
-#XfcePanelWindowWrapper #pulseaudio-button {
+// Hide swich I/O images in xfce panel popups
+#XfcePanelWindowWrapper {
   switch, slider { color: transparent; }
 }
 
