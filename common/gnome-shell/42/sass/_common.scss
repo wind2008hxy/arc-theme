@@ -1360,7 +1360,10 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 
   .message-list-placeholder {
     StIcon { width: 0; height: 0; }
-    StLabel { color: $insensitive_fg_color; }
+    StLabel {
+      color: $insensitive_fg_color;
+      font-weight: normal;
+    }
   }
 
   StScrollBar { padding: 2px 0; }
