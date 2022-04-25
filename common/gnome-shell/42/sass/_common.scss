@@ -2942,6 +2942,7 @@ $_screenshot_ui_panel_padding: 15px;
 
 .screenshot-ui-close-button {
   @extend .window-close; // copy window close button
+  padding: $window_close_button_padding !important;
   &.left { margin-left: 8px;}
   &.right { margin-right: 8px;}
 }
