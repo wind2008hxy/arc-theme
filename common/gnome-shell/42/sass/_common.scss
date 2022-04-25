@@ -1356,6 +1356,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 .message-list {
   width: 31.5em;
   padding: 9px 0;
+  border-width: 0;
 
   .message-list-placeholder {
     StIcon { width: 0; height: 0; }
