@@ -170,7 +170,9 @@ StScrollBar {
   border-left-width: 5px;
   color: $selected_bg_color;
 
-  .popup-menu-item.selected & {
+  .popup-menu-item:hover &,
+  .popup-menu-item:active &,
+  .popup-menu-item:focus & {
     -barlevel-background-color: transparentize(black, 0.8);
     -barlevel-active-background-color: $selected_fg_color;
     color: $selected_fg_color;
