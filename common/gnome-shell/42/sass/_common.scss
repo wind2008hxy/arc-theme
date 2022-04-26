@@ -1363,6 +1363,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
     StLabel {
       color: $insensitive_fg_color;
       font-weight: normal;
+      @include fontsize($font-size);
     }
   }
 
