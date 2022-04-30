@@ -1136,7 +1136,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
     }
   }
 
-  $calendar_day_size: 27px;
+  $calendar_day_size: 2.25em;
 
   .calendar-day-base {
     @include fontsize($font-size * 0.8);
