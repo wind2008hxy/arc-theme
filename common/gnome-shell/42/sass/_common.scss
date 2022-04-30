@@ -1479,7 +1479,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
       color: transparentize($fg_color, 0.4);
       @include fontsize($font-size * 0.9);
       /* HACK: the label should be baseline-aligned with a 1em label, fake this with some bottom padding */
-      padding-bottom: 0.05em;//Use em instead of px, since this depends on font-size
+      padding-bottom: 0.04em;//Use em instead of px, since this depends on font-size
 
       &:ltr { text-align: right };
       &:rtl { text-align: left };
