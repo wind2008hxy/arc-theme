@@ -4043,6 +4043,7 @@ window {
   &.solid-csd {
     margin: 1px;
     padding: 0;
+    border: 1px solid $borders_color;
     border-radius: 0;
     background-color: $header_bg;
     box-shadow: none;

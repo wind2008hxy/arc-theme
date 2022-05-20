@@ -3322,6 +3322,7 @@ decoration {
     border-radius: 3px;
   }
   .solid-csd & {
+    border: 1px solid $borders_color;
     border-radius: 0;
     margin: 1px;
     background-color: $header_bg;
