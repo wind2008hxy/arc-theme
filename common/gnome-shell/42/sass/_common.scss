@@ -702,6 +702,7 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
 // OSD
 //
 .osd-window {
+  padding: 10px;
   text-align: center;
   font-weight: bold;
   margin: 4em;
@@ -838,6 +839,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 
 .workspace-switcher {
   @extend %shell_osd;
+  padding: 10px;
   margin: 4em;
   spacing: 8px;
 }
