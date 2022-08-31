@@ -2256,6 +2256,7 @@ $_dash_bottom_margin: 20px;
     marging: 0;
     padding: 4px 4px 5px;
     min-height: 0;
+    border-radius: 2px !important;
     font-weight: normal !important;
     @extend %button;
 
