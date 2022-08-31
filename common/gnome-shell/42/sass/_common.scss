@@ -1657,7 +1657,7 @@ $window_close_button_padding: 0;
 
 .nm-dialog-scroll-view {
   border: 1px solid $borders_color;
-  padding: 5px;
+  padding: 0;
   border-radius: 2px;
   background-color: $base_color;
 }
@@ -1670,6 +1670,7 @@ $window_close_button_padding: 0;
 
   &:selected {
     background-color: $selected_bg_color;
+    border-radius: 0;
     color: $selected_fg_color;
   }
   &:hover {
