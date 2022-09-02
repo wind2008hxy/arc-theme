@@ -3303,15 +3303,17 @@ decoration {
     border-radius: 0;
   }
   // server-side decorations as used by mutter
-  .ssd & {
+  .ssd &,
+  .ssd &:backdrop {
     border-radius: if($variant=='light' or $variant=='lighter', 4px 4px 0 0, 3px 3px 0 0);
     box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', transparentize(black, 0.35), $_wm_border);
-
-    &.maximized {
-      border-radius: 0;
-      box-shadow: none;
-    }
   }
+  .ssd.maximized &,
+  .ssd.maximized &:backdrop {
+    border-radius: 0;
+    box-shadow: none;
+  }
+
   .csd.popup & {
     border-radius: 2px;
     box-shadow: 0 3px 6px if($variant != 'dark', $_wm_border, transparentize($_wm_border, 0.1)),
