@@ -1167,8 +1167,22 @@ headerbar,
   separator.titlebutton { @extend %header_separator; }
 }
 
-.titlebar {
+.titlebar,
+.background .titlebar {
   border-radius: $_header_radius $_header_radius 0 0;
+}
+
+.background.tiled .titlebar,
+.background.tiled-top .titlebar,
+.background.tiled-right .titlebar,
+.background.tiled-bottom .titlebar,
+.background.tiled-left .titlebar,
+.background.maximized .titlebar,
+.background.solid-csd .titlebar {
+  &:backdrop, & {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
 }
 
 headerbar {
@@ -1214,6 +1228,25 @@ headerbar {
       &:backdrop, & {
         border-top-left-radius: $_header_radius;
         border-top-right-radius: $_header_radius;
+      }
+    }
+  }
+
+  window.tiled &,
+  window.tiled-top &,
+  window.tiled-right &,
+  window.tiled-bottom &,
+  window.tiled-left &,
+  window.maximized &,
+  window.fullscreen &,
+  window.solid-csd & {
+    &, &:backdrop {
+      &,
+      &:first-child,
+      &:last-child,
+      &:only-child {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
       }
     }
   }
