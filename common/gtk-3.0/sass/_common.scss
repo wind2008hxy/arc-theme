@@ -3307,7 +3307,10 @@ decoration {
     border-radius: if($variant=='light' or $variant=='lighter', 4px 4px 0 0, 3px 3px 0 0);
     box-shadow: 0 0 0 1px if($variant == 'dark' or $variant == 'darker', transparentize(black, 0.35), $_wm_border);
 
-    &.maximized { border-radius: 0; }
+    &.maximized {
+      border-radius: 0;
+      box-shadow: none;
+    }
   }
   .csd.popup & {
     border-radius: 2px;
