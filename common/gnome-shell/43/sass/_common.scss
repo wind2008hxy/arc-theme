@@ -1509,6 +1509,8 @@ $ws_dot_inactive: $ws_indicator_height / 6;
     margin: 0;
     &:hover { color: transparentize($fg_color, 0.3); }
     &:active { color: $selected_bg_color }
+
+    & StIcon { icon-size: 16px; }
   }
 
   // body
@@ -1535,6 +1537,8 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 
   &:last-child:ltr { padding-right: 18px; }
   &:last-child:rtl { padding-left: 18px; }
+
+  & StIcon { icon-size: 16px; }
 }
 
 .message:active .message-media-control {
@@ -2499,11 +2503,12 @@ $_dash_bottom_margin: 20px;
 
 .candidate-page-button {
   padding: 4px;
+
+  & StIcon { icon-size: 1em; }
 }
 
 .candidate-page-button-previous { border-radius: 2px 0px 0px 2px; border-right-width: 0; }
 .candidate-page-button-next { border-radius: 0px 2px 2px 0px;  }
-.candidate-page-button-icon { icon-size: 1em; }
 
 //
 // Auth Dialogs & Screen Shield
@@ -2873,6 +2878,8 @@ $_dash_bottom_margin: 20px;
     color: $osd_fg_color;
     &:hover { color: lighten($osd_fg_color, 10%); }
     &:active { color: darken($osd_fg_color, 10%); }
+
+    & StIcon { icon-size: 12px; }
    }
 }
 
