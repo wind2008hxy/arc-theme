@@ -934,7 +934,14 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 
     &.screen-recording-indicator {
       box-shadow: inset 0 0 0 100px $error_color;
+    }
+    &.screen-sharing-indicator {
+      box-shadow: inset 0 0 0 100px $warning_color;
+      StBoxLayout { margin: 0 4px; }
+    }
 
+    &.screen-recording-indicator,
+    &.screen-sharing-indicator {
       StBoxLayout {
         spacing: 4px;
       }
@@ -952,6 +959,9 @@ $ws_dot_inactive: $ws_indicator_height / 6;
       &.screen-recording-indicator {
         box-shadow: inset 0 0 0 100px transparentize($error_color, 0.1);
       }
+      &.screen-sharing-indicator {
+        box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.1);
+      }
     }
 
     @at-root %panel_button_active,
@@ -962,6 +972,9 @@ $ws_dot_inactive: $ws_indicator_height / 6;
 
       &.screen-recording-indicator {
         box-shadow: inset 0 0 0 100px transparentize($error_color, 0.15);
+      }
+      &.screen-sharing-indicator {
+        box-shadow: inset 0 0 0 100px transparentize($warning_color, 0.15);
       }
     }
 
