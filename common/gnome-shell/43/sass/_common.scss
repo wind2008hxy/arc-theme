@@ -62,6 +62,22 @@ stage {
   @extend %button;
 }
 
+.icon-button {
+  @extend %button;
+
+  border-radius: 99px;
+  border-style: solid;
+  border-width: 1px;
+  font-weight: bold;
+  padding: 4px;
+  min-height: 16px;
+
+  & > StIcon {
+    icon-size: 16px;
+    -st-icon-style: symbolic;
+  }
+}
+
 %button {
   @include button(normal);
 
