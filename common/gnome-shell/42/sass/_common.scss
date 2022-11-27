@@ -932,10 +932,26 @@ $ws_dot_inactive: $ws_indicator_height / 6;
       height: 0;
     }
 
+    &.screen-recording-indicator {
+      box-shadow: inset 0 0 0 100px $error_color;
+
+      StBoxLayout {
+        spacing: 4px;
+      }
+
+      StIcon {
+        icon-size: 16px;
+      }
+    }
+
     @at-root %panel_button_hover,
     &:hover {
       box-shadow: inset 0 0 0 100px transparentize(black, 0.83);
       border-color: transparent;
+
+      &.screen-recording-indicator {
+        box-shadow: inset 0 0 0 100px transparentize($error_color, 0.1);
+      }
     }
 
     @at-root %panel_button_active,
@@ -943,6 +959,10 @@ $ws_dot_inactive: $ws_indicator_height / 6;
       color: $selected_fg_color;
       box-shadow: inset 0 0 0 100px $selected_bg_color;
       border-color: black;
+
+      &.screen-recording-indicator {
+        box-shadow: inset 0 0 0 100px transparentize($error_color, 0.15);
+      }
     }
 
     .system-status-icon { icon-size: 16px; padding: 0 4px; }
