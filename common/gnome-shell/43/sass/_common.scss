@@ -1699,70 +1699,6 @@ $window_close_button_padding: 0;
 }
 
 //
-// Network Dialogs
-//
-.nm-dialog {
-  max-height: 34em;
-  min-height: 31em;
-  min-width: 32em;
-}
-
-.nm-dialog-content {
-  spacing: 20px;
-  padding: 10px;
-
-  @extend %modal_dialog_content_box;
-}
-.nm-dialog-header {
-  font-weight: bold;
-  @include fontsize($font-size * 1.2);
-}
-.nm-dialog-subheader { color: $insensitive_fg_color;}
-.nm-dialog-header-icon { icon-size: 32px; }
-.nm-dialog-header-hbox { spacing: 10px; }
-
-.nm-dialog-scroll-view {
-  border: 1px solid $borders_color;
-  padding: 0;
-  border-radius: 2px;
-  background-color: $base_color;
-}
-
-.nm-dialog-item {
-  @include fontsize($font-size);
-  border-bottom: 0px solid;
-  padding: 12px;
-  spacing: 0px;
-
-  &:selected {
-    background-color: $selected_bg_color;
-    border-radius: 0;
-    color: $selected_fg_color;
-  }
-  &:hover {
-    background-color: if($variant != 'dark', transparentize(black, 0.95), transparentize(white, 0.97));
-  }
-}
-
-.nm-dialog-icon { icon-size: 16px; }
-.nm-dialog-icons { spacing: .5em; }
-
-.no-networks-box { spacing: 12px; }
-.no-networks-label { color: $insensitive_fg_color; }
-
-.nm-dialog-airplane-box {
-  text-align: center;
-  spacing: 12px;
-}
-
-.nm-dialog-airplane-headline {
-  @include fontsize($font-size * 1.1);
-  font-weight: bold;
-  text-align: center;
-}
-.nm-dialog-airplane-text { color: $insensitive_fg_color; }
-
-//
 // Overview
 //
 .controls-manager,
@@ -3335,6 +3271,9 @@ $_screenshot_ui_panel_padding: 15px;
   }
 }
 
+.nm-network-item {
+  .wireless-secure-icon { icon-size: 8px; }
+}
 
 //
 // OpenWeather extension
