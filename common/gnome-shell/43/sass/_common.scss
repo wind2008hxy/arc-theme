@@ -2007,8 +2007,6 @@ $_dash_bottom_margin: 20px;
 }
 
 .page-navigation-hint {
-  width: 300px;
-
   &.dnd {
     background: rgba(255, 255, 255, 0.1);
   }
@@ -2031,9 +2029,17 @@ $_dash_bottom_margin: 20px;
 }
 
 .page-navigation-arrow {
-  margin: 6px;
-  width: 24px;
-  height: 24px;
+  &  > StIcon {
+    margin: 6px;
+    padding: 18px;
+    width: 24px;
+    height: 24px;
+    border-radius: 99px;
+  }
+
+  &:insensitive > StIcon { @include button(osd-insensitive);}
+  &:hover > StIcon { @include button(osd-hover);}
+  &:active > StIcon { @include button(osd-active);}
 }
 
 //
