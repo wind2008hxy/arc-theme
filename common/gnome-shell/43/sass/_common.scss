@@ -37,6 +37,11 @@ $_popup_menu_shadow: if($variant!='dark', 0 1px 3px 2.1px rgba(0, 0, 0, 0.06), $
 
 $panel_transition_duration: 250ms;
 
+// Chroma key to flag when a background-color is always occluded, not visible.
+// This allows any box-shadow behind it to be rendered more efficiently by
+// omitting the middle rectangle.
+$invisible_occluded_bg_color: rgba(3,2,1,0);
+
 stage {
   @include fontsize($font-size);
   color: $fg_color;
@@ -1680,6 +1685,7 @@ $window_close_button_padding: 0;
 .workspace-background {
   // keep in sync with BACKGROUND_CORNER_RADIUS_PIXELS in workspace.js
   border-radius: 30px;
+  background-color: $invisible_occluded_bg_color;
   box-shadow: 0 8px 16px 0 transparentize(black, 0.8);
 }
 
