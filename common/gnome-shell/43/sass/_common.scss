@@ -673,27 +673,6 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
 // desktop ackground menu
 .background-menu { -boxpointer-gap: 4px; -arrow-rise: 0px; }
 
-// system status menu
-.aggregate-menu {
-  min-width: 23.5em;
-
-  // this is unneeded at the top-level in this menu, hide it
-  .popup-menu-ornament { width: 0 !important; }
-
-  // lock screen, shutdown, etc. buttons
-  .popup-menu-icon {
-    margin: 0 4px;
-    -st-icon-style: symbolic;
-  }
-
-  // account for ornaments in submenus with padding
-  .popup-sub-menu .popup-menu-item > :first-child {
-    // this value is hardcoded for visual effect
-    &:ltr { margin-left: 20px;}
-    &:rtl { margin-right: 20px;}
-  }
-}
-
 // right-click (and panel) app menu
 .app-menu {
   max-width: 27.25em;
