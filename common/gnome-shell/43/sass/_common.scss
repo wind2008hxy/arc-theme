@@ -3024,6 +3024,9 @@ $_screenshot_ui_panel_padding: 15px;
     background-color: $selected_bg_color;
     color: $selected_fg_color;
   }
+  &:insensitive {
+    color: $osd_insensitive_fg_color;
+  }
 
   &:first-child:ltr {
     border-radius: 2px 0px 0px 2px;
