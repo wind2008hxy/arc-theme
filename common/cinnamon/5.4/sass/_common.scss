@@ -1469,10 +1469,17 @@ StScrollBar {
 //
 
 .grouped-window-list {
+  &-box {
+    spacing: 2px;
+  }
+  &-box.vertical {
+    spacing: 3px;
+  }
   &-thumbnail-label {
     padding-left: 4px;
   }
   &-number-label {
+    font-size: 10px;
     z-index: 99;
     text-shadow: none;
     font-size: 1.1em;
@@ -1482,9 +1489,11 @@ StScrollBar {
   &-badge {
     border-radius: 256px;
     background-color: $osd_bg_color;
+    margin: 0;
   }
   &-button-label {
-    padding-left: 4px;
+    padding-left: 6px;
+    padding-right: 6px;
   }
   &-thumbnail-alert {
     background: transparentize($error_color, 0.5);
