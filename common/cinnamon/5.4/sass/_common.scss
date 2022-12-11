@@ -1931,6 +1931,17 @@ StScrollBar {
 }
 
 //
+// Pointer accessibility notifications
+//
+.pie-timer {
+  width: 30px;
+  height: 30px;
+  -pie-border-width: 1px;
+  -pie-border-color: $borders_color;
+  -pie-background-color: $bg_color;
+}
+
+//
 // Xkcd Desklet
 //
 .xkcd-box {
