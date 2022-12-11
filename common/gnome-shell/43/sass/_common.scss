@@ -2398,6 +2398,11 @@ $_dash_bottom_margin: 20px;
     &:active, &:checked { @include button(osd-active); }
   }
 
+  // keys that may be latched: ctrl/alt/shift
+  &:latched, &:latched:hover {
+    @include button(osd-active);
+  }
+
   &.enter-key {
     @include button(osd-active);
 
