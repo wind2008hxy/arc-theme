@@ -297,7 +297,10 @@ StScrollBar {
     border-color: if($variant!='dark', darken($osd_bg_color, 5%), darken($osd_bg_color, 8%));
 
     &:hover { background-color: lighten($osd_bg_color, 5%); }
-    &:focus { color: $selected_bg_color; }
+    &:focus {
+      color: $selected_bg_color;
+      box-shadow: none !important;
+    }
     &:active {
       color: $selected_fg_color;
       background-color: $selected_bg_color;
