@@ -3233,9 +3233,14 @@ $_screenshot_ui_panel_padding: 15px;
       icon-size: 16px;
       border-radius: 999px;
       padding: 6px;
-      background-color: lighten($bg_color, 10%);
+      border: 1px solid $button_border;
+      background-color: $button_bg;
 
-      &.active { background-color: $selected_bg_color; }
+      &.active {
+        background-color: $selected_bg_color;
+        color: $selected_fg_color;
+        border: 1px solid if($variant!='dark', $selected_bg_color, $button_border);
+      }
     }
 
     & .title {
