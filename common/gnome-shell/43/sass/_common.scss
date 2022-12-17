@@ -3175,6 +3175,8 @@ $_screenshot_ui_panel_padding: 15px;
   max-width: 12em;
   min-height: 40px;
 
+  &:first-child { border-radius: 99px}
+
   &:checked { @include button(default); }
 
   & > StBoxLayout { spacing: 4px; }
