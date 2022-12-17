@@ -77,6 +77,11 @@ stage {
   padding: 4px;
   min-height: 16px;
 
+  &.flat {
+    background-color: transparent;
+    border-color: transparent;
+  }
+
   & > StIcon {
     icon-size: 16px;
     -st-icon-style: symbolic;
