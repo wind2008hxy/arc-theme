@@ -3248,12 +3248,12 @@ $_screenshot_ui_panel_padding: 15px;
     }
 
     & .title {
-      @include fontsize($font-size * 1.6);
+      @include fontsize($font-size * 1.4);
       font-weight: 800;
     }
 
     & .subtitle {
-      @include fontsize($font-size * 1.2);
+      @include fontsize($font-size);
       font-weight: 800;
     }
   }
