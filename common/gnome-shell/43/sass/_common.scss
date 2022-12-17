@@ -3165,7 +3165,7 @@ $_screenshot_ui_panel_padding: 15px;
 }
 
 .quick-toggle {
-  border-radius: 99px;
+  border-radius: 3px;
   min-width: 12em;
   max-width: 12em;
   min-height: 40px;
@@ -3193,8 +3193,8 @@ $_screenshot_ui_panel_padding: 15px;
     background-color: transparentize($fg_color, 0.9);
     padding: 4px 7px;
 
-    &:ltr { border-radius: 0 99px 99px 0; }
-    &:rtl { border-radius: 99px 0 0 99px; }
+    &:ltr { border-radius: 0 3px 3px 0; }
+    &:rtl { border-radius: 3px 0 0 3px; }
   }
 
   &:checked .quick-toggle-arrow {
