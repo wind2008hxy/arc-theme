@@ -3233,7 +3233,11 @@ $_screenshot_ui_panel_padding: 15px;
   padding: 8px;
   margin: 8px 16px 0;
 
-  .popup-menu-item { border-radius: 2px; }
+  .popup-menu-item {
+    border-radius: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 
   .popup-menu-item > StIcon { -st-icon-style: symbolic; }
 
