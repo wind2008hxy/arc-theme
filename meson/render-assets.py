@@ -89,6 +89,5 @@ for asset_array in asset_arrays:
     'oxipng',
     '-o', 'max',
     '--strip', 'safe',
-    '--libdeflater',
     ] + asset_files,
     check=True)
