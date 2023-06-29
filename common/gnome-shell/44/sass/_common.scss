@@ -3179,7 +3179,7 @@ $_screenshot_ui_panel_padding: 15px;
 
   &:checked { @include button(default); }
 
-  & > StBoxLayout { spacing: 4px; }
+  & > StBoxLayout { spacing: 6px; }
 
   /* Move padding into the box; this is to allow menu arrows
      to extend to the border */
