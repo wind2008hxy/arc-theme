@@ -3188,7 +3188,13 @@ $_screenshot_ui_panel_padding: 15px;
   &:ltr > StBoxLayout { padding-left: 10px; }
   &:rtl > StBoxLayout { padding-right: 10px; }
 
-  .quick-toggle-label { font-weight: normal; }
+  .quick-toggle-title { font-weight: bold; }
+
+  & StBoxLayout > .quick-toggle-subtitle {
+    font-weight: normal;
+    @include fontsize($font-size);
+  }
+
   .quick-toggle-icon, .quick-toggle-arrow { icon-size: 16px; }
 }
 
