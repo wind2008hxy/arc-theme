@@ -894,6 +894,7 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   border: 0 solid $shell_osd_border_color;
   border-bottom-width: 1px;
   transition-duration: $panel_transition_duration;
+  box-shadow: none;
 
   // Fix dynamic top bar extension
   &.dynamic-top-bar-white-btn { border-image: none; }
