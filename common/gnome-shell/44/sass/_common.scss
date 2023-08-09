@@ -3246,7 +3246,8 @@ $_screenshot_ui_panel_padding: 15px;
 }
 
 .quick-toggle-menu {
-  background-color: $shell_popup_menu_background_color;
+  background-color: $shell_popup_menu_background_color !important;
+  color: $fg_color !important;
   border-color: $borders_color;
   border-radius: 3px;
   padding: 8px;
