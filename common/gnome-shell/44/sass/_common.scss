@@ -2017,17 +2017,15 @@ $_dash_bottom_margin: 20px;
 }
 
 .page-navigation-arrow {
-  &  > StIcon {
-    margin: 6px;
-    padding: 18px;
-    width: 24px;
-    height: 24px;
-    border-radius: 99px;
-  }
+  margin: 6px;
+  padding: 18px;
+  width: 24px;
+  height: 24px;
+  border-radius: 99px;
 
-  &:insensitive > StIcon { @include button(osd-insensitive);}
-  &:hover > StIcon { @include button(osd-hover);}
-  &:active > StIcon { @include button(osd-active);}
+  &:insensitive { @include button(osd-insensitive);}
+  &:hover { @include button(osd-hover);}
+  &:active { @include button(osd-active);}
 }
 
 //
