@@ -2509,8 +2509,6 @@ $_dash_bottom_margin: 20px;
   border: 0;
   icon-size: 64px;
 
-  .login-dialog-user-list-item:selected & { color: $selected_fg_color; }
-
   .unlock-dialog & { color: $_shell_fg_color; }
 
   &:hover {
@@ -2533,68 +2531,12 @@ $_dash_bottom_margin: 20px;
   }
 }
 
-.user-widget.vertical .user-icon {
-  icon-size: 128px;
 
-  & StIcon {
-    padding: 20px;
-    padding-top: 18px;
-    padding-bottom: 22px;
-    width: 88px; height: 88px;
-  }
-}
+$_gdm_dialog_width: 23em;
 
-//
-// Login Dialog
-//
-.login-dialog-banner-view {
-  padding-top: 24px;
-  max-width: 23em;
-}
-
+// common style for gdm and lockscreen
 .login-dialog,
 .unlock-dialog {
-  //reset
-  border: none;
-  background-color: transparent;
-
-  StEntry {
-    caret-color: $selected_fg_color;
-    selection-background-color: $selected_bg_color;
-    selected-color: $selected_fg_color;
-
-    @include entry(osd);
-
-    StLabel.hint-text { color: transparentize($osd_fg_color, 0.3); }
-
-    &:focus {
-      selection-background-color: $selected_fg_color;
-      selected-color: $selected_bg_color;
-
-      @include entry(osd-focus);
-
-      StLabel.hint-text { color: transparentize($selected_fg_color, 0.3); }
-    }
-  }
-
-  .modal-dialog-button-box { spacing: 3px; }
-  .modal-dialog-button {
-    padding: 3px 18px;
-    &, &:default {
-      @extend %osd_button;
-    }
-  }
-
-  .cancel-button,
-  .switch-user-button,
-  .login-dialog-session-list-button {
-    padding: 0;
-    border-radius: 99px;
-    width: 32px;
-    height: 32px;
-
-    StIcon { icon-size: 16px; }
-  }
 
   .caps-lock-warning-label,
   .login-dialog-message-warning {
@@ -2602,23 +2544,51 @@ $_dash_bottom_margin: 20px;
   }
 }
 
-.login-dialog-logo-bin { padding: 24px 0px; }
-.login-dialog-banner { color: $osd_fg_color; @include fontsize($font-size * 1.1); }
-.login-dialog-button-box { width: 23em; spacing: 5px; }
+/* Login Dialog */
+.login-dialog {
+  background-color: transparent;
+}
+
+// buttons
+.login-dialog-button {
+
+  &.cancel-button,
+  &.switch-user-button,
+  &.login-dialog-session-list-button {
+    @extend .icon-button;
+  }
+
+  &.cancel-button {
+    padding: 6px;
+  }
+}
+
+.login-dialog-button-box {
+  width: $_gdm_dialog_width;
+  spacing: 8px;
+}
+
+.login-dialog-logo-bin {
+  margin: 3em 0;
+}
+.login-dialog-banner { color: $osd_fg_color; }
+.login-dialog-banner-view { max-width: $_gdm_dialog_width; }
 .login-dialog-message { text-align: center; }
 .login-dialog-user-selection-box { padding: 100px 0px; }
+
 .login-dialog-not-listed-label {
-  padding-left: 2px;
+  @include fontsize($font-size);
+  font-weight: bold;
+  color: $osd_fg_color;
+  padding: 8px;
+
   .login-dialog-not-listed-button:focus &,
   .login-dialog-not-listed-button:hover & {
     color: lighten($osd_fg_color, 25%);
   }
-}
-.login-dialog-not-listed-label {
-  @include fontsize($font-size * 0.9);
-  font-weight: bold;
-  color: $osd_fg_color;
-  padding-top: 1em;
+  .login-dialog-not-listed-button:focus & {
+    text-decoration: underline;
+  }
 }
 
 .login-dialog-auth-list-view { -st-vfade-offset: 1em; }
@@ -2626,16 +2596,19 @@ $_dash_bottom_margin: 20px;
   spacing: 6px;
   margin-left: 2em;
 }
-
 .login-dialog-auth-list-title {
   margin-left: 2em;
 }
 
 .login-dialog-auth-list-item {
   border-radius: 5px;
-  padding: 6px;
+  padding: 4px;
   color: $osd_fg_color;
-  &:focus, &:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
+
+  &:focus, &:selected {
+    background-color: $selected_bg_color;
+    color: $selected_fg_color;
+  }
 }
 
 .login-dialog-auth-list-label {
@@ -2648,102 +2621,104 @@ $_dash_bottom_margin: 20px;
 }
 
 .login-dialog-user-list-view { -st-vfade-offset: 1em; }
+
 .login-dialog-user-list {
   spacing: 12px;
-  width: 23em;
-  &:expanded .login-dialog-user-list-item:selected { background-color: $selected_bg_color; color: $selected_fg_color; }
-  &:expanded .login-dialog-user-list-item:logged-in { border-right: 2px solid $selected_bg_color; }
-}
-.login-dialog-user-list-item {
-  border-radius: 5px;
-  padding: 6px;
-  color: $osd_fg_color;
-  &:ltr .user-widget { padding-right: 1em; }
-  &:rtl .user-widget { padding-left: 1em; }
-  .login-dialog-timed-login-indicator {
-    margin-top: 6px;
+  width: $_gdm_dialog_width;
+
+  .login-dialog-user-list-item {
+    border-radius: 5px;
+    padding: 4px;
+    background-color: transparent;
+    color: $osd_fg_color;
+
+    &:selected .user-widget .user-icon { color: $selected_fg_color; }
+
+    .login-dialog-timed-login-indicator {
+      height: 2px;
+      margin-top: 6px;
+      background-color: $osd_fg_color;
+    }
+
+    &:focus .login-dialog-timed-login-indicator { background-color: $selected_fg_color; }
   }
-  &:selected .login-dialog-timed-login-indicator { background-color: $selected_fg_color; }
-}
 
-.user-widget-label {
-  color: $osd_fg_color;
+  &:expanded .login-dialog-user-list-item {
 
-  .login-dialog-user-list-item:selected & { color: $selected_fg_color; }
+    &:selected {
+      background-color: $selected_bg_color;
+      color: $selected_fg_color;
+    }
 
-  .unlock-dialog & { color: $_shell_fg_color; }
-}
-
-.user-widget.horizontal .user-widget-label {
-  @include fontsize($font-size * 1.2);
-  font-weight: bold;
-  padding-left: 15px;
-
-  &:ltr { padding-left: 14px; text-align: left; }
-  &:rtl { padding-right: 14px; text-align: right; }
-}
-
-.user-widget.vertical .user-widget-label {
-  @include fontsize($font-size * 1.5);
-  text-align: center;
-  font-weight: normal;
-  padding-top: 16px;
-}
-
-.login-dialog-timed-login-indicator {
-  height: 2px;
-  background-color: $osd_fg_color;
+    &:logged-in {
+      border-right: 2px solid $selected_bg_color;
+    }
+  }
 }
 
 .login-dialog-prompt-layout {
-  padding-top: 24px;
-  padding-bottom: 12px;
   spacing: 8px;
-  width: 23em;
+  width: 26em;
 }
 
-.login-dialog-prompt-entry {
-  height: 1.5em;
+.login-dialog-prompt-entry {}
+
+
+/* Screen Shield */
+// a.k.a. the lockscreen
+
+.unlock-dialog {
+  background-color: transparent;
 }
 
-.login-dialog-prompt-label {
-  color: $osd_fg_color;
-  @include fontsize($font-size * 1.1);
-  padding-top: 1em;
+.screen-shield-background { // just the shadow, really
+  background: black;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.6);
 }
 
-//
-// Screen Shield
-//
+#lockDialogGroup {
+  background-color: $_system_bg_color
+}
+
+// Clock
 .unlock-dialog-clock {
   color: $_shell_fg_color;
-  font-weight: 300;
-  text-align: center;
-  spacing: 24px;
-  padding-bottom: 2.5em;
+  spacing: 2em;
+
+  .unlock-dialog-clock-time {
+    @include fontsize(72);
+    font-feature-settings: "tnum";
+    font-weight: 200;
+  }
+
+  .unlock-dialog-clock-date {
+    @include fontsize(20);
+    font-weight: 400;
+  }
+
+  .unlock-dialog-clock-hint {
+    margin-top: 2em;
+    padding: 4px 12px;
+    border-radius: 3px;
+    font-weight: bold;
+  }
 }
 
-.unlock-dialog-clock-time {
-  font-size: 64pt;
-  padding-top: 42px;
-  font-feature-settings: "tnum";
-}
-
-.unlock-dialog-clock-date {
-  font-size: 16pt;
-  font-weight: normal;
-}
-
-.unlock-dialog-clock-hint {
-  font-weight: normal;
-  padding-top: 48px;
+// Notifications
+#unlockDialogNotifications {
+  StButton#vhandle, StButton#hhandle {
+    background-color: transparentize($bg_color,0.7);
+    &:hover, &:focus { background-color: transparentize($bg_color,0.5); }
+    &:active { background-color: transparentize($selected_bg_color,0.5); }
+  }
 }
 
 .unlock-dialog-notifications-container {
-  margin: 12px 0;
+  margin: 12px;
   spacing: 6px;
-  width: 23em;
+  width: $_gdm_dialog_width;
   background-color: transparent;
+
   .summary-notification-stack-scrollview {
     padding-top: 0;
     padding-bottom: 0;
@@ -2751,12 +2726,10 @@ $_dash_bottom_margin: 20px;
 
   .notification,
   .unlock-dialog-notification-source {
-    padding: 12px 6px;
+    padding: 12px 16px;
     @extend %popup_menu;
 
-    StIcon { -st-icon-style: symbolic; }
-
-    // &.critical { background-color: transparentize($osd_bg_color,0.1) } // FIXME
+ //   &.critical { background-color: transparentize($_gdm_fg,0.8) }//FIXME
   }
 }
 
@@ -2768,28 +2741,70 @@ $_dash_bottom_margin: 20px;
 
 .unlock-dialog-notification-count-text {
   font-weight: bold;
-  padding: 0 6px;
-  color: $fg_color;
-  border: 1px solid transparentize(white, 0.9);
-  background-color: transparentize(white, 0.8);
+  padding: 0 12px;
+  color: $osd_fg_color;
+  background-color: $osd_bg_color;
   border-radius: 99px;
-  margin-right: 12px;
 }
 
-.screen-shield-background { //just the shadow, really
-  background: black;
-  box-shadow: 0px 2px 4px transparentize(black,0.6);
-}
 
-#lockDialogGroup {
-  background-color: $_system_bg_color;
-}
+// User Widget
+.user-widget {
 
-#unlockDialogNotifications {
-  StButton#vhandle, StButton#hhandle {
-    background-color: transparentize($bg_color,0.7);
-    &:hover, &:focus { background-color: transparentize($bg_color,0.5); }
-    &:active { background-color: transparentize($selected_bg_color,0.5); }
+  .user-widget-label {
+    color: $osd_fg_color;
+
+    .login-dialog-user-list-item:selected & { color: $selected_fg_color; }
+
+    .unlock-dialog & { color: $_shell_fg_color; }
+  }
+
+  // layout of the user list
+  &.horizontal {
+    spacing: 12px;
+
+    .user-widget-label {
+      @include fontsize($font-size * 1.2);
+      font-weight: bold;
+    }
+
+    .user-icon {
+      & StIcon {
+        padding: 12px;
+        icon-size: 32px;
+        width: 48px;
+        height: 48px;
+        color: $osd_fg_color;
+        background-color: transparent;
+
+        .login-dialog-user-list-item:selected & { color: $selected_fg_color; }
+      }
+    }
+  }
+
+  // layout of the login prompt
+  &.vertical {
+    spacing: 16px;
+
+    .user-widget-label {
+      @include fontsize($font-size * 1.5);
+      text-align: center;
+      font-weight: normal;
+      margin-bottom: .75em;
+    }
+
+    .user-icon {
+      icon-size: 160px;
+
+      & StIcon {
+        padding: 32px;
+        icon-size: 64px;
+        color: $osd_fg_color;
+        background-color: transparent;
+
+        .login-dialog-user-list-item:selected & { color: $selected_fg_color; }
+      }
+    }
   }
 }
 
