@@ -3351,6 +3351,10 @@ $_screenshot_ui_panel_padding: 15px;
     @extend .icon-button;
     padding: 4px;
   }
+  & .spinner {
+    padding: 4px;
+  }
+
 
   &.popup-inactive-menu-item { color: $fg_color; }
 }
