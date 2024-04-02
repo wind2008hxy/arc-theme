@@ -3324,6 +3324,16 @@ $_screenshot_ui_panel_padding: 15px;
 
 .device-subtitle { color: transparentize($fg_color, 0.5); }
 
+.keyboard-brightness-item .slider {
+  min-height: 16px;
+}
+
+.keyboard-brightness-level {
+  spacing: 4px;
+
+  .button:checked { @include button(active); }
+}
+
 // background apps
 
 .background-apps-quick-toggle {
