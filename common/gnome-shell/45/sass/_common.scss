@@ -1022,9 +1022,8 @@ $ws_dot_inactive: $ws_indicator_height / 6;
     spacing: 0;
   }
 
-  .screencast-indicator { color: $error_color; }
-
-  .remote-access-indicator { color: $error_color; }
+  // important privacy related indicators
+  .privacy-indicator { color: $error_color; }
 
   .popup-menu-arrow { width: 0; }
 }
