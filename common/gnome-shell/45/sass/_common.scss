@@ -595,7 +595,7 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
   spacing: 12px;
   background-color: transparent;
 
-  padding: .4em 0em;
+  padding: .4em 16px;
 
   &:hover, &:active, &:focus {
     &, &:checked {
