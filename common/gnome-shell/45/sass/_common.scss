@@ -728,7 +728,6 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
   .osd-monitor-label { @include fontsize($font-size * 3); }
 
   .level {
-    height: 4px;
     min-width: 160px;
     -barlevel-height: 4px;
     -barlevel-background-color: transparentize(black, 0.5);
@@ -3236,7 +3235,6 @@ $_screenshot_ui_panel_padding: 15px;
 
   .slider-bin {
     &:focus {@include button(focus);}
-    min-height: 16px; // slider size
     padding: 4px;
     border-radius: 99px;
   }
@@ -3322,10 +3320,6 @@ $_screenshot_ui_panel_padding: 15px;
 }
 
 .device-subtitle { color: transparentize($fg_color, 0.5); }
-
-.keyboard-brightness-item .slider {
-  min-height: 16px;
-}
 
 .keyboard-brightness-level {
   spacing: 4px;
