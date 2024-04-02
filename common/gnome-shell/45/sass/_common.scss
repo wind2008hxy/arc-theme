@@ -595,8 +595,7 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
   spacing: 12px;
   background-color: transparent;
 
-  &:ltr { padding: .4em 16px .4em 0em; }
-  &:rtl { padding: .4em 0em .4em 16px; }
+  padding: .4em 0em;
 
   &:hover, &:active, &:focus {
     &, &:checked {
@@ -620,6 +619,10 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
   }
 }
 
+.popup-ornamented-menu-item {
+  &:ltr {padding-left: 16px;}
+  &:rtl {padding-right: 16px;}
+}
 
 // all other graphical elements (sliders)
 .popup-inactive-menu-item {
@@ -642,19 +645,12 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
   background-color: $_popup_submenu_background_color;
   box-shadow: inset 0 -1px $_popup_submenu_border_color;
   border-radius: 0;
-
-  .popup-menu-ornament {
-    min-width: 16px !important;
-  }
 }
 
 // container for radio and check boxes
 .popup-menu-ornament {
-  width: 1.2em;
-  text-align: center !important;
-
-  &:ltr { text-align: right;}
-  &:rtl { text-align: left;}
+  icon-size: 16px !important;
+  width: 16px;
 }
 
 // separator
@@ -684,9 +680,6 @@ $_popup_submenu_border_color: if($variant!='dark', rgba(0, 0, 0, 0.1), rgba(0, 0
 // right-click (and panel) app menu
 .app-menu {
   max-width: 27.25em;
-
-  // this is unneeded at the top-level in this menu, hide it
-  .popup-menu-ornament { width: 0 !important; }
 
   .popup-separator-menu-item:first-child {
     margin: .4em 4px;
