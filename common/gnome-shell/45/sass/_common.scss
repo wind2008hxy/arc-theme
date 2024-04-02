@@ -899,9 +899,18 @@ $ws_dot_inactive: $ws_indicator_height / 6;
     border-color: transparent;
 
     .panel-button {
+      &#panelActivities .workspace-dot {
+        background-color: $_panel_fg_color;
+      }
+
       &:focus, &:active, &:checked {
         &, &.clock-display .clock {
           color: $selected_fg_color;
+          border-color: transparent;
+        }
+
+        &#panelActivities .workspace-dot {
+          background-color: $selected_fg_color;
           border-color: transparent;
         }
       }
@@ -1010,7 +1019,24 @@ $ws_dot_inactive: $ws_indicator_height / 6;
     }
   }
 
-  #panelActivities.panel-button { -natural-hpadding: 12px; }
+  #panelActivities.panel-button {
+    -natural-hpadding: 12px;
+
+    & StBoxLayout {
+      spacing: 5px;
+    }
+
+    & .workspace-dot {
+      border-radius: 999px;
+      min-width: 8px;
+      min-height: 8px;
+      background-color: $_panel_fg_color;
+    }
+
+    &:active, &:overview, &:focus, &:checked {
+      & .workspace-dot { background-color: $selected_fg_color; }
+    }
+  }
 
   .panel-status-indicators-box,
   .panel-status-menu-box {
@@ -1026,33 +1052,6 @@ $ws_dot_inactive: $ws_indicator_height / 6;
   .privacy-indicator { color: $error_color; }
 
   .popup-menu-arrow { width: 0; }
-}
-
-// Activities button
-#panel #panelActivities.panel-button {
-
-  > * {
-    background-image: url("common-assets/panel/activities.svg");
-    background-size: contain;
-    width: 24px;
-    height: 24px;
-    background-color: transparent !important;
-    background-gradient-direction: none !important;
-    border: 0 solid transparent !important;
-    text-shadow: 0 0 transparent !important;
-    transition-duration: 0ms !important;
-    box-shadow: none !important;
-    color: transparent;
-  }
-
-  &:active, &:overview, &:focus, &:checked {
-    background-color: transparent;
-    box-shadow: none;
-    border-bottom-width: 1px;
-    border-color: transparent;
-
-    > * { background-image: url("common-assets/panel/activities-active.svg"); }
-  }
 }
 
 // a little unstructured mess:
